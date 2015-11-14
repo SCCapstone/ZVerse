@@ -27,6 +27,9 @@ input[type="select"] {
     max-width: 280px;
 }
 
+.navbar{
+    background-color: #CCFF99;
+}
 /* Responsive: Portrait tablets and up */
 @media screen and (min-width: 768px) {
     .jumbotron {
