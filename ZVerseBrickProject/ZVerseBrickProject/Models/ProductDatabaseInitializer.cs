@@ -10,7 +10,6 @@ namespace ZVerseBrickProject.Models
     {
         protected override void Seed(ProductContext context)
         {
-            base.Seed(context);
             GetCategories().ForEach(c => context.Categories.Add(c));
             GetProducts().ForEach(p => context.Products.Add(p));
 
@@ -162,7 +161,7 @@ namespace ZVerseBrickProject.Models
                     Description = "Pleased of offer our alumni an opportunity to take a piece of traditions plaza back to home or office. ",
                     ImagePath="image13.jpg",
                     UnitPrice = 75.00,
-                    CategoryID = 4
+                    CategoryID = 3
                 },
 
             };
