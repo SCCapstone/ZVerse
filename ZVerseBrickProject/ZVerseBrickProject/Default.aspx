@@ -64,7 +64,7 @@
                 scene = new THREE.Scene();
 
                 camera = new THREE.PerspectiveCamera( 45, window.innerWidth / window.innerHeight, 1, 2000 );
-                camera.position.z = 100;
+                camera.position.z = 40;
                 scene.add( camera );
 
                 var ambient = new THREE.AmbientLight( 0x101030 );
@@ -76,8 +76,8 @@
 
                 var loader = new THREE.OBJLoader();
         //loader.load( "img/male02.obj", function ( object ) {
-        loader.load( "img/originalMeanModel.obj", function ( object ) {
-                    object.position.y = - 80;
+                loader.load("C:\Users\Alexa\Downloads\DecBrick.obj", function (object) {
+                    object.position.y = 5;
                     scene.add( object );
                 } );
 
