@@ -1,4 +1,10 @@
-﻿/* Move down content because we have a fixed navbar that is 50px tall */
+﻿canvas{
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+/* Move down content because we have a fixed navbar that is 50px tall */
 body {
     padding-top: 50px;
     padding-bottom: 20px;
@@ -25,6 +31,20 @@ input[type="email"],
 input[type="tel"],
 input[type="select"] {
     max-width: 280px;
+}
+.navbar-brand{
+    background-size: 115px 35px;
+    height:40px;
+    margin:2px;
+    width:120px;
+    background-image: url("../Images/zverselogo.jpg"); 
+    background-repeat: no-repeat;
+    background-position: left center
+}
+
+.navbar{
+    background-color: #CCFF99;
+    margin-bottom:500px; 
 }
 
 /* Responsive: Portrait tablets and up */
