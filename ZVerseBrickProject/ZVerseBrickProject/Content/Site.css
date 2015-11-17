@@ -26,6 +26,20 @@ input[type="tel"],
 input[type="select"] {
     max-width: 280px;
 }
+.navbar-brand{
+    background-size: 115px 35px;
+    height:40px;
+    margin:2px;
+    width:120px;
+    background-image: url("../Images/zverselogo.jpg"); 
+    background-repeat: no-repeat;
+    background-position: left center
+}
+
+.navbar{
+    background-color: #CCFF99;
+    margin-bottom:500px; 
+}
 
 /* Responsive: Portrait tablets and up */
 @media screen and (min-width: 768px) {
