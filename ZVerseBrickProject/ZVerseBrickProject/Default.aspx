@@ -1,6 +1,12 @@
 ﻿<html>
-<script src="http://threejs.org/build/three.min.js"></script>
-    </html>
+   <head>
+      <title>3D Rendering</title>
+      <style>canvas { width: 100%; height: 100% }</style>
+   </head>
+      <script src="http://threejs.org/build/three.min.js"></script>
+</html>
+
+
 
 <script>
 var camera, scene, renderer;
