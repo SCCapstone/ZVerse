@@ -86,6 +86,7 @@
             }, 
             loadModel: function () {
                 
+/*
                 var oLoader = new THREE.OBJMTLLoader();
                 oLoader.load('C:\ZVerse\AutoBrickProject\DecBrick.OBJ', 'C:\ZVerse\AutoBrickProject\DecBrick.mtl', function(object) {
 
@@ -96,20 +97,21 @@
                     lesson6.scene.add(object);
                 
                 });
-            /*
+                */
+            
                 // Prepare loader and load the model
                 var oLoader = new THREE.OBJMTLLoader();
                 oLoader.load('C:\Users\Alexa\Downloads\DecBrick.OBJ', 'C:\Users\Alexa\Downloads\DecBrick.mtl', function (object) {
                     var material2 = new THREE.MeshLambertMaterial({ color: oxa65e00 });
 
                     object.traverse(function (child) {
-                        if (chile instanceof THREE.Mesh) {
+                        if (child instanceof THREE.Mesh) {
 
                             // Apply custom material
-                            chile.material = material2;
+                            child.material = material2;
 
                             // Enable casting shadows
-                            chile.castShadow = true;
+                            child.castShadow = true;
                             child.receiveShadow = true;
 
                         }
@@ -119,7 +121,7 @@
                     object.position.x = 0;
                     object.position.y = 0;
                     object.position.z = 0;
-                    object.scale.set(1, 1, 1);
+                    object.scale.set(.285714, .285714, .285714);
                     lesson6.scene.add(object);
 
                 });
@@ -161,34 +163,7 @@
             window.attachEvent('onload', initializeLesson);
         else windowonload = initializeLesson;
 
-        /*
-        // Prepare loader and load the model
-        var oLoader = new THREE.OBJLoader();
-        oLoader.load('C:\ZVerse\AutoBrickProject\DecBrick.OBJ', function (object, materials) {
-        var material2 = new THREE.MeshLambertMaterial({ color: oxa65e00 });
-
-            object.traverse(function (child) {
-                if (chile instanceof THREE.Mesh) {
-
-                    // Apply custom material
-                    chile.material = material2;
-
-                    // Enable casting shadows
-                    chile.castShadow = true;
-                    child.receiveShadow = true;
-
-                }
-
-            });
-
-            object.position.x = 0;
-            object.position.y = 0;
-            object.position.z = 0;
-            object.scale.set(1, 1, 1);
-            lesson6.scene.add(object);
-
-        });
-        */
+      
     </script>
   
     </div>
