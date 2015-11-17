@@ -1,4 +1,6 @@
-﻿<script src="http://threejs.org/build/three.min.js"></script>
+﻿<html>
+<script src="http://threejs.org/build/three.min.js"></script>
+    </html>
 
 <script>
 var camera, scene, renderer;
