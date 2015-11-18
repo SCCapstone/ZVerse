@@ -181,8 +181,6 @@
     <Content Include="Account\Web.config" />
     <Content Include="ProductList.aspx" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
-    <Content Include="index1.html" />
-    <Content Include="main.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
@@ -216,6 +214,8 @@
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Site.Master" />
+    <Content Include="style.css" />
+    <Content Include="three.js" />
     <Content Include="ViewSwitcher.ascx" />
     <Content Include="Web.config" />
     <Content Include="Bundle.config" />
