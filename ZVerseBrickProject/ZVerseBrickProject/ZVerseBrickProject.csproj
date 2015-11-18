@@ -179,7 +179,11 @@
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="Account\Web.config" />
+    <Content Include="index.html" />
+    <Content Include="main.js" />
+    <Content Include="ObjectLoader.js" />
     <Content Include="ProductList.aspx" />
+    <Content Include="male02.obj" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -214,8 +218,9 @@
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Site.Master" />
-    <Content Include="style.css" />
     <Content Include="three.js" />
+    <Content Include="three.min.js" />
+    <Content Include="UV_Grid_Sm.jpg" />
     <Content Include="ViewSwitcher.ascx" />
     <Content Include="Web.config" />
     <Content Include="Bundle.config" />
