@@ -19,21 +19,21 @@
             </p>
         </div>
         <div class="col-md-4">
-            <h2>Get more libraries</h2>
+            <h2>Product Engineering</h2>
             <p>
-                NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.
+               We specialize in 3D design of products specifically engineered for 3D printing.
             </p>
             <p>
-                <a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301949">Learn more &raquo;</a>
+                <a class="btn btn-default" href="http://zverse.com/3d-modeling/">Learn more &raquo;</a>
             </p>
         </div>
         <div class="col-md-4">
-            <h2>Web Hosting</h2>
+            <h2>Full Color 3D Printing</h2>
             <p>
-                You can easily find a web hosting company that offers the right mix of features and price for your applications.
+                No one knows more about 3D color print production. Our experience and efficiency is unmatched.
             </p>
             <p>
-                <a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301950">Learn more &raquo;</a>
+                <a class="btn btn-default" href="http://zverse.com/3d-print-production/">Learn more &raquo;</a>
             </p>
         </div>
     </div>
