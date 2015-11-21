@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="ProductList.aspx.cs" Inherits="ZVerseBrickProject.WebForm1" %>
+﻿<%@ Page Title="ProductList" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="ProductList.aspx.cs" Inherits="ZVerseBrickProject.WebForm1" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
      <ol style="visibility:hidden;"></ol>
           <div id="CategoryMenu" style="text-align: left">       
