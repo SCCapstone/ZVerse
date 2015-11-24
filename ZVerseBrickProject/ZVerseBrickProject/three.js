@@ -1,4 +1,3 @@
-// JavaScript source code
 // File:src/Three.js
 
 /**
@@ -28371,10 +28370,10 @@ THREE.CurveUtils = {
 
 		// To check if my formulas are correct
 
-		var h00 = 6 * t * t - 6 * t; 	// derived from 2t^3 ? 3t^2 + 1
-		var h10 = 3 * t * t - 4 * t + 1; // t^3 ? 2t^2 + t
-		var h01 = - 6 * t * t + 6 * t; 	// ? 2t3 + 3t2
-		var h11 = 3 * t * t - 2 * t;	// t3 ? t2
+		var h00 = 6 * t * t - 6 * t; 	// derived from 2t^3 − 3t^2 + 1
+		var h10 = 3 * t * t - 4 * t + 1; // t^3 − 2t^2 + t
+		var h01 = - 6 * t * t + 6 * t; 	// − 2t3 + 3t2
+		var h11 = 3 * t * t - 2 * t;	// t3 − t2
 
 		return h00 + h10 + h01 + h11;
 
@@ -34181,21 +34180,21 @@ THREE.DodecahedronGeometry = function ( radius, detail ) {
 
 	var vertices = [
 
-		// (�1, �1, �1)
+		// (±1, ±1, ±1)
 		- 1, - 1, - 1,    - 1, - 1,  1,
 		- 1,  1, - 1,    - 1,  1,  1,
 		 1, - 1, - 1,     1, - 1,  1,
 		 1,  1, - 1,     1,  1,  1,
 
-		// (0, �1/?, �?)
+		// (0, ±1/φ, ±φ)
 		 0, - r, - t,     0, - r,  t,
 		 0,  r, - t,     0,  r,  t,
 
-		// (�1/?, �?, 0)
+		// (±1/φ, ±φ, 0)
 		- r, - t,  0,    - r,  t,  0,
 		 r, - t,  0,     r,  t,  0,
 
-		// (�?, 0, �1/?)
+		// (±φ, 0, ±1/φ)
 		- t,  0, - r,     t,  0, - r,
 		- t,  0,  r,     t,  0,  r
 	];

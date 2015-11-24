@@ -174,6 +174,8 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Site.css" />
+    <Content Include="DDSLoader.js" />
+    <Content Include="Detector.js" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
@@ -181,9 +183,12 @@
     <Content Include="Account\Web.config" />
     <Content Include="index.html" />
     <Content Include="main.js" />
+    <Content Include="MTLLoader.js" />
     <Content Include="ObjectLoader.js" />
+    <Content Include="OBJMTLLoader.js" />
     <Content Include="ProductList.aspx" />
-    <Content Include="male02.obj" />
+    <Content Include="DecBrick.mtl" />
+    <Content Include="DecBrick.OBJ" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -218,6 +223,7 @@
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Site.Master" />
+    <Content Include="stats.min.js" />
     <Content Include="three.js" />
     <Content Include="three.min.js" />
     <Content Include="UV_Grid_Sm.jpg" />
