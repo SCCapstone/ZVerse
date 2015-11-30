@@ -188,7 +188,7 @@
     <Content Include="OBJMTLLoader.js" />
     <Content Include="ProductList.aspx" />
     <Content Include="DecBrick.mtl" />
-    <Content Include="DecBrick.OBJ" />
+    <Content Include="DecBrick.obj" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
