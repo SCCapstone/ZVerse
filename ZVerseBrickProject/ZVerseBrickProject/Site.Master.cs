@@ -7,6 +7,8 @@ using System.Web.Security;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using Microsoft.AspNet.Identity;
+using System.Linq;
+using ZVerseBrickProject.Models;
 
 namespace ZVerseBrickProject
 {
@@ -71,6 +73,14 @@ namespace ZVerseBrickProject
         {
 
         }
+
+        public IQueryable<Category> GetCategories()
+        {
+            var _db = new ZVerseBrickProject.Models.ProductContext();
+            IQueryable<Category> query = _db.Categories;
+            return query;
+        }
+
 
         protected void Unnamed_LoggingOut(object sender, LoginCancelEventArgs e)
         {
