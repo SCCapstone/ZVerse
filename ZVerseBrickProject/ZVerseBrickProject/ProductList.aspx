@@ -54,7 +54,7 @@
                             </tr>
                             <tr>
                                 <td class =" col-md-3">
-                                     <!--<a href="ProductDetails.aspx?productID=<%#:Item.ProductID%>"> -->
+                                     <a href="ProductDetails.aspx?productID=<%#:Item.ProductID%>"> 
                                         <span>
                                             <%#:Item.ProductName%>
                                         </span>
