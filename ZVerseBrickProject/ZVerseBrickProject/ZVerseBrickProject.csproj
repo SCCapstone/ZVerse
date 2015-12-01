@@ -181,14 +181,34 @@
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="Account\Web.config" />
+    <Content Include="Images\productImages\image01.jpg" />
+    <Content Include="Images\productImages\image02.jpg" />
+    <Content Include="Images\productImages\image03.jpg" />
+    <Content Include="Images\productImages\image04.jpg" />
+    <Content Include="Images\productImages\image05.jpg" />
+    <Content Include="Images\productImages\image06.jpg" />
+    <Content Include="Images\productImages\image07.jpg" />
+    <Content Include="Images\productImages\image08.jpg" />
+    <Content Include="Images\productImages\image09.jpg" />
+    <Content Include="Images\productImages\image10.jpg" />
+    <Content Include="Images\productImages\image11.jpg" />
+    <Content Include="Images\productImages\image12.jpg" />
+    <Content Include="Images\productImages\image13.jpg" />
+    <Content Include="Images\zverselogo.jpg" />
     <Content Include="index.html" />
     <Content Include="main.js" />
     <Content Include="MTLLoader.js" />
     <Content Include="ObjectLoader.js" />
     <Content Include="OBJMTLLoader.js" />
+    <Content Include="obj\Debug\ZVerseBrickProject.csproj.FileListAbsolute.txt" />
+    <Content Include="obj\Debug\ZVerseBrickProject.dll" />
+    <Content Include="obj\Debug\ZVerseBrickProject.pdb" />
+    <Content Include="ProductDetails.aspx" />
     <Content Include="ProductList.aspx" />
     <Content Include="DecBrick.mtl" />
     <Content Include="DecBrick.OBJ" />
+    <Content Include="obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
+    <Content Include="obj\Debug\ZVerseBrickProject.csprojResolveAssemblyReference.cache" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -379,6 +399,16 @@
     <Compile Include="Models\ProductDatabaseInitializer.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\Product.cs" />
+    <Compile Include="obj\Debug\TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs" />
+    <Compile Include="obj\Debug\TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs" />
+    <Compile Include="obj\Debug\TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs" />
+    <Compile Include="ProductDetails.aspx.cs">
+      <DependentUpon>ProductDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ProductDetails.aspx.designer.cs">
+      <DependentUpon>ProductDetails.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Site.Master.cs">
       <DependentUpon>Site.Master</DependentUpon>
@@ -412,6 +442,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="obj\Debug\TempPE\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

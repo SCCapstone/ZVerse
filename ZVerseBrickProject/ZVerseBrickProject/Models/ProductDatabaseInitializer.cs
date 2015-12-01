@@ -158,7 +158,7 @@ namespace ZVerseBrickProject.Models
                 {
                     ProductID = 13,
                     ProductName = "Mizzou Tradition Plaza Paved Replica",
-                    Description = "Pleased of offer our alumni an opportunity to take a piece of traditions plaza back to home or office. ",
+                    Description = "Pleased to offer our alumni an opportunity to take a piece of traditions plaza back to home or office. ",
                     ImagePath="image13.jpg",
                     UnitPrice = 75.00,
                     CategoryID = 3
