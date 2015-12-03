@@ -7,8 +7,8 @@
     <style>
         body {
             font-family: Monospace;
-            background-color: #000;
-            color: #fff;
+            background-color: #808080;
+            color: #ffd800;
             margin: 0px;
             overflow: hidden;
         }
@@ -38,7 +38,7 @@
         <a href="http://threejs.org" target="_blank">three.js</a> - OBJMTLLoader test
     </div>
 
-    <script src="three.min.js"></script>
+    <script src="three.js"></script>
 
     <script src="DDSLoader.js"></script>
     <script src="MTLLoader.js"></script>
@@ -126,6 +126,8 @@
 
 			}
 
+			
+            
 			function onWindowResize() {
 
 				windowHalfX = window.innerWidth / 2;
@@ -149,8 +151,8 @@
 
 			function animate() {
 
-				requestAnimationFrame( animate );
-				render();
+			    requestAnimationFrame(animate);
+			    render();
 
 			}
 
