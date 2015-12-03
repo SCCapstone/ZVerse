@@ -1,4 +1,4 @@
-﻿<%@ Page Title="ProductList" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="ProductList.aspx.cs" Inherits="ZVerseBrickProject.WebForm1" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="ProductList.aspx.cs" Inherits="ZVerseBrickProject.WebForm1" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
      <ol style="visibility:hidden;"></ol>
           <div id="CategoryMenu" style="text-align: left">       
@@ -25,7 +25,7 @@
             </hgroup>
 
             <asp:ListView ID="productList" runat="server" 
-                DataKeyNames="ProductID" GroupItemCount="4"
+                DataKeyNames="ProductID" GroupItemCount="3"
                 ItemType="ZVerseBrickProject.Models.Product" SelectMethod="GetProducts">
                 <EmptyDataTemplate>
                     <table>
@@ -45,16 +45,16 @@
                 <ItemTemplate>
                     <td class =" col-md-3"  runat="server">
                         <table class ="table">
-                            <!--<tr>
-                                <td>
-                                     <a href="ProductDetails.aspx?productID=<%#:Item.ProductID%>">
-                                       <img src="/Catalog/Images/Thumbs/<%#:Item.ImagePath%>"
-                                            width="100" height="75" style="border: solid" /></a> 
+                           <tr>
+                                <td class =" col-md-3">
+                                     <!--<a href="ProductDetails.aspx?productID=<%#:Item.ProductID%>"> -->
+                                       <img src="Images/productImages/<%#:Item.ImagePath%>"
+                                            width="280" height="210"  style="border: none; margin: auto; " /></a> 
                                 </td> 
-                            </tr> -->
+                            </tr>
                             <tr>
                                 <td class =" col-md-3">
-                                    <a href="ProductDetails.aspx?productID=<%#:Item.ProductID%>">
+                                     <a href="ProductDetails.aspx?productID=<%#:Item.ProductID%>"> 
                                         <span>
                                             <%#:Item.ProductName%>
                                         </span>
