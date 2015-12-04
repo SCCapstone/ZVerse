@@ -154,6 +154,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Data\zversebrickproject.mdf" />
+    <Content Include="App_Data\zversebrickproject_log.ldf">
+      <DependentUpon>zversebrickproject.mdf</DependentUpon>
+    </Content>
     <Content Include="BrickDisplay.aspx" />
     <Content Include="Account\AddPhoneNumber.aspx" />
     <Content Include="Account\Confirm.aspx" />
@@ -181,19 +185,6 @@
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="Account\Web.config" />
-    <Content Include="Images\productImages\._image01.jpg" />
-    <Content Include="Images\productImages\._image02.jpg" />
-    <Content Include="Images\productImages\._image03.jpg" />
-    <Content Include="Images\productImages\._image04.jpg" />
-    <Content Include="Images\productImages\._image05.jpg" />
-    <Content Include="Images\productImages\._image06.jpg" />
-    <Content Include="Images\productImages\._image07.jpg" />
-    <Content Include="Images\productImages\._image08.jpg" />
-    <Content Include="Images\productImages\._image09.jpg" />
-    <Content Include="Images\productImages\._image10.jpg" />
-    <Content Include="Images\productImages\._image11.jpg" />
-    <Content Include="Images\productImages\._image12.jpg" />
-    <Content Include="Images\productImages\._image13.jpg" />
     <Content Include="Images\productImages\image01.jpg" />
     <Content Include="Images\productImages\image02.jpg" />
     <Content Include="Images\productImages\image03.jpg" />
@@ -208,18 +199,26 @@
     <Content Include="Images\productImages\image12.jpg" />
     <Content Include="Images\productImages\image13.jpg" />
     <Content Include="Images\zverselogo.jpg" />
-    <Content Include="index.html" />
-    <Content Include="index1.html" />
+    <Content Include="js\fonts\font1.js" />
+    <Content Include="js\index2.html" />
+    <Content Include="js\OBJLoader.js" />
+    <Content Include="js\OrbitControls.js" />
+    <Content Include="js\script.js" />
+    <Content Include="js\stats.min.js" />
+    <Content Include="js\three.min.js" />
+    <Content Include="js\THREEx.WindowResize.js" />
     <Content Include="main.js" />
     <Content Include="MTLLoader.js" />
     <Content Include="ObjectLoader.js" />
     <Content Include="OBJMTLLoader.js" />
+    <Content Include="obj\Debug\ZVerseBrickProject.csproj.FileListAbsolute.txt" />
+    <Content Include="obj\Debug\ZVerseBrickProject.dll" />
+    <Content Include="obj\Debug\ZVerseBrickProject.pdb" />
     <Content Include="ProductDetails.aspx" />
     <Content Include="ProductList.aspx" />
     <Content Include="DecBrick.mtl" />
-    <Content Include="DecBrick.OBJ" />
-    <Content Include="Images\productImages\._.DS_Store" />
-    <None Include="Properties\PublishProfiles\alexabreelandtemp.pubxml" />
+    <Content Include="obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
+    <Content Include="obj\Debug\ZVerseBrickProject.csprojResolveAssemblyReference.cache" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -227,7 +226,7 @@
     <Content Include="Scripts\jquery-1.10.2.min.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\respond.js" />
-    <Content Include="Scripts\respond.min.js" />
+    <Content Include="respond.min.js" />
     <Content Include="Scripts\WebForms\DetailsView.js" />
     <Content Include="Scripts\WebForms\Focus.js" />
     <Content Include="Scripts\WebForms\GridView.js" />
@@ -410,6 +409,9 @@
     <Compile Include="Models\ProductDatabaseInitializer.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\Product.cs" />
+    <Compile Include="obj\Debug\TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs" />
+    <Compile Include="obj\Debug\TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs" />
+    <Compile Include="obj\Debug\TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs" />
     <Compile Include="ProductDetails.aspx.cs">
       <DependentUpon>ProductDetails.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -449,7 +451,7 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="App_Data\" />
+    <Folder Include="obj\Debug\TempPE\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
