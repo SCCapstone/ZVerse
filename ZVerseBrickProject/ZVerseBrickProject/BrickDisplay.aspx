@@ -65,11 +65,11 @@
             <h2 style="text-align:right">
                Mizzou Tradition Plaza Paved Replica</h2>
             <p style="text-align:right">
-                Pleased to offer our alumni an opportunity to take a piece of traditions plaza back home
-                </p>
+                Pleased to offer our alumni an opportunity to take a piece of Traditions Plaza back home!    </p>
             <p style="text-align:right">
                 $75.00
             </p>
+          <a class="btn btn-default" style="float: right;" href="http://shop.zverse.com/collections/mizzou/products/mizzou-traditions-plaza-paver-replica">Learn more &raquo;</a>
             
       
     </asp:Content>
