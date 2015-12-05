@@ -154,6 +154,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Data\zversebrickproject.mdf" />
+    <Content Include="App_Data\zversebrickproject_log.ldf">
+      <DependentUpon>zversebrickproject.mdf</DependentUpon>
+    </Content>
     <Content Include="BrickDisplay.aspx" />
     <Content Include="Account\AddPhoneNumber.aspx" />
     <Content Include="Account\Confirm.aspx" />
@@ -196,10 +200,8 @@
     <Content Include="Images\productImages\image13.jpg" />
     <Content Include="Images\zverselogo.jpg" />
     <Content Include="js\fonts\font1.js" />
-    <Content Include="js\index.html" />
-    <Content Include="js\MTLLoader.js" />
+    <Content Include="js\index2.html" />
     <Content Include="js\OBJLoader.js" />
-    <Content Include="js\OBJMTLLoader.js" />
     <Content Include="js\OrbitControls.js" />
     <Content Include="js\script.js" />
     <Content Include="js\stats.min.js" />
@@ -215,8 +217,8 @@
     <Content Include="ProductDetails.aspx" />
     <Content Include="ProductList.aspx" />
     <Content Include="DecBrick.mtl" />
-    <Content Include="js\DecBrick.obj" />
-    <Content Include="js\DecBrick.mtl" />
+    <Content Include="obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
+    <Content Include="obj\Debug\ZVerseBrickProject.csprojResolveAssemblyReference.cache" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -224,7 +226,7 @@
     <Content Include="Scripts\jquery-1.10.2.min.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\respond.js" />
-    <Content Include="Scripts\respond.min.js" />
+    <Content Include="respond.min.js" />
     <Content Include="Scripts\WebForms\DetailsView.js" />
     <Content Include="Scripts\WebForms\Focus.js" />
     <Content Include="Scripts\WebForms\GridView.js" />
@@ -449,7 +451,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="App_Data\" />
     <Folder Include="obj\Debug\TempPE\" />
   </ItemGroup>
   <PropertyGroup>
