@@ -48,9 +48,7 @@
                     </button>
 
 
-                    <a class="navbar-brand" runat="server" href="~/"> 
-                        <!--<img src="/Images/zverselogo.jpg" alt="Company logo"  /> -->
-                        <!--<asp:Image  ID="zverselogo" runat="server" ImageUrl="~/Images/zverselogo.jpg" ImageAlign="top"  BorderStyle="None" />  -->
+                    <a class="navbar-brand" runat="server" href="~/Default"> 
                     </a>
                 </div>
                 <div class="navbar-collapse collapse">

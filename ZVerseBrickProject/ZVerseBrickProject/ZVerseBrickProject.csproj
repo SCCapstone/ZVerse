@@ -158,6 +158,9 @@
     <Content Include="App_Data\zversebrickproject_log.ldf">
       <DependentUpon>zversebrickproject.mdf</DependentUpon>
     </Content>
+    <Content Include="App_Start\Content\bootstrap.css" />
+    <Content Include="App_Start\Content\bootstraporiginal.css" />
+    <Content Include="App_Start\Content\Site.css" />
     <Content Include="BrickDisplay.aspx" />
     <Content Include="Account\AddPhoneNumber.aspx" />
     <Content Include="Account\Confirm.aspx" />
@@ -176,7 +179,7 @@
     <Content Include="Account\VerifyPhoneNumber.aspx" />
     <Content Include="Contact.aspx" />
     <Content Include="Content\bootstrap.css" />
-    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\bootstraporiginal.css" />
     <Content Include="Content\Site.css" />
     <Content Include="DDSLoader.js" />
     <Content Include="Detector.js" />
@@ -261,7 +264,9 @@
     <Content Include="three.min.js" />
     <Content Include="UV_Grid_Sm.jpg" />
     <Content Include="ViewSwitcher.ascx" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Bundle.config" />
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
