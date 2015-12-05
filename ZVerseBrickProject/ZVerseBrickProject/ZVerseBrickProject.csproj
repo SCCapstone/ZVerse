@@ -178,6 +178,9 @@
     <Content Include="Account\TwoFactorAuthenticationSignIn.aspx" />
     <Content Include="Account\VerifyPhoneNumber.aspx" />
     <Content Include="Contact.aspx" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstraporiginal.css" />
+    <Content Include="Content\Site.css" />
     <Content Include="DDSLoader.js" />
     <Content Include="Detector.js" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
