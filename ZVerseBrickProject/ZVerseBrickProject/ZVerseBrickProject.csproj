@@ -158,6 +158,9 @@
     <Content Include="App_Data\zversebrickproject_log.ldf">
       <DependentUpon>zversebrickproject.mdf</DependentUpon>
     </Content>
+    <Content Include="App_Start\Content\bootstrap.css" />
+    <Content Include="App_Start\Content\bootstraporiginal.css" />
+    <Content Include="App_Start\Content\Site.css" />
     <Content Include="BrickDisplay.aspx" />
     <Content Include="Account\AddPhoneNumber.aspx" />
     <Content Include="Account\Confirm.aspx" />
