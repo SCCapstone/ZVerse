@@ -201,7 +201,9 @@
     <Content Include="Images\zverselogo.jpg" />
     <Content Include="js\fonts\font1.js" />
     <Content Include="js\index2.html" />
+    <Content Include="js\MTLLoader.js" />
     <Content Include="js\OBJLoader.js" />
+    <Content Include="js\OBJMTLLoader.js" />
     <Content Include="js\OrbitControls.js" />
     <Content Include="js\script.js" />
     <Content Include="js\stats.min.js" />
@@ -219,6 +221,8 @@
     <Content Include="DecBrick.mtl" />
     <Content Include="obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
     <Content Include="obj\Debug\ZVerseBrickProject.csprojResolveAssemblyReference.cache" />
+    <Content Include="js\DecBrick.obj" />
+    <Content Include="js\DecBrick.mtl" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
