@@ -1,0 +1,78 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style>
+        tb1 {
+            float: left;
+        }
+        tb2 {
+            float: left;
+        }
+        tb3 {
+            float: left;
+        }
+        txtControls {
+            background-color: maroon;
+        }
+    </style>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/dojo/1.9.7/dojo/dojo.js" data-dojo-config="isDebug: true, async: true, parseOnLoad: true"></script>
+
+    <script>
+        require([
+		    "dojo/on",
+		    "dojo/dom-construct",
+		    "dojo/domReady!"],
+		    function (
+		    on,
+		    domConstruct,
+		    ready) {
+		        var textBox1 = document.getElementById("textBoxOne");
+		        var textBox2 = document.getElementById("textBoxTwo");
+		        var textBox3 = document.getElementById("textBoxThree");
+		        var value1 = textBox1.value;
+		        var value2 = textBox2.value;
+		        var value3 = textBox3.value;
+		        var test1 = "";
+		        var test2 = "";
+		        var test3 = "";
+
+		        if (value1 != test1) {
+		            test1 = value1;
+		        }
+		    }
+        );
+    </script>
+</head>
+<body>
+    <div id="txtControls">
+        <h1>Controls</h1>
+        <div id="tb1">
+            <input type="text" id="textBoxOne">
+        </div>
+        <div id="tb2">
+            <input type="text" id="textBoxTwo">
+        </div>
+        <div id="tb3">
+            <input type="text" id="textBoxThree">
+        </div>
+    </div>
+    <div id="txtOutputWrapper">
+        <h4>Output1</h4>
+        <div id="txtOutput1">
+            <p>output will be here</p>
+        </div>
+        <h4>Output2</h4>
+        <div id="txtOutput2">
+            <p>output will be here</p>
+        </div>
+        <h4>Output3</h4>
+        <div id="txtOutput3">
+            <p>output will be here</p>
+        </div>
+    </div>
+</body>
+</html>
