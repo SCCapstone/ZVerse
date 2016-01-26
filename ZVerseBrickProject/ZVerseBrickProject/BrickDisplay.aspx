@@ -23,9 +23,9 @@
 }
         </style>
 <div id="container">
-  <img id="image" src="http://www.noao.edu/image_gallery/images/d4/androa.jpg" />
+  <img id="image" src="https://scrapbookoftruthdotnet.files.wordpress.com/2015/03/shutterstock_755319.jpg" />
   <p id="text">
-    Hello World!
+    Alexa Breeland
   </p>
 </div>
     </asp:Content>
