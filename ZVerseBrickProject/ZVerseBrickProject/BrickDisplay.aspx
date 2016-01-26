@@ -3,8 +3,8 @@
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
     <style>
     #container {
-  height: 300px;
-  width: 300px;
+  height: 400px;
+  width: 800px;
   position: relative;
 }
 #image {
@@ -13,12 +13,12 @@
   top: 0;
 }
 #text {
-  z-index: 100;
+  z-index: 200;
   position: absolute;
-  color: white;
+  color: black;
   font-size: 24px;
   font-weight: bold;
-  left: 150px;
+  left: 300px;
   top: 350px;
 }
         </style>
