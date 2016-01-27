@@ -212,7 +212,6 @@
     <Content Include="js\stats.min.js" />
     <Content Include="js\three.min.js" />
     <Content Include="js\THREEx.WindowResize.js" />
-    <Content Include="main.js" />
     <Content Include="MTLLoader.js" />
     <Content Include="ObjectLoader.js" />
     <Content Include="OBJMTLLoader.js" />
