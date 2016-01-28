@@ -129,7 +129,7 @@ var lesson6 = {
 
         // prepare loader and load the model
         var oLoader = new THREE.OBJLoader();
-        oLoader.load('/DecBrick.obj', function (object, materials) {
+        oLoader.load('DecBrick.obj', function (object, materials) {
 
             // var material = new THREE.MeshFaceMaterial(materials);
             var material2 = new THREE.MeshLambertMaterial({ color: 0xa65e00 });
