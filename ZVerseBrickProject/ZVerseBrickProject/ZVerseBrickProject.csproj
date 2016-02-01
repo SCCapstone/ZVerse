@@ -158,6 +158,9 @@
     <Content Include="App_Data\zversebrickproject_log.ldf">
       <DependentUpon>zversebrickproject.mdf</DependentUpon>
     </Content>
+    <Content Include="App_Start\Content\bootstrap.css" />
+    <Content Include="App_Start\Content\bootstraporiginal.css" />
+    <Content Include="App_Start\Content\Site.css" />
     <Content Include="BrickDisplay.aspx" />
     <Content Include="Account\AddPhoneNumber.aspx" />
     <Content Include="Account\Confirm.aspx" />
@@ -175,6 +178,9 @@
     <Content Include="Account\TwoFactorAuthenticationSignIn.aspx" />
     <Content Include="Account\VerifyPhoneNumber.aspx" />
     <Content Include="Contact.aspx" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstraporiginal.css" />
+    <Content Include="Content\Site.css" />
     <Content Include="DDSLoader.js" />
     <Content Include="Detector.js" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
@@ -198,13 +204,14 @@
     <Content Include="Images\zverselogo.jpg" />
     <Content Include="js\fonts\font1.js" />
     <Content Include="js\index2.html" />
+    <Content Include="js\MTLLoader.js" />
     <Content Include="js\OBJLoader.js" />
+    <Content Include="js\OBJMTLLoader.js" />
     <Content Include="js\OrbitControls.js" />
     <Content Include="js\script.js" />
     <Content Include="js\stats.min.js" />
     <Content Include="js\three.min.js" />
     <Content Include="js\THREEx.WindowResize.js" />
-    <Content Include="main.js" />
     <Content Include="MTLLoader.js" />
     <Content Include="ObjectLoader.js" />
     <Content Include="OBJMTLLoader.js" />
@@ -216,6 +223,8 @@
     <Content Include="DecBrick.mtl" />
     <Content Include="obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
     <Content Include="obj\Debug\ZVerseBrickProject.csprojResolveAssemblyReference.cache" />
+    <Content Include="js\DecBrick.obj" />
+    <Content Include="js\DecBrick.mtl" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
