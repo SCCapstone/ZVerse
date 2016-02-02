@@ -181,8 +181,6 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstraporiginal.css" />
     <Content Include="Content\Site.css" />
-    <Content Include="DDSLoader.js" />
-    <Content Include="Detector.js" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
@@ -202,6 +200,7 @@
     <Content Include="Images\productImages\image12.jpg" />
     <Content Include="Images\productImages\image13.jpg" />
     <Content Include="Images\zverselogo.jpg" />
+    <Content Include="index2.html" />
     <Content Include="js\fonts\font1.js" />
     <Content Include="js\index2.html" />
     <Content Include="js\MTLLoader.js" />
@@ -212,15 +211,11 @@
     <Content Include="js\stats.min.js" />
     <Content Include="js\three.min.js" />
     <Content Include="js\THREEx.WindowResize.js" />
-    <Content Include="MTLLoader.js" />
-    <Content Include="ObjectLoader.js" />
-    <Content Include="OBJMTLLoader.js" />
     <Content Include="obj\Debug\ZVerseBrickProject.csproj.FileListAbsolute.txt" />
     <Content Include="obj\Debug\ZVerseBrickProject.dll" />
     <Content Include="obj\Debug\ZVerseBrickProject.pdb" />
     <Content Include="ProductDetails.aspx" />
     <Content Include="ProductList.aspx" />
-    <Content Include="DecBrick.mtl" />
     <Content Include="obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
     <Content Include="obj\Debug\ZVerseBrickProject.csprojResolveAssemblyReference.cache" />
     <Content Include="js\DecBrick.obj" />
@@ -232,7 +227,6 @@
     <Content Include="Scripts\jquery-1.10.2.min.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\respond.js" />
-    <Content Include="respond.min.js" />
     <Content Include="Scripts\WebForms\DetailsView.js" />
     <Content Include="Scripts\WebForms\Focus.js" />
     <Content Include="Scripts\WebForms\GridView.js" />
@@ -258,10 +252,6 @@
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Site.Master" />
-    <Content Include="stats.min.js" />
-    <Content Include="three.js" />
-    <Content Include="three.min.js" />
-    <Content Include="UV_Grid_Sm.jpg" />
     <Content Include="ViewSwitcher.ascx" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
