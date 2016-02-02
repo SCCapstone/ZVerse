@@ -19,39 +19,34 @@
         }
     </style>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/dojo/1.9.7/dojo/dojo.js" data-dojo-config="isDebug: true, async: true, parseOnLoad: true"></script>
-
     <script>
-        require([
-		    "dojo/on",
-		    "dojo/dom-construct",
-		    "dojo/domReady!"],
-		    function (
-		    on,
-		    domConstruct,
-		    ready) {
-		        var textBox1 = document.getElementById("textBoxOne");
-		        var textBox2 = document.getElementById("textBoxTwo");
-		        var textBox3 = document.getElementById("textBoxThree");
-		        var value1 = textBox1.value;
-		        var value2 = textBox2.value;
-		        var value3 = textBox3.value;
-		        var test1 = "";
-		        var test2 = "";
-		        var test3 = "";
+        var textBox1 = document.getElementById("textBoxOne");//raw data from text box 1
+	    var textBox2 = document.getElementById("textBoxTwo");//raw data from text box 2
+		var textBox3 = document.getElementById("textBoxThree");//raw data from text box 3
+		var test1 = "";//string that has been passed to render line 1
+		var test2 = "";//string that has been passed to render line 2
+		var test3 = "";//string that has been passed to render line 3
+		function getText1()
+		{
+		    test1 = document.getElementById("textBoxOne");;
+		    document.getElementById("txtOutput1").innerHTML = test1;
+		}
+		    
+		if(textBox2 != test2)
+		{
+            
+		}
+		if(textBox3 != test3)
+		{
 
-		        if (value1 != test1) {
-		            test1 = value1;
-		        }
-		    }
-        );
+		}    
     </script>
 </head>
 <body>
     <div id="txtControls">
         <h1>Controls</h1>
         <div id="tb1">
-            <input type="text" id="textBoxOne">
+            <input type="text" id="textBoxOne" oninput="getText1()">
         </div>
         <div id="tb2">
             <input type="text" id="textBoxTwo">
@@ -62,8 +57,10 @@
     </div>
     <div id="txtOutputWrapper">
         <h4>Output1</h4>
-        <div id="txtOutput1">
-            <p>output will be here</p>
+        <div>
+            <p id="txtOutput1">
+            output will be here
+            </p>
         </div>
         <h4>Output2</h4>
         <div id="txtOutput2">
