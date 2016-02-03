@@ -40,8 +40,8 @@ var lesson6 = {
 
         // prepare renderer
         this.renderer = new THREE.WebGLRenderer({ antialias: true });
-        this.renderer.setSize(SCREEN_WIDTH, SCREEN_HEIGHT);
-        //this.renderer.setSize(SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2);
+        //this.renderer.setSize(SCREEN_WIDTH, SCREEN_HEIGHT);
+        this.renderer.setSize(SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2);
         this.renderer.setClearColor(this.scene.fog.color);
         this.renderer.shadowMapEnabled = true;
         this.renderer.shadowMapSoft = true;
