@@ -59,16 +59,16 @@ var lesson6 = {
         this.controls.target = new THREE.Vector3(0, 0, 0);
         this.controls.maxDistance = 20;
 
-        //// prepare clock
-        //this.clock = new THREE.Clock();
+        // prepare clock
+        this.clock = new THREE.Clock();
 
-        //// prepare stats
-        //this.stats = new Stats();
-        //this.stats.domElement.style.position = 'absolute';
-        //this.stats.domElement.style.left = '50px';
-        //this.stats.domElement.style.bottom = '50px';
-        //this.stats.domElement.style.zIndex = 1;
-        //this.container.appendChild(this.stats.domElement);
+        // prepare stats
+        this.stats = new Stats();
+        this.stats.domElement.style.position = 'absolute';
+        this.stats.domElement.style.left = '50px';
+        this.stats.domElement.style.bottom = '50px';
+        this.stats.domElement.style.zIndex = 1;
+        this.container.appendChild(this.stats.domElement);
         
 
         //LIGHTS
@@ -127,12 +127,6 @@ var lesson6 = {
         this.loadModel();
     },
     loadModel: function () {
-
-        //var loader = new THREE.ImageLoader(manager);
-        //loader.load('mizzou_birck_hardens_TEXTURE.jpg', function (image) {
-        //    texture.image = image;
-        //    texture.needsUpdate = true;
-        //});
 
         // prepare loader and load the model
         var oLoader = new THREE.OBJLoader();

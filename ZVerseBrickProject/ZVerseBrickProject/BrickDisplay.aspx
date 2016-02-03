@@ -14,7 +14,6 @@
     <title>WebGL With Three.js - Lesson 6 - loading models - OBJ | Script Tutorials</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     
-
 </head>
 <body>
     <script src="js/three.min.js"></script>
