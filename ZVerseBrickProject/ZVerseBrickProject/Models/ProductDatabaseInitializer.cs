@@ -12,7 +12,7 @@ namespace ZVerseBrickProject.Models
         {
             GetCategories().ForEach(c => context.Categories.Add(c));
             GetProducts().ForEach(p => context.Products.Add(p));
-
+            GetItems().ForEach(i => context.Items.Add(i)); 
         }
 
         
@@ -169,6 +169,119 @@ namespace ZVerseBrickProject.Models
             return products; 
         }
 
+        private static List<Item> GetItems()
+        {
+            var items = new List<Item>
+            {
+                new Item
+                {
+                    Id = 1,
+                    Quantity = 2,
+                    Name = "Clemson Memorial Stadium",
+                    Category = "Clemson",
+                    Price = 150.00M
 
+               },
+                new Item
+                {
+                    Id = 2,
+                    Quantity = 4,
+                    Name = "Clemson Tiger Paw Magnet",
+                    Price = 14.99M,
+                    Category = "Clemson",
+               },
+                new Item
+                {
+                    Id = 3,
+                    Quantity = 3,
+                    Name = "Clemson Tiger Bronze Statue",
+                    Price = 81.99M,
+                    Category = "Clemson",
+                },
+                new Item
+                {
+                    Id = 4,
+                    Quantity = 7,
+                    Name = "Clemson Tiger Head Magnet",
+                    Price = 8.95M,
+                    Category = "Clemson",
+                },
+                new Item
+                {
+                    Id = 5,
+                    Quantity = 2,
+                    Name = "William Brice Stadium",
+                    Price = 129.99M,
+                    Category = "USC",
+                },
+                new Item
+                {
+                    Id = 6,
+                    Quantity = 5,
+                    Name = "Cocky Mini Statue",
+                    Price = 59.99M,
+                    Category = "USC",
+                },
+                new Item
+                {
+                    Id = 7,
+                    Quantity = 3,
+                    Name = "Cocky Football Ornament",
+                    Price = 14.99M,
+                    Category = "USC",
+                },
+                new Item
+                {
+                    Id = 8,
+                    Quantity = 5,
+                    Name = "Cocky Baseball Ornament",
+                    Price = 14.99M,
+                    Category = "USC",
+                },
+                new Item
+                {
+                    Id = 9,
+                    Quantity = 3,
+                    Name = "Cocky Basketball Ornament",
+                    Price = 14.99M,
+                    Category = "USC",
+                },
+                new Item
+                {
+                    Id = 10,
+                    Quantity = 8,
+                    Name = "Missouri Tigers Chip Clip Magnet",
+                    Price = 15.00M,
+                    Category = "Missou",
+                },
+                new Item
+                {
+                    Id = 11,
+                    Quantity = 6,
+                    Name = "Mizzou Tigers Football Ornament",
+                    Price = 12.99M,
+                    Category = "Missou",
+                },
+                new Item
+                {
+                    Id = 12,
+                    Quantity = 3,
+                    Name = "Wood Easel",
+                    Price = 8.00M,
+                    Category = "Missou",
+                },
+                new Item
+                {
+                    Id = 13,
+                    Quantity = 5,
+                    Name = "Mizzou Tradition Plaza Paved Replica",
+                    Price = 75.00M,
+                    Category = "Missou",
+                },
+
+            };
+
+            return items;
+        }
     }
 }
