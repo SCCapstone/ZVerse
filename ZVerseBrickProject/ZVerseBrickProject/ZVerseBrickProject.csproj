@@ -203,6 +203,8 @@
     <Content Include="index2.html" />
     <Content Include="js\fonts\font1.js" />
     <Content Include="js\index2.html" />
+    <Content Include="js\mizzou_birck_hadens_MASK.jpg" />
+    <Content Include="js\mizzou_birck_hadens_TEXTURE.jpg" />
     <Content Include="js\MTLLoader.js" />
     <Content Include="js\OBJLoader.js" />
     <Content Include="js\OBJMTLLoader.js" />

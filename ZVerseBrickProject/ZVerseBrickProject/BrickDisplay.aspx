@@ -6,26 +6,28 @@
     <p>Use this area to provide additional information.</p>
        -->
 
-    <html lang="en">
-    <head>
-        <meta charset="utf-8" />
-        <meta name="author" content="Script Tutorials" />
-        <title>WebGL With Three.js - Lesson 6 - loading models - OBJ | Script Tutorials</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-        <!--<link href="css/main.css" rel="stylesheet" type="text/css" />-->
-    </head>
-    <body>
-        <script src="js/three.min.js"></script>
-        <script src="js/MTLLoader.js"></script>
-        <script src="js/OBJMTLLoader.js"></script>
-        <script src="js/OBJLoader.js"></script>
-        <script src="js/THREEx.WindowResize.js"></script>
-        <script src="js/OrbitControls.js"></script>
-        <script src="js/stats.min.js"></script>
-        <script src="js/script.js"></script>
 
-    </body>
-    </html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="author" content="Script Tutorials" />
+    <title>WebGL With Three.js - Lesson 6 - loading models - OBJ | Script Tutorials</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    
+
+</head>
+<body>
+    <script src="js/three.min.js"></script>
+    <script src="js/MTLLoader.js"></script>
+    <script src="js/OBJMTLLoader.js"></script>
+    <script src="js/OBJLoader.js"></script>
+    <script src="js/THREEx.WindowResize.js"></script>
+    <script src="js/OrbitControls.js"></script>
+    <script src="js/stats.min.js"></script>
+    <script src="js/script.js"></script>
+
+</body>
+</html>
 
 
     <h2 style="text-align: right">Mizzou Tradition Plaza Paved Replica</h2>
