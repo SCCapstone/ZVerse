@@ -53,7 +53,20 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.3\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Http, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.2.3\lib\net45\System.Web.Http.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.5.2.3\lib\net45\System.Web.Http.WebHost.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Web" />
@@ -154,6 +167,13 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Data\zversebrickproject.mdf" />
+    <Content Include="App_Data\zversebrickproject_log.ldf">
+      <DependentUpon>zversebrickproject.mdf</DependentUpon>
+    </Content>
+    <Content Include="App_Start\Content\bootstrap.css" />
+    <Content Include="App_Start\Content\bootstraporiginal.css" />
+    <Content Include="App_Start\Content\Site.css" />
     <Content Include="BrickDisplay.aspx" />
     <Content Include="Account\AddPhoneNumber.aspx" />
     <Content Include="Account\Confirm.aspx" />
@@ -172,10 +192,8 @@
     <Content Include="Account\VerifyPhoneNumber.aspx" />
     <Content Include="Contact.aspx" />
     <Content Include="Content\bootstrap.css" />
-    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\bootstraporiginal.css" />
     <Content Include="Content\Site.css" />
-    <Content Include="DDSLoader.js" />
-    <Content Include="Detector.js" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
@@ -195,25 +213,26 @@
     <Content Include="Images\productImages\image12.jpg" />
     <Content Include="Images\productImages\image13.jpg" />
     <Content Include="Images\zverselogo.jpg" />
+    <Content Include="index2.html" />
     <Content Include="js\fonts\font1.js" />
-    <Content Include="js\index.html" />
+    <Content Include="js\index2.html" />
+    <Content Include="js\MTLLoader.js" />
     <Content Include="js\OBJLoader.js" />
+    <Content Include="js\OBJMTLLoader.js" />
     <Content Include="js\OrbitControls.js" />
     <Content Include="js\script.js" />
     <Content Include="js\stats.min.js" />
     <Content Include="js\three.min.js" />
     <Content Include="js\THREEx.WindowResize.js" />
-    <Content Include="main.js" />
-    <Content Include="MTLLoader.js" />
-    <Content Include="ObjectLoader.js" />
-    <Content Include="OBJMTLLoader.js" />
     <Content Include="obj\Debug\ZVerseBrickProject.csproj.FileListAbsolute.txt" />
     <Content Include="obj\Debug\ZVerseBrickProject.dll" />
     <Content Include="obj\Debug\ZVerseBrickProject.pdb" />
     <Content Include="ProductDetails.aspx" />
     <Content Include="ProductList.aspx" />
-    <Content Include="DecBrick.mtl" />
+    <Content Include="obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
+    <Content Include="obj\Debug\ZVerseBrickProject.csprojResolveAssemblyReference.cache" />
     <Content Include="js\DecBrick.obj" />
+    <Content Include="js\DecBrick.mtl" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -221,7 +240,6 @@
     <Content Include="Scripts\jquery-1.10.2.min.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\respond.js" />
-    <Content Include="Scripts\respond.min.js" />
     <Content Include="Scripts\WebForms\DetailsView.js" />
     <Content Include="Scripts\WebForms\Focus.js" />
     <Content Include="Scripts\WebForms\GridView.js" />
@@ -247,12 +265,10 @@
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Site.Master" />
-    <Content Include="stats.min.js" />
-    <Content Include="three.js" />
-    <Content Include="three.min.js" />
-    <Content Include="UV_Grid_Sm.jpg" />
     <Content Include="ViewSwitcher.ascx" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Bundle.config" />
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
@@ -372,6 +388,7 @@
       <DependentUpon>VerifyPhoneNumber.aspx</DependentUpon>
     </Compile>
     <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="BrickDisplay.aspx.cs">
       <DependentUpon>BrickDisplay.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -389,6 +406,7 @@
     <Compile Include="Contact.aspx.designer.cs">
       <DependentUpon>Contact.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Controllers\ItemController.cs" />
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -400,6 +418,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\Category.cs" />
+    <Compile Include="Models\Item.cs" />
     <Compile Include="Models\ProductContext.cs" />
     <Compile Include="Models\ProductDatabaseInitializer.cs" />
     <Compile Include="Models\IdentityModels.cs" />
@@ -446,7 +465,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="App_Data\" />
     <Folder Include="obj\Debug\TempPE\" />
   </ItemGroup>
   <PropertyGroup>
