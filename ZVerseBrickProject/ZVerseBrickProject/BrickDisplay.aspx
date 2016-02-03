@@ -6,7 +6,7 @@
 <head>
 <style>
 div.background {
-  background: url(https://scrapbookoftruthdotnet.files.wordpress.com/2015/03/shutterstock_755319.jpg);
+  background: url(http://localhost:49814/js/index2.html);
   border: 2px solid black;
 }
 
