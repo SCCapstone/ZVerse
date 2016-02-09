@@ -28,17 +28,21 @@
 		var test3 = "";//string that has been passed to render line 3
 		function getText1()
 		{
-		    test1 = document.getElementById("textBoxOne");;
+		    test1 = document.getElementById("textBoxOne").value;
 		    document.getElementById("txtOutput1").innerHTML = test1;
+		    //document.getElementById("txtOutput1").innerHTML = document.getElementById("textBoxOne").value;
 		}
 		    
-		if(textBox2 != test2)
+		function getText2()
 		{
-            
+		    test2 = document.getElementById("textBoxTwo").value;
+		    document.getElementById("txtOutput2").innerHTML = test2;
 		}
-		if(textBox3 != test3)
-		{
 
+		function getText3()
+		{
+		    test3 = document.getElementById("textBoxThree").value;
+		    document.getElementById("txtOutput3").innerHTML = test3;
 		}    
     </script>
 </head>
@@ -46,13 +50,13 @@
     <div id="txtControls">
         <h1>Controls</h1>
         <div id="tb1">
-            <input type="text" id="textBoxOne" oninput="getText1()">
+            <input type="text" id="textBoxOne" oninput="setTimeout(getText1, 1000)">
         </div>
         <div id="tb2">
-            <input type="text" id="textBoxTwo">
+            <input type="text" id="textBoxTwo" oninput="setTimeout(getText2, 1000)">
         </div>
         <div id="tb3">
-            <input type="text" id="textBoxThree">
+            <input type="text" id="textBoxThree" oninput="setTimeout(getText3, 1000)">
         </div>
     </div>
     <div id="txtOutputWrapper">
