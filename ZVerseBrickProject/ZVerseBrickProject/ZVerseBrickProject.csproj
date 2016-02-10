@@ -216,6 +216,10 @@
     <Content Include="obj\Debug\ZVerseBrickProject.dll" />
     <Content Include="obj\Debug\ZVerseBrickProject.pdb" />
     <Content Include="js\Practice.html" />
+    <Content Include="Practice\master-mobile-web-apps-with-jqm-pages-topbottom.png" />
+    <Content Include="Practice\master-mobile-web-apps-with-jqm-pages.png" />
+    <Content Include="Practice\master-mobile-web-apps-with-jqm-spine.png" />
+    <Content Include="Practice\master-mobile-web-apps-with-jqm.png" />
     <Content Include="Practice\RenderPage.html" />
     <Content Include="Practice\requestAnimFrame.js" />
     <Content Include="Practice\three.js" />
