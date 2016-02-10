@@ -63,12 +63,12 @@ var lesson6 = {
         this.clock = new THREE.Clock();
 
         // prepare stats
-        this.stats = new Stats();
-        this.stats.domElement.style.position = 'absolute';
-        this.stats.domElement.style.left = '50px';
-        this.stats.domElement.style.bottom = '50px';
-        this.stats.domElement.style.zIndex = 1;
-        this.container.appendChild(this.stats.domElement);
+        //this.stats = new Stats();
+        //this.stats.domElement.style.position = 'absolute';
+        //this.stats.domElement.style.left = '50px';
+        //this.stats.domElement.style.bottom = '50px';
+        //this.stats.domElement.style.zIndex = 1;
+        //this.container.appendChild(this.stats.domElement);
         
 
         //LIGHTS
