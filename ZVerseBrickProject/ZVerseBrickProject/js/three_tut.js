@@ -15,8 +15,13 @@ function init() {
     light.position.set(0, 1, 1).normalize();
     scene.add(light);
 
+    var texture = new THREE.TextureLoader().load("bricks.jpg");
+    texture.wrapS = THREE.RepeatWrapping;
+    texture.wrapT = THREE.RepeatWrapping;
+    texture.repeat.set(4, 4);
+
     var geometry = new THREE.CubeGeometry(10, 10, 10);
-    var material = new THREE.MeshPhongMaterial({ map: THREE.TextureLoader('bricks.jpg') });
+    var material = new THREE.MeshBasicMaterial({ map: texture }),
 
     mesh = new THREE.Mesh(geometry, material);
     mesh.position.z = -50;
