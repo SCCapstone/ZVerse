@@ -1,0 +1,39 @@
+﻿<!doctype html>
+
+<html>
+<head>
+    <title>A Rotatable 3D Product Boxshot with Three.js</title>
+    <script type="text/javascript" src="Three.js"></script>
+    <script type="text/javascript" src="requestAnimFrame.js"></script>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+
+    <script type="text/javascript">
+
+window.onload = function() {
+
+  // Set up some variables and add a mousemove handler to the page
+  var mouseX = 0;                                               // Mouse X pos relative to window centre
+  var mouseY = 0;                                               // Mouse Y pos relative to window centre
+  var windowCentreX = window.innerWidth / 2;                    // Window centre (X pos)
+  var windowCentreY = window.innerHeight / 2;                   // Window centre (Y pos)
+  var WebGLSupported = isWebGLSupported();                      // Check for WebGL support
+
+  document.addEventListener( 'mousemove', function( event ) {
+
+    // Update mouseX and mouseY based on the new mouse X and Y positions
+    mouseX = ( event.clientX - windowCentreX );
+    mouseY = ( event.clientY - windowCentreY );
+  }, false );
+
+}
+
+    </script>
+</head>
+<body>
+</body>
+</html>

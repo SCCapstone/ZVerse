@@ -216,6 +216,7 @@
     <Content Include="obj\Debug\ZVerseBrickProject.dll" />
     <Content Include="obj\Debug\ZVerseBrickProject.pdb" />
     <Content Include="js\Practice.html" />
+    <Content Include="Practice\RenderPage.html" />
     <Content Include="Practice\requestAnimFrame.js" />
     <Content Include="Practice\three.js" />
     <Content Include="ProductDetails.aspx" />
