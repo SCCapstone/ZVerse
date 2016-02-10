@@ -186,7 +186,6 @@
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="Account\Web.config" />
-    <Content Include="Images\crate.jpg" />
     <Content Include="Images\productImages\image01.jpg" />
     <Content Include="Images\productImages\image02.jpg" />
     <Content Include="Images\productImages\image03.jpg" />
@@ -202,7 +201,6 @@
     <Content Include="Images\productImages\image13.jpg" />
     <Content Include="Images\zverselogo.jpg" />
     <Content Include="index2.html" />
-    <Content Include="js\brick.jpg" />
     <Content Include="js\fonts\font1.js" />
     <Content Include="js\index2.html" />
     <Content Include="js\MTLLoader.js" />
@@ -218,6 +216,8 @@
     <Content Include="obj\Debug\ZVerseBrickProject.dll" />
     <Content Include="obj\Debug\ZVerseBrickProject.pdb" />
     <Content Include="js\Practice.html" />
+    <Content Include="Practice\requestAnimFrame.js" />
+    <Content Include="Practice\three.js" />
     <Content Include="ProductDetails.aspx" />
     <Content Include="ProductList.aspx" />
     <Content Include="obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
