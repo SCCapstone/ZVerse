@@ -2,8 +2,8 @@
 <html>
 <head>
     <title>A Rotatable 3D Product Boxshot with Three.js | Demo | Elated.com</title>
-    <script src="three.js"></script>
-    <script src="requestAnimFrame.js"></script>
+    <script type="text/javascript" src="three.js"></script>
+    <script type="text/javascript" src="requestAnimFrame.js"></script>
     <style>
         body {
             margin: 0;
@@ -54,19 +54,19 @@ window.onload = function() {
 
   var light = new THREE.PointLight( 0xffffff, .4 );
   light.position.set( 10, 10, 10 );
-  scene.addLight( light );
+  scene.add( light );
 
   ambientLight = new THREE.AmbientLight( 0xbbbbbb );
-  scene.addLight( ambientLight );
+  scene.add( ambientLight );
 
   // Create the materials
 
   var materialClass = THREE.MeshLambertMaterial;
   var darkGrey =  new materialClass( { color: 0x333333 } );
-  var bookCover = new materialClass( { color: 0xffffff, map: THREE.ImageUtils.loadTexture( 'master-mobile-web-apps-with-jqm.png' ) } );
-  var bookSpine = new materialClass( { color: 0xffffff, map: THREE.ImageUtils.loadTexture( 'master-mobile-web-apps-with-jqm-spine.png' ) } );
-  var bookPages = new materialClass( { color: 0xffffff, map: THREE.ImageUtils.loadTexture( 'master-mobile-web-apps-with-jqm-pages.png' ) } );
-  var bookPagesTopBottom = new materialClass( { color: 0xffffff, map: THREE.ImageUtils.loadTexture( 'master-mobile-web-apps-with-jqm-pages-topbottom.png' ) } );
+  var bookCover = new materialClass( { map: THREE.TextureLoader( 'master-mobile-web-apps-with-jqm.png' ) } );
+  var bookSpine = new materialClass( { map: THREE.TextureLoader( 'master-mobile-web-apps-with-jqm-spine.png' ) } );
+  var bookPages = new materialClass( { map: THREE.TextureLoader( 'master-mobile-web-apps-with-jqm-pages.png' ) } );
+  var bookPagesTopBottom = new materialClass( { map: THREE.TextureLoader( 'master-mobile-web-apps-with-jqm-pages-topbottom.png' ) } );
 
   var materials = [
     bookSpine,          // Left side
@@ -77,9 +77,10 @@ window.onload = function() {
     darkGrey            // Back side
   ];
 
-  // Create the book and add it to the scene
-  var book =  new THREE.Mesh( new THREE.CubeGeometry( 7, 10, 1.2, 4, 4, 1, materials ), new THREE.MeshFaceMaterial() );
-  scene.addChild( book );
+    // Create the book and add it to the scene
+  
+  var book =  new THREE.Mesh( new THREE.CubeGeometry( 7, 10, 1.2, 4, 4, 1 ), new THREE.MeshFaceMaterial(materials) );
+  scene.add( book );
 
   // Begin the animation
   animate();
@@ -138,10 +139,6 @@ function isWebGLSupported() {
 
 <body>
 
-    <div style="padding: 20px;">
-        <h1>A Rotatable 3D Product Boxshot with Three.js</h1>
-        <p>&copy; Elated.com | <a href="http://www.elated.com/articles/rotatable-3d-product-boxshot-threejs/">Back to Tutorial</a></p>
-    </div>
 
 </body>
 
