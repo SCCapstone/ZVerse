@@ -22,22 +22,21 @@ function init() {
     light.position.set(0, 1, 1).normalize();
     scene.add(light);
 
-    var dynamicTexture = new THREEx.DynamicTexture(512, 512);
-    var text = 'hello';
-    dynamicTexture.clear('cyan')
-			.drawText(text, undefined, 256, 'red');
+   // var dynamicTexture = new THREEx.DynamicTexture(512,512);
+
     var texture = new THREE.TextureLoader().load("brick.jpg");
    // texture.wrapS = THREE.RepeatWrapping;
     //texture.wrapT = THREE.RepeatWrapping;
     //texture.repeat.set(4, 4);
 
     var geometry = new THREE.CubeGeometry(50, 20, 10);
-    var material = new THREE.MeshBasicMaterial({ map: dynamicTexture.texture }),
-
+    var material = new THREE.MeshBasicMaterial({ map: texture });
     mesh = new THREE.Mesh(geometry, material);
+    //var text = 'hello';
     //mesh.position.z = -50;
     scene.add(mesh);
 
+    //dynamicTexture.drawText(text, undefined, 256, 'green');
     renderer = new THREE.WebGLRenderer();
     renderer.setSize(window.innerWidth, window.innerHeight);
     document.body.appendChild(renderer.domElement);
