@@ -16,7 +16,7 @@ function init() {
     scene.add(light);
 
     var geometry = new THREE.CubeGeometry(10, 10, 10);
-    var material = new THREE.MeshPhongMaterial({ map: THREE.ImageUtils.loadTexture('Images/crate.jpg') });
+    var material = new THREE.MeshPhongMaterial({ map: THREE.ImageUtils.loadTexture('bricks.jpg') });
 
     mesh = new THREE.Mesh(geometry, material);
     mesh.position.z = -50;

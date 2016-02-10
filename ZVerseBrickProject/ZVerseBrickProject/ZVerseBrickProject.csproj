@@ -201,6 +201,7 @@
     <Content Include="Images\productImages\image13.jpg" />
     <Content Include="Images\zverselogo.jpg" />
     <Content Include="index2.html" />
+    <Content Include="js\bricks.jpg" />
     <Content Include="js\fonts\font1.js" />
     <Content Include="js\index2.html" />
     <Content Include="js\MTLLoader.js" />

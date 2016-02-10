@@ -2,8 +2,8 @@
 <html>
 <head>
     <title>A Rotatable 3D Product Boxshot with Three.js | Demo | Elated.com</title>
-    <script type="text/javascript" src="three.js"></script>
-    <script type="text/javascript" src="requestAnimFrame.js"></script>
+    <script src="three.js"></script>
+    <script src="requestAnimFrame.js"></script>
     <style>
         body {
             margin: 0;
@@ -22,7 +22,7 @@ window.onload = function() {
   var mouseY = 0;                                               // Mouse Y pos relative to window centre
   var windowCentreX = window.innerWidth / 2;                    // Window centre (X pos)
   var windowCentreY = window.innerHeight / 2;                   // Window centre (Y pos)
-  var WebGLSupported = isWebGLSupported();                      // Check for WebGL support
+  //var WebGLSupported = isWebGLSupported();                      // Check for WebGL support
 
   document.addEventListener( 'mousemove', function( event ) {
 
@@ -32,7 +32,7 @@ window.onload = function() {
   }, false );
 
   // Create the renderer and add it to the page's body element
-  var renderer = WebGLSupported ? new THREE.WebGLRenderer() : new THREE.CanvasRenderer();
+  var renderer = new THREE.WebGLRenderer();
   renderer.setSize( window.innerWidth, 600 );
   document.body.appendChild( renderer.domElement );
 
@@ -61,7 +61,7 @@ window.onload = function() {
 
   // Create the materials
 
-  var materialClass = WebGLSupported ? THREE.MeshLambertMaterial : THREE.MeshBasicMaterial;
+  var materialClass = THREE.MeshLambertMaterial;
   var darkGrey =  new materialClass( { color: 0x333333 } );
   var bookCover = new materialClass( { color: 0xffffff, map: THREE.ImageUtils.loadTexture( 'master-mobile-web-apps-with-jqm.png' ) } );
   var bookSpine = new materialClass( { color: 0xffffff, map: THREE.ImageUtils.loadTexture( 'master-mobile-web-apps-with-jqm-spine.png' ) } );
