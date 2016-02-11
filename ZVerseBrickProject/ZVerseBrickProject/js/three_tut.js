@@ -22,7 +22,9 @@ function init() {
     light.position.set(0, 1, 1).normalize();
     scene.add(light);
 
-
+   //var dynamicTexture = new THREEx.DynamicTexture(512, 512)
+    //dynamicTexture.clear('white')
+      //  .drawText('hello', undefined, 256, 'black')
     var texture = new THREE.TextureLoader().load("brick.jpg");
  
 
@@ -37,6 +39,37 @@ function init() {
 
     document.addEventListener('mousemove', onDocumentMouseMove, false);
     window.addEventListener('resize', onWindowResize, false);
+
+    //var text2 = document.createElement('div');
+    //text2.style.position = 'absolute';
+    ////text2.style.zIndex = 1;    // if you still don't see the label, try uncommenting this
+    //text2.style.width = 200;
+    //text2.style.height = 200;
+    ////text2.style.backgroundColor = "blue";
+    //text2.innerHTML = "hi there!";
+    //text2.style.top = 325 + 'px';
+    //text2.style.left = 550 + 'px';
+    //document.body.appendChild(text2);
+
+    // create a canvas element
+    var canvas1 = document.createElement('canvas');
+    var context1 = canvas1.getContext('2d');
+    context1.font = "Bold 30px Arial";
+    context1.fillStyle = "rgba(255,0,0,0.95)";
+    context1.fillText('Alexa', 0, 20);
+
+    // canvas contents will be used for a texture
+    var texture1 = new THREE.Texture(canvas1)
+    texture1.needsUpdate = true;
+
+    var material1 = new THREE.MeshBasicMaterial({ map: texture1 });
+    material1.transparent = true;
+    var mesh1 = new THREE.Mesh(
+        new THREE.PlaneGeometry(canvas1.width/2, canvas1.height/2),
+        material1
+      );
+    mesh1.position.set(10,-20,8);
+    scene.add(mesh1);
 
     
 }
