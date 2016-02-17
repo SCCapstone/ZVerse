@@ -190,7 +190,7 @@
     <Content Include="Account\ResetPasswordConfirmation.aspx" />
     <Content Include="Account\TwoFactorAuthenticationSignIn.aspx" />
     <Content Include="Account\VerifyPhoneNumber.aspx" />
-    <Content Include="BrickTest.aspx" />
+    <Content Include="BrickwithText.aspx" />
     <Content Include="Contact.aspx" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstraporiginal.css" />
@@ -405,12 +405,12 @@
     <Compile Include="App_Start\IdentityConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
-    <Compile Include="BrickTest.aspx.cs">
-      <DependentUpon>BrickTest.aspx</DependentUpon>
+    <Compile Include="BrickwithText.aspx.cs">
+      <DependentUpon>BrickwithText.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="BrickTest.aspx.designer.cs">
-      <DependentUpon>BrickTest.aspx</DependentUpon>
+    <Compile Include="BrickwithText.aspx.designer.cs">
+      <DependentUpon>BrickwithText.aspx</DependentUpon>
     </Compile>
     <Compile Include="Contact.aspx.cs">
       <DependentUpon>Contact.aspx</DependentUpon>

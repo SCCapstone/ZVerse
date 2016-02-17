@@ -20,7 +20,7 @@ function init() {
     light.position.set(0, 1, 1).normalize();
     scene.add(light);
 
-    var texture = new THREE.TextureLoader().load("brick.jpg");
+    var texture = new THREE.TextureLoader().load("js/brick.jpg");
     var geometry = new THREE.CubeGeometry(5,3.1,2.9); //width, height, depth
     var material = new THREE.MeshBasicMaterial({ map: texture });
     mesh = new THREE.Mesh(geometry, material);
