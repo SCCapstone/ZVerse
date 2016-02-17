@@ -32,7 +32,7 @@ function init() {
 
     var dynamicTexture = new THREEx.DynamicTexture(512, 512);
     dynamicTexture.context.font = "bolder 80px Verdana";
-    dynamicTexture.drawText(text1, undefined, 100, 'black');
+    dynamicTexture.drawText(text1, undefined, 140, 'black');
     var geometry1 = new THREE.CubeGeometry(3,3,3);
     var material1 = new THREE.MeshBasicMaterial({ map: dynamicTexture.texture });
     material1.transparent = true;
@@ -44,7 +44,7 @@ function init() {
 
     var dynamicTexture1 = new THREEx.DynamicTexture(512, 512);
     dynamicTexture1.context.font = "bolder 80px Verdana";
-    dynamicTexture1.drawText(text2, undefined, 240, 'black');
+    dynamicTexture1.drawText(text2, undefined, 280, 'black');
     var geometry2 = new THREE.CubeGeometry(3, 3, 3);
     var material2 = new THREE.MeshBasicMaterial({ map: dynamicTexture1.texture });
     material2.transparent = true;
@@ -56,7 +56,7 @@ function init() {
 
     var dynamicTexture2 = new THREEx.DynamicTexture(512, 512);
     dynamicTexture2.context.font = "bolder 80px Verdana";
-    dynamicTexture2.drawText(text3, undefined, 380, 'black');
+    dynamicTexture2.drawText(text3, undefined, 420, 'black');
     var geometry3 = new THREE.CubeGeometry(3, 3, 3);
     var material3 = new THREE.MeshBasicMaterial({ map: dynamicTexture2.texture });
     material3.transparent = true;
