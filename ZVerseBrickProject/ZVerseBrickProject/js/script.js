@@ -132,7 +132,7 @@ var lesson6 = {
         oLoader.load('DecBrick.obj', function (object, materials) {
 
             // var material = new THREE.MeshFaceMaterial(materials);
-            var material2 = new THREE.MeshLambertMaterial({ color: 0xa65e00 });
+            var material2 = new THREE.MeshLambertMaterial({ color: 0xffffff});
 
             object.traverse(function (child) {
                 if (child instanceof THREE.Mesh) {
