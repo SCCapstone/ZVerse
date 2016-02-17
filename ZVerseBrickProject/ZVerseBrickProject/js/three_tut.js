@@ -12,26 +12,45 @@ animate();
 
 function init() {
 
-    
-
     scene = new THREE.Scene();
-    camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 1, 2000);
-    camera.position.z = 100;
+    camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, .01, 100);
+    camera.position.z = 10;
 
     var light = new THREE.DirectionalLight(0xffffff);
     light.position.set(0, 1, 1).normalize();
     scene.add(light);
 
-   //var dynamicTexture = new THREEx.DynamicTexture(512, 512)
-    //dynamicTexture.clear('white')
-      //  .drawText('hello', undefined, 256, 'black')
-    var texture = new THREE.TextureLoader().load("brick.jpg");
- 
+    var texture2 = new THREE.TextureLoader().load("brick.jpg");
+    var geometry2 = new THREE.CubeGeometry(5,3.1,2.9); //width, height, depth
+    var material2 = new THREE.MeshBasicMaterial({ map: texture2 });
+    mesh2 = new THREE.Mesh(geometry2, material2);
+    scene.add(mesh2);
 
-    var geometry = new THREE.CubeGeometry(50, 20, 10);
-    var material = new THREE.MeshBasicMaterial({ map: texture });
-    mesh = new THREE.Mesh(geometry, material);
-    scene.add(mesh);
+    var text1 = 'hello';
+
+    var dynamicTexture = new THREEx.DynamicTexture(512, 512);
+    dynamicTexture.context.font = "bolder 100px Verdana";
+    dynamicTexture.drawText(text1, undefined, 170, 'red');
+    var geometry1 = new THREE.CubeGeometry(3,3,3);
+    var material1 = new THREE.MeshBasicMaterial({ map: dynamicTexture.texture });
+    material1.transparent = true;
+   // material1.opacity = 0.5;
+    material1.polygonOffset = true;
+    material1.polygonOffsetFactor = -0.2;
+    mesh1 = new THREE.Mesh(geometry1, material1);
+    scene.add(mesh1);
+
+    //var dynamicTexture = new THREEx.DynamicTexture(512, 512);
+    //dynamicTexture.context.font = "bolder 90px Verdana";
+    //dynamicTexture.clear('alpha');
+    //dynamicTexture.drawText('Hello', undefined, 256, 'red');
+    //var geometry = new THREE.CubeGeometry(5,2,1);
+    //var material = new THREE.MeshBasicMaterial({
+    //    map: dynamicTexture.texture
+    //})
+    //var mesh = new THREE.Mesh(geometry, material);
+    //scene.add(mesh);
+
 
     renderer = new THREE.WebGLRenderer();
     renderer.setSize(window.innerWidth, window.innerHeight);
@@ -51,32 +70,32 @@ function init() {
     //text2.style.left = 550 + 'px';
     //document.body.appendChild(text2);
 
-    // create a canvas element
-    var canvas1 = document.createElement('canvas');
-    var context1 = canvas1.getContext('2d');
-    context1.font = "Bold 30px Arial";
-    context1.fillStyle = "rgba(255,0,0,0.95)";
-    context1.fillText('Alexa', 0, 20);
+    //// create a canvas element
+    //var canvas1 = document.createElement('canvas');
+    //var context1 = canvas1.getContext('2d');
+    //context1.font = "Bold 30px Arial";
+    //context1.fillStyle = "rgba(255,0,0,0.95)";
+    //context1.fillText('Alexa', 0, 20);
 
-    // canvas contents will be used for a texture
-    var texture1 = new THREE.Texture(canvas1)
-    texture1.needsUpdate = true;
+    //// canvas contents will be used for a texture
+    //var texture1 = new THREE.Texture(canvas1)
+    //texture1.needsUpdate = true;
 
-    var material1 = new THREE.MeshBasicMaterial({ map: texture1 });
-    material1.transparent = true;
-    var mesh1 = new THREE.Mesh(
-        new THREE.PlaneGeometry(canvas1.width/2, canvas1.height/2),
-        material1
-      );
-    mesh1.position.set(10,-20,8);
-    scene.add(mesh1);
+    //var material1 = new THREE.MeshBasicMaterial({ map: texture1 });
+    //material1.transparent = true;
+    //var mesh1 = new THREE.Mesh(
+    //    new THREE.PlaneGeometry(canvas1.width/2, canvas1.height/2),
+    //    material1
+    //  );
+    //mesh1.position.set(10,-20,8);
+    //scene.add(mesh1);
 
     
 }
 
 function onDocumentMouseMove(event) {
-    mouseX = (event.clientX - windowHalfX) / 2;
-    mouseY = (event.clientY - windowHalfY) / 2;
+    mouseX = (event.clientX - windowHalfX) / 10;
+    mouseY = (event.clientY - windowHalfY) / 10;
 }
 
 function animate() {
