@@ -20,17 +20,19 @@ function init() {
     light.position.set(0, 1, 1).normalize();
     scene.add(light);
 
-    var texture2 = new THREE.TextureLoader().load("brick.jpg");
-    var geometry2 = new THREE.CubeGeometry(5,3.1,2.9); //width, height, depth
-    var material2 = new THREE.MeshBasicMaterial({ map: texture2 });
-    mesh2 = new THREE.Mesh(geometry2, material2);
-    scene.add(mesh2);
+    var texture = new THREE.TextureLoader().load("brick.jpg");
+    var geometry = new THREE.CubeGeometry(5,3.1,2.9); //width, height, depth
+    var material = new THREE.MeshBasicMaterial({ map: texture });
+    mesh = new THREE.Mesh(geometry, material);
+    scene.add(mesh);
 
     var text1 = 'hello';
+    var text2 = 'its me';
+    var text3 = '-Alexa';
 
     var dynamicTexture = new THREEx.DynamicTexture(512, 512);
-    dynamicTexture.context.font = "bolder 100px Verdana";
-    dynamicTexture.drawText(text1, undefined, 170, 'red');
+    dynamicTexture.context.font = "bolder 80px Verdana";
+    dynamicTexture.drawText(text1, undefined, 100, 'black');
     var geometry1 = new THREE.CubeGeometry(3,3,3);
     var material1 = new THREE.MeshBasicMaterial({ map: dynamicTexture.texture });
     material1.transparent = true;
@@ -40,16 +42,29 @@ function init() {
     mesh1 = new THREE.Mesh(geometry1, material1);
     scene.add(mesh1);
 
-    //var dynamicTexture = new THREEx.DynamicTexture(512, 512);
-    //dynamicTexture.context.font = "bolder 90px Verdana";
-    //dynamicTexture.clear('alpha');
-    //dynamicTexture.drawText('Hello', undefined, 256, 'red');
-    //var geometry = new THREE.CubeGeometry(5,2,1);
-    //var material = new THREE.MeshBasicMaterial({
-    //    map: dynamicTexture.texture
-    //})
-    //var mesh = new THREE.Mesh(geometry, material);
-    //scene.add(mesh);
+    var dynamicTexture1 = new THREEx.DynamicTexture(512, 512);
+    dynamicTexture1.context.font = "bolder 80px Verdana";
+    dynamicTexture1.drawText(text2, undefined, 240, 'black');
+    var geometry2 = new THREE.CubeGeometry(3, 3, 3);
+    var material2 = new THREE.MeshBasicMaterial({ map: dynamicTexture1.texture });
+    material2.transparent = true;
+    // material1.opacity = 0.5;
+    material2.polygonOffset = true;
+    material2.polygonOffsetFactor = -0.2;
+    mesh2 = new THREE.Mesh(geometry2, material2);
+    scene.add(mesh2);
+
+    var dynamicTexture2 = new THREEx.DynamicTexture(512, 512);
+    dynamicTexture2.context.font = "bolder 80px Verdana";
+    dynamicTexture2.drawText(text3, undefined, 380, 'black');
+    var geometry3 = new THREE.CubeGeometry(3, 3, 3);
+    var material3 = new THREE.MeshBasicMaterial({ map: dynamicTexture2.texture });
+    material3.transparent = true;
+    // material1.opacity = 0.5;
+    material3.polygonOffset = true;
+    material3.polygonOffsetFactor = -0.2;
+    mesh3 = new THREE.Mesh(geometry3, material3);
+    scene.add(mesh3);
 
 
     renderer = new THREE.WebGLRenderer();
