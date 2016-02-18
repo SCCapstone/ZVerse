@@ -14,9 +14,6 @@
         tb3 {
             float: left;
         }
-        txtControls {
-            background-color: maroon;
-        }
     </style>
 
     <script>
@@ -26,6 +23,7 @@
 		var test1 = "";//string that has been passed to render line 1
 		var test2 = "";//string that has been passed to render line 2
 		var test3 = "";//string that has been passed to render line 3
+		var rerenderFlags = [true,true,true];// unless all three flags are true, don't render
 		function getText1()
 		{
 		    test1 = document.getElementById("textBoxOne").value;
@@ -50,13 +48,13 @@
     <div id="txtControls">
         <h1>Controls</h1>
         <div id="tb1">
-            <input type="text" id="textBoxOne" oninput="setTimeout(getText1, 1000)">
+            <input type="text" id="textBoxOne" oninput="setTimeout(getText1, 5000)">
         </div>
         <div id="tb2">
-            <input type="text" id="textBoxTwo" oninput="setTimeout(getText2, 1000)">
+            <input type="text" id="textBoxTwo" oninput="setTimeout(getText2, 5000)">
         </div>
         <div id="tb3">
-            <input type="text" id="textBoxThree" oninput="setTimeout(getText3, 1000)">
+            <input type="text" id="textBoxThree" oninput="setTimeout(getText3, 5000)">
         </div>
     </div>
     <div id="txtOutputWrapper">
