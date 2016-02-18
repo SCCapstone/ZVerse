@@ -1,9 +1,10 @@
-﻿canvas{
+﻿/*
+canvas{
     position: fixed;
-    top: 0;
-    left: 0;
+    top: 50px;
+    left: 20px;
 }
-
+*/
 /* Move down content because we have a fixed navbar that is 50px tall */
 body {
     padding-top: 50px;

@@ -8,6 +8,8 @@ using System.Web.Security;
 using System.Web.SessionState;
 using System.Data.Entity;
 using ZVerseBrickProject.Models;
+using System.Web.Http;
+
 
 namespace ZVerseBrickProject
 {
@@ -22,6 +24,11 @@ namespace ZVerseBrickProject
             // Initialize the product database.
             Database.SetInitializer(new ProductDatabaseInitializer());
 
+            //Add routing information
+            RouteTable.Routes.MapHttpRoute(
+                name: "DefaultApi",
+                routeTemplate: "api/{controller}/{id}",
+                defaults: new {id= System.Web.Http.RouteParameter.Optional });
         }
     }
 }

@@ -5,6 +5,7 @@
 _references.js
 
 
+
 # User-specific files
 *.suo
 *.user
@@ -24,7 +25,7 @@ x86/
 build/
 bld/
 [Bb]in/
-[Oo]bj/
+
 
 # Visual Studio 2015 cache/options directory
 .vs/
@@ -53,7 +54,6 @@ artifacts/
 *_i.h
 *.ilk
 *.meta
-*.obj
 *.pch
 *.pdb
 *.pgc
@@ -232,3 +232,6 @@ _Pvt_Extensions
 
 # FAKE - F# Make
 .fake/
+
+# Remove DS_Store
+.DS_Store

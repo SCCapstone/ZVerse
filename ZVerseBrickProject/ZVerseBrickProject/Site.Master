@@ -48,9 +48,7 @@
                     </button>
 
 
-                    <a class="navbar-brand" runat="server" href="~/"> 
-                        <!--<img src="/Images/zverselogo.jpg" alt="Company logo"  /> -->
-                        <!--<asp:Image  ID="zverselogo" runat="server" ImageUrl="~/Images/zverselogo.jpg" ImageAlign="top"  BorderStyle="None" />  -->
+                    <a class="navbar-brand" runat="server" href="~/Default"> 
                     </a>
                 </div>
                 <div class="navbar-collapse collapse">
@@ -59,6 +57,7 @@
                         <li><a runat="server" href="~/BrickDisplay">BrickDisplay</a></li>
                         <li><a runat="server" href="~/Contact">Contact</a></li>
                         <li><a runat="server" href="~/ProductList">Catalogue</a></li>
+                        <li><a runat="server" href="~/BrickwithText">BrickwithText</a></li>
 
                     </ul>
                     <asp:LoginView runat="server" ViewStateMode="Disabled">
