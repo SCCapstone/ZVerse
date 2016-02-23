@@ -1,4 +1,7 @@
-﻿/*
+﻿.textBoxLine{
+    float: left;
+}
+/*
 canvas{
     position: fixed;
     top: 50px;
