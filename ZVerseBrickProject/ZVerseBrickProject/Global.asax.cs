@@ -9,6 +9,7 @@ using System.Web.SessionState;
 using System.Data.Entity;
 using ZVerseBrickProject.Models;
 using System.Web.Http;
+using ZVerseBrickProject.UserRoles;
 
 
 namespace ZVerseBrickProject
@@ -29,6 +30,10 @@ namespace ZVerseBrickProject
                 name: "DefaultApi",
                 routeTemplate: "api/{controller}/{id}",
                 defaults: new {id= System.Web.Http.RouteParameter.Optional });
+
+            // Create the custom role and user
+            RoleActions roleActions = new RoleActions();
+            roleActions.AddUserAndRole();
         }
     }
 }

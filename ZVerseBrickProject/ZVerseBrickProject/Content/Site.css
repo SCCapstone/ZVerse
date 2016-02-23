@@ -37,8 +37,8 @@ input[type="select"] {
     background-size: 115px 35px;
     height:40px;
     margin:2px;
-    width:120px;
-    background-image: url("../Images/zverselogo.jpg"); 
+    width:150px;
+    background-image: url('../Images/zverselogo.jpg'); 
     background-repeat: no-repeat;
     background-position: left
 }
