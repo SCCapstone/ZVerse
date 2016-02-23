@@ -105,7 +105,7 @@ var dynamicTexture = new THREEx.DynamicTexture(512, 512);
 function getText1(text) {
     text1 = text;
     dynamicTexture.clear();
-    dynamicTexture.needsUpdate() = true;
+   // dynamicTexture.needsUpdate = true;
     dynamicTexture.context.font = "bolder 80px Verdana";
     dynamicTexture.drawText(text1, undefined, 140, 'black');
     var geometry1 = new THREE.CubeGeometry(3,3,3);

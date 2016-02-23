@@ -17,19 +17,19 @@
         
         <div class="textBoxLine">
             <asp:Label AssociatedControlID="textbox1">Top Text Line:
-                <asp:TextBox ID="textBox1" runat="server" MaxLength="40" placeholder="text line 1" onchange="getText1(this.value)"></asp:TextBox>
+                <asp:TextBox ID="textBox1" runat="server" MaxLength="40" placeholder="text line 1" onKeyPress ="getText1(this.value)" onKeyUp = "getText1(this.value)"></asp:TextBox>
             </asp:Label>
         </div>
         <br /><br />
         <div class="textBoxLine">
             <asp:Label AssociatedControlID="textbox2">Middle Text Line:
-                <asp:TextBox ID="textBox2" runat="server" MaxLength="40" placeholder="text line 2" onchange="getText2(this.value)"></asp:TextBox>
+                <asp:TextBox ID="textBox2" runat="server" MaxLength="40" placeholder="text line 2" onKeyPress ="getText2(this.value)" onKeyUp = "getText2(this.value)"></asp:TextBox>
             </asp:Label>
         </div>
         <br /><br />
         <div class="textBoxLine">
             <asp:Label AssociatedControlID="textbox3">Bottom Text Line:
-                <asp:TextBox ID="textBox3" runat="server" MaxLength="40" placeholder="text line 3" onchange="getText3(this.value)"></asp:TextBox>
+                <asp:TextBox ID="textBox3" runat="server" MaxLength="40" placeholder="text line 3" onKeyPress ="getText3(this.value)" onKeyUp = "getText3(this.value)"></asp:TextBox>
             </asp:Label>
         </div>
 
