@@ -100,9 +100,12 @@ function onWindowResize() {
     renderer.setSize(window.innerWidth, window.innerHeight);
 }
 
+var dynamicTexture = new THREEx.DynamicTexture(512, 512);
+
 function getText1(text) {
     text1 = text;
-    var dynamicTexture = new THREEx.DynamicTexture(512, 512);
+    dynamicTexture.clear();
+    dynamicTexture.needsUpdate() = true;
     dynamicTexture.context.font = "bolder 80px Verdana";
     dynamicTexture.drawText(text1, undefined, 140, 'black');
     var geometry1 = new THREE.CubeGeometry(3,3,3);
@@ -113,11 +116,14 @@ function getText1(text) {
     material1.polygonOffsetFactor = -0.2;
     mesh1 = new THREE.Mesh(geometry1, material1);
     scene.add(mesh1);
+    
 }
+
+var dynamicTexture1 = new THREEx.DynamicTexture(512, 512);
 
 function getText2(text) {
     text2 = text;
-    var dynamicTexture1 = new THREEx.DynamicTexture(512, 512);
+    dynamicTexture1.clear();
     dynamicTexture1.context.font = "bolder 80px Verdana";
     dynamicTexture1.drawText(text2, undefined, 280, 'black');
     var geometry2 = new THREE.CubeGeometry(3, 3, 3);
@@ -130,9 +136,11 @@ function getText2(text) {
     scene.add(mesh2);
 }
 
+var dynamicTexture2 = new THREEx.DynamicTexture(512, 512);
+
 function getText3(text) {
     text3 = text;
-    var dynamicTexture2 = new THREEx.DynamicTexture(512, 512);
+    dynamicTexture2.clear();
     dynamicTexture2.context.font = "bolder 80px Verdana";
     dynamicTexture2.drawText(text3, undefined, 420, 'black');
     var geometry3 = new THREE.CubeGeometry(3, 3, 3);
