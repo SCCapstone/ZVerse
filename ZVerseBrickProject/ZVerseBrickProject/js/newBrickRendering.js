@@ -33,7 +33,7 @@ function init() {
     var dynamicTexture = new THREEx.DynamicTexture(512, 512);
     dynamicTexture.context.font = "bolder 80px Verdana";
     dynamicTexture.drawText(text1, undefined, 140, 'black');
-    var geometry1 = new THREE.CubeGeometry(3,3,3);
+    var geometry1 = new THREE.CubeGeometry(4.9,3,3);
     var material1 = new THREE.MeshBasicMaterial({ map: dynamicTexture.texture });
     material1.transparent = true;
    // material1.opacity = 0.5;
@@ -45,7 +45,7 @@ function init() {
     var dynamicTexture1 = new THREEx.DynamicTexture(512, 512);
     dynamicTexture1.context.font = "bolder 80px Verdana";
     dynamicTexture1.drawText(text2, undefined, 280, 'black');
-    var geometry2 = new THREE.CubeGeometry(3, 3, 3);
+    var geometry2 = new THREE.CubeGeometry(4.9, 3, 3);
     var material2 = new THREE.MeshBasicMaterial({ map: dynamicTexture1.texture });
     material2.transparent = true;
     // material1.opacity = 0.5;
@@ -57,7 +57,7 @@ function init() {
     var dynamicTexture2 = new THREEx.DynamicTexture(512, 512);
     dynamicTexture2.context.font = "bolder 80px Verdana";
     dynamicTexture2.drawText(text3, undefined, 420, 'black');
-    var geometry3 = new THREE.CubeGeometry(3, 3, 3);
+    var geometry3 = new THREE.CubeGeometry(4.9, 3, 3);
     var material3 = new THREE.MeshBasicMaterial({ map: dynamicTexture2.texture });
     material3.transparent = true;
     // material1.opacity = 0.5;
@@ -106,9 +106,9 @@ function getText1(text) {
     text1 = text;
     dynamicTexture.clear();
    // dynamicTexture.needsUpdate = true;
-    dynamicTexture.context.font = "bolder 80px Verdana";
+    dynamicTexture.context.font = "60px Verdana";
     dynamicTexture.drawText(text1, undefined, 140, 'black');
-    var geometry1 = new THREE.CubeGeometry(3,3,3);
+    var geometry1 = new THREE.CubeGeometry(4.9,3,3);
     var material1 = new THREE.MeshBasicMaterial({ map: dynamicTexture.texture });
     material1.transparent = true;
    // material1.opacity = 0.5;
@@ -124,9 +124,9 @@ var dynamicTexture1 = new THREEx.DynamicTexture(512, 512);
 function getText2(text) {
     text2 = text;
     dynamicTexture1.clear();
-    dynamicTexture1.context.font = "bolder 80px Verdana";
+    dynamicTexture1.context.font = "60px Verdana";
     dynamicTexture1.drawText(text2, undefined, 280, 'black');
-    var geometry2 = new THREE.CubeGeometry(3, 3, 3);
+    var geometry2 = new THREE.CubeGeometry(4.9, 3, 3);
     var material2 = new THREE.MeshBasicMaterial({ map: dynamicTexture1.texture });
     material2.transparent = true;
     // material1.opacity = 0.5;
@@ -141,9 +141,9 @@ var dynamicTexture2 = new THREEx.DynamicTexture(512, 512);
 function getText3(text) {
     text3 = text;
     dynamicTexture2.clear();
-    dynamicTexture2.context.font = "bolder 80px Verdana";
+    dynamicTexture2.context.font = "60px Verdana";
     dynamicTexture2.drawText(text3, undefined, 420, 'black');
-    var geometry3 = new THREE.CubeGeometry(3, 3, 3);
+    var geometry3 = new THREE.CubeGeometry(4.9, 3, 3);
     var material3 = new THREE.MeshBasicMaterial({ map: dynamicTexture2.texture });
     material3.transparent = true;
     // material1.opacity = 0.5;
