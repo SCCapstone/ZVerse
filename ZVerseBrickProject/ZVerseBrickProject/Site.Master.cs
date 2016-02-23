@@ -71,7 +71,10 @@ namespace ZVerseBrickProject
 
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (HttpContext.Current.User.IsInRole("admin"))
+            {
+                adminLink.Visible = true;
+            }
         }
 
         public IQueryable<Category> GetCategories()
