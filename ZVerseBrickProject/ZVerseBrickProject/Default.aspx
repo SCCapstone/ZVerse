@@ -6,7 +6,6 @@
         <h1><%: Title %>.</h1>
         <p class="lead">ZVerse delivers turnkey 3D printing solutions from 3D content creation to full color production.</p>
         <p><a href="http://zverse.com/" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
-        <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/Account/AdminPages/AdminOnly.aspx">Upload your model here</asp:HyperLink>
     </div>
 
     <div class="row">
