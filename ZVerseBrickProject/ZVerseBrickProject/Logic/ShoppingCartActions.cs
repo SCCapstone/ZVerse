@@ -82,5 +82,21 @@ namespace ZVerseBrickProject.Logic
                 c => c.CartId == ShoppingCartId).ToList();
         }
 
+        public decimal GetTotal()
+        {
+            ShoppingCartId = GetCartId();
+            //Multiply product price by quantity of that product go get
+            //the current price for each of those products in teh cart.
+            //Sum all product price totals to get the cart total. 
+            decimal? total = decimal.Zero;
+
+            total = (decimal?)(from cartItems in _db.ShoppingCartItems
+                               where cartItems.CartId == ShoppingCartId
+                               select (int?)cartItems.Quantity *
+                               cartItems.Product.UnitPrice).Sum();
+            return total ?? decimal.Zero;
+
+        }
+
     }
 }
