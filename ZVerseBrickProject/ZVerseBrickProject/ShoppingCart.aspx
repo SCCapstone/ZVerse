@@ -7,7 +7,7 @@
         <Columns>
         <asp:BoundField DataField="ProductID" HeaderText="ID" SortExpression="ProductID" />        
         <asp:BoundField DataField="Product.ProductName" HeaderText="Name" />        
-        <asp:BoundField DataField="Product.UnitPrice" HeaderText="Price (each)" DataFormatString="{0:c}"/>     
+        <asp:BoundField DataField="Product.UnitPrice" HeaderText="Unit Price" DataFormatString="{0:c}"/>     
         <asp:TemplateField   HeaderText="Quantity">            
                 <ItemTemplate>
                     <asp:TextBox ID="PurchaseQuantity" Width="40" runat="server" Text="<%#: Item.Quantity %>"></asp:TextBox> 
@@ -18,9 +18,9 @@
                     <%#: String.Format("{0:c}", ((Convert.ToDouble(Item.Quantity)) *  Convert.ToDouble(Item.Product.UnitPrice)))%>
                 </ItemTemplate>        
         </asp:TemplateField> 
-        <asp:TemplateField HeaderText="Remove Item">            
+        <asp:TemplateField HeaderText="Delete">            
                 <ItemTemplate>
-                    <asp:CheckBox id="Remove" runat="server"></asp:CheckBox>
+                    <asp:CheckBox id="Delete" runat="server"></asp:CheckBox>
                 </ItemTemplate>        
         </asp:TemplateField>    
         </Columns>    
@@ -33,4 +33,14 @@
         </strong> 
     </div>
     <br />
+
+     <table> 
+    <tr>
+      <td>
+        <asp:Button ID="UpdateBtn" runat="server" Text="Update" OnClick="UpdateBtn_Click" />
+      </td>
+    
+    </tr>
+    </table>
+
 </asp:Content>

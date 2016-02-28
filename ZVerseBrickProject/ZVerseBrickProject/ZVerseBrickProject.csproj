@@ -193,6 +193,7 @@
     <Content Include="Account\TwoFactorAuthenticationSignIn.aspx" />
     <Content Include="Account\VerifyPhoneNumber.aspx" />
     <Content Include="BrickwithText.aspx" />
+    <Content Include="Checkout.aspx" />
     <Content Include="Contact.aspx" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstraporiginal.css" />
@@ -432,6 +433,13 @@
     <Compile Include="BrickwithText.aspx.designer.cs">
       <DependentUpon>BrickwithText.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Checkout.aspx.cs">
+      <DependentUpon>Checkout.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Checkout.aspx.designer.cs">
+      <DependentUpon>Checkout.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Contact.aspx.cs">
       <DependentUpon>Contact.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -450,7 +458,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Logic\ShoppingCartActions.cs" />
+    <Compile Include="Controllers\ShoppingCartFunctions.cs" />
     <Compile Include="Models\Category.cs" />
     <Compile Include="Models\CartItem.cs" />
     <Compile Include="Models\Item.cs" />
@@ -508,6 +516,7 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Logic\" />
     <Folder Include="obj\Debug\TempPE\" />
   </ItemGroup>
   <PropertyGroup>

@@ -9,6 +9,7 @@ using System.Web.UI.WebControls;
 using Microsoft.AspNet.Identity;
 using System.Linq;
 using ZVerseBrickProject.Models;
+using ZVerseBrickProject.Controllers;
 
 namespace ZVerseBrickProject
 {
@@ -74,6 +75,15 @@ namespace ZVerseBrickProject
             if (HttpContext.Current.User.IsInRole("admin"))
             {
                 adminLink.Visible = true;
+            }
+        }
+
+        protected void Page_PreRender(object sender, EventArgs e)
+        {
+            using (ShoppingCartFunctions usersShoppingCart = new ShoppingCartFunctions())
+            {
+                string cartStr = string.Format("Cart ({0})", usersShoppingCart.GetCount());
+                cartCount.InnerHtml = "<span class='glyphicon glyphicon-shopping-cart'></span>" + cartStr;
             }
         }
 

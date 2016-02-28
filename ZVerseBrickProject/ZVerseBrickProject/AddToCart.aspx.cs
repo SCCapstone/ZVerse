@@ -5,7 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Diagnostics; 
-using ZVerseBrickProject.Logic;
+using ZVerseBrickProject.Controllers;
 
 namespace ZVerseBrickProject
 {
@@ -17,7 +17,7 @@ namespace ZVerseBrickProject
             int productId;
             if (!String.IsNullOrEmpty(rawId) && int.TryParse(rawId, out productId))
             {
-                using (ShoppingCartActions usersShoppingCart = new ShoppingCartActions())
+                using (ShoppingCartFunctions usersShoppingCart = new ShoppingCartFunctions())
                 {
                     usersShoppingCart.AddToCart(Convert.ToInt16(rawId));
                 }
