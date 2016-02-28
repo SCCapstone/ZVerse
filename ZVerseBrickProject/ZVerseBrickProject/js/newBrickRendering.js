@@ -4,18 +4,23 @@ var renderer;
 var mesh;
 var mouseX = 0;
 var mouseY = 0;
-var windowHalfX = window.innerWidth / 2;
-var windowHalfY = window.innerHeight / 2;
+container = document.getElementById('canvas');
+
+var windowHalfX = container.offsetWidth / 2;
+var windowHalfY = container.offsetHeight / 2;
 var text1 = '';
 var text2 = '';
 var text3 = '';
+var container; 
 
 init();
 animate();
 
 function init() {
+
+
     scene = new THREE.Scene();
-    camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, .01, 100);
+    camera = new THREE.PerspectiveCamera(45, container.offsetWidth/container.offsetHeight, .01, 100);
     camera.position.z = 10;
 
     var light = new THREE.DirectionalLight(0xffffff);
@@ -68,11 +73,11 @@ function init() {
 
 
     renderer = new THREE.WebGLRenderer();
-    renderer.setSize(window.innerWidth, window.innerHeight);
-    document.body.appendChild(renderer.domElement);
+    renderer.setSize(container.offsetWidth, container.offsetHeight);
+    container.appendChild(renderer.domElement);
 
-    document.addEventListener('mousemove', onDocumentMouseMove, false);
-    window.addEventListener('resize', onWindowResize, false);
+    container.addEventListener('mousemove', onDocumentMouseMove, false);
+    container.addEventListener('resize', onWindowResize, false);
     
 }
 
@@ -93,11 +98,11 @@ function render() {
 }
 
 function onWindowResize() {
-    windowHalfX = window.innerWidth / 2;
-    windowHalfY = window.innerHeight / 2;
-    camera.aspect = window.innerWidth / window.innerHeight;
+    windowHalfX = container.offsetWidth / 2;
+    windowHalfY = container.offsetHeight / 2;
+    camera.aspect = container.offsetWidth/container.offsetHeight;
     camera.updateProjectionMatrix();
-    renderer.setSize(window.innerWidth, window.innerHeight);
+    renderer.setSize(container.offsetWidth, container.offsetHeight);
 }
 
 var dynamicTexture = new THREEx.DynamicTexture(512, 512);
