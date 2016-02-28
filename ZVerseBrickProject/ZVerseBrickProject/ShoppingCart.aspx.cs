@@ -30,8 +30,9 @@ namespace ZVerseBrickProject
                 {
                     LabelTotalText.Text = "";
                     lblTotal.Text = "";
-                    ShoppingCartTitle.InnerHtml = "<h2>Please add an item onto shopping cart.</h2>";
+                    ShoppingCartTitle.InnerHtml = "<h2>Please add an item onto the shopping cart.</h2>";
                     UpdateBtn.Visible = false;
+                    CheckoutBtn.Visible = false;
                 }
             }
         }
@@ -88,6 +89,13 @@ namespace ZVerseBrickProject
             UpdateCartItems();
         }
 
-
+        protected void CheckoutBtn_Click(object sender, EventArgs e)
+        {
+            using (ShoppingCartFunctions usersShoppingCart = new ShoppingCartFunctions())
+            {
+                usersShoppingCart.EmptyCart();
+            }   
+            Response.Redirect("Checkout.aspx");
+        }
     }
 }

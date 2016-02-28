@@ -37,9 +37,17 @@
      <table> 
     <tr>
       <td>
-        <asp:Button ID="UpdateBtn" runat="server" Text="Update" OnClick="UpdateBtn_Click" />
+        <asp:Button ID="UpdateBtn" runat="server" Text="Update" CssClass="btn btn-info" OnClick="UpdateBtn_Click" />
       </td>
-    
+        <td>
+            &nbsp
+        </td>
+      <td>
+        <!--Checkout Button -->
+            <asp:LinkButton ID="CheckoutBtn" runat="server" Text="Checkout" CssClass="btn btn-success" OnClick="CheckoutBtn_Click"> 
+                <span aria-hidden="true" class="glyphicon glyphicon-ok-sign"> Checkout</span>                                       
+            </asp:LinkButton>
+      </td>
     </tr>
     </table>
 
