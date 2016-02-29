@@ -1,9 +1,13 @@
-﻿/*canvas{
+﻿.textBoxLine{
+    float: left;
+}
+/*
+canvas{
     position: fixed;
-    top: 10px;
-    left: 5px;
-}*/
-
+    top: 50px;
+    left: 20px;
+}
+*/
 /* Move down content because we have a fixed navbar that is 50px tall */
 body {
     padding-top: 50px;
@@ -36,8 +40,8 @@ input[type="select"] {
     background-size: 115px 35px;
     height:40px;
     margin:2px;
-    width:120px;
-    background-image: url("../Images/zverselogo.jpg"); 
+    width:150px;
+    background-image: url('../Images/zverselogo.jpg'); 
     background-repeat: no-repeat;
     background-position: left
 }

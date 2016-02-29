@@ -1,0 +1,77 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style>
+        tb1 {
+            float: left;
+        }
+        tb2 {
+            float: left;
+        }
+        tb3 {
+            float: left;
+        }
+    </style>
+
+    <script>
+        var textBox1 = document.getElementById("textBoxOne");//raw data from text box 1
+	    var textBox2 = document.getElementById("textBoxTwo");//raw data from text box 2
+		var textBox3 = document.getElementById("textBoxThree");//raw data from text box 3
+		var test1 = "";//string that has been passed to render line 1
+		var test2 = "";//string that has been passed to render line 2
+		var test3 = "";//string that has been passed to render line 3
+		var rerenderFlags = [true,true,true];// unless all three flags are true, don't render
+		function getText1()
+		{
+		    test1 = document.getElementById("textBoxOne").value;
+		    document.getElementById("txtOutput1").innerHTML = test1;
+		    //document.getElementById("txtOutput1").innerHTML = document.getElementById("textBoxOne").value;
+		}
+		    
+		function getText2()
+		{
+		    test2 = document.getElementById("textBoxTwo").value;
+		    document.getElementById("txtOutput2").innerHTML = test2;
+		}
+
+		function getText3()
+		{
+		    test3 = document.getElementById("textBoxThree").value;
+		    document.getElementById("txtOutput3").innerHTML = test3;
+		}    
+    </script>
+</head>
+<body>
+    <div id="txtControls">
+        <h1>Controls</h1>
+        <div id="tb1">
+            <input type="text" id="textBoxOne" oninput="setTimeout(getText1, 5000)">
+        </div>
+        <div id="tb2">
+            <input type="text" id="textBoxTwo" oninput="setTimeout(getText2, 5000)">
+        </div>
+        <div id="tb3">
+            <input type="text" id="textBoxThree" oninput="setTimeout(getText3, 5000)">
+        </div>
+    </div>
+    <div id="txtOutputWrapper">
+        <h4>Output1</h4>
+        <div>
+            <p id="txtOutput1">
+            output will be here
+            </p>
+        </div>
+        <h4>Output2</h4>
+        <div id="txtOutput2">
+            <p>output will be here</p>
+        </div>
+        <h4>Output3</h4>
+        <div id="txtOutput3">
+            <p>output will be here</p>
+        </div>
+    </div>
+</body>
+</html>
