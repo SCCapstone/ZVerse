@@ -29,9 +29,7 @@
 
     <h2 style="text-align: right">Mizzou Tradition Plaza Paved Replica</h2>
     <p style="text-align: right">
-        Pleased to offer our alumni an opportunity to take a piece of Traditions Plaza back home! 
-        </br >
-        Below is a sample of our real brick without text.   
+        Pleased to offer our alumni an opportunity to take a piece of Traditions Plaza back home!   
     </p>
     <p style="text-align: right">
         $75.00

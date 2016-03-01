@@ -1,0 +1,16 @@
+﻿Revert "rearrange brick"
+
+This reverts commit 14a7800e9b49e05083c0b54d6b05d27144f3ea8f.
+
+# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+# On branch master
+# Your branch is ahead of 'origin/master' by 54 commits.
+#   (use "git push" to publish your local commits)
+#
+# Changes to be committed:
+#	modified:   ZVerseBrickProject/ZVerseBrickProject/BrickDisplay.aspx
+#	modified:   ZVerseBrickProject/ZVerseBrickProject/Site.Master
+#	modified:   ZVerseBrickProject/ZVerseBrickProject/ZVerseBrickProject.csproj
+#
+
