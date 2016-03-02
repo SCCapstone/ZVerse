@@ -168,10 +168,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Admin\AdminPage.aspx" />
-    <Content Include="App_Data\zversebrickproject.mdf" />
-    <Content Include="App_Data\zversebrickproject_log.ldf">
-      <DependentUpon>zversebrickproject.mdf</DependentUpon>
-    </Content>
     <Content Include="App_Start\Content\bootstrap.css" />
     <Content Include="App_Start\Content\bootstraporiginal.css" />
     <Content Include="App_Start\Content\Site.css" />
@@ -485,6 +481,7 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="App_Data\" />
     <Folder Include="obj\Debug\TempPE\" />
     <Folder Include="Uploaded_Files\" />
   </ItemGroup>
