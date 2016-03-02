@@ -15,14 +15,14 @@
         <!--<link href="css/main.css" rel="stylesheet" type="text/css" />-->
     </head>
     <body>
-                <script src="js/three.min.js"></script> 
-            <script src="js/MTLLoader.js"></script>
-         <script src="js/OBJMTLLoader.js"></script> 
+        <script src="js/three.min.js"></script> 
+        <script src="js/MTLLoader.js"></script>
+        <script src="js/OBJMTLLoader.js"></script> 
         <script src="js/OBJLoader.js"></script> 
         <script src="js/THREEx.WindowResize.js"></script> 
         <script src="js/OrbitControls.js"></script> 
         <script src="js/stats.min.js"></script> 
-            <script src="js/script.js"></script>
+        <script src="js/script.js"></script>
     </body>
     </html>
    
