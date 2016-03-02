@@ -7,10 +7,10 @@
 
     <div id="uploadForm">
         <p>Upload your javascript file here: </p>
-   <%--     <asp:FileUpload id="FileUploadControl" runat="server" />
+        <asp:FileUpload id="FileUploadControl" runat="server" />
         <asp:Button runat="server" id="UploadButton" text="Upload" onclick="UploadButton_Click" />
         <br /><br />
-        <asp:Label runat="server" id="StatusLabel" text="" />--%>
+        <asp:Label runat="server" id="StatusLabel" text="" />
     </div>
 
 </asp:Content>
