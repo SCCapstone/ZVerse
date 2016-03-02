@@ -46,9 +46,9 @@
     </head>
     <body>
                 <script src="js/three.min.js"></script> 
+        <script src="js/OBJLoader.js"></script> 
             <script src="js/MTLLoader.js"></script>
          <script src="js/OBJMTLLoader.js"></script> 
-        <script src="js/OBJLoader.js"></script> 
         <script src="js/THREEx.WindowResize.js"></script> 
         <script src="js/OrbitControls.js"></script> 
         <script src="js/stats.min.js"></script> 
