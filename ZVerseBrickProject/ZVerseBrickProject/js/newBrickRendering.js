@@ -40,7 +40,7 @@ var material3 = new THREE.MeshBasicMaterial({ map: dynamicTexture2.texture });
 
 //FUNCTION DECLARATION SECTION/////////////////////////////////////////////////
 init();//initializing function uses to begin the 3D window
-animate();//TODO******************************************************************************************
+animate();//makes the brick actually work by calling render
 
 /*-----------------------------------------------------------------------------
 Name: init()
