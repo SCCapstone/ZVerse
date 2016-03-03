@@ -259,6 +259,7 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstraporiginal.css" />
     <Content Include="Content\Site.css" />
+    <Content Include="CubeWeb.aspx" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
@@ -299,7 +300,7 @@
     <Content Include="js\THREEx.WindowResize.js" />
     <Content Include="js\newBrickRendering.js" />
     <Content Include="js\BrickRendering.html" />
-    <Content Include="Plaque.aspx" />
+    <Content Include="PlaqueWeb.aspx" />
     <Content Include="ProductDetails.aspx" />
     <Content Include="ProductList.aspx" />
     <Content Include="js\DecBrick.obj" />
@@ -516,11 +517,12 @@
       <DependentUpon>Contact.aspx</DependentUpon>
     </Compile>
     <Compile Include="Controllers\ItemController.cs" />
-    <Compile Include="Cube.aspx.cs">
+    <Compile Include="CubeWeb.aspx.cs">
+      <DependentUpon>CubeWeb.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Cube.aspx.designer.cs">
-      <DependentUpon>Cube.aspx.cs</DependentUpon>
+    <Compile Include="CubeWeb.aspx.designer.cs">
+      <DependentUpon>CubeWeb.aspx</DependentUpon>
     </Compile>
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
@@ -540,12 +542,12 @@
     <Compile Include="Models\ProductDatabaseInitializer.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\Product.cs" />
-    <Compile Include="Plaque.aspx.cs">
-      <DependentUpon>Plaque.aspx</DependentUpon>
+    <Compile Include="PlaqueWeb.aspx.cs">
+      <DependentUpon>PlaqueWeb.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Plaque.aspx.designer.cs">
-      <DependentUpon>Plaque.aspx</DependentUpon>
+    <Compile Include="PlaqueWeb.aspx.designer.cs">
+      <DependentUpon>PlaqueWeb.aspx</DependentUpon>
     </Compile>
     <Compile Include="ProductDetails.aspx.cs">
       <DependentUpon>ProductDetails.aspx</DependentUpon>
