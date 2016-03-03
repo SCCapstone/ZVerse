@@ -13,9 +13,87 @@ namespace ZVerseBrickProject.Admin
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+           
         }
 
+        protected void Hide5_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Panel p = (Panel)Master.FindControl("Panel5");
+                p.Visible = false;
+            }
+            catch (Exception ex)
+            {
+                StatusLabel.Text = "Task could not be completed, the following error occured: " + ex.Message;
+            }
+
+        }
+        protected void Hide6_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Panel p = (Panel)Master.FindControl("Panel6");
+                p.Visible = false;
+            }
+            catch (Exception ex)
+            {
+                StatusLabel.Text = "Task could not be completed, the following error occured: " + ex.Message;
+            }
+
+        }
+        protected void Hide7_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Panel p = (Panel)Master.FindControl("Panel7");
+                p.Visible = false;
+            }
+            catch (Exception ex)
+            {
+                StatusLabel.Text = "Task could not be completed, the following error occured: " + ex.Message;
+            }
+
+        }
+        protected void Show5_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Panel q = (Panel)Master.FindControl("Panel5");
+                q.Visible = true;
+            }
+            catch (Exception ex)
+            {
+                StatusLabel.Text = "Task could not be completed, the following error occured: " + ex.Message;
+            }
+
+        }
+        protected void Show6_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Panel q = (Panel)Master.FindControl("Panel6");
+                q.Visible = true;
+            }
+            catch (Exception ex)
+            {
+                StatusLabel.Text = "Task could not be completed, the following error occured: " + ex.Message;
+            }
+
+        }
+        protected void Show7_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Panel q = (Panel)Master.FindControl("Panel7");
+                q.Visible = true;
+            }
+            catch (Exception ex)
+            {
+                StatusLabel.Text = "Task could not be completed, the following error occured: " + ex.Message;
+            }
+
+        }
         protected void UploadButton_Click(object sender, EventArgs e)
         {
             if (FileUploadControl.HasFile)
@@ -37,5 +115,6 @@ namespace ZVerseBrickProject.Admin
                 }
             }
         }
+
     }
 }

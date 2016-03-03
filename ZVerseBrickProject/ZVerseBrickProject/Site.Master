@@ -52,16 +52,16 @@
                 </div>
                 <div class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
-                        <li><a runat="server" href="~/Default">Home</a></li>
-                        <li><a runat="server" href="~/Contact">Contact</a></li>
-                        <li><a runat="server" href="~/ProductList">Catalogue</a></li>
-                        <li><a runat="server" href="~/BrickDisplay">OBJ</a></li>
-                        <li><a runat="server" href="~/BrickwithText">Brick</a></li>
-                        <li><a runat="server" href="~/CubeWeb">USCube</a></li>
-                        <li><a runat="server" href="~/PlaqueWeb">Plaque</a></li>
-                        <li><a runat="server" id="adminLink" visible="false" 
-                            href="~/Admin/AdminPage">Admin</a></li>
-                        <li><a runat="server" href="~/ShoppingCart" id="cartCount"></a></li>
+                         <li><asp:Panel ID="Panel1" runat="server"><a runat="server" href="~/Default">Home</a></asp:Panel></li>
+                         <li><asp:Panel ID="Panel2" runat="server"><a runat="server" href="~/Contact">Contact</a></asp:Panel></li>
+                         <li><asp:Panel ID="Panel3" runat="server"><a runat="server" href="~/ProductList">Catalogue</a></asp:Panel></li>
+                         <li><asp:Panel ID="Panel4" runat="server"><a runat="server" href="~/BrickDisplay">OBJ</a></asp:Panel></li>
+                         <li><asp:Panel ID="Panel5" runat="server"><a runat="server" href="~/BrickwithText">Brick</a></asp:Panel></li>
+                         <li><asp:Panel ID="Panel6" runat="server"><a runat="server" href="~/CubeWeb">USCube</a></asp:Panel></li>
+                         <li><asp:Panel ID="Panel7" runat="server"><a runat="server" href="~/PlaqueWeb">Plaque</a></asp:Panel></li>
+                         <li><asp:Panel ID="Panel8" runat="server"><a runat="server" id="adminLink" visible="false" 
+                            href="~/Admin/AdminPage">Admin</a></asp:Panel></li>
+                         <li><asp:Panel ID="Panel9" runat="server"><a runat="server" href="~/ShoppingCart" id="cartCount"></a></asp:Panel></li>
 
 
                     </ul>
