@@ -230,6 +230,7 @@
     <Content Include="js\THREEx.WindowResize.js" />
     <Content Include="js\newBrickRendering.js" />
     <Content Include="js\BrickRendering.html" />
+    <Content Include="PlaqueWeb.aspx" />
     <Content Include="ProductDetails.aspx" />
     <Content Include="ProductList.aspx" />
     <Content Include="js\DecBrick.obj" />
@@ -466,6 +467,13 @@
     <Compile Include="Models\ProductDatabaseInitializer.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\Product.cs" />
+    <Compile Include="PlaqueWeb.aspx.cs">
+      <DependentUpon>PlaqueWeb.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PlaqueWeb.aspx.designer.cs">
+      <DependentUpon>PlaqueWeb.aspx</DependentUpon>
+    </Compile>
     <Compile Include="ProductDetails.aspx.cs">
       <DependentUpon>ProductDetails.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
