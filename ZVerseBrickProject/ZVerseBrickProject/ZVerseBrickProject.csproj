@@ -194,6 +194,7 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstraporiginal.css" />
     <Content Include="Content\Site.css" />
+    <Content Include="CubeWeb.aspx" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
@@ -440,6 +441,13 @@
       <DependentUpon>Contact.aspx</DependentUpon>
     </Compile>
     <Compile Include="Controllers\ItemController.cs" />
+    <Compile Include="CubeWeb.aspx.cs">
+      <DependentUpon>CubeWeb.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CubeWeb.aspx.designer.cs">
+      <DependentUpon>CubeWeb.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
