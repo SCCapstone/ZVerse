@@ -113,6 +113,8 @@ function init() {
     //bind window to event listeners
     container.addEventListener('mousemove', onDocumentMouseMove, false);
     container.addEventListener('resize', onWindowResize, false);
+
+    container.addEventListener('mouseout', onDocumentMouseOut, false);
 }
 
 
@@ -130,6 +132,10 @@ function onDocumentMouseMove(event) {
     mouseY = (event.clientY - windowHalfY) / 10;
 }
 
+function onDocumentMouseOut(event) {
+    mouseX = 0;
+    mouseY = 0;
+}
 
 /*-----------------------------------------------------------------------------
 Name: animate()
