@@ -58,7 +58,7 @@
                         <li><a runat="server" href="~/BrickDisplay">BrickDisplay</a></li>
                         <li><a runat="server" href="~/BrickwithText">BrickwithText</a></li>
                         <li><a runat="server" href="~/Cube">GamecockCube</a></li>
-                        <li><a runat="server" href="~/Placque">Placque</a></li>
+                        <li><a runat="server" href="~/Plaque">Plaque</a></li>
                         <li><a runat="server" id="adminLink" visible="false" 
                             href="~/Admin/AdminPage">Admin</a></li>
                         <li><a runat="server" href="~/ShoppingCart" id="cartCount"></a></li>
