@@ -12,9 +12,52 @@ namespace ZVerseBrickProject.Models
         {
             GetCategories().ForEach(c => context.Categories.Add(c));
             GetProducts().ForEach(p => context.Products.Add(p));
-            GetItems().ForEach(i => context.Items.Add(i)); 
+            GetItems().ForEach(i => context.Items.Add(i));
+            GetBricks().ForEach(i => context.Bricks.Add(i)); 
+
         }
 
+
+        private static List<Brick> GetBricks()
+        {
+            var bricks = new List<Brick>
+            {
+                new Brick
+                {
+                    BrickID = 1,
+                    BrickName = "Mizzou Tradition Plaza Paved Replica",
+                    Description = "Pleased to offer our alumni an opportunity to take a piece of traditions plaza back to home or office. ",
+                    ImagePath="brick.jpg",
+                    UnitPrice = 75.00,
+                    JSPath = "newBrickRendering.js"
+
+                },
+                new Brick
+                {
+                    BrickID = 2,
+                    BrickName = "Gamecocks Cube",
+                    Description = "Proud to be Gamecocks. Hurry and purchase this wonderful brick with this 99% discount off!",                    
+                    UnitPrice = 1.00,
+                    ImagePath="GamecockCube.jpg",
+                    JSPath = "Gamecock.js"
+
+                },
+
+                  new Brick
+                {
+                    BrickID = 3,
+                    BrickName = "Clemson Wooden Plaza",
+                    Description = "Proud to be Clemson Fan. Hurry and purchase this wonderful brick with this 99% discount off!",
+                    UnitPrice = 1.00,
+                    ImagePath="pine_blankframe.jpg",
+                    JSPath = "Plaque.js"
+
+                },
+
+            };
+
+            return bricks;  
+        }
         
 
         private static List<Category> GetCategories()
@@ -162,6 +205,26 @@ namespace ZVerseBrickProject.Models
                     ImagePath="image13.jpg",
                     UnitPrice = 75.00,
                     CategoryID = 3
+                },
+
+                new Product
+                {
+                    ProductID = 14,
+                    ProductName = "Gamecocks Cube Brick",
+                    Description = "Proud to be Gamecocks. Hurry and purchase this wonderful brick with this 99% discount off!",
+                    ImagePath="image14.jpg",
+                    UnitPrice = 1.00,
+                    CategoryID = 1
+                },
+
+                  new Product
+                {
+                    ProductID = 15,
+                    ProductName = "Clemson Wooden Plaza",
+                    Description = "Proud to be Clemson Fan. Hurry and purchase this wonderful brick with this 99% discount off!",
+                    ImagePath="image15.jpg",
+                    UnitPrice = 11.00,
+                    CategoryID = 2
                 },
 
             };
