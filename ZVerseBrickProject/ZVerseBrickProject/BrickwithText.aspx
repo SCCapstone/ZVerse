@@ -19,7 +19,7 @@ Output Parameters: Passes the user input from the text box to external
         #canvas{
             background-color: #E6F2FF;
             width:700px;
-            height: 400px;
+            height: 500px;
             margin: 0 30px 0 0;
             position: static;
             top: 10px;
