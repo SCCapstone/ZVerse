@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Plaque.aspx.cs" Inherits="ZVerseBrickProject.Placque" %>
+﻿<%@ Page Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="PlaqueWeb.aspx.cs" Inherits="ZVerseBrickProject.Placque" %>
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
 <!-----------------------------------------------------------------------------
 Name: BrickwithText.aspx
