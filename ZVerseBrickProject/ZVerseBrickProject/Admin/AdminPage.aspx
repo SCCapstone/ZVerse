@@ -13,4 +13,18 @@
         <asp:Label runat="server" id="StatusLabel" text="" />
     </div>   
 
+    <div class="row">
+            <h2>Our current available models include:</h2>
+            
+            <p>
+                <a class="btn btn-default" href="http://zverse.azurewebsites.net/BrickWithText"> BrickModel &raquo;</a>
+            </p>
+        <p>
+            <a class="btn btn-default" href="http://zverse.azurewebsites.net/CubeWeb"> GamecockCube &raquo;</a>
+        </p>
+          <p>
+            <a class="btn btn-default" href="http://zverse.azurewebsites.net/PlaqueWeb"> Plaque &raquo;</a>
+        </p>
+        </div>
+
 </asp:Content>

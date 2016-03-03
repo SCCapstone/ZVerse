@@ -279,14 +279,12 @@
     <Content Include="Images\productImages\image12.jpg" />
     <Content Include="Images\productImages\image13.jpg" />
     <Content Include="Images\zverselogo.jpg" />
-    <Content Include="index2.html" />
     <Content Include="JavaScriptProofOfConcept.html" />
     <Content Include="js\brick.jpg" />
     <Content Include="js\bricks.jpg" />
     <Content Include="js\fonts\font1.js" />
     <Content Include="js\Gamecock.js" />
     <Content Include="js\GamecockCube.jpg" />
-    <Content Include="js\index2.html" />
     <Content Include="js\MTLLoader.js" />
     <Content Include="js\OBJLoader.js" />
     <Content Include="js\OBJMTLLoader.js" />
