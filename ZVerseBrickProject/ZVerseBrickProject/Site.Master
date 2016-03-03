@@ -55,9 +55,9 @@
                         <li><a runat="server" href="~/Default">Home</a></li>
                         <li><a runat="server" href="~/Contact">Contact</a></li>
                         <li><a runat="server" href="~/ProductList">Catalogue</a></li>
-                        <li><a runat="server" href="~/BrickDisplay">BrickDisplay</a></li>
-                        <li><a runat="server" href="~/BrickwithText">BrickwithText</a></li>
-                        <li><a runat="server" href="~/CubeWeb">GamecockCube</a></li>
+                        <li><a runat="server" href="~/BrickDisplay">OBJ</a></li>
+                        <li><a runat="server" href="~/BrickwithText">Brick</a></li>
+                        <li><a runat="server" href="~/CubeWeb">USCube</a></li>
                         <li><a runat="server" href="~/PlaqueWeb">Plaque</a></li>
                         <li><a runat="server" id="adminLink" visible="false" 
                             href="~/Admin/AdminPage">Admin</a></li>
@@ -74,7 +74,7 @@
                         </AnonymousTemplate>
                         <LoggedInTemplate>
                             <ul class="nav navbar-nav navbar-right">
-                                <li><a runat="server" href="~/Account/Manage" title="Manage your account">Hello, <%: Context.User.Identity.GetUserName()  %> !</a></li>
+                                <li><a runat="server" href="~/Account/Manage" title="Manage your account">Welcome!</a></li>
                                 <li>
                                     <asp:LoginStatus runat="server" LogoutAction="Redirect" LogoutText="Log off" LogoutPageUrl="~/" OnLoggingOut="Unnamed_LoggingOut" />
                                 </li>

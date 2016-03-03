@@ -19,7 +19,7 @@ Output Parameters: Passes the user input from the text box to external
         #canvas{
             background-color: #E6F2FF;
             width:700px;
-            height: 400px;
+            height: 500px;
             margin: 0 30px 0 0;
             position: static;
             top: 10px;
@@ -47,7 +47,7 @@ Output Parameters: Passes the user input from the text box to external
             <br />
             <br />
             <p>
-            Please complete the following to add text to the break. May need to hit enter to have your text render on the brick
+            Please complete the following to add text to the break
             </p>
             <!--Top line text box, calls getText1() in newBrickRendering.js on key press or key up-->
             <div class="textBoxLine">
