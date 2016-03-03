@@ -194,6 +194,7 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstraporiginal.css" />
     <Content Include="Content\Site.css" />
+    <Content Include="CubeWeb.aspx" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
@@ -213,15 +214,17 @@
     <Content Include="Images\productImages\image12.jpg" />
     <Content Include="Images\productImages\image13.jpg" />
     <Content Include="Images\zverselogo.jpg" />
-    <Content Include="index2.html" />
     <Content Include="js\brick.jpg" />
     <Content Include="js\bricks.jpg" />
     <Content Include="js\fonts\font1.js" />
-    <Content Include="js\index2.html" />
+    <Content Include="js\Gamecock.js" />
+    <Content Include="js\GamecockCube.jpg" />
     <Content Include="js\MTLLoader.js" />
     <Content Include="js\OBJLoader.js" />
     <Content Include="js\OBJMTLLoader.js" />
     <Content Include="js\OrbitControls.js" />
+    <Content Include="js\pine_blankframe.jpg" />
+    <Content Include="js\Plaque.js" />
     <Content Include="js\script.js" />
     <Content Include="js\stats.min.js" />
     <Content Include="js\three.min.js" />
@@ -229,6 +232,7 @@
     <Content Include="js\THREEx.WindowResize.js" />
     <Content Include="js\newBrickRendering.js" />
     <Content Include="js\BrickRendering.html" />
+    <Content Include="PlaqueWeb.aspx" />
     <Content Include="ProductDetails.aspx" />
     <Content Include="ProductList.aspx" />
     <Content Include="js\DecBrick.obj" />
@@ -440,6 +444,13 @@
       <DependentUpon>Contact.aspx</DependentUpon>
     </Compile>
     <Compile Include="Controllers\ItemController.cs" />
+    <Compile Include="CubeWeb.aspx.cs">
+      <DependentUpon>CubeWeb.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CubeWeb.aspx.designer.cs">
+      <DependentUpon>CubeWeb.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -458,6 +469,13 @@
     <Compile Include="Models\ProductDatabaseInitializer.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\Product.cs" />
+    <Compile Include="PlaqueWeb.aspx.cs">
+      <DependentUpon>PlaqueWeb.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PlaqueWeb.aspx.designer.cs">
+      <DependentUpon>PlaqueWeb.aspx</DependentUpon>
+    </Compile>
     <Compile Include="ProductDetails.aspx.cs">
       <DependentUpon>ProductDetails.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
