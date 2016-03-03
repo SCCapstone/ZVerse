@@ -31,9 +31,9 @@ var text3 = '';
 var dynamicTexture = new THREEx.DynamicTexture(512, 512);
 var dynamicTexture1 = new THREEx.DynamicTexture(512, 512);
 var dynamicTexture2 = new THREEx.DynamicTexture(512, 512);
-var geometry1 = new THREE.CubeGeometry(4.9, 3, 3);
-var geometry2 = new THREE.CubeGeometry(4.9, 3, 3);
-var geometry3 = new THREE.CubeGeometry(4.9, 3, 3);
+var geometry1 = new THREE.CubeGeometry(5, 5, 5);
+var geometry2 = new THREE.CubeGeometry(5, 5, 5);
+var geometry3 = new THREE.CubeGeometry(5, 5, 5);
 var material1 = new THREE.MeshBasicMaterial({ map: dynamicTexture.texture });
 var material2 = new THREE.MeshBasicMaterial({ map: dynamicTexture1.texture });
 var material3 = new THREE.MeshBasicMaterial({ map: dynamicTexture2.texture });
@@ -62,7 +62,7 @@ function init() {
 
     //load the brick model and texture
     var texture = new THREE.TextureLoader().load("js/GamecockCube.jpg");
-    var geometry = new THREE.CubeGeometry(3, 3, 3); //width, height, depth
+    var geometry = new THREE.CubeGeometry(5, 5, 5); //width, height, depth
     var material = new THREE.MeshBasicMaterial({ map: texture });
     mesh = new THREE.Mesh(geometry, material);
     scene.add(mesh);
@@ -71,7 +71,8 @@ function init() {
     var dynamicTexture = new THREEx.DynamicTexture(512, 512);
     dynamicTexture.context.font = "bolder 80px Verdana";
     dynamicTexture.drawText(text1, undefined, 140, 'black');
-    var geometry1 = new THREE.CubeGeometry(4.9, 3, 3);
+    //var geometry1 = new THREE.CubeGeometry(4, 2.5, 2.9);
+    var geometry1 = new THREE.CubeGeometry(5, 5, 5);
     var material1 = new THREE.MeshBasicMaterial({ map: dynamicTexture.texture });
     material1.transparent = true;
     material1.polygonOffset = true;
@@ -83,7 +84,7 @@ function init() {
     var dynamicTexture1 = new THREEx.DynamicTexture(512, 512);
     dynamicTexture1.context.font = "bolder 80px Verdana";
     dynamicTexture1.drawText(text2, undefined, 280, 'black');
-    var geometry2 = new THREE.CubeGeometry(4.9, 3, 3);
+    var geometry2 = new THREE.CubeGeometry(5, 5, 5);
     var material2 = new THREE.MeshBasicMaterial({ map: dynamicTexture1.texture });
     material2.transparent = true;
     material2.polygonOffset = true;
@@ -95,7 +96,7 @@ function init() {
     var dynamicTexture2 = new THREEx.DynamicTexture(512, 512);
     dynamicTexture2.context.font = "bolder 80px Verdana";
     dynamicTexture2.drawText(text3, undefined, 420, 'black');
-    var geometry3 = new THREE.CubeGeometry(4.9, 3, 3);
+    var geometry3 = new THREE.CubeGeometry(5, 5, 5);
     var material3 = new THREE.MeshBasicMaterial({ map: dynamicTexture2.texture });
     material3.transparent = true;
     material3.polygonOffset = true;
