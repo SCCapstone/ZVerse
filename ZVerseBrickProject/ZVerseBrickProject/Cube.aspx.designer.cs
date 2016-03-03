@@ -10,7 +10,7 @@
 namespace ZVerseBrickProject {
     
     
-    public partial class extraModel01 {
+    public partial class Cube {
         
         /// <summary>
         /// textBox1 control.

@@ -61,7 +61,7 @@ function init() {
     scene.add(light);
 
     //load the brick model and texture
-    var texture = new THREE.TextureLoader().load("js/CarolinaGamecocks.jpg");
+    var texture = new THREE.TextureLoader().load("js/GamecockCube.jpg");
     var geometry = new THREE.CubeGeometry(3, 3, 3); //width, height, depth
     var material = new THREE.MeshBasicMaterial({ map: texture });
     mesh = new THREE.Mesh(geometry, material);
