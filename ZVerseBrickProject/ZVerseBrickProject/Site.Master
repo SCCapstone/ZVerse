@@ -11,7 +11,7 @@
     <asp:PlaceHolder runat="server">
         <%: Scripts.Render("~/bundles/modernizr") %>
     </asp:PlaceHolder>
-    <webopt:bundlereference runat="server" path="~/Content/css" />
+    <webopt:BundleReference runat="server" Path="~/Content/css" />
     <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
 
 </head>
@@ -34,7 +34,7 @@
                 <asp:ScriptReference Name="WebParts.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebParts.js" />
                 <asp:ScriptReference Name="Focus.js" Assembly="System.Web" Path="~/Scripts/WebForms/Focus.js" />
                 <asp:ScriptReference Name="WebFormsBundle" />
-                <%--Site Scripts--%>
+                <%--Site Scripts--%>         
             </Scripts>
         </asp:ScriptManager>
 
@@ -48,8 +48,7 @@
                     </button>
 
 
-                    <a class="navbar-brand" runat="server" href="~/Default"> 
-                    </a>
+                    <a class="navbar-brand" runat="server" href="~/Default"></a>
                 </div>
                 <div class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
@@ -58,6 +57,8 @@
                         <li><a runat="server" href="~/ProductList">Catalogue</a></li>
                         <li><a runat="server" href="~/BrickDisplay">BrickDisplay</a></li>
                         <li><a runat="server" href="~/BrickwithText">BrickwithText</a></li>
+                        <li><a runat="server" href="~/Cube">GamecockCube</a></li>
+                        <li><a runat="server" href="~/Plaque">Plaque</a></li>
                         <li><a runat="server" id="adminLink" visible="false" 
                             href="~/Admin/AdminPage">Admin</a></li>
                         <li><a runat="server" href="~/ShoppingCart" id="cartCount"></a></li>
@@ -83,7 +84,7 @@
                 </div>
             </div>
         </div>
-   
+
 
         <div class="container body-content">
             <asp:ContentPlaceHolder ID="MainContent" runat="server">

@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Brick with Text" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="BrickwithText.aspx.cs" Inherits="ZVerseBrickProject.About" %>
+﻿<%@ Page Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Plaque.aspx.cs" Inherits="ZVerseBrickProject.Placque" %>
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
 <!-----------------------------------------------------------------------------
 Name: BrickwithText.aspx
@@ -19,7 +19,7 @@ Output Parameters: Passes the user input from the text box to external
         #canvas{
             background-color: #E6F2FF;
             width:700px;
-            height: 500px;
+            height: 400px;
             margin: 0 30px 0 0;
             position: static;
             top: 10px;
@@ -47,7 +47,7 @@ Output Parameters: Passes the user input from the text box to external
             <br />
             <br />
             <p>
-            Please complete the following to add text to the break
+            Please complete the following to add text to the break. May need to hit enter to have your text render on the brick
             </p>
             <!--Top line text box, calls getText1() in newBrickRendering.js on key press or key up-->
             <div class="textBoxLine">
@@ -93,6 +93,6 @@ Output Parameters: Passes the user input from the text box to external
     <script src="js/three.min.js"></script>
     <!--Containing file for brick and text rendering functions-->
     <!--Note this js file must be at the end of div content-->
-    <script src="js/newBrickRendering.js"></script>
+    <script src="js/Plaque.js"></script>
 
 </asp:Content>
