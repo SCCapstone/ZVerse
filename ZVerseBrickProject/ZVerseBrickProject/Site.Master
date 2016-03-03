@@ -50,30 +50,30 @@
 
                     <a class="navbar-brand" runat="server" href="~/Default"></a>
                 </div>
-                <div class="navbar-collapse collapse">
+                <div class="navbar-collapse collapse" style="margin-top:15px">
                     <ul class="nav navbar-nav">
-                        <li><a runat="server" href="~/Default">Home</a></li>
-                        <li><a runat="server" href="~/Contact">Contact</a></li>
-                        <li><a runat="server" href="~/ProductList">Catalogue</a></li>
-                        <li><a runat="server" href="~/BrickDisplay">OBJ</a></li>
-                        <li><a runat="server" href="~/BrickwithText">Brick</a></li>
-                        <li><a runat="server" href="~/CubeWeb">USCube</a></li>
-                        <li><a runat="server" href="~/PlaqueWeb">Plaque</a></li>
-                        <li><a runat="server" id="adminLink" visible="false" 
-                            href="~/Admin/AdminPage">Admin</a></li>
-                        <li><a runat="server" href="~/ShoppingCart" id="cartCount"></a></li>
+                         <li><asp:Panel ID="Panel1" runat="server"><a runat="server" href="~/Default">Home</a>&nbsp&nbsp</asp:Panel></li>
+                         <li><asp:Panel ID="Panel2" runat="server"><a runat="server" href="~/Contact">Contact</a>&nbsp&nbsp</asp:Panel></li>
+                         <li><asp:Panel ID="Panel3" runat="server"><a runat="server" href="~/ProductList">Catalogue</a>&nbsp&nbsp</asp:Panel></li>
+                         <li><asp:Panel ID="Panel4" runat="server"><a runat="server" href="~/BrickDisplay">OBJ</a>&nbsp&nbsp</asp:Panel></li>
+                         <li><asp:Panel ID="Panel5" runat="server"><a runat="server" href="~/BrickwithText">Brick</a>&nbsp&nbsp</asp:Panel></li>
+                         <li><asp:Panel ID="Panel6" runat="server"><a runat="server" href="~/CubeWeb">USCube</a>&nbsp&nbsp</asp:Panel></li>
+                         <li><asp:Panel ID="Panel7" runat="server"><a runat="server" href="~/PlaqueWeb">Plaque</a>&nbsp&nbsp</asp:Panel></li>
+                         <li><asp:Panel ID="Panel8" runat="server"><a runat="server" id="adminLink" visible="false" 
+                            href="~/Admin/AdminPage">Admin</a>&nbsp&nbsp</asp:Panel></li>
+                         <li><asp:Panel ID="Panel9" runat="server"><a runat="server" href="~/ShoppingCart" id="cartCount"></a>&nbsp&nbsp</asp:Panel></li>
 
 
                     </ul>
                     <asp:LoginView runat="server" ViewStateMode="Disabled">
                         <AnonymousTemplate>
-                            <ul class="nav navbar-nav navbar-right">
+                            <ul class="nav navbar-nav navbar-right" style="margin-top:-15px">
                                 <li><a runat="server" href="~/Account/Register">Register</a></li>
                                 <li><a runat="server" href="~/Account/Login">Log in</a></li>
                             </ul>
                         </AnonymousTemplate>
                         <LoggedInTemplate>
-                            <ul class="nav navbar-nav navbar-right">
+                            <ul class="nav navbar-nav navbar-right" style="margin-top:-15px">
                                 <li><a runat="server" href="~/Account/Manage" title="Manage your account">Welcome!</a></li>
                                 <li>
                                     <asp:LoginStatus runat="server" LogoutAction="Redirect" LogoutText="Log off" LogoutPageUrl="~/" OnLoggingOut="Unnamed_LoggingOut" />
