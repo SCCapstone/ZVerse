@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Placque.aspx.cs" Inherits="ZVerseBrickProject.Placque" %>
+﻿<%@ Page Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Plaque.aspx.cs" Inherits="ZVerseBrickProject.Placque" %>
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
 <!-----------------------------------------------------------------------------
 Name: BrickwithText.aspx
@@ -93,6 +93,6 @@ Output Parameters: Passes the user input from the text box to external
     <script src="js/three.min.js"></script>
     <!--Containing file for brick and text rendering functions-->
     <!--Note this js file must be at the end of div content-->
-    <script src="js/Placque.js"></script>
+    <script src="js/Plaque.js"></script>
 
 </asp:Content>
