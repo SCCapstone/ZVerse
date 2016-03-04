@@ -6,7 +6,6 @@
     <h1>Welcome, Admin!</h1>
     <hr />
     <h3>Manage your models here</h3>
-    <br />
 
     <div id="uploadForm">
         <br />
@@ -16,27 +15,27 @@
         <br />
         <br />
         <asp:Label runat="server" ID="StatusLabel" Text="" />
-    </div>
+  
 
 
-    <div class="row">
-        <h2>Our current available models include:</h2>
+   
+        <h3>Our current available models include:</h3>
+        Clicking hide will take the existing model off the BrickCatalogue and the Tabs. <br />
+        You must click to another page to see the changes. <br /> <br />
+         <asp:ListView ID="bricklist" ItemType="ZVerseBrickProject.Models.Brick" runat="server" SelectMethod="GetBricks">
+             <ItemTemplate>
+                 <p>
+                     <a class="btn btn-default" href="/TestDisplay2.aspx?brickID=<%#:Item.BrickID%>">
+                         <%#:Item.BrickName %>
+                     </a>
+                     &nbsp&nbsp
+                                <asp:Button runat="server" ID="Show" Text="Show" CommandArgument="<%#:Item.BrickID %>" OnCommand="Show_Click" />
+                     <asp:Button runat="server" ID="Hide" Text="Hide" CommandArgument="<%#:Item.BrickID %>" OnCommand="Hide_Click" />
+                 </p>
+             </ItemTemplate>
+             <ItemSeparatorTemplate>&nbsp&nbsp</ItemSeparatorTemplate>
+         </asp:ListView>
+  
 
-        <p>
-            <a class="btn btn-default" href="http://zverse.azurewebsites.net/BrickWithText">BrickModel &raquo;</a>
-            <asp:Button runat="server" ID="Show5" Text="Show" OnClick="Show5_Click" />
-            <asp:Button runat="server" ID="Hide5" Text="Hide" OnClick="Hide5_Click" />
-        </p>
-        <p>
-            <a class="btn btn-default" href="http://zverse.azurewebsites.net/CubeWeb">GamecockCube &raquo;</a>
-            <asp:Button runat="server" ID="Show6" Text="Show" OnClick="Show6_Click" />
-            <asp:Button runat="server" ID="Hide6" Text="Hide" OnClick="Hide6_Click" />
-        </p>
-        <p>
-            <a class="btn btn-default" href="http://zverse.azurewebsites.net/PlaqueWeb">Plaque &raquo;</a>
-            <asp:Button runat="server" ID="Show7" Text="Show" OnClick="Show7_Click" />
-            <asp:Button runat="server" ID="Hide7" Text="Hide" OnClick="Hide7_Click" />
-        </p>
-    </div>
-
+          </div>
 </asp:Content>

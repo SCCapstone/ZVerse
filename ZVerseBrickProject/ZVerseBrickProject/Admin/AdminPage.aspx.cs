@@ -1,11 +1,13 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using System.IO;
+using ZVerseBrickProject.Models;
+using System.Data.Entity.Infrastructure;
 
 namespace ZVerseBrickProject.Admin
 {
@@ -13,87 +15,42 @@ namespace ZVerseBrickProject.Admin
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-           
+
         }
 
-        protected void Hide5_Click(object sender, EventArgs e)
+        public IQueryable<Brick> GetBricks()
         {
-            try
-            {
-                Panel p = (Panel)Master.FindControl("Panel5");
-                p.Visible = false;
-            }
-            catch (Exception ex)
-            {
-                StatusLabel.Text = "Task could not be completed, the following error occured: " + ex.Message;
-            }
-
+            var _db = new ZVerseBrickProject.Models.ProductContext();
+            IQueryable<Brick> query = _db.Bricks;
+            return query;
         }
-        protected void Hide6_Click(object sender, EventArgs e)
+
+        //This function will set the brickmodel visible property to 
+        // be false to hide the model from tab and catalogue
+        protected void Hide_Click(object sender, CommandEventArgs e)
         {
-            try
-            {
-                Panel p = (Panel)Master.FindControl("Panel6");
-                p.Visible = false;
-            }
-            catch (Exception ex)
-            {
-                StatusLabel.Text = "Task could not be completed, the following error occured: " + ex.Message;
-            }
+            int brickid = Int32.Parse(e.CommandArgument.ToString());
+            var _db = new ZVerseBrickProject.Models.ProductContext();
+            Brick thebrick; 
+            thebrick = _db.Bricks.Find(brickid);
+            thebrick.isVisible = false;
+            _db.SaveChanges(); 
 
         }
-        protected void Hide7_Click(object sender, EventArgs e)
+
+        //This function will set the brickmodel visible property to 
+        // be true to reveal the model on the tab and catalogue. 
+        protected void Show_Click(object sender, CommandEventArgs e)
         {
-            try
-            {
-                Panel p = (Panel)Master.FindControl("Panel7");
-                p.Visible = false;
-            }
-            catch (Exception ex)
-            {
-                StatusLabel.Text = "Task could not be completed, the following error occured: " + ex.Message;
-            }
+            int brickid = Int32.Parse(e.CommandArgument.ToString());
+            var _db = new ZVerseBrickProject.Models.ProductContext();
+            Brick thebrick;
+            thebrick = _db.Bricks.Find(brickid);
+            thebrick.isVisible = true;
+            _db.SaveChanges();
 
         }
-        protected void Show5_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                Panel q = (Panel)Master.FindControl("Panel5");
-                q.Visible = true;
-            }
-            catch (Exception ex)
-            {
-                StatusLabel.Text = "Task could not be completed, the following error occured: " + ex.Message;
-            }
-
-        }
-        protected void Show6_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                Panel q = (Panel)Master.FindControl("Panel6");
-                q.Visible = true;
-            }
-            catch (Exception ex)
-            {
-                StatusLabel.Text = "Task could not be completed, the following error occured: " + ex.Message;
-            }
-
-        }
-        protected void Show7_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                Panel q = (Panel)Master.FindControl("Panel7");
-                q.Visible = true;
-            }
-            catch (Exception ex)
-            {
-                StatusLabel.Text = "Task could not be completed, the following error occured: " + ex.Message;
-            }
-
-        }
+               
         protected void UploadButton_Click(object sender, EventArgs e)
         {
             if (FileUploadControl.HasFile)
