@@ -76,6 +76,8 @@ namespace ZVerseBrickProject
             {
                 adminLink.Visible = true;
             }
+
+           
         }
 
         protected void Page_PreRender(object sender, EventArgs e)
@@ -91,6 +93,15 @@ namespace ZVerseBrickProject
         {
             var _db = new ZVerseBrickProject.Models.ProductContext();
             IQueryable<Category> query = _db.Categories;
+            return query;
+        }
+
+
+        public IQueryable<Brick> GetBricks()
+        {
+            var _db = new ZVerseBrickProject.Models.ProductContext();
+            IQueryable<Brick> query = _db.Bricks;
+            query = query.Where(b => b.isVisible == true);
             return query;
         }
 
