@@ -253,13 +253,11 @@
     <Content Include="Account\ResetPasswordConfirmation.aspx" />
     <Content Include="Account\TwoFactorAuthenticationSignIn.aspx" />
     <Content Include="Account\VerifyPhoneNumber.aspx" />
-    <Content Include="BrickwithText.aspx" />
     <Content Include="Checkout.aspx" />
     <Content Include="Contact.aspx" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstraporiginal.css" />
     <Content Include="Content\Site.css" />
-    <Content Include="CubeWeb.aspx" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
@@ -278,6 +276,8 @@
     <Content Include="Images\productImages\image11.jpg" />
     <Content Include="Images\productImages\image12.jpg" />
     <Content Include="Images\productImages\image13.jpg" />
+    <Content Include="Images\productImages\image14.jpg" />
+    <Content Include="Images\productImages\image15.jpg" />
     <Content Include="Images\zverselogo.jpg" />
     <Content Include="JavaScriptProofOfConcept.html" />
     <Content Include="js\brick.jpg" />
@@ -298,7 +298,11 @@
     <Content Include="js\THREEx.WindowResize.js" />
     <Content Include="js\newBrickRendering.js" />
     <Content Include="js\BrickRendering.html" />
-    <Content Include="PlaqueWeb.aspx" />
+    <Content Include="oldfiles\BrickwithText.aspx" />
+    <Content Include="oldfiles\CubeWeb.aspx" />
+    <Content Include="oldfiles\Final.aspx" />
+    <Content Include="oldfiles\JavaScriptProofOfConcept.html" />
+    <Content Include="oldfiles\PlaqueWeb.aspx" />
     <Content Include="ProductDetails.aspx" />
     <Content Include="ProductList.aspx" />
     <Content Include="js\DecBrick.obj" />
@@ -344,6 +348,8 @@
     <Content Include="Global.asax" />
     <Content Include="ShoppingCart.aspx" />
     <Content Include="Site.Master" />
+    <Content Include="TestDisplay.aspx" />
+    <Content Include="TestList.aspx" />
     <Content Include="three.js" />
     <Content Include="ViewSwitcher.ascx" />
     <Content Include="Web.config">
@@ -493,13 +499,6 @@
     <Compile Include="App_Start\IdentityConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
-    <Compile Include="BrickwithText.aspx.cs">
-      <DependentUpon>BrickwithText.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="BrickwithText.aspx.designer.cs">
-      <DependentUpon>BrickwithText.aspx</DependentUpon>
-    </Compile>
     <Compile Include="Checkout.aspx.cs">
       <DependentUpon>Checkout.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -515,13 +514,6 @@
       <DependentUpon>Contact.aspx</DependentUpon>
     </Compile>
     <Compile Include="Controllers\ItemController.cs" />
-    <Compile Include="CubeWeb.aspx.cs">
-      <DependentUpon>CubeWeb.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="CubeWeb.aspx.designer.cs">
-      <DependentUpon>CubeWeb.aspx</DependentUpon>
-    </Compile>
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -533,6 +525,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Controllers\ShoppingCartFunctions.cs" />
+    <Compile Include="Models\Brick.cs" />
     <Compile Include="Models\Category.cs" />
     <Compile Include="Models\CartItem.cs" />
     <Compile Include="Models\Item.cs" />
@@ -540,11 +533,32 @@
     <Compile Include="Models\ProductDatabaseInitializer.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\Product.cs" />
-    <Compile Include="PlaqueWeb.aspx.cs">
+    <Compile Include="oldfiles\BrickwithText.aspx.cs">
+      <DependentUpon>BrickwithText.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="oldfiles\BrickwithText.aspx.designer.cs">
+      <DependentUpon>BrickwithText.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="oldfiles\CubeWeb.aspx.cs">
+      <DependentUpon>CubeWeb.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="oldfiles\CubeWeb.aspx.designer.cs">
+      <DependentUpon>CubeWeb.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="oldfiles\Final.aspx.cs">
+      <DependentUpon>Final.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="oldfiles\Final.aspx.designer.cs">
+      <DependentUpon>Final.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="oldfiles\PlaqueWeb.aspx.cs">
       <DependentUpon>PlaqueWeb.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="PlaqueWeb.aspx.designer.cs">
+    <Compile Include="oldfiles\PlaqueWeb.aspx.designer.cs">
       <DependentUpon>PlaqueWeb.aspx</DependentUpon>
     </Compile>
     <Compile Include="ProductDetails.aspx.cs">
@@ -577,6 +591,20 @@
       <DependentUpon>Site.Mobile.Master</DependentUpon>
     </Compile>
     <Compile Include="Startup.cs" />
+    <Compile Include="TestDisplay.aspx.cs">
+      <DependentUpon>TestDisplay.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TestDisplay.aspx.designer.cs">
+      <DependentUpon>TestDisplay.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TestList.aspx.cs">
+      <DependentUpon>TestList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TestList.aspx.designer.cs">
+      <DependentUpon>TestList.aspx</DependentUpon>
+    </Compile>
     <Compile Include="UserRoles\RoleActions.cs" />
     <Compile Include="ViewSwitcher.ascx.cs">
       <DependentUpon>ViewSwitcher.ascx</DependentUpon>
