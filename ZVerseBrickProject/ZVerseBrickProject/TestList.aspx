@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Bricks with Text" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="TestList.aspx.cs" Inherits="ZVerseBrickProject.TestForm" %>
+﻿<%@ Page Title="Models with Text" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="TestList.aspx.cs" Inherits="ZVerseBrickProject.TestForm" %>
 
 <asp:Content ID="Content3" ContentPlaceHolderID="MainContent" runat="server">
     <ol style="visibility: hidden;"></ol>

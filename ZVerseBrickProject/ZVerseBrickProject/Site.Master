@@ -61,10 +61,10 @@
                             <asp:Panel ID="Panel3" runat="server"><a runat="server" href="~/ProductList">Catalogue</a>&nbsp&nbsp</asp:Panel>
                         </li>
                         <li>
-                            <asp:Panel ID="Pane20" runat="server"><a runat="server" href="~/TestList">BrickCatalogue</a>&nbsp&nbsp</asp:Panel>
+                            <asp:Panel ID="Pane20" runat="server"><a runat="server" href="~/TestList">Custom Objects</a>&nbsp&nbsp</asp:Panel>
                         </li>
                         <li>
-                            <asp:Panel ID="Panel4" runat="server"><a runat="server" href="~/BrickDisplay">SampleBrick</a>&nbsp&nbsp</asp:Panel>
+                            <asp:Panel ID="Panel4" runat="server"><a runat="server" href="~/BrickDisplay">Sample Brick</a>&nbsp&nbsp</asp:Panel>
                         </li>
                         <li>
                             <asp:Panel ID="Panel9" runat="server"><a runat="server" href="~/ShoppingCart" id="cartCount"></a>&nbsp&nbsp</asp:Panel>
