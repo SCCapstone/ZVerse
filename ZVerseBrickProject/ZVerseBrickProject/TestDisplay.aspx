@@ -46,7 +46,7 @@
             <br />
             <br />
             <p>
-            Please complete the following to add text to the break. May need to hit enter to have your text render on the brick
+            Please complete the following to add text to your object!
             </p>
             <!--Top line text box, calls getText1() in newBrickRendering.js on key press or key up-->
             <div class="textBoxLine">
