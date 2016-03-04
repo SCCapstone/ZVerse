@@ -21,6 +21,7 @@ namespace ZVerseBrickProject
         {
             var _db = new ZVerseBrickProject.Models.ProductContext();
             IQueryable<Brick> query = _db.Bricks;
+            query = query.Where(b => b.isVisible == true);
             return query;
         }
 

@@ -1,8 +1,7 @@
-﻿<%@ Page Title="TestLiSt" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="TestList.aspx.cs" Inherits="ZVerseBrickProject.TestForm" %>
-<asp:Content ID="Content3" ContentPlaceHolderID="MainContent" runat="server">
-     <ol style="visibility:hidden;"></ol>
-         
+﻿<%@ Page Title="Bricks with Text" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="TestList.aspx.cs" Inherits="ZVerseBrickProject.TestForm" %>
 
+<asp:Content ID="Content3" ContentPlaceHolderID="MainContent" runat="server">
+    <ol style="visibility: hidden;"></ol>
 
     <section>
         <div>
@@ -10,7 +9,7 @@
                 <h2><%: Page.Title %></h2>
             </hgroup>
 
-            <asp:ListView ID="BrickList" runat="server" 
+            <asp:ListView ID="BrickList" runat="server"
                 DataKeyNames="BrickID" GroupItemCount="3"
                 ItemType="ZVerseBrickProject.Models.Brick" SelectMethod="GetBricks">
                 <EmptyDataTemplate>
@@ -21,7 +20,7 @@
                     </table>
                 </EmptyDataTemplate>
                 <EmptyItemTemplate>
-                    <td/>
+                    <td />
                 </EmptyItemTemplate>
                 <GroupTemplate>
                     <tr id="itemPlaceholderContainer" runat="server">
@@ -29,17 +28,17 @@
                     </tr>
                 </GroupTemplate>
                 <ItemTemplate>
-                    <td class =" col-md-3"  runat="server">
-                        <table class ="table">
-                           <tr>
-                                <td class =" col-md-3">
-                                       <img src="js/<%#:Item.ImagePath%>"
-                                            width="280" height="210"  style="border: none; margin: auto; " /></a> 
-                                </td> 
+                    <td class=" col-md-3" runat="server">
+                        <table class="table">
+                            <tr>
+                                <td class=" col-md-3">
+                                    <img src="js/<%#:Item.ImagePath%>"
+                                        width="280" height="210" style="border: none; margin: auto;" /></a> 
+                                </td>
                             </tr>
                             <tr>
-                                <td class =" col-md-3">
-                                     <a href="TestDisplay2.aspx?brickID=<%#:Item.BrickID%>"> 
+                                <td class=" col-md-3">
+                                    <a href="TestDisplay.aspx?brickID=<%#:Item.BrickID%>">
                                         <span>
                                             <%#:Item.BrickName%>
                                         </span>
@@ -49,27 +48,27 @@
                                         <b>Price: </b><%#:String.Format("{0:c}", Item.UnitPrice)%>
                                     </span>
                                     <br />
-                    <!-- <a class="btn btn-success btn-sm" href="/AddToCart.aspx?productID=">               
+                                    <a class="btn btn-success btn-sm" href="/AddToCart.aspx?productID=<%#Item.BrickID %>">
                                         <span class="ProductListItem">
                                             <b>Add To Cart<b>
-                                        </span>    
-                                    </a>-->
+                                        </span>
+                                    </a>
 
                                 </td>
                             </tr>
                             <tr>
-                                <td class =" col-md-3">&nbsp;</td>
+                                <td class=" col-md-3">&nbsp;</td>
                             </tr>
                         </table>
                         </p>
                     </td>
                 </ItemTemplate>
                 <LayoutTemplate>
-                    <table style="width:100%;";>
+                    <table style="width: 100%;">
                         <tbody>
                             <tr>
                                 <td>
-                                    <table id="groupPlaceholderContainer" runat="server" style="width:100%">
+                                    <table id="groupPlaceholderContainer" runat="server" style="width: 100%">
                                         <tr id="groupPlaceholder"></tr>
                                     </table>
                                 </td>
@@ -82,6 +81,6 @@
                     </table>
                 </LayoutTemplate>
             </asp:ListView>
-         </div>
+        </div>
     </section>
 </asp:Content>
