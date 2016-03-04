@@ -279,7 +279,6 @@
     <Content Include="Images\productImages\image14.jpg" />
     <Content Include="Images\productImages\image15.jpg" />
     <Content Include="Images\zverselogo.jpg" />
-    <Content Include="JavaScriptProofOfConcept.html" />
     <Content Include="js\brick.jpg" />
     <Content Include="js\bricks.jpg" />
     <Content Include="js\fonts\font1.js" />

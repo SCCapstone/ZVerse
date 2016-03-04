@@ -66,9 +66,7 @@
                         <li>
                             <asp:Panel ID="Panel4" runat="server"><a runat="server" href="~/BrickDisplay">Sample Brick</a>&nbsp&nbsp</asp:Panel>
                         </li>
-                        <li>
-                            <asp:Panel ID="Panel9" runat="server"><a runat="server" href="~/ShoppingCart" id="cartCount"></a>&nbsp&nbsp</asp:Panel>
-                        </li>
+                       
                         <asp:ListView ID="bricklist" ItemType="ZVerseBrickProject.Models.Brick" runat="server" SelectMethod="GetBricks">
                             <ItemTemplate>
                                 <li>
@@ -82,6 +80,9 @@
                             </ItemTemplate>
                             <ItemSeparatorTemplate>&nbsp&nbsp</ItemSeparatorTemplate>
                         </asp:ListView>
+                         <li>
+                            <asp:Panel ID="Panel9" runat="server"><a runat="server" href="~/ShoppingCart" id="cartCount"></a>&nbsp&nbsp</asp:Panel>
+                        </li>
                         <li>
                             <asp:Panel ID="Panel8" runat="server">
                                 <a runat="server" id="adminLink" visible="false"

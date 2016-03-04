@@ -58,6 +58,15 @@ namespace ZVerseBrickProject {
         protected global::System.Web.UI.WebControls.Panel Panel4;
         
         /// <summary>
+        /// bricklist control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ListView bricklist;
+        
+        /// <summary>
         /// Panel9 control.
         /// </summary>
         /// <remarks>
@@ -74,15 +83,6 @@ namespace ZVerseBrickProject {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlAnchor cartCount;
-        
-        /// <summary>
-        /// bricklist control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.ListView bricklist;
         
         /// <summary>
         /// Panel8 control.
