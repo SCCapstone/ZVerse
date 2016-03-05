@@ -48,7 +48,7 @@ namespace ZVerseBrickProject.Models
                   new Brick
                 {
                     BrickID = 3,
-                    BrickName = "Clemson Plaza",
+                    BrickName = "Clemson Plaque",
                     Description = "Proud to be Clemson Fan. Hurry and purchase this wonderful brick with this 99% discount off!",
                     UnitPrice = 11.00,
                     ImagePath="pine_blankframe.jpg",
@@ -223,7 +223,7 @@ namespace ZVerseBrickProject.Models
                   new Product
                 {
                     ProductID = 3,
-                    ProductName = "Clemson Wooden Plaza",
+                    ProductName = "Clemson Wooden Plaque",
                     Description = "Proud to be Clemson Fan. Hurry and purchase this wonderful brick with this 99% discount off!",
                     ImagePath="image15.jpg",
                     UnitPrice = 11.00,
