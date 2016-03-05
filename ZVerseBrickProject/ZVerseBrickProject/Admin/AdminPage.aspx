@@ -20,7 +20,7 @@
 
    
         <h3>Our current available models include:</h3>
-        Clicking hide will take the existing model off the BrickCatalogue and the Tabs. <br />
+        Clicking hide will take the existing model off the Custom Objects and the Tabs. <br />
         Click the Update Website button when done with your changes! <br /> <br />
          <asp:ListView ID="bricklist" ItemType="ZVerseBrickProject.Models.Brick" runat="server" SelectMethod="GetBricks">
              <ItemTemplate>
@@ -35,9 +35,7 @@
              </ItemTemplate>
              <ItemSeparatorTemplate>&nbsp&nbsp</ItemSeparatorTemplate>
          </asp:ListView>
-   <p>
-                <a class="btn btn-default" href="http://zverse.azurewebsites.net">Update Website &raquo;</a>
-            </p>
-
+           <br />
+                <a class="btn btn-primary" href="/Default.aspx">Update Website</a>
           </div>
 </asp:Content>
