@@ -263,6 +263,7 @@
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="Account\Web.config" />
+    <Content Include="fonts\helvetiker_regular.typeface.js" />
     <Content Include="Images\productImages\image01.jpg" />
     <Content Include="Images\productImages\image02.jpg" />
     <Content Include="Images\productImages\image03.jpg" />

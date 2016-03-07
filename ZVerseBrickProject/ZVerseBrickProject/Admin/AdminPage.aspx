@@ -25,7 +25,7 @@
          <asp:ListView ID="bricklist" ItemType="ZVerseBrickProject.Models.Brick" runat="server" SelectMethod="GetBricks">
              <ItemTemplate>
                  <p>
-                     <a class="btn btn-default" href="/TestDisplay2.aspx?brickID=<%#:Item.BrickID%>">
+                     <a href="/TestDisplay.aspx?brickID=<%#:Item.BrickID%>">
                          <%#:Item.BrickName %>
                      </a>
                      &nbsp&nbsp
