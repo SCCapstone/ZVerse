@@ -103,14 +103,15 @@ function init() {
     mesh3 = new THREE.Mesh(geometry3, material3);
     scene.add(mesh3);
 
+
     //render the brick and text line textures
     renderer = new THREE.WebGLRenderer({alpha: 1});
     renderer.setSize(container.offsetWidth, container.offsetHeight);
     renderer.setClearColor(0xff0000, 0);
 
-container.appendChild(renderer.domElement);
+    container.appendChild(renderer.domElement);
 
-    //bind window to event listeners
+ //bind window to event listeners
 container.addEventListener('mousemove', onDocumentMouseMove, false);
 container.addEventListener('mouseout', onDocumentMouseOut, false);
     container.addEventListener('resize', onWindowResize, false);
