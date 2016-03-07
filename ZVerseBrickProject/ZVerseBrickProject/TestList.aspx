@@ -32,6 +32,7 @@
                         <table class="table">
                             <tr>
                                 <td class=" col-md-3">
+                                    <a href="TestDisplay.aspx?brickID=<%#:Item.BrickID%>">
                                     <img src="js/<%#:Item.ImagePath%>"
                                         width="280" height="210" style="border: none; margin: auto;" /></a> 
                                 </td>
