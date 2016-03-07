@@ -70,7 +70,7 @@ function init() {
     //initialize the texture for the first line of text
     var dynamicTexture = new THREEx.DynamicTexture(512, 512);
     dynamicTexture.context.font = "bolder 80px Verdana";
-    dynamicTexture.drawText(text1, undefined, 140, 'black');
+    dynamicTexture.drawText(text1, undefined, 140, 'cyan');
     //var geometry1 = new THREE.CubeGeometry(4, 2.5, 2.9);
     var geometry1 = new THREE.CubeGeometry(5, 5, 5);
     var material1 = new THREE.MeshBasicMaterial({ map: dynamicTexture.texture });
@@ -83,7 +83,7 @@ function init() {
     //initialize the texture for the second line of text
     var dynamicTexture1 = new THREEx.DynamicTexture(512, 512);
     dynamicTexture1.context.font = "bolder 80px Verdana";
-    dynamicTexture1.drawText(text2, undefined, 280, 'black');
+    dynamicTexture1.drawText(text2, undefined, 280, 'cyan');
     var geometry2 = new THREE.CubeGeometry(5, 5, 5);
     var material2 = new THREE.MeshBasicMaterial({ map: dynamicTexture1.texture });
     material2.transparent = true;
@@ -95,7 +95,7 @@ function init() {
     //initialize the texture for the third line of text
     var dynamicTexture2 = new THREEx.DynamicTexture(512, 512);
     dynamicTexture2.context.font = "bolder 80px Verdana";
-    dynamicTexture2.drawText(text3, undefined, 420, 'black');
+    dynamicTexture2.drawText(text3, undefined, 420, 'cyan');
     var geometry3 = new THREE.CubeGeometry(5, 5, 5);
     var material3 = new THREE.MeshBasicMaterial({ map: dynamicTexture2.texture });
     material3.transparent = true;
@@ -194,7 +194,7 @@ function getText1(text) {
     text1 = text;
     dynamicTexture.clear();
     dynamicTexture.context.font = "60px Verdana";
-    dynamicTexture.drawText(text1, undefined, 140, 'black');
+    dynamicTexture.drawText(text1, undefined, 140, '#A2B5CD');
     material1.transparent = true;
     material1.polygonOffset = true;
     material1.polygonOffsetFactor = -0.2;
@@ -217,7 +217,7 @@ function getText2(text) {
     text2 = text;
     dynamicTexture1.clear();
     dynamicTexture1.context.font = "60px Verdana";
-    dynamicTexture1.drawText(text2, undefined, 280, 'black');
+    dynamicTexture1.drawText(text2, undefined, 280, '#A2B5CD');
     material2.transparent = true;
     material2.polygonOffset = true;
     material2.polygonOffsetFactor = -0.2;
@@ -239,7 +239,7 @@ function getText3(text) {
     text3 = text;
     dynamicTexture2.clear();
     dynamicTexture2.context.font = "60px Verdana";
-    dynamicTexture2.drawText(text3, undefined, 420, 'black');
+    dynamicTexture2.drawText(text3, undefined, 420, '#A2B5CD');
     material3.transparent = true;
     material3.polygonOffset = true;
     material3.polygonOffsetFactor = -0.2;
