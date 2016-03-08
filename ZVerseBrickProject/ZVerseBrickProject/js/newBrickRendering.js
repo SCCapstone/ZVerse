@@ -17,6 +17,9 @@ var mouseY = 0;
 var container = container = document.getElementById('canvas');
 var windowHalfX = container.offsetWidth / 2;
 var windowHalfY = container.offsetHeight / 2;
+var radious = 1600;
+var theta = 45;
+var phi = 60;
 
 /*
 Variables to store the dynamic textures, geometries, and materials for the 
@@ -67,36 +70,13 @@ function init() {
     mesh = new THREE.Mesh(geometry, material);
     scene.add(mesh);
 
-    //// add 3D text
-    //var materialFront = new THREE.MeshBasicMaterial( { color: 0xff0000 } );
-    //var materialSide = new THREE.MeshBasicMaterial( { color: 0x000088 } );
-    //var materialArray = [ materialFront, materialSide ];
-    //var textGeom = new THREE.TextGeometry( "Hello, World!", 
-	//{
-	//    size: 30, height: 4, curveSegments: 3,
-	//    font: "helvetiker", weight: "bold", style: "normal",
-	//    bevelThickness: 1, bevelSize: 2, bevelEnabled: true,
-	//    material: 0, extrudeMaterial: 1
-	//});
-    //// font: helvetiker, gentilis, droid sans, droid serif, optimer
-    //// weight: normal, bold
-	
-    //var textMaterial = new THREE.MeshFaceMaterial(materialArray);
-    //var textMesh = new THREE.Mesh(textGeom, textMaterial );
-	
-    //textGeom.computeBoundingBox();
-    //var textWidth = textGeom.boundingBox.max.x - textGeom.boundingBox.min.x;
-	
-    //textMesh.position.set( -0.5 * textWidth, 50, 100 );
-    //textMesh.rotation.x = -Math.PI / 4;
-    //scene.add(textMesh);
 
     //initialize the texture for the first line of text
     var dynamicTexture = new THREEx.DynamicTexture(512, 512);
     dynamicTexture.context.font = "bolder 80px Verdana";
     dynamicTexture.drawText(text1, undefined, 140, 'black');
     var geometry1 = new THREE.CubeGeometry(4.9, 3, 3);
-    var material1 = new THREE.MeshBasicMaterial({ map: dynamicTexture.texture });
+    var material1 = new THREE.MeshBasicMaterial({ map: dynamicTexture.texture});
     material1.transparent = true;
     material1.polygonOffset = true;
     material1.polygonOffsetFactor = -0.2;
@@ -138,7 +118,7 @@ function init() {
  //bind window to event listeners
 container.addEventListener('mousemove', onDocumentMouseMove, false);
 container.addEventListener('mouseout', onDocumentMouseOut, false);
-    container.addEventListener('resize', onWindowResize, false);
+container.addEventListener('resize', onWindowResize, false);
 }
 
 
@@ -152,13 +132,14 @@ Output Parameters:
     mouseY - the y coordinate of the cursor on the screen
 -----------------------------------------------------------------------------*/
 function onDocumentMouseMove(event) {
-    mouseX = (event.clientX - windowHalfX) / 10;
-    mouseY = (event.clientY - windowHalfY) / 10;
+    mouseX = (event.clientX - windowHalfX) /10;
+    mouseY = (event.clientY - windowHalfY) /10;
 }
 function onDocumentMouseOut(event) {
     mouseX = 0;
     mouseY = 0;
 }
+
 
 /*-----------------------------------------------------------------------------
 Name: animate()

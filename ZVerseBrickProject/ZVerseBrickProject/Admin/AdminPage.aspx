@@ -7,6 +7,7 @@
     <hr />
     <h3>Manage your models here</h3>
 
+
     <div id="uploadForm">
         <br />
         <p>Upload your javascript file here: </p>
@@ -16,7 +17,7 @@
         <br />
         <asp:Label runat="server" ID="StatusLabel" Text="" />
   
-
+         </div>
 
    
         <h3>Our current available models include:</h3>
@@ -28,14 +29,43 @@
                      <a href="/TestDisplay.aspx?brickID=<%#:Item.BrickID%>">
                          <%#:Item.BrickName %>
                      </a>
-                     &nbsp&nbsp
+                    <%-- <img src="<%#:Item.ImagePath%>">;--%>
+                   <%--  &nbsp&nbsp
                                 <asp:Button runat="server" ID="Show" Text="Show" CommandArgument="<%#:Item.BrickID %>" OnCommand="Show_Click" />
-                     <asp:Button runat="server" ID="Hide" Text="Hide" CommandArgument="<%#:Item.BrickID %>" OnCommand="Hide_Click" />
+                     <asp:Button runat="server" ID="Hide" Text="Hide" CommandArgument="<%#:Item.BrickID %>" OnCommand="Hide_Click" />--%>
+   <script type="text/javascript">
+function toggle(button)
+{
+  if(document.getElementById("1").value=="Hiding"){
+      document.getElementById("1").value = "Showing";
+      //Hide_Click(<%#:Item.BrickID %>);
+  }
+  else if (document.getElementById("1").value == "Showing") {
+      document.getElementById("1").value = "Hiding";
+  }
+}
+</script>
+
+                     <html>
+<body>
+    <form action="AdminPage.aspx">
+        <input type="button" id="1" value="Showing" style="color:blue"
+               onclick="toggle(this); ">
+    </form>
+</body>
+</html>
+   
                  </p>
              </ItemTemplate>
              <ItemSeparatorTemplate>&nbsp&nbsp</ItemSeparatorTemplate>
          </asp:ListView>
            <br />
                 <a class="btn btn-primary" href="/Default.aspx">Update Website</a>
-          </div>
+          
+
+
 </asp:Content>
+
+
+
+

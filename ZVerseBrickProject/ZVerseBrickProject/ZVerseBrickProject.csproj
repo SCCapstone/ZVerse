@@ -258,12 +258,15 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstraporiginal.css" />
     <Content Include="Content\Site.css" />
+    <Content Include="html.html" />
+    <Content Include="js\fonts\droid_sans_bold.typeface.js" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="Account\Web.config" />
     <Content Include="fonts\helvetiker_regular.typeface.js" />
+    <Content Include="HtmlPage1.html" />
     <Content Include="Images\productImages\image01.jpg" />
     <Content Include="Images\productImages\image02.jpg" />
     <Content Include="Images\productImages\image03.jpg" />
@@ -283,8 +286,10 @@
     <Content Include="js\brick.jpg" />
     <Content Include="js\bricks.jpg" />
     <Content Include="js\fonts\font1.js" />
+    <Content Include="js\fonts\helvetiker_regular.typeface.js" />
     <Content Include="js\Gamecock.js" />
     <Content Include="js\GamecockCube.jpg" />
+    <Content Include="js\JavaScript.js" />
     <Content Include="js\MTLLoader.js" />
     <Content Include="js\OBJLoader.js" />
     <Content Include="js\OBJMTLLoader.js" />
@@ -293,6 +298,7 @@
     <Content Include="js\Plaque.js" />
     <Content Include="js\script.js" />
     <Content Include="js\stats.min.js" />
+    <Content Include="js\Three.js" />
     <Content Include="js\three.min.js" />
     <Content Include="js\threex.dynamictexture.js" />
     <Content Include="js\THREEx.WindowResize.js" />
