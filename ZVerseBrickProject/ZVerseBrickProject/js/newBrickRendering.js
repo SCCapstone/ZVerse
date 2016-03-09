@@ -17,9 +17,7 @@ var mouseY = 0;
 var container = container = document.getElementById('canvas');
 var windowHalfX = container.offsetWidth / 2;
 var windowHalfY = container.offsetHeight / 2;
-var radious = 1600;
-var theta = 45;
-var phi = 60;
+
 
 /*
 Variables to store the dynamic textures, geometries, and materials for the 
@@ -115,8 +113,42 @@ function init() {
 
     container.appendChild(renderer.domElement);
 
+    var isDragging = false;
+    var previousMousePosition = {
+        x: 0,
+        y: 0
+    };
+    $(renderer.domElement).on('mousedown', function (e) {
+        isDragging = true;
+    })
+    .on('mousemove', function (e) {
+        //console.log(e);
+        var deltaMove = {
+            x: e.offsetX - previousMousePosition.x,
+            y: e.offsetY - previousMousePosition.y
+        };
+
+        if (isDragging) {
+            
+            mouseX = (event.clientX - windowHalfX) /10;
+            mouseY = (event.clientY - windowHalfY) /10;
+        
+        }
+
+        previousMousePosition = {
+            x: e.offsetX,
+            y: e.offsetY
+        };
+    });
+    /* */
+
+    $(document).on('mouseup', function (e) {
+        isDragging = false;
+    });
+
+
  //bind window to event listeners
-container.addEventListener('mousemove', onDocumentMouseMove, false);
+//container.addEventListener('mousemove', onDocumentMouseMove, false);
 container.addEventListener('mouseout', onDocumentMouseOut, false);
 container.addEventListener('resize', onWindowResize, false);
 }
@@ -193,10 +225,10 @@ Input Parameters:
 Output Parameters: No formal output, but this function renders text onto the 
     polygon on the top line
 -----------------------------------------------------------------------------*/
-function getText1(text) {
+function getText1(text,answer) {
     text1 = text;
     dynamicTexture.clear();
-    dynamicTexture.context.font = "60px Verdana";
+    dynamicTexture.context.font = answer;
     dynamicTexture.drawText(text1, undefined, 140, 'black');
     material1.transparent = true;
     material1.polygonOffset = true;
@@ -216,10 +248,10 @@ Input Parameters:
 Output Parameters: No formal output, but this function renders text onto the 
     polygon on the middle line
 -----------------------------------------------------------------------------*/
-function getText2(text) {
+function getText2(text,answer) {
     text2 = text;
     dynamicTexture1.clear();
-    dynamicTexture1.context.font = "60px Verdana";
+    dynamicTexture1.context.font = answer;
     dynamicTexture1.drawText(text2, undefined, 280, 'black');
     material2.transparent = true;
     material2.polygonOffset = true;
@@ -238,10 +270,10 @@ Input Parameters:
 Output Parameters: No formal output, but this function renders text onto the 
     polygon on the bottom line
 -----------------------------------------------------------------------------*/
-function getText3(text) {
+function getText3(text,answer) {
     text3 = text;
     dynamicTexture2.clear();
-    dynamicTexture2.context.font = "60px Verdana";
+    dynamicTexture2.context.font = answer;
     dynamicTexture2.drawText(text3, undefined, 420, 'black');
     material3.transparent = true;
     material3.polygonOffset = true;

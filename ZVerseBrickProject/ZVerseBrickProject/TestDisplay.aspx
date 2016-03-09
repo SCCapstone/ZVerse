@@ -48,10 +48,30 @@
             <p>
             Please complete the following to add text to your object!
             </p>
+            <body>
+                
+                    <script>
+function check(browser) {
+    document.getElementById("answer").value=browser;
+}
+    </script>
+</head>
+<body>
+
+    <p>Choose a font:</p>
+    
+    <form>
+        <input type="radio" name="browser" onclick="check(this.value)" value="60px Verdana">Verdana<br>
+        <input type="radio" name="browser" onclick="check(this.value)" value="100px Helvetiker">Helvetiker<br>
+        <input type="radio" name="browser" onclick="check(this.value)" value="100px Sans">Sans<br>
+        <br>
+    </form>
+
+</body>
             <!--Top line text box, calls getText1() in newBrickRendering.js on key press or key up-->
             <div class="textBoxLine">
                 <asp:Label AssociatedControlID="textbox1" runat="server">Top Text Line:
-                <asp:TextBox ID="textBox1" runat="server" MaxLength="40" placeholder="text line 1" onKeyPress ="getText1(this.value)" onKeyUp = "getText1(this.value)"></asp:TextBox>
+                <asp:TextBox ID="textBox1" runat="server" MaxLength="40" placeholder="text line 1" onKeyPress ="getText1(this.value,this.answer)" onKeyUp = "getText1(this.value,answer)"></asp:TextBox>
                 </asp:Label>
             </div>
             <br />
@@ -59,7 +79,7 @@
             <!--Middle line text box, calls getText2() in newBrickRendering.js on key press or key up-->
             <div class="textBoxLine">
                 <asp:Label AssociatedControlID="textbox2" runat="server">Middle Text Line:
-                <asp:TextBox ID="textBox2" runat="server" MaxLength="40" placeholder="text line 2" onKeyPress ="getText2(this.value)" onKeyUp = "getText2(this.value)"></asp:TextBox>
+                <asp:TextBox ID="textBox2" runat="server" MaxLength="40" placeholder="text line 2" onKeyPress ="getText2(this.value,this.answer)" onKeyUp = "getText2(this.value,answer)"></asp:TextBox>
                 </asp:Label>
             </div>
             <br />
@@ -67,7 +87,7 @@
             <!--Bottom line text box, calls getText2() in newBrickRendering.js on key press or key up-->
             <div class="textBoxLine">
                 <asp:Label AssociatedControlID="textbox3" runat="server">Bottom Text Line:
-                <asp:TextBox ID="textBox3" runat="server" MaxLength="40" placeholder="text line 3" onKeyPress ="getText3(this.value)" onKeyUp = "getText3(this.value)"></asp:TextBox>
+                <asp:TextBox ID="textBox3" runat="server" MaxLength="40" placeholder="text line 3" onKeyPress ="getText3(this.value,this.answer)" onKeyUp = "getText3(this.value,answer)"></asp:TextBox>
                 </asp:Label>
             </div>
             <br />
