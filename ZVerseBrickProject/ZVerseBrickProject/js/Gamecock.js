@@ -79,30 +79,6 @@ function init() {
     mesh = new THREE.Mesh(geometry, material);
     scene.add(mesh);
 
-    //initialize the texture for the first line of text
-    var dynamicTexture = new THREEx.DynamicTexture(512, 512);
-    dynamicTexture.context.font = "bolder 80px Verdana";
-    dynamicTexture.drawText(text1, undefined, 140, 'cyan');
-    //var geometry1 = new THREE.CubeGeometry(4, 2.5, 2.9);
-    var geometry1 = new THREE.CubeGeometry(5, 5, 5);
-    var material1 = new THREE.MeshBasicMaterial({ map: dynamicTexture.texture });
-    material1.transparent = true;
-    material1.polygonOffset = true;
-    material1.polygonOffsetFactor = -0.2;
-    mesh1 = new THREE.Mesh(geometry1, material1);
-    scene.add(mesh1);
-
-    //initialize the texture for the second line of text
-    var dynamicTexture1 = new THREEx.DynamicTexture(512, 512);
-    dynamicTexture1.context.font = "bolder 80px Verdana";
-    dynamicTexture1.drawText(text2, undefined, 280, 'cyan');
-    var geometry2 = new THREE.CubeGeometry(5, 5, 5);
-    var material2 = new THREE.MeshBasicMaterial({ map: dynamicTexture1.texture });
-    material2.transparent = true;
-    material2.polygonOffset = true;
-    material2.polygonOffsetFactor = -0.2;
-    mesh2 = new THREE.Mesh(geometry2, material2);
-    scene.add(mesh2);
 
     //initialize the texture for the third line of text
     var dynamicTexture4 = new THREEx.DynamicTexture(512, 512);
@@ -202,7 +178,7 @@ Input Parameters:
 Output Parameters: No formal output, but this function renders text onto the 
     polygon on the top line
 -----------------------------------------------------------------------------*/
-function getText1(text) {
+function getText1(text,answer) {
  text1 = text;
 
     shadowing.clear();
@@ -213,6 +189,7 @@ function getText1(text) {
     shadowmaterial.polygonOffsetFactor = -0.2;
     mesh5 = new THREE.Mesh(shadowgeo, shadowmaterial);
     scene.add(mesh5);
+
     dynamicTexture.clear();
     dynamicTexture.context.font = "60px Verdana";
     dynamicTexture.drawText(text1, undefined, 140, 'black');
@@ -234,11 +211,12 @@ Input Parameters:
 Output Parameters: No formal output, but this function renders text onto the 
     polygon on the middle line
 -----------------------------------------------------------------------------*/
-function getText2(text) {
+function getText2(text,answer) {
     text2 = text;
+
     dynamicTexture1.clear();
     dynamicTexture1.context.font = "60px Verdana";
-    dynamicTexture1.drawText(text2, undefined, 280, '#A2B5CD');
+    dynamicTexture1.drawText(text2, undefined, 280, 'black');
     material2.transparent = true;
     material2.polygonOffset = true;
     material2.polygonOffsetFactor = -0.2;
@@ -256,11 +234,11 @@ Input Parameters:
 Output Parameters: No formal output, but this function renders text onto the 
     polygon on the bottom line
 -----------------------------------------------------------------------------*/
-function getText3(text) {
+function getText3(text,answer) {
     text3 = text;
     dynamicTexture2.clear();
     dynamicTexture2.context.font = "60px Verdana";
-    dynamicTexture2.drawText(text3, undefined, 420, '#A2B5CD');
+    dynamicTexture2.drawText(text3, undefined, 420, 'black');
     material3.transparent = true;
     material3.polygonOffset = true;
     material3.polygonOffsetFactor = -0.2;
