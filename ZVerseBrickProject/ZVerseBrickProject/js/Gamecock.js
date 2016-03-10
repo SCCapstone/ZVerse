@@ -31,12 +31,24 @@ var text3 = '';
 var dynamicTexture = new THREEx.DynamicTexture(512, 512);
 var dynamicTexture1 = new THREEx.DynamicTexture(512, 512);
 var dynamicTexture2 = new THREEx.DynamicTexture(512, 512);
-var geometry1 = new THREE.CubeGeometry(5, 5, 5);
-var geometry2 = new THREE.CubeGeometry(5, 5, 5);
-var geometry3 = new THREE.CubeGeometry(5, 5, 5);
+var shadowing = new THREEx.DynamicTexture(512, 512);
+var shadowing1 = new THREEx.DynamicTexture(512, 512);
+var shadowing2 = new THREEx.DynamicTexture(512, 512);
+
+var geometry1 = new THREE.CubeGeometry(6.2, 6.2, 6.3);
+var geometry2 = new THREE.CubeGeometry(6.1, 6.1, 6.2);
+var geometry3 = new THREE.CubeGeometry(6.1, 6.1, 6.2);
+
+var shadowgeo = new THREE.CubeGeometry(6.2,6.2,6.2);
+var shadowgeo1 = new THREE.CubeGeometry(6.1,6.1,6.1);
+var shadowgeo2 = new THREE.CubeGeometry(6.1,6.1,6.1);
+
 var material1 = new THREE.MeshBasicMaterial({ map: dynamicTexture.texture });
 var material2 = new THREE.MeshBasicMaterial({ map: dynamicTexture1.texture });
 var material3 = new THREE.MeshBasicMaterial({ map: dynamicTexture2.texture });
+var shadowmaterial = new THREE.MeshBasicMaterial({ map: shadowing.texture });
+var shadowmaterial1 = new THREE.MeshBasicMaterial({ map: shadowing1.texture });
+var shadowmaterial2 = new THREE.MeshBasicMaterial({ map: shadowing2.texture });
 
 //FUNCTION DECLARATION SECTION/////////////////////////////////////////////////
 init();//initializing function uses to begin the 3D window
@@ -55,54 +67,30 @@ function init() {
     //set the primary parameters of the 3D window
     scene = new THREE.Scene();
     camera = new THREE.PerspectiveCamera(45, container.offsetWidth / container.offsetHeight, .01, 100);
-    camera.position.z = 10;
+    camera.position.z = 15;
     var light = new THREE.DirectionalLight(0xffffff);
     light.position.set(0, 1, 1).normalize();
     scene.add(light);
 
     //load the brick model and texture
     var texture = new THREE.TextureLoader().load("js/GamecockCube.jpg");
-    var geometry = new THREE.CubeGeometry(5, 5, 5); //width, height, depth
+    var geometry = new THREE.CubeGeometry(6, 6, 6); //width, height, depth
     var material = new THREE.MeshBasicMaterial({ map: texture });
     mesh = new THREE.Mesh(geometry, material);
     scene.add(mesh);
 
-    //initialize the texture for the first line of text
-    var dynamicTexture = new THREEx.DynamicTexture(512, 512);
-    dynamicTexture.context.font = "bolder 80px Verdana";
-    dynamicTexture.drawText(text1, undefined, 140, 'cyan');
-    //var geometry1 = new THREE.CubeGeometry(4, 2.5, 2.9);
-    var geometry1 = new THREE.CubeGeometry(5, 5, 5);
-    var material1 = new THREE.MeshBasicMaterial({ map: dynamicTexture.texture });
-    material1.transparent = true;
-    material1.polygonOffset = true;
-    material1.polygonOffsetFactor = -0.2;
-    mesh1 = new THREE.Mesh(geometry1, material1);
-    scene.add(mesh1);
-
-    //initialize the texture for the second line of text
-    var dynamicTexture1 = new THREEx.DynamicTexture(512, 512);
-    dynamicTexture1.context.font = "bolder 80px Verdana";
-    dynamicTexture1.drawText(text2, undefined, 280, 'cyan');
-    var geometry2 = new THREE.CubeGeometry(5, 5, 5);
-    var material2 = new THREE.MeshBasicMaterial({ map: dynamicTexture1.texture });
-    material2.transparent = true;
-    material2.polygonOffset = true;
-    material2.polygonOffsetFactor = -0.2;
-    mesh2 = new THREE.Mesh(geometry2, material2);
-    scene.add(mesh2);
 
     //initialize the texture for the third line of text
-    var dynamicTexture2 = new THREEx.DynamicTexture(512, 512);
-    dynamicTexture2.context.font = "bolder 80px Verdana";
-    dynamicTexture2.drawText(text3, undefined, 420, 'cyan');
-    var geometry3 = new THREE.CubeGeometry(5, 5, 5);
-    var material3 = new THREE.MeshBasicMaterial({ map: dynamicTexture2.texture });
-    material3.transparent = true;
-    material3.polygonOffset = true;
-    material3.polygonOffsetFactor = -0.2;
-    mesh3 = new THREE.Mesh(geometry3, material3);
-    scene.add(mesh3);
+    var dynamicTexture4 = new THREEx.DynamicTexture(512, 512);
+    dynamicTexture4.context.font = "25px Verdana";
+    dynamicTexture4.drawText("University of South Carolina", undefined, 500, 'white');
+    var geometry4 = new THREE.CubeGeometry(6.1, 6.1, 6.1);
+    var material4 = new THREE.MeshBasicMaterial({ map: dynamicTexture4.texture });
+    material4.transparent = true;
+    material4.polygonOffset = true;
+    material4.polygonOffsetFactor = -0.2;
+    mesh4 = new THREE.Mesh(geometry4, material4);
+    scene.add(mesh4);
 
     //render the brick and text line textures
     renderer = new THREE.WebGLRenderer({ alpha: 1 });
@@ -190,11 +178,21 @@ Input Parameters:
 Output Parameters: No formal output, but this function renders text onto the 
     polygon on the top line
 -----------------------------------------------------------------------------*/
-function getText1(text) {
-    text1 = text;
+function getText1(text,answer) {
+ text1 = text;
+
+    shadowing.clear();
+    shadowing.context.font = "62px Verdana";
+    shadowing.drawText(text1, undefined, 140, '#DCDCDC');
+    shadowmaterial.transparent = true;
+    shadowmaterial.polygonOffset = true;
+    shadowmaterial.polygonOffsetFactor = -0.2;
+    mesh5 = new THREE.Mesh(shadowgeo, shadowmaterial);
+    scene.add(mesh5);
+
     dynamicTexture.clear();
     dynamicTexture.context.font = "60px Verdana";
-    dynamicTexture.drawText(text1, undefined, 140, '#A2B5CD');
+    dynamicTexture.drawText(text1, undefined, 140, 'black');
     material1.transparent = true;
     material1.polygonOffset = true;
     material1.polygonOffsetFactor = -0.2;
@@ -213,11 +211,12 @@ Input Parameters:
 Output Parameters: No formal output, but this function renders text onto the 
     polygon on the middle line
 -----------------------------------------------------------------------------*/
-function getText2(text) {
+function getText2(text,answer) {
     text2 = text;
+
     dynamicTexture1.clear();
     dynamicTexture1.context.font = "60px Verdana";
-    dynamicTexture1.drawText(text2, undefined, 280, '#A2B5CD');
+    dynamicTexture1.drawText(text2, undefined, 280, 'black');
     material2.transparent = true;
     material2.polygonOffset = true;
     material2.polygonOffsetFactor = -0.2;
@@ -235,11 +234,11 @@ Input Parameters:
 Output Parameters: No formal output, but this function renders text onto the 
     polygon on the bottom line
 -----------------------------------------------------------------------------*/
-function getText3(text) {
+function getText3(text,answer) {
     text3 = text;
     dynamicTexture2.clear();
     dynamicTexture2.context.font = "60px Verdana";
-    dynamicTexture2.drawText(text3, undefined, 420, '#A2B5CD');
+    dynamicTexture2.drawText(text3, undefined, 420, 'black');
     material3.transparent = true;
     material3.polygonOffset = true;
     material3.polygonOffsetFactor = -0.2;
