@@ -17,6 +17,8 @@ namespace ZVerseBrickProject.Models
         [Required, StringLength(10000), Display(Name = "Product Description"), DataType(DataType.MultilineText)]
         public string Description { get; set; }
 
+        public string Incription { get; set; }
+
         public string ImagePath { get; set; }
 
         [Display(Name = "Price")]
