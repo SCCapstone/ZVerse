@@ -6,6 +6,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Diagnostics; 
 using ZVerseBrickProject.Controllers;
+using ZVerseBrickProject.Models;
 
 namespace ZVerseBrickProject
 {
@@ -17,9 +18,24 @@ namespace ZVerseBrickProject
             int productId;
             if (!String.IsNullOrEmpty(rawId) && int.TryParse(rawId, out productId))
             {
+                int currentID = Convert.ToInt16(rawId); 
+                if((currentID < 0))
+                {
+                    string text1 = Request.QueryString["tb1"];
+                    string text2 = Request.QueryString["tb2"];
+                    string text3 = Request.QueryString["tb3"];
+                    string incription = string.Concat(text1, " ", text2, " ", text3); 
+                    var _db = new ZVerseBrickProject.Models.ProductContext();
+                    Brick theproduct;
+                    AddProducts products = new AddProducts();
+                    AddBricks bricks = new AddBricks();
+                    theproduct = _db.Bricks.Find(-currentID); 
+                    currentID = products.AddProduct(theproduct.BrickName, theproduct.Description,theproduct.UnitPrice.ToString(), "1", theproduct.ImagePath, incription);
+                    bricks.AddBrick(currentID, theproduct.BrickName, theproduct.Description, theproduct.UnitPrice.ToString(), theproduct.ImagePath, incription);
+                }
                 using (ShoppingCartFunctions usersShoppingCart = new ShoppingCartFunctions())
                 {
-                    usersShoppingCart.AddToCart(Convert.ToInt16(rawId));
+                    usersShoppingCart.AddToCart(currentID);
                 }
 
             }
