@@ -13,12 +13,12 @@ namespace ZVerseBrickProject {
     public partial class TestDisplay {
         
         /// <summary>
-        /// TestDetails2 control.
+        /// BrickDetail control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.FormView TestDetails2;
+        protected global::System.Web.UI.WebControls.FormView BrickDetail;
     }
 }

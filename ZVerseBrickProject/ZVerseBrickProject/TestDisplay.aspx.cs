@@ -35,5 +35,23 @@ namespace ZVerseBrickProject
 
             return query;
         }
+
+        //This function will set the brickmodel visible property to 
+        // be true to reveal the model on the tab and catalogue. 
+        protected void AddCart(object sender, CommandEventArgs e)
+        {
+            int brickid = -Int32.Parse(e.CommandArgument.ToString());
+            TextBox tb1 = (TextBox)BrickDetail.FindControl("textBox1");
+            TextBox tb2 = (TextBox)BrickDetail.FindControl("textBox2");
+            TextBox tb3 = (TextBox)BrickDetail.FindControl("textBox3");
+            string txt1 = tb1.Text;
+            string txt2 = tb2.Text;
+            string txt3 = tb3.Text;
+            Debug.WriteLine(txt1);
+            Debug.WriteLine(brickid);
+            Response.Redirect("AddToCart.aspx?productID=" + brickid +
+                "&tb1=" + txt1 + "&tb2=" + txt2 + "&tb3=" + txt3);
+
+        }
     }
 }
