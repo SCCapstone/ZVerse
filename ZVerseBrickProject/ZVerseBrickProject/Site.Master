@@ -14,7 +14,12 @@
     <webopt:BundleReference runat="server" Path="~/Content/css" />
     <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
 
+    <asp:ContentPlaceHolder ID="Stylesheets" runat="server">
+        <link rel="stylesheet" href="/css/master.css" type="text/css" />
+    </asp:ContentPlaceHolder>
+
 </head>
+
 <body>
     <form runat="server">
         <asp:ScriptManager runat="server">
@@ -52,39 +57,39 @@
                 <div class="navbar-collapse collapse" style="margin-top: 15px">
                     <ul class="nav navbar-nav">
                         <li>
-                            <asp:Panel ID="Panel1" runat="server"><a runat="server" href="~/Default">Home</a>&nbsp&nbsp</asp:Panel>
+                            <asp:Panel ID="Panel1" CssClass="masterpanel" runat="server">&nbsp<a runat="server" href="~/Default">Home</a>&nbsp</asp:Panel>
                         </li>
                         <li>
-                            <asp:Panel ID="Panel2" runat="server"><a runat="server" href="~/Contact">Contact</a>&nbsp&nbsp</asp:Panel>
+                            <asp:Panel ID="Panel2" CssClass="masterpanel" runat="server">&nbsp<a runat="server" href="~/Contact">Contact</a>&nbsp</asp:Panel>
                         </li>
                         <li>
-                            <asp:Panel ID="Panel3" runat="server"><a runat="server" href="~/ProductList">Catalogue</a>&nbsp&nbsp</asp:Panel>
+                            <asp:Panel ID="Panel3" CssClass="masterpanel" runat="server">&nbsp<a runat="server" href="~/ProductList">Catalogue</a>&nbsp</asp:Panel>
                         </li>
                         <li>
-                            <asp:Panel ID="Pane20" runat="server"><a runat="server" href="~/TestList">Custom Objects</a>&nbsp&nbsp</asp:Panel>
+                            <asp:Panel ID="Pane20" CssClass="masterpanel" runat="server">&nbsp<a runat="server" href="~/TestList">Custom Objects</a>&nbsp</asp:Panel>
                         </li>
                         <li>
-                            <asp:Panel ID="Panel4" runat="server"><a runat="server" href="~/BrickDisplay">Sample Brick</a>&nbsp&nbsp</asp:Panel>
+                            <asp:Panel ID="Panel4" CssClass="masterpanel" runat="server">&nbsp<a runat="server" href="~/BrickDisplay">Sample Brick</a>&nbsp</asp:Panel>
                         </li>
                        
                         <asp:ListView ID="bricklist" ItemType="ZVerseBrickProject.Models.Brick" runat="server" SelectMethod="GetBricks">
                             <ItemTemplate>
                                 <li>
-                                    <asp:Panel runat="server">
-                                        <a href="/TestDisplay.aspx?brickID=<%#:Item.BrickID%>">
-                                            <%#:Item.BrickName %>
+                                    <asp:Panel CssClass="masterpanel" runat="server">
+                                        &nbsp<a href="/TestDisplay.aspx?brickID=<%#:Item.BrickID%>">
+                                           <%#:Item.BrickName %>
                                         </a>
-                                        &nbsp&nbsp
+                                        &nbsp
                                     </asp:Panel>
                                 </li>
                             </ItemTemplate>
-                            <ItemSeparatorTemplate>&nbsp&nbsp</ItemSeparatorTemplate>
+                            <ItemSeparatorTemplate></ItemSeparatorTemplate>
                         </asp:ListView>
                          <li>
-                            <asp:Panel ID="Panel9" runat="server"><a runat="server" href="~/ShoppingCart" id="cartCount"></a>&nbsp&nbsp</asp:Panel>
+                            <asp:Panel ID="Panel9" CssClass="masterpanel" runat="server"><a runat="server" href="~/ShoppingCart" id="cartCount"></a>&nbsp&nbsp</asp:Panel>
                         </li>
                         <li>
-                            <asp:Panel ID="Panel8" runat="server">
+                            <asp:Panel ID="Panel8" CssClass="masterpanel" runat="server">
                                 <a runat="server" id="adminLink" visible="false"
                                     href="~/Admin/AdminPage">Admin</a>&nbsp&nbsp
                             </asp:Panel>

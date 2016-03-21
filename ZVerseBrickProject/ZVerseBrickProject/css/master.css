@@ -1,0 +1,15 @@
+﻿body {
+    
+}
+
+.masterpanel:hover{
+   background: #6DC85B; 
+}
+
+.masterpanel:active{
+   background: #44A231; 
+}
+
+a:link {
+    text-decoration: none;
+}
