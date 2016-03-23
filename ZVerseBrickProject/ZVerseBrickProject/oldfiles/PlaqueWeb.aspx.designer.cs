@@ -7,45 +7,36 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace ZVerseBrickProject.Admin {
+namespace ZVerseBrickProject {
     
     
-    public partial class AdminPage {
+    public partial class Placque {
         
         /// <summary>
-        /// FileUploadControl control.
+        /// textBox1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.FileUpload FileUploadControl;
+        protected global::System.Web.UI.WebControls.TextBox textBox1;
         
         /// <summary>
-        /// UploadButton control.
+        /// textBox2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button UploadButton;
+        protected global::System.Web.UI.WebControls.TextBox textBox2;
         
         /// <summary>
-        /// StatusLabel control.
+        /// textBox3 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label StatusLabel;
-        
-        /// <summary>
-        /// bricklist control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.ListView bricklist;
+        protected global::System.Web.UI.WebControls.TextBox textBox3;
     }
 }

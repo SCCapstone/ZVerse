@@ -15,5 +15,7 @@ namespace ZVerseBrickProject.Models
         public DbSet<Category> Categories { get; set; }
         public DbSet<Product> Products { get; set; }
         public DbSet<Item> Items { get; set; }
+        public DbSet<CartItem> ShoppingCartItems { get; set; }
+        public DbSet<Brick> Bricks { get; set; }
     }
 }

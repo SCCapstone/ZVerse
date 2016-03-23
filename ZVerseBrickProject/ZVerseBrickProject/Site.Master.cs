@@ -9,6 +9,7 @@ using System.Web.UI.WebControls;
 using Microsoft.AspNet.Identity;
 using System.Linq;
 using ZVerseBrickProject.Models;
+using ZVerseBrickProject.Controllers;
 
 namespace ZVerseBrickProject
 {
@@ -75,12 +76,32 @@ namespace ZVerseBrickProject
             {
                 adminLink.Visible = true;
             }
+
+           
+        }
+
+        protected void Page_PreRender(object sender, EventArgs e)
+        {
+            using (ShoppingCartFunctions usersShoppingCart = new ShoppingCartFunctions())
+            {
+                string cartStr = string.Format("Cart ({0})", usersShoppingCart.GetCount());
+                cartCount.InnerHtml = "<span class='glyphicon glyphicon-shopping-cart'></span>" + cartStr;
+            }
         }
 
         public IQueryable<Category> GetCategories()
         {
             var _db = new ZVerseBrickProject.Models.ProductContext();
             IQueryable<Category> query = _db.Categories;
+            return query;
+        }
+
+
+        public IQueryable<Brick> GetBricks()
+        {
+            var _db = new ZVerseBrickProject.Models.ProductContext();
+            IQueryable<Brick> query = _db.Bricks;
+            query = query.Where(b => b.isVisible == true);
             return query;
         }
 

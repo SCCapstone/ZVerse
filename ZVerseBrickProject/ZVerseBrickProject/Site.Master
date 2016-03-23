@@ -7,11 +7,13 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title><%: Page.Title %> - ZVerse WebPage</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 
     <asp:PlaceHolder runat="server">
         <%: Scripts.Render("~/bundles/modernizr") %>
     </asp:PlaceHolder>
-    <webopt:bundlereference runat="server" path="~/Content/css" />
+    <webopt:BundleReference runat="server" Path="~/Content/css" />
     <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
 
 </head>
@@ -47,33 +49,63 @@
                         <span class="icon-bar"></span>
                     </button>
 
-
-                    <a class="navbar-brand" runat="server" href="~/Default"> 
-                    </a>
-
+                    <a class="navbar-brand" runat="server" href="~/Default"></a>
                 </div>
-                <div class="navbar-collapse collapse">
-                    <ul class="nav navbar-nav">
-                        <li><a runat="server" id="adminLink" visible="false" 
-                            href="~/Admin/AdminPage">Admin</a></li>
-                        <li><a runat="server" href="~/Default">Home</a></li>
-                        <li><a runat="server" href="~/BrickDisplay">BrickDisplay</a></li>
-                        <li><a runat="server" href="~/Contact">Contact</a></li>
-                        <li><a runat="server" href="~/ProductList">Catalogue</a></li>
-                        <li><a runat="server" href="~/BrickDisplay">BrickTest</a></li>
-                        
+                <div class="navbar-collapse collapse" style="margin-top: 15px">
+                    <ul class="nav nav-pills">
+                        <li class="active"> 
+                            <asp:Panel ID="Panel1" runat="server"><a runat="server" href="~/Default">Home</a>&nbsp&nbsp</asp:Panel>
+                        </li>
+                        <li>
+                            <asp:Panel ID="Panel2" runat="server"><a runat="server" href="~/Contact">Contact</a>&nbsp&nbsp</asp:Panel>
+                        </li>
+                        <li>
+                            <asp:Panel ID="Panel3" runat="server"><a runat="server" href="~/ProductList">Catalogue</a>&nbsp&nbsp</asp:Panel>
+                        </li>
+                        <li>
+                            <asp:Panel ID="Pane20" runat="server"><a runat="server" href="~/TestList">Custom Objects</a>&nbsp&nbsp</asp:Panel>
+                        </li>
+                        <li>
+                            <asp:Panel ID="Panel4" runat="server"><a runat="server" href="~/BrickDisplay">Sample Brick</a>&nbsp&nbsp</asp:Panel>
+                        </li>
+                       
+                        <asp:ListView ID="bricklist" ItemType="ZVerseBrickProject.Models.Brick" runat="server" SelectMethod="GetBricks">
+                            <ItemTemplate>
+                                <li>
+                                    <asp:Panel runat="server">
+                                        <a href="/TestDisplay.aspx?brickID=<%#:Item.BrickID%>">
+                                            <%#:Item.BrickName %>
+                                        </a>
+                                        &nbsp&nbsp
+                                    </asp:Panel>
+                                </li>
+                            </ItemTemplate>
+                            <ItemSeparatorTemplate>&nbsp&nbsp</ItemSeparatorTemplate>
+                        </asp:ListView>
+                         <li>
+                            <asp:Panel ID="Panel9" runat="server"><a runat="server" href="~/ShoppingCart" id="cartCount"></a>&nbsp&nbsp</asp:Panel>
+                        </li>
+                        <li>
+                            <asp:Panel ID="Panel8" runat="server">
+                                <a runat="server" id="adminLink" visible="false"
+                                    href="~/Admin/AdminPage">Admin</a>&nbsp&nbsp
+                            </asp:Panel>
+                        </li>
 
                     </ul>
+
+
+
                     <asp:LoginView runat="server" ViewStateMode="Disabled">
                         <AnonymousTemplate>
-                            <ul class="nav navbar-nav navbar-right">
+                            <ul class="nav navbar-nav navbar-right" style="margin-top: -15px">
                                 <li><a runat="server" href="~/Account/Register">Register</a></li>
                                 <li><a runat="server" href="~/Account/Login">Log in</a></li>
                             </ul>
-                            <asp:WebPartManager ID="WebPartManager1" runat="server"></asp:WebPartManager>        </AnonymousTemplate>
+                        </AnonymousTemplate>
                         <LoggedInTemplate>
-                            <ul class="nav navbar-nav navbar-right">
-                                <li><a runat="server" href="~/Account/Manage" title="Manage your account">Hello, <%: Context.User.Identity.GetUserName()  %>!</a></li>
+                            <ul class="nav navbar-nav navbar-right" style="margin-top: -15px">
+                                <li><a runat="server" href="~/Account/Manage" title="Manage your account">Welcome!</a></li>
                                 <li>
                                     <asp:LoginStatus runat="server" LogoutAction="Redirect" LogoutText="Log off" LogoutPageUrl="~/" OnLoggingOut="Unnamed_LoggingOut" />
                                 </li>
@@ -83,7 +115,7 @@
                 </div>
             </div>
         </div>
-   
+
 
         <div class="container body-content">
             <asp:ContentPlaceHolder ID="MainContent" runat="server">
@@ -96,3 +128,10 @@
     </form>
 </body>
 </html>
+<script>
+$(document).ready(function(){
+    $(".nav-tabs a").click(function(){
+        $(this).tab('show');
+    });
+});
+</script>

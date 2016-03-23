@@ -1,4 +1,4 @@
-﻿<%@ Page Title="ZVerse" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="ZVerseBrickProject._Default" %>
+﻿<%@ Page Title="ZVerse" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="default.aspx.cs" Inherits="ZVerseBrickProject._Default" %>
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
 
@@ -6,7 +6,6 @@
         <h1><%: Title %>.</h1>
         <p class="lead">ZVerse delivers turnkey 3D printing solutions from 3D content creation to full color production.</p>
         <p><a href="http://zverse.com/" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
-        
     </div>
 
     <div class="row">

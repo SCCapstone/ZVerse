@@ -40,7 +40,8 @@ var lesson6 = {
 
         // prepare renderer
         this.renderer = new THREE.WebGLRenderer({ antialias: true });
-        this.renderer.setSize(SCREEN_WIDTH, SCREEN_HEIGHT);
+        //this.renderer.setSize(SCREEN_WIDTH, SCREEN_HEIGHT);
+        this.renderer.setSize(SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2);
         this.renderer.setClearColor(this.scene.fog.color);
         this.renderer.shadowMapEnabled = true;
         this.renderer.shadowMapSoft = true;
@@ -62,12 +63,12 @@ var lesson6 = {
         this.clock = new THREE.Clock();
 
         // prepare stats
-        this.stats = new Stats();
-        this.stats.domElement.style.position = 'absolute';
-        this.stats.domElement.style.left = '50px';
-        this.stats.domElement.style.bottom = '50px';
-        this.stats.domElement.style.zIndex = 1;
-        this.container.appendChild(this.stats.domElement);
+        //this.stats = new Stats();
+        //this.stats.domElement.style.position = 'absolute';
+        //this.stats.domElement.style.left = '50px';
+        //this.stats.domElement.style.bottom = '50px';
+        //this.stats.domElement.style.zIndex = 1;
+        //this.container.appendChild(this.stats.domElement);
         
 
         //LIGHTS
@@ -129,10 +130,10 @@ var lesson6 = {
 
         // prepare loader and load the model
         var oLoader = new THREE.OBJLoader();
-        oLoader.load('DecBrick.obj', function (object, materials) {
+        oLoader.load('js/DecBrick.obj', function (object, materials) {
 
             // var material = new THREE.MeshFaceMaterial(materials);
-            var material2 = new THREE.MeshLambertMaterial({ color: 0xa65e00 });
+            var material2 = new THREE.MeshLambertMaterial({ color: 0xffffff});
 
             object.traverse(function (child) {
                 if (child instanceof THREE.Mesh) {
