@@ -55,7 +55,7 @@
                 <head>
     <script>
 function check(browser) {
-    document.getElementById("answer").value=browser;
+    document.getElementById("answer").value = browser;
 }
     </script>
 </head>
@@ -64,9 +64,9 @@ function check(browser) {
     <p>What's your favorite browser?</p>
 
     <form>
-        <input type="radio" name="browser" onclick="check(this.value)" value="60px Verdana">Verdana<br>
-        <input type="radio" name="browser" onclick="check(this.value)" value="60px Helvetiker">Helvetiker<br>
-        <input type="radio" name="browser" onclick="check(this.value)" value="60px Sans">Sans<br>
+        <input type="radio" name="browser" onclick="check(this.value)" value="Verdana">Verdana<br>
+        <input type="radio" name="browser" onclick="check(this.value)" value="Helvetiker">Helvetiker<br>
+        <input type="radio" name="browser" onclick="check(this.value)" value="Sans">Sans<br>
         <br>
         Your font is: <input type="text" id="answer" size="20">
     </form>
@@ -117,7 +117,8 @@ function check(browser) {
      <!--this file does...-->
     <script src="js/threex.dynamictexture.js"></script>
     <!--this file does...-->
-    <script src="js/three.min.js"></script>
+    <script src="three.js"></script>
+     <script src ="fonts/helvetiker_regular.typeface.js"></script>
     <!--Containing file for brick and text rendering functions-->
     <!--Note this js file must be at the end of div content-->
     <script src="js/<%#Item.JSPath %>"></script>
