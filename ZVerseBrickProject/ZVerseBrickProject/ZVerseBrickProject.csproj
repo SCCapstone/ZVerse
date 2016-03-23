@@ -259,6 +259,7 @@
     <Content Include="Content\bootstraporiginal.css" />
     <Content Include="Content\Site.css" />
     <Content Include="html.html" />
+    <Content Include="JavaScript.js" />
     <Content Include="js\fonts\droid_sans_bold.typeface.js" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
