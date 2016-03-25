@@ -64,9 +64,9 @@ function check(browser) {
     <p>What's your favorite browser?</p>
 
     <form>
+        <input type="radio" name="browser" onclick="check(this.value)" value="Gentilis">Gentilis<br>
         <input type="radio" name="browser" onclick="check(this.value)" value="Verdana">Verdana<br>
-        <input type="radio" name="browser" onclick="check(this.value)" value="Helvetiker">Helvetiker<br>
-        <input type="radio" name="browser" onclick="check(this.value)" value="Sans">Sans<br>
+        <input type="radio" name="browser" onclick="check(this.value)" value="Optimer">Optimer<br>
         <br>
         Your font is: <input type="text" id="answer" size="20">
     </form>
@@ -119,6 +119,8 @@ function check(browser) {
     <!--this file does...-->
     <script src="three.js"></script>
      <script src ="fonts/helvetiker_regular.typeface.js"></script>
+     <script src ="fonts/gentilis_regular.typeface.js"></script>
+     <script src ="fonts/optimer_regular.typeface.js"></script>
     <!--Containing file for brick and text rendering functions-->
     <!--Note this js file must be at the end of div content-->
     <script src="js/<%#Item.JSPath %>"></script>
