@@ -62,9 +62,9 @@ function check(browser) {
 <body>
 
     <form>
-        <input type="radio" name="browser" onclick="check(this.value)" value="Gentilis">Gentilis<br>
+        <input type="radio" name="browser" onclick="check(this.value)" value="Open Sans">Sans<br>
         <input type="radio" name="browser" onclick="check(this.value)" value="Helvetiker">Helvetiker<br>
-        <input type="radio" name="browser" onclick="check(this.value)" value="Optimer">Optimer<br>
+        <input type="radio" name="browser" onclick="check(this.value)" value="Alex Brush">Alex Brush<br>
         <br>
         Your font is: <input type="text" id="answer" size="20">
     </form>
@@ -116,6 +116,9 @@ function check(browser) {
    <script src="js/Three.js"></script>
     <script src="js/three.min.js"></script>
 <!--this file does...-->
+            
+     <script src ="fonts/Sans_Regular.js"></script>
+    <script src ="fonts/Brush_Regular.js"></script>
      <script src ="fonts/helvetiker_regular.typeface.js"></script>
      <script src ="fonts/gentilis_regular.typeface.js"></script>
      <script src ="fonts/optimer_regular.typeface.js"></script>
