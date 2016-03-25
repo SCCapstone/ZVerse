@@ -64,7 +64,7 @@ function check(browser) {
     <form>
         <input type="radio" name="browser" onclick="check(this.value)" value="Open Sans">Sans<br>
         <input type="radio" name="browser" onclick="check(this.value)" value="Helvetiker">Helvetiker<br>
-        <input type="radio" name="browser" onclick="check(this.value)" value="Alex Brush">Alex Brush<br>
+        <input type="radio" name="browser" onclick="check(this.value)" value="Optimer">Optimer<br>
         <br>
         Your font is: <input type="text" id="answer" size="20">
     </form>

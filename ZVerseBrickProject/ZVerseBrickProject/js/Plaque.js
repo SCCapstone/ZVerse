@@ -168,10 +168,11 @@ Output Parameters: No formal output, but this function renders text onto the
 function getText1(text,answer) {
     text1 = text;
 
+    answer = "\"" + answer + "\"";
     dynamicTexture.clear();
-    dynamicTexture.context.font = "bolder 55px Verdana";
-    dynamicTexture.drawText(text1, undefined, 140, '#707070');
-    dynamicTexture.context.font = "60px Verdana";
+    dynamicTexture.context.font = "bolder 60px " + answer;
+    dynamicTexture.drawText(text1, undefined, 140, '#545454');
+    dynamicTexture.context.font = "60px " + answer;
     dynamicTexture.drawText(text1, undefined, 140, 'black');
     material1.transparent = true;
     material1.polygonOffset = true;
@@ -193,10 +194,12 @@ Output Parameters: No formal output, but this function renders text onto the
 -----------------------------------------------------------------------------*/
 function getText2(text,answer) {
     text2 = text;
+
+    answer = "\"" + answer + "\"";
     dynamicTexture1.clear();
-    dynamicTexture1.context.font = "bolder 55px Verdana";
+    dynamicTexture1.context.font = "bolder 60px " + answer;
     dynamicTexture1.drawText(text2, undefined, 280, '#707070');
-    dynamicTexture1.context.font = "60px Verdana";
+    dynamicTexture1.context.font = "60px " + answer;
     dynamicTexture1.drawText(text2, undefined, 280, 'black');
     material2.transparent = true;
     material2.polygonOffset = true;
@@ -217,10 +220,12 @@ Output Parameters: No formal output, but this function renders text onto the
 -----------------------------------------------------------------------------*/
 function getText3(text,answer) {
     text3 = text;
+ 
+    answer = "\"" + answer + "\"";
     dynamicTexture2.clear();
-    dynamicTexture2.context.font = "bolder 55px Verdana";
+    dynamicTexture2.context.font = "bolder 60px " + answer;
     dynamicTexture2.drawText(text3, undefined, 420, '#707070');
-    dynamicTexture2.context.font = "60px Verdana";
+    dynamicTexture2.context.font = "60px " + answer;
     dynamicTexture2.drawText(text3, undefined, 420, 'black');
     material3.transparent = true;
     material3.polygonOffset = true;
