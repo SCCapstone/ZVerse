@@ -54,28 +54,34 @@
 </head>
                 <head>
     <script>
+
+
+
 function check(browser) {
     document.getElementById("answer").value = browser;
 }
+
+
+
+
     </script>
 </head>
 <body>
 
     <form>
-        <input type="radio" name="browser" onclick="check(this.value)" value="Open Sans">Sans<br>
-        <input type="radio" name="browser" onclick="check(this.value)" value="Helvetiker">Helvetiker<br>
-        <input type="radio" name="browser" onclick="check(this.value)" value="Optimer">Optimer<br>
+        <input type="radio" name="browser" onclick="check(this.value)" id ="cursive" value= "French Script MT">French Script MT<br>
+        <input type="radio" name="browser" onclick="check(this.value)" id ="helv" value="Helvetiker">Helvetiker<br>
+        <input type="radio" name="browser" onclick="check(this.value)" id ="opt" value="Arial">Arial<br>
         <br>
         Your font is: <input type="text" id="answer" size="20">
     </form>
-
-</body>
-
+    
+</body
 
             <!--Top line text box, calls getText1() in newBrickRendering.js on key press or key up-->
             <div class="textBoxLine">
                 <asp:Label AssociatedControlID="textbox1" runat="server">Top Text Line:
-                <asp:TextBox ID="textBox1" runat="server" MaxLength="40" placeholder="text line 1" onKeyPress ="getText1(this.value,answer)" onKeyUp = "getText1(this.value,answer)"></asp:TextBox>
+                <asp:TextBox ID="textBox1" runat="server" MaxLength="40" placeholder="text line 1" onKeyPress ="getText1(this.value,answer.value)" onKeyUp = "getText1(this.value,answer.value)"></asp:TextBox>
                 </asp:Label>
             </div>
             <br />
@@ -83,7 +89,7 @@ function check(browser) {
             <!--Middle line text box, calls getText2() in newBrickRendering.js on key press or key up-->
             <div class="textBoxLine">
                 <asp:Label AssociatedControlID="textbox2" runat="server">Middle Text Line:
-                <asp:TextBox ID="textBox2" runat="server" MaxLength="40" placeholder="text line 2" onKeyPress ="getText2(this.value,answer)" onKeyUp = "getText2(this.value,answer)"></asp:TextBox>
+                <asp:TextBox ID="textBox2" runat="server" MaxLength="40" placeholder="text line 2" onKeyPress ="getText2(this.value,answer.value)" onKeyUp = "getText2(this.value,answer.value)"></asp:TextBox>
                 </asp:Label>
             </div>
             <br />
@@ -91,7 +97,7 @@ function check(browser) {
             <!--Bottom line text box, calls getText2() in newBrickRendering.js on key press or key up-->
             <div class="textBoxLine">
                 <asp:Label AssociatedControlID="textbox3" runat="server">Bottom Text Line:
-                <asp:TextBox ID="textBox3" runat="server" MaxLength="40" placeholder="text line 3" onKeyPress ="getText3(this.value,answer)" onKeyUp = "getText3(this.value,answer)"></asp:TextBox>
+                <asp:TextBox ID="textBox3" runat="server" MaxLength="40" placeholder="text line 3" onKeyPress ="getText3(this.value,answer.value)" onKeyUp = "getText3(this.value,answer.value)"></asp:TextBox>
                 </asp:Label>
             </div>
             <br />

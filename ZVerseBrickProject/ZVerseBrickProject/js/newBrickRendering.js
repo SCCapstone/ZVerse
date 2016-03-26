@@ -213,7 +213,7 @@ function getText1(text, answer) {
 
     answer = "\"" + answer + "\"";
     dynamicTexture.clear();
-    dynamicTexture.context.font = "bolder 60px " + answer;
+    dynamicTexture.context.font = "bolder 58px " + answer;
     dynamicTexture.drawText(text1, undefined, 140, '#707070');
     dynamicTexture.context.font = "60px " + answer;
     dynamicTexture.drawText(text1, undefined, 140, 'black');
@@ -242,7 +242,7 @@ function getText2(text,answer) {
 
     answer = "\"" + answer + "\"";
     dynamicTexture1.clear();
-    dynamicTexture1.context.font = "bolder 60px " + answer;
+    dynamicTexture1.context.font = "bolder 58px " + answer;
     dynamicTexture1.drawText(text2, undefined, 280, '#707070');
     dynamicTexture1.context.font = "60px " + answer;
     dynamicTexture1.drawText(text2, undefined, 280, 'black');
@@ -267,7 +267,7 @@ function getText3(text,answer) {
     text3 = text;
     answer = "\"" + answer + "\"";
     dynamicTexture2.clear();
-    dynamicTexture2.context.font = "bolder 60px " + answer;
+    dynamicTexture2.context.font = "bolder 58px " + answer;
     dynamicTexture2.drawText(text3, undefined, 420, '#707070');
     dynamicTexture2.context.font = "60px " + answer;
     dynamicTexture2.drawText(text3, undefined, 420, 'black');
