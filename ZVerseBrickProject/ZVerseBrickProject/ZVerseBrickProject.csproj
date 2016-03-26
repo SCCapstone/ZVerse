@@ -258,7 +258,12 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstraporiginal.css" />
     <Content Include="Content\Site.css" />
+    <Content Include="fonts\Brush_Regular.js" />
+    <Content Include="fonts\gentilis_regular.typeface.js" />
+    <Content Include="fonts\optimer_regular.typeface.js" />
+    <Content Include="fonts\Sans_Regular.js" />
     <Content Include="html.html" />
+    <Content Include="JavaScript.js" />
     <Content Include="js\fonts\droid_sans_bold.typeface.js" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
