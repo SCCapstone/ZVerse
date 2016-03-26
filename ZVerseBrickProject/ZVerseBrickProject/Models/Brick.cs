@@ -31,5 +31,7 @@ namespace ZVerseBrickProject.Models
         public bool isVisible { get; set; }
 
         public string showhide { get; set; }
+
+        public bool isStandard { get; set; }
     }
 }

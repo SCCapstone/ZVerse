@@ -43,7 +43,7 @@
                <asp:TextBox ID="brickname" Width="280" runat="server" Text="<%#: Item.BrickName %>"></asp:TextBox>
                 </h5>
                <p>
-                    <a href="TestDisplay.aspx?brickID=<%#:Item.BrickID%>">
+                    <a href="../TestDisplay.aspx?brickID=<%#:Item.BrickID%>">
                         <img src="../js/<%#:Item.ImagePath%>" width="280" height="210" style="border: none; margin: auto;" />
                     </a>
                 </p>

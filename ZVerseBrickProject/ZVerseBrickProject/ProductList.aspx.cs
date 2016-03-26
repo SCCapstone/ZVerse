@@ -30,7 +30,11 @@ namespace ZVerseBrickProject
             IQueryable<Product> query = _db.Products;
             if (categoryId.HasValue && categoryId > 0)
             {
-                query = query.Where(p => p.CategoryID == categoryId);
+                query = query.Where(p => p.ProductID < 16 && p.CategoryID == categoryId);
+            }
+            else
+            {
+                query = query.Where(p => p.ProductID < 16);
             }
             return query;
         }

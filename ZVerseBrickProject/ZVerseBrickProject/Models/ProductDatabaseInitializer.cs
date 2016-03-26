@@ -28,11 +28,12 @@ namespace ZVerseBrickProject.Models
                     BrickName = "Mizzou Brick",
                     Description = "Pleased to offer our alumni an opportunity to take a piece of traditions plaza back to home or office. ",
                     ImagePath="brick.jpg",
-                    Incription = "Mizzou Brick incript", 
+                    Incription = "Mizzou Brick incript",
                     UnitPrice = 75.00,
                     JSPath = "newBrickRendering.js",
                     isVisible = true,
-                    showhide = "Hide"
+                    showhide = "Hide",
+                    isStandard = true
 
                 },
                 new Brick
@@ -46,7 +47,8 @@ namespace ZVerseBrickProject.Models
                     ImagePath="GamecockCube.jpg",
                     JSPath = "Gamecock.js",
                      isVisible = true,
-                      showhide = "Hide"
+                      showhide = "Hide",
+                    isStandard = true
 
                 },
 
@@ -61,7 +63,8 @@ namespace ZVerseBrickProject.Models
                     ImagePath="pine_blankframe.jpg",
                     JSPath = "Plaque.js",
                     isVisible = true,
-                    showhide = "Hide"
+                    showhide = "Hide",
+                    isStandard = true
 
                 },
                 new Brick
@@ -75,7 +78,8 @@ namespace ZVerseBrickProject.Models
                     ImagePath="pine_blankframe.jpg",
                     JSPath = "Plaque.js",
                     isVisible = true,
-                    showhide = "Hide"
+                    showhide = "Hide",
+                    isStandard = true
 
                 },
 
