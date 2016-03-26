@@ -33,7 +33,10 @@ namespace ZVerseBrickProject.Models
                     JSPath = "newBrickRendering.js",
                     isVisible = true,
                     showhide = "Hide",
-                    isStandard = true
+                    isStandard = true,
+                    tb1 = "test1",
+                    tb2 = "test2",
+                    tb3 = "test3",
 
                 },
                 new Brick
@@ -48,8 +51,10 @@ namespace ZVerseBrickProject.Models
                     JSPath = "Gamecock.js",
                      isVisible = true,
                       showhide = "Hide",
-                    isStandard = true
-
+                    isStandard = true,
+                    tb1 = "test1",
+                    tb2 = "test2",
+                    tb3 = "test3",
                 },
 
                   new Brick
@@ -64,7 +69,10 @@ namespace ZVerseBrickProject.Models
                     JSPath = "Plaque.js",
                     isVisible = true,
                     showhide = "Hide",
-                    isStandard = true
+                    isStandard = true,
+                    tb1 = "test1",
+                    tb2 = "test2",
+                    tb3 = "test3",
 
                 },
                 new Brick
@@ -79,7 +87,10 @@ namespace ZVerseBrickProject.Models
                     JSPath = "Plaque.js",
                     isVisible = true,
                     showhide = "Hide",
-                    isStandard = true
+                    isStandard = true,
+                    tb1 = "test1",
+                    tb2 = "test2",
+                    tb3 = "test3",
 
                 },
 
