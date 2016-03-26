@@ -1,0 +1,12 @@
+﻿.modelist li{
+    display:inline;
+    float: left;
+    margin-left: 2em;
+    margin-bottom: 15px;
+}
+
+.modelistcontainer {
+    display: block;
+    margin-bottom: 30px;
+    width: 100%;
+}
