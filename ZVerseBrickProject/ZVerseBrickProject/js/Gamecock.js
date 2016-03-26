@@ -183,7 +183,7 @@ function getText1(text,answer) {
 
  answer = "\"" + answer + "\"";
  dynamicTexture.clear();
- dynamicTexture.context.font = "bold 56px " + answer;
+ dynamicTexture.context.font = "bolder 56px " + answer;
  dynamicTexture.drawText(text1, undefined, 140, '#707070');
  dynamicTexture.context.font = "60px " + answer;
  dynamicTexture.drawText(text1, undefined, 140, 'black');
