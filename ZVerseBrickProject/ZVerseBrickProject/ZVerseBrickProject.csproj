@@ -255,10 +255,11 @@
     <Content Include="Account\VerifyPhoneNumber.aspx" />
     <Content Include="Checkout.aspx" />
     <Content Include="Contact.aspx" />
+    <Content Include="Content\admin.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstraporiginal.css" />
     <Content Include="Content\Site.css" />
-    <Content Include="css\master.css" />
+    <Content Include="Content\master.css" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
@@ -298,6 +299,7 @@
     <Content Include="js\THREEx.WindowResize.js" />
     <Content Include="js\newBrickRendering.js" />
     <Content Include="js\BrickRendering.html" />
+    <Content Include="oldfiles\OldAdminPage.aspx" />
     <Content Include="oldfiles\BrickwithText.aspx" />
     <Content Include="oldfiles\CubeWeb.aspx" />
     <Content Include="oldfiles\Final.aspx" />
@@ -535,6 +537,13 @@
     <Compile Include="Models\ProductDatabaseInitializer.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\Product.cs" />
+    <Compile Include="oldfiles\OldAdminPage.aspx.cs">
+      <DependentUpon>OldAdminPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="oldfiles\OldAdminPage.aspx.designer.cs">
+      <DependentUpon>OldAdminPage.aspx</DependentUpon>
+    </Compile>
     <Compile Include="oldfiles\BrickwithText.aspx.cs">
       <DependentUpon>BrickwithText.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

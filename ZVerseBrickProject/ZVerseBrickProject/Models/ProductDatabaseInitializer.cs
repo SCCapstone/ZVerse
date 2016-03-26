@@ -31,7 +31,8 @@ namespace ZVerseBrickProject.Models
                     Incription = "Mizzou Brick incript", 
                     UnitPrice = 75.00,
                     JSPath = "newBrickRendering.js",
-                    isVisible = true
+                    isVisible = true,
+                    showhide = "Hide"
 
                 },
                 new Brick
@@ -39,12 +40,13 @@ namespace ZVerseBrickProject.Models
                     BrickID = 2,
                     BrickName = "USC Cube",
                     Description = "Proud to be Gamecocks. Hurry and purchase this wonderful brick with this 99% discount off!",                    
-                    UnitPrice = 1.00,
+                    UnitPrice = 10.00,
                    Incription = "USC Brick incript",
 
                     ImagePath="GamecockCube.jpg",
                     JSPath = "Gamecock.js",
-                     isVisible = true
+                     isVisible = true,
+                      showhide = "Hide"
 
                 },
 
@@ -58,7 +60,22 @@ namespace ZVerseBrickProject.Models
 
                     ImagePath="pine_blankframe.jpg",
                     JSPath = "Plaque.js",
-                     isVisible = true,
+                    isVisible = true,
+                    showhide = "Hide"
+
+                },
+                new Brick
+                {
+                    BrickID = 4,
+                    BrickName = "Clemson Plaque2",
+                    Description = "Proud to be Clemson Fan. Hurry and purchase this wonderful brick with this 99% discount off!",
+                    UnitPrice = 11.00,
+                    Incription = "Clemson Brick incript",
+
+                    ImagePath="pine_blankframe.jpg",
+                    JSPath = "Plaque.js",
+                    isVisible = true,
+                    showhide = "Hide"
 
                 },
 

@@ -29,5 +29,7 @@ namespace ZVerseBrickProject.Models
         public string JSPath { get; set; }
 
         public bool isVisible { get; set; }
+
+        public string showhide { get; set; }
     }
 }
