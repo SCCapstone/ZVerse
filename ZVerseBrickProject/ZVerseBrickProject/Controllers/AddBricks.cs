@@ -9,7 +9,7 @@ namespace ZVerseBrickProject.Controllers
 {
     public class AddBricks
     {
-        public int AddBrick(int BrickID, string BrickName, string BrickDesc, string BrickIncript, string BrickPrice, string BrickImagePath, string BrickJSPath, bool BrickIsVisible, string Brickshowhide , bool BrickisStandard, string text1, string text2, string text3)
+        public int AddBrick(int pid, string BrickName, string BrickDesc, string BrickIncript, string BrickPrice, string BrickImagePath, string BrickJSPath, bool BrickIsVisible, string Brickshowhide , bool BrickisStandard, string text1, string text2, string text3)
         {
 
             //Debug.WriteLine("addbrick: js path is " + BrickJSPath);
@@ -17,6 +17,7 @@ namespace ZVerseBrickProject.Controllers
 
             var myBrick = new Brick();
             //myBrick.BrickID = BrickID; 
+            myBrick.pid = pid; 
             myBrick.BrickName = BrickName;
             myBrick.Description = BrickDesc;
             myBrick.Incription = BrickIncript;

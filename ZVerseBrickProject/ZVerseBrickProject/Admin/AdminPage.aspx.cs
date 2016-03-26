@@ -49,8 +49,8 @@ namespace ZVerseBrickProject.Admin
                 thebrick.showhide = "Hide";
             }
             _db.SaveChanges();
-            Response.Redirect("AdminPage.aspx");
-
+            Response.Redirect("AdminPage.aspx", false);
+            Context.ApplicationInstance.CompleteRequest();
         }
 
         protected void RemoveBrick(object sender, CommandEventArgs e)
@@ -58,10 +58,15 @@ namespace ZVerseBrickProject.Admin
             int brickid = Int32.Parse(e.CommandArgument.ToString());
             var _db = new ZVerseBrickProject.Models.ProductContext();
             Brick thebrick;
+            Product theproduct; 
             thebrick = _db.Bricks.Find(brickid);
+            theproduct = _db.Products.Find(thebrick.pid); 
+
             _db.Bricks.Remove(thebrick);
+            _db.Products.Remove(theproduct);
             _db.SaveChanges();
-            Response.Redirect("AdminPage.aspx");
+            Response.Redirect("AdminPage.aspx", false);
+            Context.ApplicationInstance.CompleteRequest();
 
         }
 
@@ -97,7 +102,8 @@ namespace ZVerseBrickProject.Admin
                 thebrick.BrickName = brickname.Text;
                 thebrick.UnitPrice = Double.Parse(brickprice.Text);
                 _db.SaveChanges();
-                Response.Redirect("AdminPage.aspx");
+                Response.Redirect("AdminPage.aspx", false);
+                Context.ApplicationInstance.CompleteRequest();
 
             }
 

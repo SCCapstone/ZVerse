@@ -50,7 +50,8 @@ namespace ZVerseBrickProject
             Debug.WriteLine(txt1);
             Debug.WriteLine(brickid);
             Response.Redirect("AddToCart.aspx?productID=" + brickid +
-                "&tb1=" + txt1 + "&tb2=" + txt2 + "&tb3=" + txt3);
+                "&tb1=" + txt1 + "&tb2=" + txt2 + "&tb3=" + txt3, false);
+            Context.ApplicationInstance.CompleteRequest();
 
         }
     }

@@ -25,6 +25,7 @@ namespace ZVerseBrickProject.Models
                 new Brick
                 {
                     BrickID = 1,
+                    pid = 13,
                     BrickName = "Mizzou Brick",
                     Description = "Pleased to offer our alumni an opportunity to take a piece of traditions plaza back to home or office. ",
                     ImagePath="brick.jpg",
@@ -42,6 +43,7 @@ namespace ZVerseBrickProject.Models
                 new Brick
                 {
                     BrickID = 2,
+                    pid = 14,
                     BrickName = "USC Cube",
                     Description = "Proud to be Gamecocks. Hurry and purchase this wonderful brick with this 99% discount off!",                    
                     UnitPrice = 10.00,
@@ -60,6 +62,7 @@ namespace ZVerseBrickProject.Models
                   new Brick
                 {
                     BrickID = 3,
+                    pid = 15,
                     BrickName = "Clemson Plaque",
                     Description = "Proud to be Clemson Fan. Hurry and purchase this wonderful brick with this 99% discount off!",
                     UnitPrice = 11.00,
