@@ -8,6 +8,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using ZVerseBrickProject.Models;
 using System.Data.Entity.Infrastructure;
+using System.Diagnostics; 
 
 namespace ZVerseBrickProject.Admin
 {
@@ -25,32 +26,83 @@ namespace ZVerseBrickProject.Admin
             return query;
         }
 
+        
         //This function will set the brickmodel visible property to 
-        // be false to hide the model from tab and catalogue
-        protected void Hide_Click(object sender, CommandEventArgs e)
-        {
-            int brickid = Int32.Parse(e.CommandArgument.ToString());
-            var _db = new ZVerseBrickProject.Models.ProductContext();
-            Brick thebrick; 
-            thebrick = _db.Bricks.Find(brickid);
-            thebrick.isVisible = false;
-            _db.SaveChanges(); 
-
-        }
-
-        //This function will set the brickmodel visible property to 
-        // be true to reveal the model on the tab and catalogue. 
-        protected void Show_Click(object sender, CommandEventArgs e)
+        // be true/false to reveal the model on the dropdown and catalogue. 
+        protected void ShowHide(object sender, CommandEventArgs e)
         {
             int brickid = Int32.Parse(e.CommandArgument.ToString());
             var _db = new ZVerseBrickProject.Models.ProductContext();
             Brick thebrick;
             thebrick = _db.Bricks.Find(brickid);
-            thebrick.isVisible = true;
+
+            //toggle the visibility property
+            if (thebrick.isVisible)
+            {
+                thebrick.isVisible = false;
+                thebrick.showhide = "Show";
+            }
+            else
+            {
+                thebrick.isVisible = true;
+                thebrick.showhide = "Hide";
+            }
             _db.SaveChanges();
+            Response.Redirect("AdminPage.aspx");
 
         }
-               
+
+        protected void RemoveBrick(object sender, CommandEventArgs e)
+        {
+            int brickid = Int32.Parse(e.CommandArgument.ToString());
+            var _db = new ZVerseBrickProject.Models.ProductContext();
+            Brick thebrick;
+            thebrick = _db.Bricks.Find(brickid);
+            _db.Bricks.Remove(thebrick);
+            _db.SaveChanges();
+            Response.Redirect("AdminPage.aspx");
+
+        }
+
+        public static Control FindControlRecursive(Control Root, string Id)
+        {
+            if (Root.ID == Id)
+                return Root;
+
+            foreach (Control Ctl in Root.Controls)
+            {
+                Control FoundCTl = FindControlRecursive(Ctl, Id);
+                if (FoundCTl != null)
+                    return FoundCTl;
+
+            }
+
+            return null;
+        }
+        protected void lv_ItemCommand(object sender, ListViewCommandEventArgs e)
+        {
+            if (e.CommandName.Equals("testbrick"))
+            {
+                //TextBox t = bricklist.Items[Convert.ToInt32(e.CommandArgument)].FindControl("brickid") as TextBox;
+                TextBox brickid = e.Item.FindControl("brickid") as TextBox;
+                TextBox brickname = e.Item.FindControl("brickname") as TextBox;
+                TextBox brickprice = e.Item.FindControl("brickprice") as TextBox;
+
+                Debug.Print(brickid.Text + " " + brickname.Text + " " + brickprice.Text);
+                int bid = Int32.Parse(brickid.Text);
+                var _db = new ZVerseBrickProject.Models.ProductContext();
+                Brick thebrick;
+                thebrick = _db.Bricks.Find(bid);
+                thebrick.BrickName = brickname.Text;
+                thebrick.UnitPrice = Double.Parse(brickprice.Text);
+                _db.SaveChanges();
+                Response.Redirect("AdminPage.aspx");
+
+            }
+
+        }
+       
+
         protected void UploadButton_Click(object sender, EventArgs e)
         {
             if (FileUploadControl.HasFile)
