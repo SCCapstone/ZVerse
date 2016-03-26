@@ -41,7 +41,7 @@ namespace ZVerseBrickProject
 
 
                     currentID = products.AddProduct(theproduct.BrickName, theproduct.Description,theproduct.UnitPrice.ToString(), "1", theproduct.ImagePath, incription);
-                    bricks.AddBrick(currentID, theproduct.BrickName, theproduct.Description, incription, theproduct.UnitPrice.ToString(), theproduct.ImagePath, theproduct.JSPath, isVisible, "show", isStandard);
+                    bricks.AddBrick(currentID, theproduct.BrickName, theproduct.Description, incription, theproduct.UnitPrice.ToString(), theproduct.ImagePath, theproduct.JSPath, isVisible, "show", isStandard, text1, text2, text3);
 
                 }
 

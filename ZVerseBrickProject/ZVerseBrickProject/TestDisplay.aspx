@@ -58,7 +58,7 @@
                     <!--Top line text box, calls getText1() in newBrickRendering.js on key press or key up-->
                     <div class="textBoxLine">
                         <asp:Label AssociatedControlID="textbox1" runat="server">Top Text Line:
-                <asp:TextBox ID="textBox1" runat="server" MaxLength="40" placeholder="text line 1" onKeyPress="getText1(this.value)" onKeyUp="getText1(this.value)"></asp:TextBox>
+                <asp:TextBox ID="textBox1" runat="server" MaxLength="40" placeholder="text line 1" Text="<%#:Item.tb1%>" CssClass="tb1" onKeyPress="getText1(this.value)" onKeyUp="getText1(this.value)"></asp:TextBox>
                         </asp:Label>
                     </div>
                     <br />
@@ -66,7 +66,7 @@
                     <!--Middle line text box, calls getText2() in newBrickRendering.js on key press or key up-->
                     <div class="textBoxLine">
                         <asp:Label AssociatedControlID="textbox2" runat="server">Middle Text Line:
-                <asp:TextBox ID="textBox2" runat="server" MaxLength="40" placeholder="text line 2" onKeyPress="getText2(this.value)" onKeyUp="getText2(this.value)"></asp:TextBox>
+                <asp:TextBox ID="textBox2" runat="server" MaxLength="40" placeholder="text line 2" Text="<%#:Item.tb2%>" CssClass="tb2" onKeyPress="getText2(this.value)" onKeyUp="getText2(this.value)"></asp:TextBox>
                         </asp:Label>
                     </div>
                     <br />
@@ -74,7 +74,7 @@
                     <!--Bottom line text box, calls getText2() in newBrickRendering.js on key press or key up-->
                     <div class="textBoxLine">
                         <asp:Label AssociatedControlID="textbox3" runat="server">Bottom Text Line:
-                <asp:TextBox ID="textBox3" runat="server" MaxLength="40" placeholder="text line 3" onKeyPress="getText3(this.value)" onKeyUp="getText3(this.value)"></asp:TextBox>
+                <asp:TextBox ID="textBox3" runat="server" MaxLength="40" placeholder="text line 3" Text="<%#:Item.tb3%>" CssClass="tb3" onKeyPress="getText3(this.value)" onKeyUp="getText3(this.value)"></asp:TextBox>
                         </asp:Label>
                     </div>
                     <br />
@@ -100,6 +100,23 @@
             <script src="js/threex.dynamictexture.js"></script>
             <!--this file does...-->
             <script src="js/three.min.js"></script>
+            <!--Automatically draw on the brick when inscription is not empty -->
+            <script>
+                $(document).ready(function () {
+                    if ($('.tb1').val().length > 0) {
+                        alert("tb1 is more than one");
+                        getText1($('.tb1').val());
+                    }
+                    if ($('.tb2').val().length > 0) {
+                        alert("tb2 is more than one");
+                        getText2($('.tb2').val());
+                    }
+                    if ($('.tb3').val().length > 0) {
+                        alert("tb3 is more than one");
+                        getText3($('.tb3').val());
+                    }
+                })
+            </script>
             <!--Containing file for brick and text rendering functions-->
             <!--Note this js file must be at the end of div content-->
             <script src="js/<%#Item.JSPath %>"></script>
