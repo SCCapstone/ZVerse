@@ -51,6 +51,37 @@ input[type="select"] {
     margin-bottom:500px; 
 }
 
+/*.masterpanel:hover{
+   background: #6DC85B; 
+}
+
+.masterpanel:active{
+   background: #44A231; 
+}*/
+
+a:link {
+    text-decoration: none;
+}
+
+/* http://stackoverflow.com/questions/18529274/change-navbar-color-in-twitter-bootstrap-3 */
+.navbar-inverse .navbar-nav > .active > a, 
+.navbar-inverse .navbar-nav > .active > a:hover, 
+.navbar-inverse .navbar-nav > .active > a:focus {
+    color: #555;
+    background-color: #6DC85B;
+}
+
+.navbar li{
+      display: inline-block;
+      padding: 0; 
+      border: 0;
+      margin: 0
+}
+/*@media (min-width: 1200px) {
+    .container{
+        max-width: 970px;
+    }
+}*/
 /* Responsive: Portrait tablets and up */
 @media screen and (min-width: 768px) {
     .jumbotron {
@@ -88,3 +119,4 @@ input[type="select"] {
 #nav li:hover ul {
 	left: auto;
 }
+
