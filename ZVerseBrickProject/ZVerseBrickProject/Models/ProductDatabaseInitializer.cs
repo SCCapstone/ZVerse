@@ -29,7 +29,7 @@ namespace ZVerseBrickProject.Models
                     BrickName = "Mizzou Brick",
                     Description = "Pleased to offer our alumni an opportunity to take a piece of traditions plaza back to home or office. ",
                     ImagePath="brick.jpg",
-                    Incription = "Mizzou Brick incript",
+                    Incription = "Mizzou Brick default incript",
                     UnitPrice = 75.00,
                     JSPath = "newBrickRendering.js",
                     isVisible = true,
@@ -47,8 +47,7 @@ namespace ZVerseBrickProject.Models
                     BrickName = "USC Cube",
                     Description = "Proud to be Gamecocks. Hurry and purchase this wonderful brick with this 99% discount off!",                    
                     UnitPrice = 10.00,
-                   Incription = "USC Brick incript",
-
+                   Incription = "USC Brick default incript",
                     ImagePath="GamecockCube.jpg",
                     JSPath = "Gamecock.js",
                      isVisible = true,
@@ -66,8 +65,7 @@ namespace ZVerseBrickProject.Models
                     BrickName = "Clemson Plaque",
                     Description = "Proud to be Clemson Fan. Hurry and purchase this wonderful brick with this 99% discount off!",
                     UnitPrice = 11.00,
-                    Incription = "Clemson Brick incript",
-
+                    Incription = "Clemson Brick default incript",
                     ImagePath="pine_blankframe.jpg",
                     JSPath = "Plaque.js",
                     isVisible = true,
@@ -78,24 +76,23 @@ namespace ZVerseBrickProject.Models
                     tb3 = "test3",
 
                 },
-                new Brick
-                {
-                    BrickID = 4,
-                    BrickName = "Clemson Plaque2",
-                    Description = "Proud to be Clemson Fan. Hurry and purchase this wonderful brick with this 99% discount off!",
-                    UnitPrice = 11.00,
-                    Incription = "Clemson Brick incript",
+                //new Brick
+                //{
+                //    BrickID = 4,
+                //    BrickName = "Debug Model purpose",
+                //    Description = "Proud to be Clemson Fan. Hurry and purchase this wonderful brick with this 99% discount off!",
+                //    UnitPrice = 11.00,
+                //    Incription = "Clemson Brick default incript",
+                //    ImagePath="pine_blankframe.jpg",
+                //    JSPath = "Plaque.js",
+                //    isVisible = true,
+                //    showhide = "Hide",
+                //    isStandard = true,
+                //    tb1 = "test1",
+                //    tb2 = "test2",
+                //    tb3 = "test3",
 
-                    ImagePath="pine_blankframe.jpg",
-                    JSPath = "Plaque.js",
-                    isVisible = true,
-                    showhide = "Hide",
-                    isStandard = true,
-                    tb1 = "test1",
-                    tb2 = "test2",
-                    tb3 = "test3",
-
-                },
+                //},
 
             };
 
