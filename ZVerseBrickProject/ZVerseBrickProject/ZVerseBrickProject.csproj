@@ -255,16 +255,23 @@
     <Content Include="Account\VerifyPhoneNumber.aspx" />
     <Content Include="Checkout.aspx" />
     <Content Include="Contact.aspx" />
-    <Content Include="Content\admin.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstraporiginal.css" />
     <Content Include="Content\Site.css" />
-    <Content Include="Content\master.css" />
+    <Content Include="fonts\Brush_Regular.js" />
+    <Content Include="fonts\gentilis_regular.typeface.js" />
+    <Content Include="fonts\optimer_regular.typeface.js" />
+    <Content Include="fonts\Sans_Regular.js" />
+    <Content Include="html.html" />
+    <Content Include="JavaScript.js" />
+    <Content Include="js\fonts\droid_sans_bold.typeface.js" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="Account\Web.config" />
+    <Content Include="fonts\helvetiker_regular.typeface.js" />
+    <Content Include="HtmlPage1.html" />
     <Content Include="Images\productImages\image01.jpg" />
     <Content Include="Images\productImages\image02.jpg" />
     <Content Include="Images\productImages\image03.jpg" />
@@ -284,8 +291,10 @@
     <Content Include="js\brick.jpg" />
     <Content Include="js\bricks.jpg" />
     <Content Include="js\fonts\font1.js" />
+    <Content Include="js\fonts\helvetiker_regular.typeface.js" />
     <Content Include="js\Gamecock.js" />
     <Content Include="js\GamecockCube.jpg" />
+    <Content Include="js\JavaScript.js" />
     <Content Include="js\MTLLoader.js" />
     <Content Include="js\OBJLoader.js" />
     <Content Include="js\OBJMTLLoader.js" />
@@ -294,12 +303,12 @@
     <Content Include="js\Plaque.js" />
     <Content Include="js\script.js" />
     <Content Include="js\stats.min.js" />
+    <Content Include="js\Three.js" />
     <Content Include="js\three.min.js" />
     <Content Include="js\threex.dynamictexture.js" />
     <Content Include="js\THREEx.WindowResize.js" />
     <Content Include="js\newBrickRendering.js" />
     <Content Include="js\BrickRendering.html" />
-    <Content Include="oldfiles\OldAdminPage.aspx" />
     <Content Include="oldfiles\BrickwithText.aspx" />
     <Content Include="oldfiles\CubeWeb.aspx" />
     <Content Include="oldfiles\Final.aspx" />
@@ -515,8 +524,6 @@
     <Compile Include="Contact.aspx.designer.cs">
       <DependentUpon>Contact.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Controllers\AddBricks.cs" />
-    <Compile Include="Controllers\AddProducts.cs" />
     <Compile Include="Controllers\ItemController.cs" />
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
@@ -537,13 +544,6 @@
     <Compile Include="Models\ProductDatabaseInitializer.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\Product.cs" />
-    <Compile Include="oldfiles\OldAdminPage.aspx.cs">
-      <DependentUpon>OldAdminPage.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="oldfiles\OldAdminPage.aspx.designer.cs">
-      <DependentUpon>OldAdminPage.aspx</DependentUpon>
-    </Compile>
     <Compile Include="oldfiles\BrickwithText.aspx.cs">
       <DependentUpon>BrickwithText.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -634,6 +634,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Logic\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
