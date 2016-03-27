@@ -9,7 +9,7 @@ using ZVerseBrickProject.Models;
 using System.Collections.Specialized;
 using System.Collections;
 using System.Web.ModelBinding;
-
+using System.Diagnostics;
 
 namespace ZVerseBrickProject
 {
@@ -37,6 +37,22 @@ namespace ZVerseBrickProject
             }
         }
 
+        protected void  producturlClick(object sender, CommandEventArgs e)
+        {
+            int productid = Convert.ToInt32(e.CommandArgument.ToString());
+            Debug.WriteLine("shopping cart: " + productid); 
+            if (productid > 15)
+            {
+                ProductContext _db = new ProductContext();
+                int brickid = (from b in _db.Bricks where b.pid == productid select b.BrickID).FirstOrDefault();
+                Response.Redirect("TestDisplay.aspx?brickID=" + brickid); 
+            }else
+            {
+                Response.Redirect("ProductDetails.aspx?productID=" + productid);
+            }
+            Context.ApplicationInstance.CompleteRequest();
+
+        }
         public List<CartItem> GetShoppingCartItems()
         {
             ShoppingCartFunctions actions = new ShoppingCartFunctions();
