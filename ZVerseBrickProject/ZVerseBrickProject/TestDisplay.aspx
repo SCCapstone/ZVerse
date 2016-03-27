@@ -43,7 +43,7 @@
                     <%#:Item.Description %>
                     <br />
                     <br />
-                    <b>Incription:</b><br />
+                    <b>Incription (this is for debuggin purpose):</b><br />
                     <%#:Item.Incription %>
                     <br />
                     <br />
@@ -84,12 +84,7 @@
                     <!--Shopping Cart button redirect to order page -->
                     <asp:Button runat="server" ID="Show" Text="Add To Cart" class="btn btn-success" CommandArgument="<%#:Item.BrickID %>" OnCommand="AddCart" />
 
-                    <div>
-                        <span class="ProductListItem">
-                            <b>Add To Cart</b>
-                        </span>
-                        </a>
-                    </div>
+
 
 
                 </div>
@@ -104,15 +99,15 @@
             <script>
                 $(document).ready(function () {
                     if ($('.tb1').val().length > 0) {
-                        alert("tb1 is more than one");
+                        //alert("tb1 is more than one");
                         getText1($('.tb1').val());
                     }
                     if ($('.tb2').val().length > 0) {
-                        alert("tb2 is more than one");
+                        //alert("tb2 is more than one");
                         getText2($('.tb2').val());
                     }
                     if ($('.tb3').val().length > 0) {
-                        alert("tb3 is more than one");
+                       // alert("tb3 is more than one");
                         getText3($('.tb3').val());
                     }
                 })
