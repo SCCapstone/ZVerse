@@ -35,9 +35,9 @@ namespace ZVerseBrickProject.Models
                     isVisible = true,
                     showhide = "Hide",
                     isStandard = true,
-                    tb1 = "test1",
-                    tb2 = "test2",
-                    tb3 = "test3",
+                    tb1 = "",
+                    tb2 = "",
+                    tb3 = "",
 
                 },
                 new Brick
@@ -53,9 +53,9 @@ namespace ZVerseBrickProject.Models
                      isVisible = true,
                       showhide = "Hide",
                     isStandard = true,
-                    tb1 = "test1",
-                    tb2 = "test2",
-                    tb3 = "test3",
+                    tb1 = "",
+                    tb2 = "",
+                    tb3 = "", 
                 },
 
                   new Brick
@@ -71,9 +71,9 @@ namespace ZVerseBrickProject.Models
                     isVisible = true,
                     showhide = "Hide",
                     isStandard = true,
-                    tb1 = "test1",
-                    tb2 = "test2",
-                    tb3 = "test3",
+                    tb1 = "",
+                    tb2 = "",
+                    tb3 = "",
 
                 },
                 //new Brick

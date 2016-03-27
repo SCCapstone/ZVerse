@@ -20,10 +20,10 @@
     </div>
 
     <h3>Our current available models include:</h3>
-    Clicking hide will take the existing model off the Custom Objects and the Tabs.
+    Clicking Hide will take the existing model off the Custom Objects and the Tabs.
     Clicking Remove will delete the entire model from the database.
         <br />
-    Click the Update Website button when done with your changes!
+    Click the UpdateModel when you have made edits!
         <br />
     <br />
 
@@ -55,7 +55,7 @@
                 <p>
                     <asp:Button runat="server" ID="Button1" Text="<%#:Item.showhide%>" CommandArgument="<%#:Item.BrickID %>" OnCommand="ShowHide" />
                    <asp:Button runat="server" ID="Button2" Text="Remove" CommandArgument="<%#:Item.BrickID %>" OnCommand="RemoveBrick" />
-                    <asp:Button runat="server" ID="Button3" Text="UpdateBrick" CommandName="testbrick" CommandArgument="<%# Container.DataItemIndex %>" />
+                    <asp:Button runat="server" ID="Button3" Text="UpdateModel" CommandName="testbrick" CommandArgument="<%# Container.DataItemIndex %>" />
                 </p>
         </ItemTemplate>
         <ItemSeparatorTemplate></ItemSeparatorTemplate>
