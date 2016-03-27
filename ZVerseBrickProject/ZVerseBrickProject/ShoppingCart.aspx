@@ -9,20 +9,20 @@
         CssClass="table table-striped table-bordered">
         <Columns>
             <asp:BoundField DataField="ProductID" HeaderText="ID" SortExpression="ProductID" />
-            <asp:BoundField DataField="Product.ProductName" HeaderText="Name" /> 
-            <asp:BoundField DataField="Product.UnitPrice" HeaderText="Unit Price" DataFormatString="{0:c}"  />
-            <asp:BoundField DataField="Product.Incription" HeaderText="Incription" />
+            <asp:TemplateField HeaderText="Name">
+                <ItemTemplate>
+                    <asp:LinkButton ID="producturl" runat="server" Text="<%#: Item.Product.ProductName %>" CommandArgument="<%#: Item.ProductId %>" OnCommand="producturlClick"></asp:LinkButton>
+                </ItemTemplate>
+            </asp:TemplateField>
+            <asp:BoundField DataField="Product.UnitPrice" HeaderText="Unit Price" DataFormatString="{0:c}" />
+            <asp:BoundField DataField="Product.Incription" HeaderText="Inscription" />
 
             <asp:TemplateField HeaderText="Quantity">
                 <ItemTemplate>
                     <asp:TextBox ID="PurchaseQuantity" Width="40" runat="server" Text="<%#: Item.Quantity %>"></asp:TextBox>
                 </ItemTemplate>
             </asp:TemplateField>
-            <asp:TemplateField HeaderText="weblink">
-                <ItemTemplate>
-                    <asp:LinkButton ID="producturl" runat="server" Text="<%#: Item.Product.ProductName %>" CommandArgument="<%#: Item.ProductId %>" OnCommand="producturlClick"></asp:LinkButton>
-                </ItemTemplate>
-            </asp:TemplateField>
+
             <asp:TemplateField HeaderText="Item Total">
                 <ItemTemplate>
                     <%#: String.Format("{0:c}", ((Convert.ToDouble(Item.Quantity)) *  Convert.ToDouble(Item.Product.UnitPrice)))%>

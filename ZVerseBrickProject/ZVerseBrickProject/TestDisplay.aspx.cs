@@ -47,8 +47,8 @@ namespace ZVerseBrickProject
             string txt1 = tb1.Text;
             string txt2 = tb2.Text;
             string txt3 = tb3.Text;
-            Debug.WriteLine(txt1);
-            Debug.WriteLine(brickid);
+            Debug.WriteLine("txt1 is " + txt1);
+            Debug.WriteLine("brickid is " + brickid);
             Response.Redirect("AddToCart.aspx?productID=" + brickid +
                 "&tb1=" + txt1 + "&tb2=" + txt2 + "&tb3=" + txt3, false);
             Context.ApplicationInstance.CompleteRequest();

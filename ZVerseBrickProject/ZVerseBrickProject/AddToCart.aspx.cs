@@ -35,13 +35,7 @@ namespace ZVerseBrickProject
                     bool isVisible = false; 
 
                     theproduct = _db.Bricks.Find(-currentID);
-                    Debug.WriteLine("what is the product right now");
-                    Debug.WriteLine("add to cart: im path is " + theproduct.ImagePath);
-
-                    Debug.WriteLine("add to cart: js path is " + theproduct.JSPath);
-                    Debug.WriteLine("add to cart: showhide is " + theproduct.showhide);
-
-
+                    //Debug.WriteLine("add to cart: js path is " + theproduct.JSPath);
                     currentID = products.AddProduct(theproduct.BrickName, theproduct.Description,theproduct.UnitPrice.ToString(), "1", theproduct.ImagePath, incription);
                     bricks.AddBrick(currentID, theproduct.BrickName, theproduct.Description, incription, theproduct.UnitPrice.ToString(), theproduct.ImagePath, theproduct.JSPath, isVisible, "show", isStandard, text1, text2, text3);
 
