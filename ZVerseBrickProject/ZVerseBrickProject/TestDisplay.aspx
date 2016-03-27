@@ -70,8 +70,8 @@ function check(browser) {
 
     <form>
         <input type="radio" name="browser" onclick="check(this.value)" id ="cursive" value= "French Script MT">French Script MT<br>
-        <input type="radio" name="browser" onclick="check(this.value)" id ="helv" value="Helvetiker">Helvetiker<br>
-        <input type="radio" name="browser" onclick="check(this.value)" id ="opt" value="Arial">Arial<br>
+        <input type="radio" name="browser" onclick="check(this.value)" id ="helv" value="Charlesworth">Charlesworth<br>
+        <input type="radio" name="browser" onclick="check(this.value)" id ="opt" value="Comic Sans MS">Comic Sans MS<br>
         <br>
         Your font is: <input type="text" id="answer" size="20">
     </form>

@@ -167,7 +167,6 @@ Output Parameters: No formal output, but this function renders text onto the
 -----------------------------------------------------------------------------*/
 function getText1(text,answer) {
     text1 = text;
-
     answer = "\"" + answer + "\"";
     dynamicTexture.clear();
     dynamicTexture.context.font = "bolder 58px " + answer;
@@ -194,7 +193,6 @@ Output Parameters: No formal output, but this function renders text onto the
 -----------------------------------------------------------------------------*/
 function getText2(text,answer) {
     text2 = text;
-
     answer = "\"" + answer + "\"";
     dynamicTexture1.clear();
     dynamicTexture1.context.font = "bolder 58px " + answer;
