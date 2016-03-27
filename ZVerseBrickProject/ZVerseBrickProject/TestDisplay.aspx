@@ -43,10 +43,10 @@
                     <br />
                     <b>Description:</b><br />
                     <%#:Item.Description %>
-                    <br />
+<%--                    <br />
                     <br />
                     <b>Inscription (this is for debuggin purpose):</b><br />
-                    <%#:Item.Incription %>
+                    <%#:Item.Incription %>--%>
                     <br />
                     <br />
                     <span><b>Price:</b>&nbsp; <%#: String.Format("{0:c}", Item.UnitPrice) %></span>
@@ -67,7 +67,7 @@
                     <!--Top line text box, calls getText1() in newBrickRendering.js on key press or key up-->
                     <div class="textBoxLine">
                         <asp:Label AssociatedControlID="textbox1" runat="server">Top Text Line:
-                <asp:TextBox ID="textBox1" runat="server" MaxLength="40" placeholder="text line 1"  CssClass="tb1" onKeyPress="getText1(this.value, answer.value)" onKeyUp="getText1(this.value, answer.value)"></asp:TextBox>
+                <asp:TextBox ID="textBox1" runat="server" MaxLength="40" placeholder="text line 1" Text="<%#:Item.tb1%>" CssClass="tb1" onKeyPress="getText1(this.value, answer.value)" onKeyUp="getText1(this.value, answer.value)"></asp:TextBox>
                         </asp:Label>
                     </div>
                     <br />
@@ -75,7 +75,7 @@
                     <!--Middle line text box, calls getText2() in newBrickRendering.js on key press or key up-->
                     <div class="textBoxLine">
                         <asp:Label AssociatedControlID="textbox2" runat="server">Middle Text Line:
-                <asp:TextBox ID="textBox2" runat="server" MaxLength="40" placeholder="text line 2"  CssClass="tb2" onKeyPress="getText2(this.value, answer.value)" onKeyUp="getText2(this.value, answer.value)"></asp:TextBox>
+                <asp:TextBox ID="textBox2" runat="server" MaxLength="40" placeholder="text line 2"  Text="<%#:Item.tb2%>" CssClass="tb2" onKeyPress="getText2(this.value, answer.value)" onKeyUp="getText2(this.value, answer.value)"></asp:TextBox>
                         </asp:Label>
                     </div>
                     <br />
@@ -83,7 +83,7 @@
                     <!--Bottom line text box, calls getText2() in newBrickRendering.js on key press or key up-->
                     <div class="textBoxLine">
                         <asp:Label AssociatedControlID="textbox3" runat="server">Bottom Text Line:
-                <asp:TextBox ID="textBox3" runat="server" MaxLength="40" placeholder="text line 3"  CssClass="tb3" onKeyPress="getText3(this.value, answer.value)" onKeyUp="getText3(this.value, answer.value)"></asp:TextBox>
+                <asp:TextBox ID="textBox3" runat="server" MaxLength="40" placeholder="text line 3"  Text="<%#:Item.tb3%>" CssClass="tb3" onKeyPress="getText3(this.value, answer.value)" onKeyUp="getText3(this.value, answer.value)"></asp:TextBox>
                         </asp:Label>
                     </div>
                     <br />
