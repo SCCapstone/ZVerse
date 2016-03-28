@@ -18,6 +18,17 @@ var container = container = document.getElementById('canvas');
 var windowHalfX = container.offsetWidth / 2;
 var windowHalfY = container.offsetHeight / 2;
 
+var group;
+var group1;
+var group2;
+var group3;
+var targetRotationX = 0;
+var targetRotationOnMouseDownX = 0;
+var targetRotationY = 0;
+var targetRotationOnMouseDownY = 0;
+var mouseXOnMouseDown = 0;
+var mouseYOnMouseDown = 0;
+
 /*
 Variables to store the dynamic textures, geometries, and materials for the 
     three lines of text that will be rendered onto the brick
@@ -72,12 +83,18 @@ function init() {
     light.position.set(0, 1, 1).normalize();
     scene.add(light);
 
+    group = new THREE.Object3D();
+    group1 = new THREE.Object3D();
+    group2 = new THREE.Object3D();
+    group3 = new THREE.Object3D();
+
     //load the brick model and texture
     var texture = new THREE.TextureLoader().load("js/pine_blankframe.jpg");
     var geometry = new THREE.CubeGeometry(5, 5, 1); //width, height, depth
     var material = new THREE.MeshBasicMaterial({ map: texture });
     mesh = new THREE.Mesh(geometry, material);
-    scene.add(mesh);
+    group.add(mesh);
+    scene.add(group);
 
     //render the brick and text line textures
     renderer = new THREE.WebGLRenderer({ alpha: 1 });
@@ -87,7 +104,9 @@ function init() {
     container.appendChild(renderer.domElement);
 
     //bind window to event listeners
-    container.addEventListener('mousemove', onDocumentMouseMove, false);
+    container.addEventListener('mousedown', onDocumentMouseDown, false);
+    container.addEventListener('touchstart', onDocumentTouchStart, false);
+    container.addEventListener('touchmove', onDocumentTouchMove, false);
     container.addEventListener('resize', onWindowResize, false);
 
     container.addEventListener('mouseout', onDocumentMouseOut, false);
@@ -113,6 +132,80 @@ function onDocumentMouseOut(event) {
     mouseY = 0;
 }
 
+function onDocumentMouseDown(event) {
+
+    event.preventDefault();
+
+    document.addEventListener('mousemove', onDocumentMouseMove, false);
+    document.addEventListener('mouseup', onDocumentMouseUp, false);
+    document.addEventListener('mouseout', onDocumentMouseOut, false);
+
+    mouseXOnMouseDown = event.clientX - windowHalfX;
+    targetRotationOnMouseDownX = targetRotationX;
+
+    mouseYOnMouseDown = event.clientY - windowHalfY;
+    targetRotationOnMouseDownY = targetRotationY;
+
+}
+
+function onDocumentMouseMove(event) {
+
+    mouseX = event.clientX - windowHalfX;
+    mouseY = event.clientY - windowHalfY;
+
+
+    targetRotationY = targetRotationOnMouseDownY + (mouseY - mouseYOnMouseDown) * 0.02;
+    targetRotationX = targetRotationOnMouseDownX + (mouseX - mouseXOnMouseDown) * 0.02;
+
+
+
+}
+
+function onDocumentMouseUp(event) {
+
+    document.removeEventListener('mousemove', onDocumentMouseMove, false);
+    document.removeEventListener('mouseup', onDocumentMouseUp, false);
+    document.removeEventListener('mouseout', onDocumentMouseOut, false);
+
+}
+
+
+
+function onDocumentTouchStart(event) {
+
+    if (event.touches.length == 1) {
+
+        event.preventDefault();
+
+        mouseXOnMouseDown = event.touches[0].pageX - windowHalfX;
+        targetRotationOnMouseDownX = targetRotationX;
+
+        mouseYOnMouseDown = event.touches[0].pageY - windowHalfY;
+        targetRotationOnMouseDownY = targetRotationY;
+
+
+
+    }
+
+}
+
+function onDocumentTouchMove(event) {
+
+    if (event.touches.length == 1) {
+
+        event.preventDefault();
+
+        mouseX = event.touches[0].pageX - windowHalfX;
+        targetRotationX = targetRotationOnMouseDownX + (mouseX - mouseXOnMouseDown) * 0.05;
+
+        mouseY = event.touches[0].pageY - windowHalfY;
+        targetRotationY = targetRotationOnMouseDownY + (mouseY - mouseYOnMouseDown) * 0.05;
+
+    }
+
+}
+
+
 /*-----------------------------------------------------------------------------
 Name: animate()
 Description: TODO******************************************************************************************
@@ -134,11 +227,94 @@ Output Parameters:
     This function has no output parameters
 -----------------------------------------------------------------------------*/
 function render() {
-    camera.position.x += (mouseX - camera.position.x) * .4;
-    camera.position.y += (-mouseY - camera.position.y) * .4;
-    camera.lookAt(scene.position);
+    //horizontal rotation   
+    group.rotation.y += (targetRotationX - group.rotation.y) * 0.1;
+
+    //vertical rotation 
+    finalRotationY = (targetRotationY - group.rotation.x);
+
+
+    if (group.rotation.x <= 1 && group.rotation.x >= -1) {
+
+        group.rotation.x += finalRotationY * 0.1;
+    }
+    if (group.rotation.x > 1) {
+
+        group.rotation.x = 1
+    }
+    else if (group.rotation.x < -1) {
+
+        group.rotation.x = -1
+    }
+
+
+    //horizontal rotation   
+    group1.rotation.y += (targetRotationX - group1.rotation.y) * 0.1;
+
+    //vertical rotation 
+    finalRotationY = (targetRotationY - group1.rotation.x);
+
+
+    if (group1.rotation.x <= 1 && group1.rotation.x >= -1) {
+
+        group1.rotation.x += finalRotationY * 0.1;
+    }
+    if (group1.rotation.x > 1) {
+
+        group1.rotation.x = 1
+    }
+    else if (group1.rotation.x < -1) {
+
+        group1.rotation.x = -1
+    }
+
+
+
+    //horizontal rotation   
+    group2.rotation.y += (targetRotationX - group2.rotation.y) * 0.1;
+
+    //vertical rotation 
+    finalRotationY = (targetRotationY - group2.rotation.x);
+
+
+    if (group2.rotation.x <= 1 && group2.rotation.x >= -1) {
+
+        group2.rotation.x += finalRotationY * 0.1;
+    }
+    if (group2.rotation.x > 1) {
+
+        group2.rotation.x = 1
+    }
+    else if (group2.rotation.x < -1) {
+
+        group2.rotation.x = -1
+    }
+
+
+    //horizontal rotation   
+    group3.rotation.y += (targetRotationX - group3.rotation.y) * 0.1;
+
+    //vertical rotation 
+    finalRotationY = (targetRotationY - group3.rotation.x);
+
+
+    if (group3.rotation.x <= 1 && group3.rotation.x >= -1) {
+
+        group3.rotation.x += finalRotationY * 0.1;
+    }
+    if (group3.rotation.x > 1) {
+
+        group3.rotation.x = 1
+    }
+    else if (group3.rotation.x < -1) {
+
+        group3.rotation.x = -1
+    }
+
     renderer.render(scene, camera);
+
 }
+
 
 
 /*-----------------------------------------------------------------------------
@@ -177,7 +353,8 @@ function getText1(text,answer) {
     material1.polygonOffset = true;
     material1.polygonOffsetFactor = -0.2;
     mesh1 = new THREE.Mesh(geometry1, material1);
-    scene.add(mesh1);
+    group1.add(mesh1);
+    scene.add(group1);
 
 }
 
@@ -203,7 +380,8 @@ function getText2(text,answer) {
     material2.polygonOffset = true;
     material2.polygonOffsetFactor = -0.2;
     mesh2 = new THREE.Mesh(geometry2, material2);
-    scene.add(mesh2);
+    group2.add(mesh2);
+    scene.add(group2);
 }
 
 
@@ -229,5 +407,6 @@ function getText3(text,answer) {
     material3.polygonOffset = true;
     material3.polygonOffsetFactor = -0.2;
     mesh3 = new THREE.Mesh(geometry3, material3);
-    scene.add(mesh3);
+    group3.add(mesh3);
+    scene.add(group3);
 }
