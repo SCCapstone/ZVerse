@@ -92,6 +92,7 @@ function init() {
         x: 0,
         y: 0
     };
+
     $(renderer.domElement).on('mousedown', function (e) {
         isDragging = true;
     })
@@ -113,6 +114,10 @@ function init() {
             x: e.offsetX,
             y: e.offsetY
         };
+
+        controls = new THREE.OrbitControls(camera);
+        controls.target.set(0, radius, 0);
+        controls.update();
     });
     /* */
 
