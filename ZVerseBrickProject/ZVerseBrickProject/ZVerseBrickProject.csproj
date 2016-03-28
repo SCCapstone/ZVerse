@@ -301,6 +301,7 @@
     <Content Include="js\OrbitControls.js" />
     <Content Include="js\pine_blankframe.jpg" />
     <Content Include="js\Plaque.js" />
+    <Content Include="js\scene.js" />
     <Content Include="js\script.js" />
     <Content Include="js\stats.min.js" />
     <Content Include="js\Three.js" />
