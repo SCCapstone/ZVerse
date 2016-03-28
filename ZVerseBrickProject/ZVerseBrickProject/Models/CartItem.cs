@@ -14,6 +14,8 @@ namespace ZVerseBrickProject.Models
         public string CartId { get; set; }
 
         public int Quantity { get; set;  }
+
+        public string incription { get; set; }
         
         public System.DateTime DateCreated { get; set;  }
 

@@ -1,12 +1,11 @@
 ﻿<%@ Page Title="AdminPage" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="AdminPage.aspx.cs" Inherits="ZVerseBrickProject.Admin.AdminPage" %>
 
 
-<asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
-
+<asp:Content ID="AdminContent" ContentPlaceHolderID="MainContent" runat="server">
+    <link href="../Content/admin.css" rel="stylesheet" type=" text/css" />
     <h1>Welcome, Admin!</h1>
     <hr />
     <h3>Manage your models here</h3>
-
 
     <div id="uploadForm">
         <br />
@@ -16,56 +15,54 @@
         <br />
         <br />
         <asp:Label runat="server" ID="StatusLabel" Text="" />
-  
-         </div>
 
-   
-        <h3>Our current available models include:</h3>
-        Clicking hide will take the existing model off the Custom Objects and the Tabs. <br />
-        Click the Update Website button when done with your changes! <br /> <br />
-        <asp:ListView ID="bricklist" ItemType="ZVerseBrickProject.Models.Brick" runat="server" SelectMethod="GetBricks">
-            <ItemTemplate>
-                <p>
-                    <a href="/TestDisplay.aspx?brickID=<%#:Item.BrickID%>">
-                        <%#:Item.BrickName %>
-                    </a>
-                    <%-- <img src="<%#:Item.ImagePath%>">;--%>
-                    <%--  &nbsp&nbsp
-                                 <asp:Button runat="server" ID="Show" Text="Show" CommandArgument="<%#:Item.BrickID %>" OnCommand="Show_Click" />
-                    <asp:Button runat="server" ID="Hide" Text="Hide" CommandArgument="<%#:Item.BrickID %>" OnCommand="Hide_Click" />--%>
-                    <script type="text/javascript">
-                        function toggle(button)
-                        {
-                            if(document.getElementById("1").value=="Hiding"){
-                                document.getElementById("1").value = "Showing";
-                                //Hide_Click(<%#:Item.BrickID %>);
-                            }
-                            else if (document.getElementById("1").value == "Showing") {
-                                document.getElementById("1").value = "Hiding";
-                            }
-                        }
-                    </script>
 
-                    <html>
-                        <body>
-                            <form action="AdminPage.aspx">
-                                <input type="button" id="1" value="Showing" style="color:blue"
-                                    onclick="toggle(this); ">
-                            </form>
-                        </body>
-                    </html>
-   
-                </p>
-            </ItemTemplate>
-            <ItemSeparatorTemplate>&nbsp&nbsp</ItemSeparatorTemplate>
-        </asp:ListView>
+    </div>
+
+    <h3>Our current available models include:</h3>
+    Clicking Hide will take the existing model off the Custom Objects and the Tabs.
+    Clicking Remove will delete the entire model from the database.
+        <br />
+    Click the UpdateModel when you have made edits!
+        <br />
     <br />
-        <a class="btn btn-primary" href="/Default.aspx">Update Website</a>
-          
+
+    <asp:ListView ID="bricklist" ItemType="ZVerseBrickProject.Models.Brick" runat="server" SelectMethod="GetBricks" OnItemCommand="lv_ItemCommand">
+<%--        <LayoutTemplate>
+            <div class="modelistcontainer">
+                <ul class="modelist">
+                    <asp:PlaceHolder ID="itemPlaceholder" runat="server"></asp:PlaceHolder>
+                </ul>
+            </div>
+        </LayoutTemplate>--%>
+
+        <ItemTemplate>
+            <br />
+             <h5>
+               <asp:TextBox runat="server" ID="brickid" Text="<%#:Item.BrickID%>" Visible="false"></asp:TextBox>
+               <asp:TextBox ID="brickname" Width="280" runat="server" Text="<%#: Item.BrickName %>"></asp:TextBox>
+                </h5>
+               <p>
+                    <a href="../TestDisplay.aspx?brickID=<%#:Item.BrickID%>">
+                        <img src="../js/<%#:Item.ImagePath%>" width="280" height="210" style="border: none; margin: auto;" />
+                    </a>
+                </p>
+                <p>
+                 Price: $
+                 <asp:TextBox ID="brickprice" Width="50" runat="server" Text="<%#: Item.UnitPrice %>" ></asp:TextBox>
+
+                </p>
+                <p>
+                    <asp:Button runat="server" ID="Button1" Text="<%#:Item.showhide%>" CommandArgument="<%#:Item.BrickID %>" OnCommand="ShowHide" />
+                   <asp:Button runat="server" ID="Button2" Text="Remove" CommandArgument="<%#:Item.BrickID %>" OnCommand="RemoveBrick" />
+                    <asp:Button runat="server" ID="Button3" Text="UpdateModel" CommandName="testbrick" CommandArgument="<%# Container.DataItemIndex %>" />
+                </p>
+        </ItemTemplate>
+        <ItemSeparatorTemplate></ItemSeparatorTemplate>
+
+    </asp:ListView>
+
+    <br />
 
 
 </asp:Content>
-
-
-
-
