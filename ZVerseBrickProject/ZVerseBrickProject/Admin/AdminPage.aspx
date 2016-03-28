@@ -23,44 +23,44 @@
         <h3>Our current available models include:</h3>
         Clicking hide will take the existing model off the Custom Objects and the Tabs. <br />
         Click the Update Website button when done with your changes! <br /> <br />
-         <asp:ListView ID="bricklist" ItemType="ZVerseBrickProject.Models.Brick" runat="server" SelectMethod="GetBricks">
-             <ItemTemplate>
-                 <p>
-                     <a href="/TestDisplay.aspx?brickID=<%#:Item.BrickID%>">
-                         <%#:Item.BrickName %>
-                     </a>
+        <asp:ListView ID="bricklist" ItemType="ZVerseBrickProject.Models.Brick" runat="server" SelectMethod="GetBricks">
+            <ItemTemplate>
+                <p>
+                    <a href="/TestDisplay.aspx?brickID=<%#:Item.BrickID%>">
+                        <%#:Item.BrickName %>
+                    </a>
                     <%-- <img src="<%#:Item.ImagePath%>">;--%>
-                   <%--  &nbsp&nbsp
-                                <asp:Button runat="server" ID="Show" Text="Show" CommandArgument="<%#:Item.BrickID %>" OnCommand="Show_Click" />
-                     <asp:Button runat="server" ID="Hide" Text="Hide" CommandArgument="<%#:Item.BrickID %>" OnCommand="Hide_Click" />--%>
-   <script type="text/javascript">
-function toggle(button)
-{
-  if(document.getElementById("1").value=="Hiding"){
-      document.getElementById("1").value = "Showing";
-      //Hide_Click(<%#:Item.BrickID %>);
-  }
-  else if (document.getElementById("1").value == "Showing") {
-      document.getElementById("1").value = "Hiding";
-  }
-}
-</script>
+                    <%--  &nbsp&nbsp
+                                 <asp:Button runat="server" ID="Show" Text="Show" CommandArgument="<%#:Item.BrickID %>" OnCommand="Show_Click" />
+                    <asp:Button runat="server" ID="Hide" Text="Hide" CommandArgument="<%#:Item.BrickID %>" OnCommand="Hide_Click" />--%>
+                    <script type="text/javascript">
+                        function toggle(button)
+                        {
+                            if(document.getElementById("1").value=="Hiding"){
+                                document.getElementById("1").value = "Showing";
+                                //Hide_Click(<%#:Item.BrickID %>);
+                            }
+                            else if (document.getElementById("1").value == "Showing") {
+                                document.getElementById("1").value = "Hiding";
+                            }
+                        }
+                    </script>
 
-                     <html>
-<body>
-    <form action="AdminPage.aspx">
-        <input type="button" id="1" value="Showing" style="color:blue"
-               onclick="toggle(this); ">
-    </form>
-</body>
-</html>
+                    <html>
+                        <body>
+                            <form action="AdminPage.aspx">
+                                <input type="button" id="1" value="Showing" style="color:blue"
+                                    onclick="toggle(this); ">
+                            </form>
+                        </body>
+                    </html>
    
-                 </p>
-             </ItemTemplate>
-             <ItemSeparatorTemplate>&nbsp&nbsp</ItemSeparatorTemplate>
-         </asp:ListView>
-           <br />
-                <a class="btn btn-primary" href="/Default.aspx">Update Website</a>
+                </p>
+            </ItemTemplate>
+            <ItemSeparatorTemplate>&nbsp&nbsp</ItemSeparatorTemplate>
+        </asp:ListView>
+    <br />
+        <a class="btn btn-primary" href="/Default.aspx">Update Website</a>
           
 
 
