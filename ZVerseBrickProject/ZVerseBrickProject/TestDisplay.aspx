@@ -24,7 +24,6 @@
     <asp:FormView ID="BrickDetail" runat="server" ItemType="ZVerseBrickProject.Models.Brick" SelectMethod="GetBrick" RenderOuterTable="false">
 
 
-
         <ItemTemplate>
 
             <div>

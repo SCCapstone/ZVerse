@@ -167,6 +167,7 @@ function onDocumentMouseOut(event) {
     mouseY = 0;
 }
 
+
 function onDocumentMouseDown(event) {
 
     event.preventDefault();
