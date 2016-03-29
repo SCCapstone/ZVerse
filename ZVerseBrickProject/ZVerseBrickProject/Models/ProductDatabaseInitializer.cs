@@ -25,37 +25,74 @@ namespace ZVerseBrickProject.Models
                 new Brick
                 {
                     BrickID = 1,
+                    pid = 13,
                     BrickName = "Mizzou Brick",
                     Description = "Pleased to offer our alumni an opportunity to take a piece of traditions plaza back to home or office. ",
                     ImagePath="brick.jpg",
+                    Incription = "Mizzou Brick default incript",
                     UnitPrice = 75.00,
                     JSPath = "newBrickRendering.js",
-                    isVisible = true
+                    isVisible = true,
+                    showhide = "Hide",
+                    isStandard = true,
+                    tb1 = "",
+                    tb2 = "",
+                    tb3 = "",
 
                 },
                 new Brick
                 {
                     BrickID = 2,
+                    pid = 14,
                     BrickName = "USC Cube",
                     Description = "Proud to be Gamecocks. Hurry and purchase this wonderful brick with this 99% discount off!",                    
-                    UnitPrice = 1.00,
+                    UnitPrice = 10.00,
+                   Incription = "USC Brick default incript",
                     ImagePath="GamecockCube.jpg",
                     JSPath = "Gamecock.js",
-                     isVisible = true
-
+                     isVisible = true,
+                      showhide = "Hide",
+                    isStandard = true,
+                    tb1 = "",
+                    tb2 = "",
+                    tb3 = "", 
                 },
 
                   new Brick
                 {
                     BrickID = 3,
+                    pid = 15,
                     BrickName = "Clemson Plaque",
                     Description = "Proud to be Clemson Fan. Hurry and purchase this wonderful brick with this 99% discount off!",
                     UnitPrice = 11.00,
+                    Incription = "Clemson Brick default incript",
                     ImagePath="pine_blankframe.jpg",
                     JSPath = "Plaque.js",
-                     isVisible = true,
+                    isVisible = true,
+                    showhide = "Hide",
+                    isStandard = true,
+                    tb1 = "",
+                    tb2 = "",
+                    tb3 = "",
 
                 },
+                //new Brick
+                //{
+                //    BrickID = 4,
+                //    BrickName = "Debug Model purpose",
+                //    Description = "Proud to be Clemson Fan. Hurry and purchase this wonderful brick with this 99% discount off!",
+                //    UnitPrice = 11.00,
+                //    Incription = "Clemson Brick default incript",
+                //    ImagePath="pine_blankframe.jpg",
+                //    JSPath = "Plaque.js",
+                //    isVisible = true,
+                //    showhide = "Hide",
+                //    isStandard = true,
+                //    tb1 = "test1",
+                //    tb2 = "test2",
+                //    tb3 = "test3",
+
+                //},
 
             };
 
@@ -94,7 +131,7 @@ namespace ZVerseBrickProject.Models
             {
                 new Product
                 {
-                    ProductID = 13,
+                    ProductID = 1,
                     ProductName = "Clemson Memorial Stadium",
                     Description = "This is the first and only photorealistic Clemson Memorial Stadium!",
                     ImagePath="image01.jpg",
@@ -103,7 +140,7 @@ namespace ZVerseBrickProject.Models
                },
                 new Product
                 {
-                    ProductID = 14,
+                    ProductID = 2,
                     ProductName = "Clemson Tiger Paw Magnet",
                     Description = "A nice refrigerator magnet",
                     ImagePath="image02.jpg",
@@ -112,7 +149,7 @@ namespace ZVerseBrickProject.Models
                },
                 new Product
                 {
-                    ProductID = 15,
+                    ProductID = 3,
                     ProductName = "Clemson Tiger Bronze Statue",
                     Description = "Mini statue stands 4.25\" tall and 5.5\" wide!",
                     ImagePath="image03.jpg",
@@ -202,7 +239,7 @@ namespace ZVerseBrickProject.Models
                 },
                 new Product
                 {
-                    ProductID = 1,
+                    ProductID = 13,
                     ProductName = "Mizzou Tradition Plaza Paved Replica",
                     Description = "Pleased to offer our alumni an opportunity to take a piece of traditions plaza back to home or office. ",
                     ImagePath="image13.jpg",
@@ -212,7 +249,7 @@ namespace ZVerseBrickProject.Models
 
                 new Product
                 {
-                    ProductID = 2,
+                    ProductID = 14,
                     ProductName = "Gamecocks Cube Brick",
                     Description = "Proud to be Gamecocks. Hurry and purchase this wonderful brick with this 99% discount off!",
                     ImagePath="image14.jpg",
@@ -222,7 +259,7 @@ namespace ZVerseBrickProject.Models
 
                   new Product
                 {
-                    ProductID = 3,
+                    ProductID = 15,
                     ProductName = "Clemson Wooden Plaque",
                     Description = "Proud to be Clemson Fan. Hurry and purchase this wonderful brick with this 99% discount off!",
                     ImagePath="image15.jpg",

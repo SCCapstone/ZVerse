@@ -152,6 +152,20 @@ namespace ZVerseBrickProject.Controllers
                     {
                         // Remove Item.
                         _db.ShoppingCartItems.Remove(myItem);
+
+                        //remove custom models
+                        if (removeProductID > 15)
+                        {
+                            Brick thebrick;
+                            Product theproduct;
+                            int brickid = (from b in _db.Bricks where b.pid == removeProductID select b.BrickID).FirstOrDefault();
+                            thebrick = _db.Bricks.Find(brickid);
+                            theproduct = _db.Products.Find(removeProductID);
+
+                            _db.Bricks.Remove(thebrick);
+                            _db.Products.Remove(theproduct);
+                        }
+                      
                         _db.SaveChanges();
                     }
                 }
@@ -190,6 +204,20 @@ namespace ZVerseBrickProject.Controllers
             foreach (var cartItem in cartItems)
             {
                 _db.ShoppingCartItems.Remove(cartItem);
+
+                //remove custom models
+                if (cartItem.ProductId > 15)
+                {
+                    Brick thebrick;
+                    Product theproduct;
+
+                    thebrick = (from b in _db.Bricks where b.pid == cartItem.ProductId select b).FirstOrDefault();
+                    //thebrick = _db.Bricks.Find(thebrick.);
+                    theproduct = _db.Products.Find(cartItem.ProductId);
+
+                    _db.Bricks.Remove(thebrick);
+                    _db.Products.Remove(theproduct);
+                }
             }
             // Save changes.             
             _db.SaveChanges();

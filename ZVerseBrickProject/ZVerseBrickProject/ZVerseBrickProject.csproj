@@ -258,7 +258,12 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstraporiginal.css" />
     <Content Include="Content\Site.css" />
+    <Content Include="fonts\Brush_Regular.js" />
+    <Content Include="fonts\gentilis_regular.typeface.js" />
+    <Content Include="fonts\optimer_regular.typeface.js" />
+    <Content Include="fonts\Sans_Regular.js" />
     <Content Include="html.html" />
+    <Content Include="JavaScript.js" />
     <Content Include="js\fonts\droid_sans_bold.typeface.js" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -289,6 +294,7 @@
     <Content Include="js\fonts\helvetiker_regular.typeface.js" />
     <Content Include="js\Gamecock.js" />
     <Content Include="js\GamecockCube.jpg" />
+    <Content Include="js\index.html" />
     <Content Include="js\JavaScript.js" />
     <Content Include="js\MTLLoader.js" />
     <Content Include="js\OBJLoader.js" />
@@ -296,9 +302,12 @@
     <Content Include="js\OrbitControls.js" />
     <Content Include="js\pine_blankframe.jpg" />
     <Content Include="js\Plaque.js" />
+    <Content Include="js\scene.js" />
     <Content Include="js\script.js" />
+    <Content Include="js\Script2.js" />
     <Content Include="js\stats.min.js" />
     <Content Include="js\Three.js" />
+    <Content Include="js\three.min.71.js" />
     <Content Include="js\three.min.js" />
     <Content Include="js\threex.dynamictexture.js" />
     <Content Include="js\THREEx.WindowResize.js" />
@@ -519,6 +528,8 @@
     <Compile Include="Contact.aspx.designer.cs">
       <DependentUpon>Contact.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Controllers\AddBricks.cs" />
+    <Compile Include="Controllers\AddProducts.cs" />
     <Compile Include="Controllers\ItemController.cs" />
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
