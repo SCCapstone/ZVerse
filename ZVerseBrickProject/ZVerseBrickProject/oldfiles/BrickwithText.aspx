@@ -94,6 +94,8 @@ Output Parameters: Passes the user input from the text box to external
     <!--Containing file for brick and text rendering functions-->
     <!--Note this js file must be at the end of div content-->
     <script src="js/newBrickRendering.js"></script>
-    <script src="js/OrbitControls.js"></script> 
+    <script src="js/OrbitControls.js"></script>
+    <script src="js/three.min.71.js"></script>
+ 
 
 </asp:Content>
