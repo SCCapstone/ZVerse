@@ -304,6 +304,7 @@
     <Content Include="js\Plaque.js" />
     <Content Include="js\scene.js" />
     <Content Include="js\script.js" />
+    <Content Include="js\Script1.js" />
     <Content Include="js\Script2.js" />
     <Content Include="js\stats.min.js" />
     <Content Include="js\Three.js" />

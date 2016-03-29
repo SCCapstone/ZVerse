@@ -8,15 +8,17 @@ Output Parameters: No formal output, but there is a 3D window, polygon, and
 -----------------------------------------------------------------------------*/
 
 //VARIABLE DECLARATION SECTION/////////////////////////////////////////////////
-var camera; 
+var camera;
 var scene;
 var renderer;
 var mesh;
 var container = container = document.getElementById('canvas');
+
+var plane;
+var selection;
 var offset = new THREE.Vector3();
 var objects = [];
 var raycaster = new THREE.Raycaster();
-
 
 var group;
 var group1;
@@ -85,21 +87,47 @@ function init() {
     scene = new THREE.Scene();
     camera = new THREE.PerspectiveCamera(45, container.offsetWidth / container.offsetHeight, .01, 100);
     camera.position.z = 10;
+
+    this.camera.lookAt(new THREE.Vector3(0, 0, 0));
+
     var light = new THREE.DirectionalLight(0xffffff);
     light.position.set(0, 1, 1).normalize();
     scene.add(light);
+
+ 
+    // Plane, that helps to determinate an intersection position
+    //this.plane = new THREE.Mesh(new THREE.PlaneBufferGeometry(500, 500, 8, 8), new THREE.MeshBasicMaterial({ color: 0xffffff }));
+    plane = new THREE.Mesh(new THREE.PlaneBufferGeometry(5, 3.1, 2.9), new THREE.MeshBasicMaterial({ color: 0xffffff }));
+    plane.visible = false;
+    scene.add(plane);
+
+    // Add 100 random objects (spheres)
+    var object, material, radius;
+    var objGeometry = new THREE.SphereGeometry(1, 24, 24);
+    for (var i = 0; i < 75; i++) {
+        material = new THREE.MeshPhongMaterial({ color: Math.random() * 0xffffff });
+        material.transparent = true;
+        object = new THREE.Mesh(objGeometry.clone(), material);
+        this.objects.push(object);
+
+        radius = Math.random() * 1 + 2;
+        object.scale.x = radius;
+        object.scale.y = radius;
+        object.scale.z = radius;
+
+        object.position.x = Math.random() * 50 - 25;
+        object.position.y = Math.random() * 50 - 25;
+        object.position.z = Math.random() * 50 - 25;
+
+        scene.add(object);
+    }
+
+
 
     group = new THREE.Object3D();
     group1 = new THREE.Object3D();
     group2 = new THREE.Object3D();
     group3 = new THREE.Object3D();
-
-
-    //// Plane, that helps to determinate an intersection position
-    ////plane = new THREE.Mesh(new THREE.PlaneBufferGeometry(500, 500, 8, 8), new THREE.MeshBasicMaterial({ color: 0xffffff }));
-    //plane = new THREE.Mesh(new THREE.PlaneBufferGeometry(5, 3.1, 2.9), new THREE.MeshBasicMaterial({ color: oxffffff }));
-    //plane.visible = false;
-    //scene.add(plane);
 
     //load the brick model and texture
     var texture = new THREE.TextureLoader().load("js/brick.jpg");
@@ -110,7 +138,7 @@ function init() {
     scene.add(group);
 
     //render the brick and text line textures
-    renderer = new THREE.WebGLRenderer({alpha: 1});
+    renderer = new THREE.WebGLRenderer({ alpha: 1 });
     renderer.setSize(container.offsetWidth, container.offsetHeight);
     renderer.setClearColor(0xff0000, 0);
 
@@ -132,10 +160,10 @@ function init() {
     //    };
 
     //    if (isDragging) {
-            
+
     //        mouseX = (event.clientX - windowHalfX)/10;
     //        mouseY = (event.clientY - windowHalfY)/10;
-        
+
     //    }
 
     //    previousMousePosition = {
@@ -150,16 +178,17 @@ function init() {
     //});
 
 
- //bind window to event listeners
-    container.addEventListener('mousemove', onDocumentMouseMove, false);
-    container.addEventListener('mousedown', onDocumentMouseDown, false);
-    container.addEventListener('touchstart', onDocumentTouchStart, false);
-    container.addEventListener('touchmove', onDocumentTouchMove, false);
-    container.addEventListener('mouseout', onDocumentMouseOut, false);
+    //bind window to event listeners
+    //container.addEventListener('mousemove', onDocumentMouseMove, false);
+
+    //container.addEventListener('mousedown', onDocumentMouseDown, false);
+    //container.addEventListener('touchstart', onDocumentTouchStart, false);
+    //container.addEventListener('touchmove', onDocumentTouchMove, false);
+    //container.addEventListener('mouseout', onDocumentMouseOut, false);
     container.addEventListener('resize', onWindowResize, false);
-    //container.addEventListener('mDown', onMouseDown, false);
-    //container.addEventListener('mMove', onMouseMove, false);
-    //container.addEventListener('mUp', onMouseUp, false);
+    container.addEventListener('mdown', onMouseDown, false);
+    container.addEventListener('mmove', onMouseMove, false);
+    container.addEventListener('mup', onMouseUp, false);
 }
 
 
@@ -173,12 +202,77 @@ Output Parameters:
     mouseY - the y coordinate of the cursor on the screen
 -----------------------------------------------------------------------------*/
 function onDocumentMouseMove(event) {
-    mouseX = (event.clientX - windowHalfX) /10;
-    mouseY = (event.clientY - windowHalfY) /10;
+    mouseX = (event.clientX - windowHalfX) / 10;
+    mouseY = (event.clientY - windowHalfY) / 10;
 }
 function onDocumentMouseOut(event) {
     mouseX = 0;
     mouseY = 0;
+}
+
+function onMouseDown(event) {
+    //Get mouse position
+    var mouseX = (event.clientX / windowHalfX) * 2 - 1;
+    var mouseY = -(event.clientY / windowHalfY) * 2 + 1;
+
+    //Get 3D vector from 3D mouse position using 'unproject' function
+    var vector = new THREE.Vector3(mouseX, mouseY, 1);
+    vector.unproject(renderer.camera);
+
+    //Set the raycaster position 
+    renderer.raycaster.set(renderer.camera.position, vector.sub(renderer.camera.position).normalize());
+
+    //Find all intersected objects 
+    var intersects = renderer.raycaster.intersectObjects(renderer.objects);
+
+    if (intersects.length > 0) {
+        //Disable the controls
+        renderer.controls.enabled = false;
+
+        //Set the selection - first intersected object 
+        renderer.selection = intersects[0].object;
+
+        //Calculate the offset 
+        var intersects = renderer.raycaster.intersectObject(renderer.plane);
+        renderer.offset.copy(intersects[0].point).sub(renderer.plane.position);
+    }
+}
+
+function onMouseMove(event) {
+
+    event.preventDefault();
+
+    //Get Mouse Position
+    var mouseX = (event.clientX / window.innerWidth) * 2 - 1;
+    var mouseY = -(event.clientY / window.innerHeight) * 2 + 1;
+
+    //Get 3D vector from 3D mouse position using 'unproject' function
+    var vector = new THREE.Vector3(mouseX, mouseY, 1);
+    vector.unproject(renderer.camera);
+
+    //Set the raycaster position
+    renderer.raycaster.set(renderer.camera.position, vector.sub(renderer.camera.position).normalize());
+
+    if (renderer.selection) {
+        // Check the position where the plane is intersected
+        var intersects = renderer.raycaster.intersectObject(renderer.plane);
+        // Reposition the object based on the intersection point with the plane
+        renderer.selection.position.copy(intersects[0].point.sub(renderer.offset));
+    }
+    else {
+        // Update position of the plane if need
+        var intersects = renderer.raycaster.intersectObjects(renderer.objects);
+        if (intersects.length > 0) {
+            renderer.plane.position.copy(intersects[0].object.position);
+            renderer.plane.lookAt(renderer.camera.position);
+        }
+    }
+}
+
+function onMouseUp(event) {
+    // Enable the controls
+    renderer.controls.enabled = true;
+    renderer.selection = null;
 }
 
 function onDocumentMouseDown(event) {
@@ -379,73 +473,6 @@ function onWindowResize() {
     renderer.setSize(container.offsetWidth, container.offsetHeight);
 }
 
-function onMouseDown(event) {
-    // Get mouse position
-    var mouseX = (event.clientX / windowHalfX) * 2 - 1;
-    var mouseY = -(event.clientY / windowHalfY) * 2 + 1;
-
-    //document.addEventListener('momove', onMouseDown, false);
-    //document.addEventListener('moup', onMouseUp, false);
-
-    // Get 3D vector from 3D mouse position using 'unproject' function
-    var vector = new THREE.Vector3(mouseX, mouseY, 1);
-    vector.unproject(scene.camera);
-
-    // Set the raycaster position
-    scene.raycaster.set(scene.camera.position, vector.sub(scene.camera.position).normalize());
-
-    // Find all intersected objects
-    var intersects = scene.raycaster.intersectObjects(scene.objects);
-
-    if (intersects.length > 0) {
-        // Disable the controls
-        scene.controls.enabled = false;
-
-        // Set the selection - first intersected object
-        scene.selection = intersects[0].object;
-
-        // Calculate the offset
-        var intersects = scene.raycaster.intersectObject(scene.plane);
-        scene.offset.copy(intersects[0].point).sub(scene.plane.position);
-    }
-}
-
-function onMouseMove(event) {
-    event.preventDefault();
-
-    // Get mouse position
-    var mouseX = (event.clientX / window.innerWidth) * 2 - 1;
-    var mouseY = -(event.clientY / window.innerHeight) * 2 + 1;
-
-    // Get 3D vector from 3D mouse position using 'unproject' function
-    var vector = new THREE.Vector3(mouseX, mouseY, 1);
-    vector.unproject(scene.camera);
-
-    // Set the raycaster position
-    scene.raycaster.set(scene.camera.position, vector.sub(scene.camera.position).normalize());
-
-    if (scene.selection) {
-        // Check the position where the plane is intersected
-        var intersects = scene.raycaster.intersectObject(scene.plane);
-        // Reposition the object based on the intersection point with the plane
-        scene.selection.position.copy(intersects[0].point.sub(scene.offset));
-    } else {
-        // Update position of the plane if need
-        var intersects = scene.raycaster.intersectObjects(scene.objects);
-        if (intersects.length > 0) {
-            scene.plane.position.copy(intersects[0].object.position);
-            scene.plane.lookAt(scene.camera.position);
-        }
-    }
-}
-
-function onMouseUp(event) {
-    // Enable the controls
-    scene.controls.enabled = true;
-    scene.selection = null;
-}
-
-
 
 /*-----------------------------------------------------------------------------
 Name: getText1()
@@ -480,8 +507,9 @@ function getText1(text, answer) {
     group1.add(mesh1);
     scene.add(group1);
 
-    
 }
+
+
 
 
 /*-----------------------------------------------------------------------------
@@ -493,7 +521,7 @@ Input Parameters:
 Output Parameters: No formal output, but this function renders text onto the 
     polygon on the middle line
 -----------------------------------------------------------------------------*/
-function getText2(text,answer) {
+function getText2(text, answer) {
     text2 = text;
 
     answer = "\"" + answer + "\"";
@@ -520,7 +548,7 @@ Input Parameters:
 Output Parameters: No formal output, but this function renders text onto the 
     polygon on the bottom line
 -----------------------------------------------------------------------------*/
-function getText3(text,answer) {
+function getText3(text, answer) {
     text3 = text;
     answer = "\"" + answer + "\"";
     dynamicTexture2.clear();
