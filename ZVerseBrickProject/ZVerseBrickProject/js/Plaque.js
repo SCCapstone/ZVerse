@@ -105,6 +105,7 @@ function init() {
 
     //bind window to event listeners
     container.addEventListener('mousedown', onDocumentMouseDown, false);
+    container.addEventListener("mousewheel", onDocumentMouseWheel, false)
     container.addEventListener('touchstart', onDocumentTouchStart, false);
     container.addEventListener('touchmove', onDocumentTouchMove, false);
     container.addEventListener('resize', onWindowResize, false);
@@ -122,14 +123,17 @@ Output Parameters:
     mouseX - the x coordinate of the cursor on the screen
     mouseY - the y coordinate of the cursor on the screen
 -----------------------------------------------------------------------------*/
-function onDocumentMouseMove(event) {
-    mouseX = (event.clientX - windowHalfX) / 10;
-    mouseY = (event.clientY - windowHalfY) / 10;
-}
+
 
 function onDocumentMouseOut(event) {
     mouseX = 0;
     mouseY = 0;
+    camera.position.z = 10;
+}
+function onDocumentMouseWheel(event) {
+
+    camera.position.z = camera.position.z - 1;
+
 }
 
 function onDocumentMouseDown(event) {
