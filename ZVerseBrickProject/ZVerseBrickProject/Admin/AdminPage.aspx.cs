@@ -6,6 +6,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using ZVerseBrickProject.Controllers;
 using ZVerseBrickProject.Models;
 using System.Data.Entity.Infrastructure;
 using System.Diagnostics; 
@@ -112,15 +113,22 @@ namespace ZVerseBrickProject.Admin
 
         protected void UploadButton_Click(object sender, EventArgs e)
         {
+            
             if (FileUploadControl.HasFile)
             {
                 try
                 {
                     if (FileUploadControl.PostedFile.ContentType == "application/javascript")
                     {
-                        string filename = Path.GetFileName(FileUploadControl.FileName);
-                        FileUploadControl.SaveAs(Server.MapPath("~/Uploaded_Files/") + filename);
+                        string fileName = Path.GetFileName(FileUploadControl.FileName);
+                        FileUploadControl.SaveAs(Server.MapPath("~/js/") + fileName);
                         StatusLabel.Text = "Upload status: File uploaded!";
+
+                        var _db = new ZVerseBrickProject.Models.ProductContext();
+                        AddProducts products = new AddProducts();
+                        AddBricks bricks = new AddBricks();
+                        int currentID = products.AddProduct("New Product", "admin uploaded product", "5", "4", "image06.jpg", null);
+                        bricks.AddBrick(currentID, "New Model", "admin uploaded model", "default incript", "5", "image06.jpg", fileName, true, "show", true, "", "", "");
                     }
                     else
                         StatusLabel.Text = "Upload status: Only Javascript files are accepted!";
@@ -129,8 +137,13 @@ namespace ZVerseBrickProject.Admin
                 {
                     StatusLabel.Text = "Upload status: The file could not be uploaded. The following error occured: " + ex.Message;
                 }
+
             }
         }
+
+       
+
+
 
     }
 }
