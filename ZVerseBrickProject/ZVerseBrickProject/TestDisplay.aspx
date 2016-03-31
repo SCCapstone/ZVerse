@@ -23,7 +23,7 @@
 
     <asp:FormView ID="BrickDetail" runat="server" ItemType="ZVerseBrickProject.Models.Brick" SelectMethod="GetBrick" RenderOuterTable="false">
 
-
+        
         <ItemTemplate>
 
             <div>
@@ -103,6 +103,8 @@
             <!--this file does...-->
             <script src="js/Three.js"></script>
             <script src="js/three.min.js"></script>
+            
+            <script src="js/TrackballControls.js"></script>
             <!--Automatically draw on the brick when inscription is not empty -->
             <script>
                 function check(browser) {
