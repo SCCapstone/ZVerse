@@ -12,7 +12,11 @@ var camera;
 var scene;
 var renderer;
 var mesh;
+var mouseX = 0;
+var mouseY = 0;
 var container = container = document.getElementById('canvas');
+var windowHalfX = container.offsetWidth / 2;
+var windowHalfY = container.offsetHeight / 2;
 
 var group;
 var group1;
@@ -24,12 +28,6 @@ var targetRotationY = 0;
 var targetRotationOnMouseDownY = 0;
 var mouseXOnMouseDown = 0;
 var mouseYOnMouseDown = 0;
-
-var mouseX = 0;
-var mouseY = 0;
-var windowHalfX = container.offsetWidth / 2;
-var windowHalfY = container.offsetHeight / 2;
-
 
 /*
 Variables to store the dynamic textures, geometries, and materials for the 
@@ -62,6 +60,10 @@ var material3 = new THREE.MeshBasicMaterial({ map: dynamicTexture2.texture });
 var shadowmaterial = new THREE.MeshBasicMaterial({ map: shadowing.texture });
 var shadowmaterial1 = new THREE.MeshBasicMaterial({ map: shadowing1.texture });
 var shadowmaterial2 = new THREE.MeshBasicMaterial({ map: shadowing2.texture });
+
+var zoomMax = 3.4; // the closest in you can go
+var zoomMin = 20; // the farthest out you can go
+var zoomSpeed = 0.1; // how much movement on scroll wheel
 
 //FUNCTION DECLARATION SECTION/////////////////////////////////////////////////
 init();//initializing function uses to begin the 3D window
@@ -105,14 +107,13 @@ function init() {
 
     container.appendChild(renderer.domElement);
 
-
- //bind window to event listeners
+    //bind window to event listeners
     container.addEventListener('mousedown', onDocumentMouseDown, false);
     container.addEventListener('touchstart', onDocumentTouchStart, false);
     container.addEventListener('touchmove', onDocumentTouchMove, false);
-   // container.addEventListener("mousewheel", onDocumentMouseWheel, false)
-container.addEventListener('mouseout', onDocumentMouseOut, false);
-container.addEventListener('resize', onWindowResize, false);
+    container.addEventListener("mousewheel", onDocumentMouseWheel, false);
+    container.addEventListener('mouseout', onDocumentMouseOut, false);
+    container.addEventListener('resize', onWindowResize, false);
 }
 
 
@@ -133,9 +134,15 @@ function onDocumentMouseOut(event) {
 }
 
 function onDocumentMouseWheel(event) {
-
-    camera.position.z = camera.position.z - 1;
-
+    //console.log(event.wheelDeltaY);
+    if(event.wheelDeltaY > 0 && camera.position.z > zoomMax) //zoom in
+    {
+        camera.position.z = camera.position.z - zoomSpeed;
+    }
+    if (event.wheelDeltaY < 0 && camera.position.z < zoomMin) //zoom out
+    {
+        camera.position.z = camera.position.z + zoomSpeed;
+    }
 }
 
 function onDocumentMouseDown(event) {
@@ -151,33 +158,21 @@ function onDocumentMouseDown(event) {
 
     mouseYOnMouseDown = event.clientY - windowHalfY;
     targetRotationOnMouseDownY = targetRotationY;
-
-
 }
 
 function onDocumentMouseMove(event) {
-
     mouseX = event.clientX - windowHalfX;
     mouseY = event.clientY - windowHalfY;
 
-
     targetRotationY = targetRotationOnMouseDownY + (mouseY - mouseYOnMouseDown) * 0.02;
     targetRotationX = targetRotationOnMouseDownX + (mouseX - mouseXOnMouseDown) * 0.02;
-
-
-
 }
 
 function onDocumentMouseUp(event) {
-
     document.removeEventListener('mousemove', onDocumentMouseMove, false);
     document.removeEventListener('mouseup', onDocumentMouseUp, false);
     document.removeEventListener('mouseout', onDocumentMouseOut, false);
-
-
 }
-
-
 
 function onDocumentTouchStart(event) {
 
@@ -190,9 +185,6 @@ function onDocumentTouchStart(event) {
 
         mouseYOnMouseDown = event.touches[0].pageY - windowHalfY;
         targetRotationOnMouseDownY = targetRotationY;
-
-
-
     }
 
 }
@@ -208,11 +200,8 @@ function onDocumentTouchMove(event) {
 
         mouseY = event.touches[0].pageY - windowHalfY;
         targetRotationY = targetRotationOnMouseDownY + (mouseY - mouseYOnMouseDown) * 0.05;
-
     }
-
 }
-
 
 /*-----------------------------------------------------------------------------
 Name: animate()
@@ -241,20 +230,15 @@ function render() {
     //vertical rotation 
     finalRotationY = (targetRotationY - group.rotation.x);
 
-
     if (group.rotation.x <= 1 && group.rotation.x >= -1) {
-
         group.rotation.x += finalRotationY * 0.1;
     }
     if (group.rotation.x > 1) {
-
         group.rotation.x = 1
     }
     else if (group.rotation.x < -1) {
-
         group.rotation.x = -1
     }
-
 
     //horizontal rotation   
     group1.rotation.y += (targetRotationX - group1.rotation.y) * 0.1;
@@ -388,7 +372,6 @@ Output Parameters: No formal output, but this function renders text onto the
 -----------------------------------------------------------------------------*/
 function getText2(text,answer) {
     text2 = text;
-
     answer = "\"" + answer + "\"";
     dynamicTexture1.clear();
     dynamicTexture1.context.font = "bolder 58px " + answer;
