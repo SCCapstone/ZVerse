@@ -119,7 +119,7 @@ namespace ZVerseBrickProject.Admin
                     if (FileUploadControl.PostedFile.ContentType == "application/javascript")
                     {
                         string filename = Path.GetFileName(FileUploadControl.FileName);
-                        FileUploadControl.SaveAs(Server.MapPath("~/Uploaded_Files/") + filename);
+                        FileUploadControl.SaveAs(Server.MapPath("~/js/") + filename);
                         StatusLabel.Text = "Upload status: File uploaded!";
                     }
                     else
