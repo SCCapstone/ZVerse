@@ -105,7 +105,7 @@ function init() {
 
     //bind window to event listeners
     container.addEventListener('mousedown', onDocumentMouseDown, false);
-    container.addEventListener("mousewheel", onDocumentMouseWheel, false)
+   // container.addEventListener("mousewheel", onDocumentMouseWheel, false);
     container.addEventListener('touchstart', onDocumentTouchStart, false);
     container.addEventListener('touchmove', onDocumentTouchMove, false);
     container.addEventListener('resize', onWindowResize, false);
@@ -128,7 +128,7 @@ Output Parameters:
 function onDocumentMouseOut(event) {
     mouseX = 0;
     mouseY = 0;
-    camera.position.z = 10;
+   // camera.position.z = 10;
 }
 function onDocumentMouseWheel(event) {
 
