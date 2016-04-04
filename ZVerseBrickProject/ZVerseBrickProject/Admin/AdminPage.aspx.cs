@@ -127,8 +127,8 @@ namespace ZVerseBrickProject.Admin
                         var _db = new ZVerseBrickProject.Models.ProductContext();
                         AddProducts products = new AddProducts();
                         AddBricks bricks = new AddBricks();
-                        int currentID = products.AddProduct("New Product", "admin uploaded product", "5", "4", "image06.jpg", null);
-                        bricks.AddBrick(currentID, "New Model", "admin uploaded model", "default incript", "5", "image06.jpg", fileName, true, "show", true, "", "", "");
+                        int currentID = products.AddProduct("New Product", "Newly Released Product!", "5", "2", "newUpload.jpg", "test");
+                        bricks.AddBrick(currentID, "New Model", "admin uploaded model", "test", "5", "newUpload.jpg", fileName, false, "Show", true, "", "", "");
                     }
                     else
                         StatusLabel.Text = "Upload status: Only Javascript files are accepted!";
@@ -140,10 +140,5 @@ namespace ZVerseBrickProject.Admin
 
             }
         }
-
-       
-
-
-
     }
 }
