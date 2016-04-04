@@ -1,4 +1,4 @@
-﻿/*-----------------------------------------------------------------------------
+/*-----------------------------------------------------------------------------
 Name: newBrickRendering.js
 Description: This file contains all of the primary functions for rendering the
     brick polygon and its three lines of text on the side of the brick
@@ -169,6 +169,7 @@ function init() {
     container.addEventListener('touchmove', onDocumentTouchMove, false);
     container.addEventListener('mouseout', onDocumentMouseOut, false);
     container.addEventListener('resize', onWindowResize, false);
+
 }
 
 
@@ -390,93 +391,4 @@ function onWindowResize() {
 }
 
 
-/*-----------------------------------------------------------------------------
-Name: getText1()
-Description: This function takes in text renders it onto the polygon on the top
-    line of the three lines of text
-Input Parameters:
-    text: String of text to be rendered onto the polygon
-Output Parameters: No formal output, but this function renders text onto the 
-    polygon on the top line
------------------------------------------------------------------------------*/
-//function getText1(text, answer) {
-//    text1 = text;
-
-//    //shadowing.clear();
-//    //shadowing.context.font = "bolder 55px Verdana";
-//    //shadowing.drawText(text1, undefined, 140, '#707070');
-//    //shadowmaterial.transparent = true;
-//    //shadowmaterial.polygonOffset = true;
-//    //shadowmaterial.polygonOffsetFactor = -0.2;
-//    //mesh5 = new THREE.Mesh(shadowgeo, shadowmaterial);
-//    //scene.add(mesh5);
-//    answer = "\"" + answer + "\"";
-//    dynamicTexture.clear();
-//    dynamicTexture.context.font = "bolder 58px " + answer;
-//    dynamicTexture.drawText(text1, undefined, 140, '#707070');
-//    dynamicTexture.context.font = "60px " + answer;
-//    dynamicTexture.drawText(text1, undefined, 140, 'black');
-//    material1.transparent = true;
-//    material1.polygonOffset = true;
-//    material1.polygonOffsetFactor = -0.2;
-//    mesh1 = new THREE.Mesh(geometry1, material1);
-//    group1.add(mesh1);
-//    scene.add(group1);
-
-//}
-
-
-
-
-///*-----------------------------------------------------------------------------
-//Name: getText2()
-//Description: This function takes in text renders it onto the polygon on the 
-//    middle line of the three lines of text
-//Input Parameters:
-//    text: String of text to be rendered onto the polygon
-//Output Parameters: No formal output, but this function renders text onto the 
-//    polygon on the middle line
-//-----------------------------------------------------------------------------*/
-//function getText2(text, answer) {
-//    text2 = text;
-
-//    answer = "\"" + answer + "\"";
-//    dynamicTexture1.clear();
-//    dynamicTexture1.context.font = "bolder 58px " + answer;
-//    dynamicTexture1.drawText(text2, undefined, 280, '#707070');
-//    dynamicTexture1.context.font = "60px " + answer;
-//    dynamicTexture1.drawText(text2, undefined, 280, 'black');
-//    material2.transparent = true;
-//    material2.polygonOffset = true;
-//    material2.polygonOffsetFactor = -0.2;
-//    mesh2 = new THREE.Mesh(geometry2, material2);
-//    group2.add(mesh2);
-//    scene.add(group2);
-//}
-
-
-///*-----------------------------------------------------------------------------
-//Name: getText3()
-//Description: This function takes in text renders it onto the polygon on the 
-//    bottom line of the three lines of text
-//Input Parameters:
-//    text: String of text to be rendered onto the polygon
-//Output Parameters: No formal output, but this function renders text onto the 
-//    polygon on the bottom line
-//-----------------------------------------------------------------------------*/
-//function getText3(text, answer) {
-//    text3 = text;
-//    answer = "\"" + answer + "\"";
-//    dynamicTexture2.clear();
-//    dynamicTexture2.context.font = "bolder 58px " + answer;
-//    dynamicTexture2.drawText(text3, undefined, 420, '#707070');
-//    dynamicTexture2.context.font = "60px " + answer;
-//    dynamicTexture2.drawText(text3, undefined, 420, 'black');
-//    material3.transparent = true;
-//    material3.polygonOffset = true;
-//    material3.polygonOffsetFactor = -0.2;
-//    mesh3 = new THREE.Mesh(geometry3, material3);
-//    group3.add(mesh3);
-//    scene.add(group3);
-//}
 

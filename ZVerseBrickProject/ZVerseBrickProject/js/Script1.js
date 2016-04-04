@@ -34,7 +34,6 @@ sbFragmentShader = [
 var lesson10 = {
     scene: null, camera: null, renderer: null,
     container: null, controls: null, mesh: null,
-    clock: null, stats: null,
     plane: null, selection: null, offset: new THREE.Vector3(), objects: [],
     raycaster: new THREE.Raycaster(),
 
@@ -42,29 +41,38 @@ var lesson10 = {
 
         // Create main scene
         this.scene = new THREE.Scene();
-        //this.scene.fog = new THREE.FogExp2(0xcce0ff, 0.0003);
-        this.container = document.createElement('canvas');
+        this.scene.fog = new THREE.FogExp2(0xcce0ff, 0.0003);
 
-        var windowHalfX = this.container.offsetWidth / 2;
-        var windowHalfY = this.container.offsetHeight / 2;
-
-        //var SCREEN_WIDTH = window.innerWidth, SCREEN_HEIGHT = window.innerHeight;
+        var SCREEN_WIDTH = window.innerWidth / 2, SCREEN_HEIGHT = window.innerHeight / 2;
 
         // Prepare perspective camera
-        var VIEW_ANGLE = 45, ASPECT = this.container.offsetWidth / this.container.offsetHeight, NEAR = .01, FAR = 100;
+        var VIEW_ANGLE = 45, ASPECT = SCREEN_WIDTH / SCREEN_HEIGHT, NEAR = .01, FAR = 100;
         this.camera = new THREE.PerspectiveCamera(VIEW_ANGLE, ASPECT, NEAR, FAR);
         this.scene.add(this.camera);
-        this.camera.position.set(100, 0, 0);
+        this.camera.position.set(0, 0, 10);
         this.camera.lookAt(new THREE.Vector3(0, 0, 0));
 
+
+        var light = new THREE.DirectionalLight(0xffffff);
+        light.position.set(0, 1, 1).normalize();
+        this.scene.add(light);
+
+        //Load the brick model and texture
+        var texture = new THREE.TextureLoader().load("brick.jpg");
+        var geometry = new THREE.CubeGeometry(5, 3.1, 2.9);
+        var material = new THREE.MeshBasicMaterial({ map: texture });
+        this.mesh = new THREE.Mesh(geometry, material);
+        this.scene.add(this.mesh);
+
         // Prepare webgl renderer
-        this.renderer = new THREE.WebGLRenderer({ antialias: true });
-        this.renderer.setSize(this.container.offsetWidth, this.container.offsetHeight);
-        this.renderer.setClearColor(0xff0000, 0);
+        this.renderer = new THREE.WebGLRenderer({ alpha: 1 });
+        this.renderer.setSize(SCREEN_WIDTH, SCREEN_HEIGHT);
+        this.renderer.setClearColor(this.scene.fog.color);
+
 
         // Prepare container
-
-        //document.body.appendChild(this.container);
+        this.container = document.createElement('div');
+        document.body.appendChild(this.container);
         this.container.appendChild(this.renderer.domElement);
 
         // Events
@@ -76,27 +84,15 @@ var lesson10 = {
         // Prepare Orbit controls
         this.controls = new THREE.OrbitControls(this.camera);
         this.controls.target = new THREE.Vector3(0, 0, 0);
-        this.controls.maxDistance = 150;
-
-        // Prepare clock
-        this.clock = new THREE.Clock();
-
-        // Prepare stats
-        this.stats = new Stats();
-        this.stats.domElement.style.position = 'absolute';
-        this.stats.domElement.style.left = '50px';
-        this.stats.domElement.style.bottom = '50px';
-        this.stats.domElement.style.zIndex = 1;
-        this.container.appendChild(this.stats.domElement);
+        this.controls.maxDistance = 10;
 
         // Add lights
-        this.scene.add(new THREE.AmbientLight(0x444444));
+        //this.scene.add(new THREE.AmbientLight(0x444444));
 
-        var light = new THREE.DirectionalLight(0xffffff);
-        light.position.set(0, 1, 1).normalize();
+        //var dirLight = new THREE.DirectionalLight(0xffffff);
+        //dirLight.position.set(200, 200, 1000).normalize();
         //this.camera.add(dirLight);
         //this.camera.add(dirLight.target);
-        this.scene.add(light);
 
         // Display skybox
         this.addSkybox();
@@ -107,25 +103,25 @@ var lesson10 = {
         this.scene.add(this.plane);
 
         // Add 100 random objects (spheres)
-        var object, material, radius;
-        var objGeometry = new THREE.SphereGeometry(1, 24, 24);
-        for (var i = 0; i < 50; i++) {
-            material = new THREE.MeshPhongMaterial({ color: Math.random() * 0xffffff });
-            material.transparent = true;
-            object = new THREE.Mesh(objGeometry.clone(), material);
-            this.objects.push(object);
+        //var object, material, radius;
+        //var objGeometry = new THREE.SphereGeometry(1, 24, 24);
+        //for (var i = 0; i < 50; i++) {
+        //    material = new THREE.MeshPhongMaterial({ color: Math.random() * 0xffffff });
+        //    material.transparent = true;
+        //    object = new THREE.Mesh(objGeometry.clone(), material);
+        //    this.objects.push(object);
 
-            radius = Math.random() * 4 + 2;
-            object.scale.x = radius;
-            object.scale.y = radius;
-            object.scale.z = radius;
+        //    radius = Math.random() * 4 + 2;
+        //    object.scale.x = radius;
+        //    object.scale.y = radius;
+        //    object.scale.z = radius;
 
-            object.position.x = Math.random() * 50 - 25;
-            object.position.y = Math.random() * 50 - 25;
-            object.position.z = Math.random() * 50 - 25;
+        //    object.position.x = Math.random() * 50 - 25;
+        //    object.position.y = Math.random() * 50 - 25;
+        //    object.position.z = Math.random() * 50 - 25;
 
-            this.scene.add(object);
-        }
+        //    this.scene.add(object);
+        //}
 
     },
     addSkybox: function () {
@@ -211,10 +207,10 @@ function animate() {
 
 // Update controls and stats
 function update() {
-    var delta = lesson10.clock.getDelta();
+    //var delta = lesson10.clock.getDelta();
 
     lesson10.controls.update(delta);
-    lesson10.stats.update();
+   // lesson10.stats.update();
 }
 
 // Render the scene
