@@ -24,7 +24,6 @@
         <script src="js/OrbitControls.js"></script> 
         <script src="js/stats.min.js"></script> 
         <script src="js/script.js"></script>
-        <script src="js/TrackballControls.js"></script>
     </body>
     </html>
    

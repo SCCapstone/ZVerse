@@ -62,7 +62,7 @@ var shadowmaterial = new THREE.MeshBasicMaterial({ map: shadowing.texture });
 var shadowmaterial1 = new THREE.MeshBasicMaterial({ map: shadowing1.texture });
 var shadowmaterial2 = new THREE.MeshBasicMaterial({ map: shadowing2.texture });
 
-var zoomMax = 3.4; // the closest in you can go
+var zoomMax = 5.3; // the closest in you can go
 var zoomMin = 20; // the farthest out you can go
 var zoomSpeed = 0.1; // how much movement on scroll wheel
 

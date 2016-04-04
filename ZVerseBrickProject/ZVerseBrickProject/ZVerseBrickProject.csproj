@@ -310,7 +310,6 @@
     <Content Include="js\THREEx.WindowResize.js" />
     <Content Include="js\newBrickRendering.js" />
     <Content Include="js\BrickRendering.html" />
-    <Content Include="js\TrackballControls.js" />
     <Content Include="oldfiles\BrickwithText.aspx" />
     <Content Include="oldfiles\CubeWeb.aspx" />
     <Content Include="oldfiles\Final.aspx" />
