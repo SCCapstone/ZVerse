@@ -263,6 +263,7 @@
     <Content Include="fonts\optimer_regular.typeface.js" />
     <Content Include="fonts\Sans_Regular.js" />
     <Content Include="html.html" />
+    <Content Include="js\newUpload.jpg" />
     <Content Include="JavaScript.js" />
     <Content Include="js\fonts\droid_sans_bold.typeface.js" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />

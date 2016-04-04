@@ -17,6 +17,7 @@ var mouseY = 0;
 var container = container = document.getElementById('canvas');
 var windowHalfX = container.offsetWidth / 2;
 var windowHalfY = container.offsetHeight / 2;
+
 var group;
 var group1;
 var group2;
@@ -43,24 +44,16 @@ var text3 = '';
 var dynamicTexture = new THREEx.DynamicTexture(512, 512);
 var dynamicTexture1 = new THREEx.DynamicTexture(512, 512);
 var dynamicTexture2 = new THREEx.DynamicTexture(512, 512);
-var shadowing = new THREEx.DynamicTexture(512, 512);
-var shadowing1 = new THREEx.DynamicTexture(512, 512);
-var shadowing2 = new THREEx.DynamicTexture(512, 512);
 
-var geometry1 = new THREE.CubeGeometry(6.2, 6.2, 6.3);
+var geometry1 = new THREE.CubeGeometry(6.1, 6.1, 6.2);
 var geometry2 = new THREE.CubeGeometry(6.1, 6.1, 6.2);
 var geometry3 = new THREE.CubeGeometry(6.1, 6.1, 6.2);
 
-var shadowgeo = new THREE.CubeGeometry(6.2,6.2,6.2);
-var shadowgeo1 = new THREE.CubeGeometry(6.1,6.1,6.1);
-var shadowgeo2 = new THREE.CubeGeometry(6.1,6.1,6.1);
 
 var material1 = new THREE.MeshBasicMaterial({ map: dynamicTexture.texture });
 var material2 = new THREE.MeshBasicMaterial({ map: dynamicTexture1.texture });
 var material3 = new THREE.MeshBasicMaterial({ map: dynamicTexture2.texture });
-var shadowmaterial = new THREE.MeshBasicMaterial({ map: shadowing.texture });
-var shadowmaterial1 = new THREE.MeshBasicMaterial({ map: shadowing1.texture });
-var shadowmaterial2 = new THREE.MeshBasicMaterial({ map: shadowing2.texture });
+
 
 var zoomMax = 5.3; // the closest in you can go
 var zoomMin = 20; // the farthest out you can go
@@ -373,7 +366,6 @@ Output Parameters: No formal output, but this function renders text onto the
 -----------------------------------------------------------------------------*/
 function getText1(text,answer) {
  text1 = text;
-
  answer = "\"" + answer + "\"";
  dynamicTexture.clear();
  dynamicTexture.context.font = "bolder 56px " + answer;

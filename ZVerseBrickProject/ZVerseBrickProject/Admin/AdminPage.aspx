@@ -23,9 +23,15 @@
     Clicking Hide will take the existing model off the Custom Objects and the Tabs.
     Clicking Remove will delete the entire model from the database.
         <br />
-    Click the UpdateModel when you have made edits!
+    Click the Update Model button when you have made edits!
         <br />
-    <br />
+        <br />
+    New uploads are automatically hidden. 
+        <br />
+    Be sure to update the name and price of your newly uploaded models below and then click show!
+        <br />
+        <br />
+
 
     <asp:ListView ID="bricklist" ItemType="ZVerseBrickProject.Models.Brick" runat="server" SelectMethod="GetBricks" OnItemCommand="lv_ItemCommand">
 <%--        <LayoutTemplate>
@@ -55,7 +61,7 @@
                 <p>
                     <asp:Button runat="server" ID="Button1" Text="<%#:Item.showhide%>" CommandArgument="<%#:Item.BrickID %>" OnCommand="ShowHide" />
                    <asp:Button runat="server" ID="Button2" Text="Remove" CommandArgument="<%#:Item.BrickID %>" OnCommand="RemoveBrick" />
-                    <asp:Button runat="server" ID="Button3" Text="UpdateModel" CommandName="testbrick" CommandArgument="<%# Container.DataItemIndex %>" />
+                    <asp:Button runat="server" ID="Button3" Text="Update Model" CommandName="testbrick" CommandArgument="<%# Container.DataItemIndex %>" />
                 </p>
         </ItemTemplate>
         <ItemSeparatorTemplate></ItemSeparatorTemplate>
