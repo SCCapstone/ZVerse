@@ -105,45 +105,12 @@ function init() {
 
     container.appendChild(renderer.domElement);
 
-    //var isDragging = false;
-    //var previousMousePosition = {
-    //    x: 0,
-    //    y: 0
-    //};
-    //$(renderer.domElement).on('mousedown', function (e) {
-    //    isDragging = true;
-    //})
-    //.on('mousemove', function (e) {
-    //    //console.log(e);
-    //    var deltaMove = {
-    //        x: e.offsetX - previousMousePosition.x,
-    //        y: e.offsetY - previousMousePosition.y
-    //    };
-
-    //    if (isDragging) {
-            
-    //        mouseX = (event.clientX - windowHalfX)/10;
-    //        mouseY = (event.clientY - windowHalfY)/10;
-        
-    //    }
-
-    //    previousMousePosition = {
-    //        x: e.offsetX,
-    //        y: e.offsetY
-    //    };
-    //});
-    ///* */
-
-    //$(document).on('mouseup', function (e) {
-    //    isDragging = false;
-    //});
-
 
  //bind window to event listeners
-    //container.addEventListener('mousemove', onDocumentMouseMove, false);
     container.addEventListener('mousedown', onDocumentMouseDown, false);
     container.addEventListener('touchstart', onDocumentTouchStart, false);
     container.addEventListener('touchmove', onDocumentTouchMove, false);
+   // container.addEventListener("mousewheel", onDocumentMouseWheel, false)
 container.addEventListener('mouseout', onDocumentMouseOut, false);
 container.addEventListener('resize', onWindowResize, false);
 }
@@ -158,15 +125,18 @@ Output Parameters:
     mouseX - the x coordinate of the cursor on the screen
     mouseY - the y coordinate of the cursor on the screen
 -----------------------------------------------------------------------------*/
-function onDocumentMouseMove(event) {
-    mouseX = (event.clientX - windowHalfX) /10;
-    mouseY = (event.clientY - windowHalfY) /10;
-}
+
 function onDocumentMouseOut(event) {
     mouseX = 0;
     mouseY = 0;
+    //camera.position.z = 10;
 }
 
+function onDocumentMouseWheel(event) {
+
+    camera.position.z = camera.position.z - 1;
+
+}
 
 function onDocumentMouseDown(event) {
 
@@ -181,6 +151,7 @@ function onDocumentMouseDown(event) {
 
     mouseYOnMouseDown = event.clientY - windowHalfY;
     targetRotationOnMouseDownY = targetRotationY;
+
 
 }
 
@@ -202,6 +173,7 @@ function onDocumentMouseUp(event) {
     document.removeEventListener('mousemove', onDocumentMouseMove, false);
     document.removeEventListener('mouseup', onDocumentMouseUp, false);
     document.removeEventListener('mouseout', onDocumentMouseOut, false);
+
 
 }
 
