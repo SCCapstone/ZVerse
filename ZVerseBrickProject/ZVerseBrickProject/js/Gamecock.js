@@ -55,6 +55,10 @@ var material2 = new THREE.MeshBasicMaterial({ map: dynamicTexture1.texture });
 var material3 = new THREE.MeshBasicMaterial({ map: dynamicTexture2.texture });
 
 
+var zoomMax = 5.3; // the closest in you can go
+var zoomMin = 20; // the farthest out you can go
+var zoomSpeed = 0.1; // how much movement on scroll wheel
+
 //FUNCTION DECLARATION SECTION/////////////////////////////////////////////////
 init();//initializing function uses to begin the 3D window
 animate();//TODO******************************************************************************************
@@ -91,7 +95,7 @@ function init() {
     group.add(mesh);
     scene.add(group);
 
-
+    //add "University of South Carolina" to the surface of the brick
     var dynamicTexture4 = new THREEx.DynamicTexture(512, 512);
     dynamicTexture4.context.font = "25px Verdana";
     dynamicTexture4.drawText("University of South Carolina", undefined, 500, 'white');
@@ -112,14 +116,12 @@ function init() {
     container.appendChild(renderer.domElement);
 
     //bind window to event listeners
-
     container.addEventListener('mousedown', onDocumentMouseDown, false);
-    //container.addEventListener("mousewheel", onDocumentMouseWheel, false);
     container.addEventListener('touchstart', onDocumentTouchStart, false);
     container.addEventListener('touchmove', onDocumentTouchMove, false);
-    container.addEventListener('resize', onWindowResize, false);
-
+    container.addEventListener("mousewheel", onDocumentMouseWheel, false);
     container.addEventListener('mouseout', onDocumentMouseOut, false);
+    container.addEventListener('resize', onWindowResize, false);
 }
 
 
@@ -140,11 +142,16 @@ function onDocumentMouseOut(event) {
 }
 
 function onDocumentMouseWheel(event) {
-
-    camera.position.z = camera.position.z - 1;
-
+    console.log(event.wheelDeltaY);
+    if (event.wheelDeltaY > 0 && camera.position.z > zoomMax) //zoom in
+    {
+        camera.position.z = camera.position.z - zoomSpeed;
+    }
+    if (event.wheelDeltaY < 0 && camera.position.z < zoomMin) //zoom out
+    {
+        camera.position.z = camera.position.z + zoomSpeed;
+    }
 }
-
 
 function onDocumentMouseDown(event) {
 
@@ -167,23 +174,15 @@ function onDocumentMouseMove(event) {
     mouseX = event.clientX - windowHalfX;
     mouseY = event.clientY - windowHalfY;
 
-
     targetRotationY = targetRotationOnMouseDownY + (mouseY - mouseYOnMouseDown) * 0.02;
     targetRotationX = targetRotationOnMouseDownX + (mouseX - mouseXOnMouseDown) * 0.02;
-
-
-
 }
 
 function onDocumentMouseUp(event) {
-
     document.removeEventListener('mousemove', onDocumentMouseMove, false);
     document.removeEventListener('mouseup', onDocumentMouseUp, false);
     document.removeEventListener('mouseout', onDocumentMouseOut, false);
-
 }
-
-
 
 function onDocumentTouchStart(event) {
 
@@ -196,9 +195,6 @@ function onDocumentTouchStart(event) {
 
         mouseYOnMouseDown = event.touches[0].pageY - windowHalfY;
         targetRotationOnMouseDownY = targetRotationY;
-
-
-
     }
 
 }
@@ -214,9 +210,7 @@ function onDocumentTouchMove(event) {
 
         mouseY = event.touches[0].pageY - windowHalfY;
         targetRotationY = targetRotationOnMouseDownY + (mouseY - mouseYOnMouseDown) * 0.05;
-
     }
-
 }
 
 
@@ -247,17 +241,13 @@ function render() {
     //vertical rotation 
     finalRotationY = (targetRotationY - group.rotation.x);
 
-
     if (group.rotation.x <= 1 && group.rotation.x >= -1) {
-
         group.rotation.x += finalRotationY * 0.1;
     }
     if (group.rotation.x > 1) {
-
         group.rotation.x = 1
     }
     else if (group.rotation.x < -1) {
-
         group.rotation.x = -1
     }
 
