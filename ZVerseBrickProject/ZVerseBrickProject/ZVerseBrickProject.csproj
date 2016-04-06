@@ -263,8 +263,6 @@
     <Content Include="fonts\optimer_regular.typeface.js" />
     <Content Include="fonts\Sans_Regular.js" />
     <Content Include="html.html" />
-    <Content Include="js\DDSLoader.js" />
-    <Content Include="js\Detector.js" />
     <Content Include="js\newUpload.jpg" />
     <Content Include="js\fonts\droid_sans_bold.typeface.js" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
@@ -294,11 +292,8 @@
     <Content Include="js\bricks.jpg" />
     <Content Include="js\fonts\font1.js" />
     <Content Include="js\fonts\helvetiker_regular.typeface.js" />
-    <Content Include="js\FontUtils.js" />
     <Content Include="js\Gamecock.js" />
     <Content Include="js\GamecockCube.jpg" />
-    <Content Include="js\GeometryUtils.js" />
-    <Content Include="js\helvetiker_regular.typeface.js" />
     <Content Include="js\JavaScript.js" />
     <Content Include="js\MTLLoader.js" />
     <Content Include="js\OBJLoader.js" />
@@ -309,8 +304,6 @@
     <Content Include="js\scene.js" />
     <Content Include="js\script.js" />
     <Content Include="js\stats.min.js" />
-    <Content Include="js\Test.js" />
-    <Content Include="js\TextGeometry.js" />
     <Content Include="js\Three.js" />
     <Content Include="js\three.min.js" />
     <Content Include="js\threex.dynamictexture.js" />
