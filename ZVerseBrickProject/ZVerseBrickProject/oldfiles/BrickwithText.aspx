@@ -90,7 +90,7 @@ Output Parameters: Passes the user input from the text box to external
     <!--this file does...-->
     <script src="js/threex.dynamictexture.js"></script>
     <!--this file does...-->
-    <script src="js/three.min.js"></script>
+<%--    <script src="js/three.min.js"></script>--%>
     <!--Containing file for brick and text rendering functions-->
     <!--Note this js file must be at the end of div content-->
     <script src="js/newBrickRendering.js"></script>
@@ -99,7 +99,7 @@ Output Parameters: Passes the user input from the text box to external
     <script src="js/THREEx.WindowResize.js"></script>
     <script src="js/OrbitControls.js"></script>
     <script src="js/stats.min.js"></script>
-    <script src="js/script.js"></script>
+   <%-- <script src="js/script.js"></script>--%>
  
 
 </asp:Content>

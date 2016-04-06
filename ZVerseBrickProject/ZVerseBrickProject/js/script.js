@@ -1,16 +1,6 @@
-/**
- *
- * WebGL With Three.js - Lesson 6 - loading models
- * http://www.script-tutorials.com/webgl-with-three-js-lesson-6/
- *
- * Licensed under the MIT license.
- * http://www.opensource.org/licenses/mit-license.php
- * 
- * Copyright 2014, Script Tutorials
- * http://www.script-tutorials.com/
- */
 
-var lesson6 = {
+
+var loadBrick = {
     scene: null,
     camera: null,
     renderer: null,
@@ -25,11 +15,9 @@ var lesson6 = {
         this.scene = new THREE.Scene();
         this.scene.fog = new THREE.FogExp2(0xcce0ff, 0.0003);
 
-        var SCREEN_WIDTH = window.innerWidth,
-            SCREEN_HEIGHT = window.innerHeight;
-
-        //var SCREEN_WIDTH = 50,
-          //  SCREEN_HEIGHT = 50;
+        //Set Screen Size 
+        var SCREEN_WIDTH = window.innerWidth / 2,
+            SCREEN_HEIGHT = window.innerHeight / 2;
 
         // prepare camera
         var VIEW_ANGLE = 25, ASPECT = SCREEN_WIDTH / SCREEN_HEIGHT, NEAR = 1, FAR = 2000;
@@ -41,7 +29,7 @@ var lesson6 = {
         // prepare renderer
         this.renderer = new THREE.WebGLRenderer({ antialias: true });
         //this.renderer.setSize(SCREEN_WIDTH, SCREEN_HEIGHT);
-        this.renderer.setSize(SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2);
+        this.renderer.setSize(SCREEN_WIDTH, SCREEN_HEIGHT);
         this.renderer.setClearColor(this.scene.fog.color);
         this.renderer.shadowMapEnabled = true;
         this.renderer.shadowMapSoft = true;
@@ -62,46 +50,37 @@ var lesson6 = {
         // prepare clock
         this.clock = new THREE.Clock();
 
-        // prepare stats
-        //this.stats = new Stats();
-        //this.stats.domElement.style.position = 'absolute';
-        //this.stats.domElement.style.left = '50px';
-        //this.stats.domElement.style.bottom = '50px';
-        //this.stats.domElement.style.zIndex = 1;
-        //this.container.appendChild(this.stats.domElement);
-        
-
         //LIGHTS
 
-        var hemiLight = new THREE.HemisphereLight(0xffffff, 0xffffff, 0.6);
-        hemiLight.color.setHSL(0.6, 1, 0.6);
-        hemiLight.position.set(0, 500, 0);
-        this.scene.add(hemiLight);
+        //var hemiLight = new THREE.HemisphereLight(0xffffff, 0xffffff, 0.6);
+        //hemiLight.color.setHSL(0.6, 1, 0.6);
+        //hemiLight.position.set(0, 500, 0);
+        //this.scene.add(hemiLight);
 
-        // add directional light
-        var dLight = new THREE.DirectionalLight(0xffffff, 1);
-        dLight.color.setHSL(0.1, 1, 0.95);
-        dLight.position.set(-1, 1.75, 1);
-        dLight.position.multiplyScalar(50);
+        //// add directional light
+        //var dLight = new THREE.DirectionalLight(0xffffff, 1);
+        //dLight.color.setHSL(0.1, 1, 0.95);
+        //dLight.position.set(-1, 1.75, 1);
+        //dLight.position.multiplyScalar(50);
+        ////dLight.castShadow = true;
+        ////dLight.shadowCameraVisible = true;
+        ////dLight.shadowDarkness = 0.2;
+        ////dLight.shadowMapWidth = dLight.shadowMapHeight = 1000;
+        //this.scene.add(dLight);
+
         //dLight.castShadow = true;
-        //dLight.shadowCameraVisible = true;
-        //dLight.shadowDarkness = 0.2;
-        //dLight.shadowMapWidth = dLight.shadowMapHeight = 1000;
-        this.scene.add(dLight);
 
-        dLight.castShadow = true;
+        //dLight.shadowMapWidth = 2048;
+        //dLight.shadowMapHeight = 2048;
 
-        dLight.shadowMapWidth = 2048;
-        dLight.shadowMapHeight = 2048;
+        //var d = 50;
+        //dLight.shadowCameraLeft = -d;
+        //dLight.shadowCameraRight = d;
+        //dLight.shadowCameraTop = d;
+        //dLight.shadowCameraBottom = -d;
 
-        var d = 50;
-        dLight.shadowCameraLeft = -d;
-        dLight.shadowCameraRight = d;
-        dLight.shadowCameraTop = d;
-        dLight.shadowCameraBottom = -d;
-
-        dLight.shadowCameraFar = 3500;
-        dLight.shadowBias = -0.0001;
+        //dLight.shadowCameraFar = 3500;
+        //dLight.shadowBias = -0.0001;
 
 
         // add particle of light
@@ -111,10 +90,10 @@ var lesson6 = {
 
 
         // add spot light
-        var spLight = new THREE.SpotLight(0xffffff, 1.75, 2000, Math.PI / 3);
-        spLight.castShadow = true;
-        spLight.position.set(-10, 300, -50);
-        this.scene.add(spLight);
+        //var spLight = new THREE.SpotLight(0xffffff, 1.75, 2000, Math.PI / 3);
+        //spLight.castShadow = true;
+        //spLight.position.set(-10, 300, -50);
+        //this.scene.add(spLight);
 
         // add simple ground
         //var ground = new THREE.Mesh(new THREE.PlaneGeometry(200, 200, 10, 10), new THREE.MeshLambertMaterial({ color: 0x999999 }));
@@ -151,13 +130,13 @@ var lesson6 = {
             object.position.y = 0;
             object.position.z = 0;
             object.scale.set(1, 1, 1);
-            lesson6.scene.add(object);
+            loadBrick.scene.add(object);
             });
 
         //var loader = new THREE.OBJMTLLoader();
         //loader.load('DecBrick.obj', 'DecBrick.mtl', function(object){
         //    object.position.y = 0;
-        //    lesson6.scene.add(object);
+        //    loadBrick.scene.add(object);
         //}, onprogress, onerror);
 
     }
@@ -167,25 +146,19 @@ var lesson6 = {
 function animate() {
     requestAnimationFrame(animate);
     render();
-    update();
-}
-
-// Update controls and stats
-function update() {
-    lesson6.controls.update(lesson6.clock.getDelta());
-    lesson6.stats.update();
+    //update();
 }
 
 // Render the scene
 function render() {
-    if (lesson6.renderer) {
-        lesson6.renderer.render(lesson6.scene, lesson6.camera);
+    if (loadBrick.renderer) {
+        loadBrick.renderer.render(loadBrick.scene, loadBrick.camera);
     }
 }
 
 // Initialize lesson on page load
 function initializeLesson() {
-    lesson6.init();
+    loadBrick.init();
     animate();
 }
 

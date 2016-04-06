@@ -14,14 +14,6 @@ var renderer;
 var mesh;
 var container = container = document.getElementById('canvas');
 
-//Moving Text
-var plane;
-var controls;
-var selection;
-var offset = new THREE.Vector3();
-var objects = [];
-var raycaster = new THREE.Raycaster();
-
 var group;
 var group1;
 var group2;
@@ -35,8 +27,6 @@ var mouseYOnMouseDown = 0;
 
 var mouseX = 0;
 var mouseY = 0;
-var mouseXClick = 0;
-var mouseYClick = 0;
 var windowHalfX = container.offsetWidth / 2;
 var windowHalfY = container.offsetHeight / 2;
 
@@ -66,9 +56,7 @@ var shadowgeo = new THREE.CubeGeometry(4.9, 3, 3);
 var shadowgeo1 = new THREE.CubeGeometry(4.9, 3, 3);
 var shadowgeo2 = new THREE.CubeGeometry(4.9, 3, 3);
 
-var material1 = new THREE.MeshBasicMaterial({
-    map: dynamicTexture.texture
-});
+var material1 = new THREE.MeshBasicMaterial({ map: dynamicTexture.texture });
 var material2 = new THREE.MeshBasicMaterial({ map: dynamicTexture1.texture });
 var material3 = new THREE.MeshBasicMaterial({ map: dynamicTexture2.texture });
 var shadowmaterial = new THREE.MeshBasicMaterial({ map: shadowing.texture });
@@ -92,21 +80,10 @@ function init() {
     //set the primary parameters of the 3D window
     scene = new THREE.Scene();
     camera = new THREE.PerspectiveCamera(45, container.offsetWidth / container.offsetHeight, .01, 100);
-    //camera.position.z = 10;
-
-    //Addition for moving text 
-    scene.add(camera);
-    camera.position.set(0, 0, 10);
-    camera.lookAt(new THREE.Vector3(0, 0, 0));
-
+    camera.position.z = 10;
     var light = new THREE.DirectionalLight(0xffffff);
     light.position.set(0, 1, 1).normalize();
     scene.add(light);
-
-    // Plane, that helps to determinate an intersection position
-    this.plane = new THREE.Mesh(new THREE.PlaneBufferGeometry(5, 5, 8, 8), new THREE.MeshBasicMaterial({ color: 0xffffff }));
-    this.plane.visible = false;
-    this.scene.add(this.plane);
 
     group = new THREE.Object3D();
     group1 = new THREE.Object3D();
@@ -128,48 +105,14 @@ function init() {
 
     container.appendChild(renderer.domElement);
 
-    //var isDragging = false;
-    //var previousMousePosition = {
-    //    x: 0,
-    //    y: 0
-    //};
-    //$(renderer.domElement).on('mousedown', function (e) {
-    //    isDragging = true;
-    //})
-    //.on('mousemove', function (e) {
-    //    //console.log(e);
-    //    var deltaMove = {
-    //        x: e.offsetX - previousMousePosition.x,
-    //        y: e.offsetY - previousMousePosition.y
-    //    };
-
-    //    if (isDragging) {
-
-    //        mouseX = (event.clientX - windowHalfX)/10;
-    //        mouseY = (event.clientY - windowHalfY)/10;
-
-    //    }
-
-    //    previousMousePosition = {
-    //        x: e.offsetX,
-    //        y: e.offsetY
-    //    };
-    //});
-    ///* */
-
-    //$(document).on('mouseup', function (e) {
-    //    isDragging = false;
-    //});
-
 
     //bind window to event listeners
-    container.addEventListener('mousemove', onDocumentMouseMove, false);
     container.addEventListener('mousedown', onDocumentMouseDown, false);
     container.addEventListener('touchstart', onDocumentTouchStart, false);
     container.addEventListener('touchmove', onDocumentTouchMove, false);
+    // container.addEventListener("mousewheel", onDocumentMouseWheel, false)
     container.addEventListener('mouseout', onDocumentMouseOut, false);
     container.addEventListener('resize', onWindowResize, false);
-
 }
 
 
@@ -182,15 +125,18 @@ Output Parameters:
     mouseX - the x coordinate of the cursor on the screen
     mouseY - the y coordinate of the cursor on the screen
 -----------------------------------------------------------------------------*/
-function onDocumentMouseMove(event) {
-    mouseX = (event.clientX - windowHalfX) / 10;
-    mouseY = (event.clientY - windowHalfY) / 10;
-}
+
 function onDocumentMouseOut(event) {
     mouseX = 0;
     mouseY = 0;
+    //camera.position.z = 10;
 }
 
+function onDocumentMouseWheel(event) {
+
+    camera.position.z = camera.position.z - 1;
+
+}
 
 function onDocumentMouseDown(event) {
 
@@ -205,6 +151,7 @@ function onDocumentMouseDown(event) {
 
     mouseYOnMouseDown = event.clientY - windowHalfY;
     targetRotationOnMouseDownY = targetRotationY;
+
 
 }
 
@@ -226,6 +173,7 @@ function onDocumentMouseUp(event) {
     document.removeEventListener('mousemove', onDocumentMouseMove, false);
     document.removeEventListener('mouseup', onDocumentMouseUp, false);
     document.removeEventListener('mouseout', onDocumentMouseOut, false);
+
 
 }
 
@@ -391,4 +339,93 @@ function onWindowResize() {
 }
 
 
+/*-----------------------------------------------------------------------------
+Name: getText1()
+Description: This function takes in text renders it onto the polygon on the top
+    line of the three lines of text
+Input Parameters:
+    text: String of text to be rendered onto the polygon
+Output Parameters: No formal output, but this function renders text onto the 
+    polygon on the top line
+-----------------------------------------------------------------------------*/
+function getText1(text, answer) {
+    text1 = text;
+
+    //shadowing.clear();
+    //shadowing.context.font = "bolder 55px Verdana";
+    //shadowing.drawText(text1, undefined, 140, '#707070');
+    //shadowmaterial.transparent = true;
+    //shadowmaterial.polygonOffset = true;
+    //shadowmaterial.polygonOffsetFactor = -0.2;
+    //mesh5 = new THREE.Mesh(shadowgeo, shadowmaterial);
+    //scene.add(mesh5);
+    answer = "\"" + answer + "\"";
+    dynamicTexture.clear();
+    dynamicTexture.context.font = "bolder 58px " + answer;
+    dynamicTexture.drawText(text1, undefined, 140, '#707070');
+    dynamicTexture.context.font = "60px " + answer;
+    dynamicTexture.drawText(text1, undefined, 140, 'black');
+    material1.transparent = true;
+    material1.polygonOffset = true;
+    material1.polygonOffsetFactor = -0.2;
+    mesh1 = new THREE.Mesh(geometry1, material1);
+    group1.add(mesh1);
+    scene.add(group1);
+
+}
+
+
+
+
+/*-----------------------------------------------------------------------------
+Name: getText2()
+Description: This function takes in text renders it onto the polygon on the 
+    middle line of the three lines of text
+Input Parameters:
+    text: String of text to be rendered onto the polygon
+Output Parameters: No formal output, but this function renders text onto the 
+    polygon on the middle line
+-----------------------------------------------------------------------------*/
+function getText2(text, answer) {
+    text2 = text;
+
+    answer = "\"" + answer + "\"";
+    dynamicTexture1.clear();
+    dynamicTexture1.context.font = "bolder 58px " + answer;
+    dynamicTexture1.drawText(text2, undefined, 280, '#707070');
+    dynamicTexture1.context.font = "60px " + answer;
+    dynamicTexture1.drawText(text2, undefined, 280, 'black');
+    material2.transparent = true;
+    material2.polygonOffset = true;
+    material2.polygonOffsetFactor = -0.2;
+    mesh2 = new THREE.Mesh(geometry2, material2);
+    group2.add(mesh2);
+    scene.add(group2);
+}
+
+
+/*-----------------------------------------------------------------------------
+Name: getText3()
+Description: This function takes in text renders it onto the polygon on the 
+    bottom line of the three lines of text
+Input Parameters:
+    text: String of text to be rendered onto the polygon
+Output Parameters: No formal output, but this function renders text onto the 
+    polygon on the bottom line
+-----------------------------------------------------------------------------*/
+function getText3(text, answer) {
+    text3 = text;
+    answer = "\"" + answer + "\"";
+    dynamicTexture2.clear();
+    dynamicTexture2.context.font = "bolder 58px " + answer;
+    dynamicTexture2.drawText(text3, undefined, 420, '#707070');
+    dynamicTexture2.context.font = "60px " + answer;
+    dynamicTexture2.drawText(text3, undefined, 420, 'black');
+    material3.transparent = true;
+    material3.polygonOffset = true;
+    material3.polygonOffsetFactor = -0.2;
+    mesh3 = new THREE.Mesh(geometry3, material3);
+    group3.add(mesh3);
+    scene.add(group3);
+}
 
