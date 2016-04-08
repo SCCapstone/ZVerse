@@ -10,6 +10,7 @@ using System.Collections.Specialized;
 using System.Collections;
 using System.Web.ModelBinding;
 using System.Diagnostics;
+ 
 
 namespace ZVerseBrickProject
 {
@@ -24,7 +25,11 @@ namespace ZVerseBrickProject
                 if (cartTotal > 0)
                 {
                     // Display Total.
-                    lblTotal.Text = String.Format("{0:c}", cartTotal);
+                    // tax = 7% of the subtotal + shipping 
+                    var tax = (decimal)0.07 * (cartTotal + (decimal)5.00);
+                    var total = cartTotal + tax;  
+                    lbltaxTotal.Text = String.Format("{0:c}", (tax).ToString() ); 
+                    lblTotal.Text = String.Format("{0:c}", total);
                 }
                 else
                 {
@@ -35,6 +40,35 @@ namespace ZVerseBrickProject
                     CheckoutBtn.Visible = false;
                 }
             }
+        }
+
+        protected void gridViewOrders_RowCreated(object sender, GridViewRowEventArgs e)
+        {
+
+            using (ShoppingCartFunctions usersShoppingCart = new ShoppingCartFunctions())
+            {
+                decimal cartTotal = 0;
+                cartTotal = usersShoppingCart.GetTotal();
+                if (cartTotal > 0)
+                {
+                    if (e.Row.RowType == DataControlRowType.Footer)
+                    {
+                        int intNoOfMergeCol = e.Row.Cells.Count - 1;
+                        for (int intCellCol = 1; intCellCol < intNoOfMergeCol; intCellCol++)
+                        {
+                            e.Row.Cells.RemoveAt(1);
+                        }
+                        e.Row.Cells[0].ColumnSpan = intNoOfMergeCol;
+                        e.Row.Cells[0].Text = "SubTotal: "; 
+                        e.Row.Cells[0].HorizontalAlign = HorizontalAlign.Right;
+                        e.Row.Cells[1].Text = String.Format("{0:c}", cartTotal);
+                    }
+                }
+
+                
+            }
+
+
         }
 
         protected void  producturlClick(object sender, CommandEventArgs e)
