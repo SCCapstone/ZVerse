@@ -42,7 +42,7 @@
     </asp:GridView>
     <div>
         <p></p>
-        <asp:Label ID="shippingLabel" runat="server" Text="Shipping Cost: $5.00"></asp:Label>
+        <asp:Label ID="LabelShipping" runat="server" Text="Shipping Cost: $5.00"></asp:Label>
         <br />
         <asp:Label ID="LabelTax" runat="server" Text="Sales Tax: "></asp:Label>
         <asp:Label ID="lbltaxTotal" runat="server" EnableViewState="false"></asp:Label>

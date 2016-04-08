@@ -31,13 +31,13 @@ namespace ZVerseBrickProject {
         protected global::System.Web.UI.WebControls.GridView CartList;
         
         /// <summary>
-        /// shippingLabel control.
+        /// LabelShipping control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label shippingLabel;
+        protected global::System.Web.UI.WebControls.Label LabelShipping;
         
         /// <summary>
         /// LabelTax control.

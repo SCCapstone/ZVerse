@@ -28,11 +28,14 @@ namespace ZVerseBrickProject
                     // tax = 7% of the subtotal + shipping 
                     var tax = (decimal)0.07 * (cartTotal + (decimal)5.00);
                     var total = cartTotal + tax;  
-                    lbltaxTotal.Text = String.Format("{0:c}", (tax).ToString() ); 
+                    lbltaxTotal.Text = String.Format("{0:c}", tax ); 
                     lblTotal.Text = String.Format("{0:c}", total);
                 }
                 else
                 {
+                    LabelShipping.Text = "";
+                    LabelTax.Text = "";
+                    lbltaxTotal.Text = "";
                     LabelTotalText.Text = "";
                     lblTotal.Text = "";
                     ShoppingCartTitle.InnerHtml = "<h2>Please add an item onto the shopping cart.</h2>";
@@ -47,6 +50,7 @@ namespace ZVerseBrickProject
 
             using (ShoppingCartFunctions usersShoppingCart = new ShoppingCartFunctions())
             {
+               
                 decimal cartTotal = 0;
                 cartTotal = usersShoppingCart.GetTotal();
                 if (cartTotal > 0)
@@ -61,6 +65,7 @@ namespace ZVerseBrickProject
                         e.Row.Cells[0].ColumnSpan = intNoOfMergeCol;
                         e.Row.Cells[0].Text = "SubTotal: "; 
                         e.Row.Cells[0].HorizontalAlign = HorizontalAlign.Right;
+                        e.Row.Cells[1].Font.Bold = true;
                         e.Row.Cells[1].Text = String.Format("{0:c}", cartTotal);
                     }
                 }
@@ -118,7 +123,7 @@ namespace ZVerseBrickProject
                 var cartTotal = usersShoppingCart.GetTotal(); 
                 var tax = (decimal)0.07 * (cartTotal + (decimal)5.00);
                 var total = cartTotal + tax;
-                lbltaxTotal.Text = String.Format("{0:c}", (tax).ToString());
+                lbltaxTotal.Text = String.Format("{0:c}", tax);
                 lblTotal.Text = String.Format("{0:c}", cartTotal);
                 return usersShoppingCart.GetCartItems();
             }
