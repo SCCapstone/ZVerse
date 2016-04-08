@@ -154,7 +154,9 @@ namespace ZVerseBrickProject
             {
                 usersShoppingCart.EmptyCart();
             }   
-            Response.Redirect("Checkout.aspx");
+            Response.Redirect("Checkout.aspx", false);
+            Context.ApplicationInstance.CompleteRequest();
+
         }
     }
 }
