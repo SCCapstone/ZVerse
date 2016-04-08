@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using ZVerseBrickProject.Models;
+using System.Diagnostics;
 
 namespace ZVerseBrickProject.Controllers
 {
@@ -77,7 +78,8 @@ namespace ZVerseBrickProject.Controllers
         public List<CartItem> GetCartItems()
         {
             ShoppingCartId = GetCartId();
-
+            Debug.WriteLine(_db.ShoppingCartItems.Where(
+                c => c.CartId == ShoppingCartId).ToList()); 
             return _db.ShoppingCartItems.Where(
                 c => c.CartId == ShoppingCartId).ToList();
         }
