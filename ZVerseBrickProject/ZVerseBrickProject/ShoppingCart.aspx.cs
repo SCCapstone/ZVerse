@@ -115,7 +115,11 @@ namespace ZVerseBrickProject
                 }
                 usersShoppingCart.UpdateShoppingCartDatabase(cartId, cartUpdates);
                 CartList.DataBind();
-                lblTotal.Text = String.Format("{0:c}", usersShoppingCart.GetTotal());
+                var cartTotal = usersShoppingCart.GetTotal(); 
+                var tax = (decimal)0.07 * (cartTotal + (decimal)5.00);
+                var total = cartTotal + tax;
+                lbltaxTotal.Text = String.Format("{0:c}", (tax).ToString());
+                lblTotal.Text = String.Format("{0:c}", cartTotal);
                 return usersShoppingCart.GetCartItems();
             }
         }
