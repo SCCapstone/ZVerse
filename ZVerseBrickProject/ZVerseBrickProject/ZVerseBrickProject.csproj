@@ -263,11 +263,9 @@
     <Content Include="fonts\optimer_regular.typeface.js" />
     <Content Include="fonts\Sans_Regular.js" />
     <Content Include="html.html" />
-    <Content Include="js\01_-_Default1noCulling.JPG" />
     <Content Include="js\brickTexture.jpg" />
     <Content Include="js\DDSLoader.75.js" />
     <Content Include="js\Detector.75.js" />
-    <Content Include="js\male-02-1noCulling.JPG" />
     <Content Include="js\MTLLoader.75.js" />
     <Content Include="js\newUpload.jpg" />
     <Content Include="js\fonts\droid_sans_bold.typeface.js" />
@@ -307,7 +305,6 @@
     <Content Include="js\objMtlBrick.js" />
     <Content Include="js\OBJMTLLoader.js" />
     <Content Include="js\OrbitControls.js" />
-    <Content Include="js\orig_02_-_Defaul1noCulling.JPG" />
     <Content Include="js\pine_blankframe.jpg" />
     <Content Include="js\Plaque.js" />
     <Content Include="js\scene.js" />
@@ -321,7 +318,6 @@
     <Content Include="js\THREEx.WindowResize.js" />
     <Content Include="js\newBrickRendering.js" />
     <Content Include="js\BrickRendering.html" />
-    <Content Include="js\UV_Grid_Sm.jpg" />
     <Content Include="js\webgl_loader_obj.html" />
     <Content Include="oldfiles\BrickwithText.aspx" />
     <Content Include="oldfiles\CubeWeb.aspx" />
@@ -339,8 +335,6 @@
     <Content Include="bin\roslyn\Microsoft.VisualBasic.Core.targets" />
     <Content Include="bin\roslyn\VBCSCompiler.exe.config" />
     <Content Include="bin\ZVerseBrickProject.dll.config" />
-    <Content Include="js\male02.obj" />
-    <Content Include="js\male02.mtl" />
     <None Include="Properties\PublishProfiles\ZVerse.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
