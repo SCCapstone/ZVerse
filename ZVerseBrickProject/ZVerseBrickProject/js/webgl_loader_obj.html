@@ -55,11 +55,12 @@
 				document.body.appendChild( container );
 
 			    //camera = new THREE.PerspectiveCamera( 9, window.innerWidth / window.innerHeight, 1, 2000 );
-				camera = new THREE.PerspectiveCamera( 5, window.innerWidth / window.innerHeight, 1, 2000 );
+				camera = new THREE.PerspectiveCamera( 10, (window.innerWidth/2) / (window.innerHeight/2), 1, 2000 );
 				//camera.position.y = 10;
-				camera.position.y = 10;
-				//camera.position.x = 10;
-			    //camera.position.set(0, 100, 300);
+			    //camera.position.x = 10;s
+				camera.position.set(0, 10, 30);
+				//camera.lookAt(new THREE.Vector3(0, 0, 0));
+				//camera.lookAt(new THREE.Vector3(0, 0, 0));
 				//camera.position.z = 100;
 			    //camera.position.set(0, 100, 300);
 				// scene
@@ -69,8 +70,8 @@
 				var ambient = new THREE.AmbientLight( 0x101030 );
 				scene.add( ambient );
 
-				var directionalLight = new THREE.DirectionalLight( 0xffeedd );
-				directionalLight.position.set( 0, 1, 0 );
+				var directionalLight = new THREE.DirectionalLight(0xffffff);
+				directionalLight.position.set( 0, 10, 30 );
 				scene.add( directionalLight );
 
 				// texture
@@ -118,7 +119,7 @@
 
 					} );
 
-					object.position.y = - 95;
+					//object.position.y = - 95;
 					scene.add( object );
 
 				}, onProgress, onError );
@@ -127,8 +128,8 @@
 
 				renderer = new THREE.WebGLRenderer({ antialias: true });
 				renderer.setPixelRatio( window.devicePixelRatio );
-				renderer.setSize(window.innerWidth, window.innerHeight);
-				renderer.setClearColor(0xffffff, 1);
+				renderer.setSize((window.innerWidth/2), (window.innerHeight/2));
+				renderer.setClearColor(0xff0000, 1);
 				container.appendChild( renderer.domElement );
 
 				//document.addEventListener( 'mousemove', onDocumentMouseMove, false );
@@ -144,10 +145,10 @@
 				windowHalfX = window.innerWidth / 2;
 				windowHalfY = window.innerHeight / 2;
 
-				camera.aspect = window.innerWidth / window.innerHeight;
+				camera.aspect = (window.innerWidth/2) / (window.innerHeight/2);
 				camera.updateProjectionMatrix();
 
-				renderer.setSize( window.innerWidth, window.innerHeight );
+				renderer.setSize( (window.innerWidth/2), (window.innerHeight/2) );
 
 			}
 

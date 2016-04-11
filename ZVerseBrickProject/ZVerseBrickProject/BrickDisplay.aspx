@@ -12,7 +12,7 @@
         }
         #canvas{
             background-color: #E6F2FF;
-            width:700px;
+            width: 700px;
             height: 500px;
             margin: 0 30px 0 0;
             position: static;
@@ -55,15 +55,18 @@
     </div>
 
     <!--this file does...-->
-    <script src="js/three.min.75.js"></script>
+   <%-- <script src="js/three.min.75.js"></script>--%>
     <!--this file does...-->
-<%--    <script src="js/three.min.js"></script>--%>
+    <script src="js/three.min.js"></script>
     <!--Containing file for brick and text rendering functions-->
     <!--Note this js file must be at the end of div content-->
 <%--    <script src="js/DDSLoader.75.js"></script>--%>
 
    <%-- <script src="js/MTLLoader.75.js"></script>--%>
-    <script src="js/OBJLoader.75.js"></script>
+   <%-- <script src="js/OBJLoader.75.js"></script>--%>
+    <script src="js/OBJLoader.js"></script>
+    <script src="js/THREEx.WindowResize.js"></script>
+    <script src="js/OrbitControls.js"></script>
 <%--    <script src="js/Detector.75.js"></script>
     <script src="js/stats.min.75.js"></script>--%>
     <script src="js/objMtlBrick.js"></script>
