@@ -2,13 +2,13 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
      <ol style="visibility:hidden;"></ol>
           <div id="CategoryMenu" style="text-align: left">  
-              <h3>Filter by Category:</h3>     
+              <h4>Filter by Category:</h4>     
             <asp:ListView ID="categoryList"  
                 ItemType="ZVerseBrickProject.Models.Category" 
                 runat="server"
                 SelectMethod="GetCategories" >
                 <ItemTemplate>
-                    <b style="font-size: 200%; font-style: normal">
+                    <b style="font-size: 150%; font-style: normal">
                         <a href="/ProductList.aspx?id=<%#: Item.CategoryID %>">
                         <%#: Item.CategoryName %>
                         </a>
