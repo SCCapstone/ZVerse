@@ -3,14 +3,32 @@
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
     <%--http://stackoverflow.com/questions/4013955/how-to-include-css-in-master-pages--%>
     <div class="jumbotron">
-        <h1><%: Title %>.</h1>
-        <p class="lead">ZVerse delivers turnkey 3D printing solutions from 3D content creation to full color production.</p>
-        <p><a href="http://zverse.com/" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
-        <video width="500" height="500" controls>
+      <p class="lead">ZVerse delivers turnkey 3D printing solutions from 3D content creation to full color production.
+           <a href="http://zverse.com/" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
+    </div>
+    <div = "row">
+        <div class="col-md-2">
+      <video width="500" height="500" controls>
      <source src="video/ZVerse.mp4" type="video/mp4">
     Your browser does not support the video tag.
     </video>
-    </div>
+            </div>
+        <div class="col-md-2">
+            <p>
+
+
+
+
+
+                Please watch this video to become familiar withour website!
+            </p>
+            <p>
+                You can follow the links at the bottom of the page to become more familiar with our products.
+            </p>
+        </div>
+
+        </div>
+
 
     <div class="row">
         <div class="col-md-4">
