@@ -6,6 +6,10 @@
         <h1><%: Title %>.</h1>
         <p class="lead">ZVerse delivers turnkey 3D printing solutions from 3D content creation to full color production.</p>
         <p><a href="http://zverse.com/" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
+        <video width="320" height="240" controls>
+     <source src="video/ZVerse.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+    </video>
     </div>
 
     <div class="row">
