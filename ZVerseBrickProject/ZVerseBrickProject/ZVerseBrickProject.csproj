@@ -264,8 +264,10 @@
     <Content Include="fonts\Sans_Regular.js" />
     <Content Include="html.html" />
     <Content Include="js\brickTexture.jpg" />
+    <Content Include="js\CanvasRenderer.js" />
     <Content Include="js\DDSLoader.75.js" />
     <Content Include="js\Detector.75.js" />
+    <Content Include="js\movingText.js" />
     <Content Include="js\MTLLoader.75.js" />
     <Content Include="js\newUpload.jpg" />
     <Content Include="js\fonts\droid_sans_bold.typeface.js" />
@@ -307,6 +309,7 @@
     <Content Include="js\OrbitControls.js" />
     <Content Include="js\pine_blankframe.jpg" />
     <Content Include="js\Plaque.js" />
+    <Content Include="js\Projector.js" />
     <Content Include="js\scene.js" />
     <Content Include="js\script.js" />
     <Content Include="js\stats.min.75.js" />

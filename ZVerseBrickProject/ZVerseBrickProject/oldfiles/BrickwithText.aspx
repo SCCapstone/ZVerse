@@ -27,6 +27,7 @@ Output Parameters: Passes the user input from the text box to external
             border: 1px solid;
             border-color:#99BBFF;
         }
+        
     </style> 
     <div>
         <h1>Mizzou Tradition Plaza Paved Replica</h1>
@@ -75,6 +76,29 @@ Output Parameters: Passes the user input from the text box to external
             <br />
             <br />
                    
+            <!-- Text Move up Button -->
+            <div>
+            <a class="btn btn-success" href="/AddToCart.aspx?productID=13">               
+                <span class="ProductListItem">
+                    <b>Move Text Up</b> 
+                 </span>           
+            </a>
+            </div>
+            <br />
+            <br />
+
+            <!-- Text Move Down Button -->
+            <div>
+            <a class="btn btn-success" href="/AddToCart.aspx?productID=13">               
+                <span class="ProductListItem">
+                    <b>Move Text Down</b> 
+                 </span>           
+            </a>
+            </div>
+            <br />
+            <br />
+
+
             <!--Shopping Cart button redirect to order page -->
             <div>
             <a class="btn btn-success" href="/AddToCart.aspx?productID=13">               
@@ -97,9 +121,14 @@ Output Parameters: Passes the user input from the text box to external
     <script src="js/threex.dynamictexture.js"></script>
     <!--this file does...-->
     <script src="js/three.min.js"></script>
+    <script src="js/Three.js"></script>
+    <script src="js/Detector.js"></script>
+    <script src="js/CanvasRenderer.js"></script>
+    <script src="js/Projector.js"></script>
+    <script src="js/THREEx.KeyboardState.js"></script>
     <!--Containing file for brick and text rendering functions-->
     <!--Note this js file must be at the end of div content-->
-    <script src="js/newBrickRendering.js"></script>
+    <script src="js/movingText.js"></script>
  
 
 </asp:Content>
