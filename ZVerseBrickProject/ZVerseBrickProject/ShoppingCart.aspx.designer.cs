@@ -31,6 +31,33 @@ namespace ZVerseBrickProject {
         protected global::System.Web.UI.WebControls.GridView CartList;
         
         /// <summary>
+        /// LabelShipping control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label LabelShipping;
+        
+        /// <summary>
+        /// LabelTax control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label LabelTax;
+        
+        /// <summary>
+        /// lbltaxTotal control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lbltaxTotal;
+        
+        /// <summary>
         /// LabelTotalText control.
         /// </summary>
         /// <remarks>

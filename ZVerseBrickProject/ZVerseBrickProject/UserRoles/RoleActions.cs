@@ -33,16 +33,16 @@ namespace ZVerseBrickProject.UserRoles
             var userMgr = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(context));
             var appUser = new ApplicationUser
             {
-                UserName = "zverseAdmin@zverse.com",
-                Email = "zverseAdmin@zverse.com"
+                UserName = "zverse123@gmail.com",
+                Email = "zverse123@gmail.com"
             };
             IdUserResult = userMgr.Create(appUser, "Pa$$word1");
 
             // If the new admin user was successfully created, 
             // add the new user to the "admin" role. 
-            if (!userMgr.IsInRole(userMgr.FindByEmail("zverseAdmin@zverse.com").Id, "admin"))
+            if (!userMgr.IsInRole(userMgr.FindByEmail("zverse123@gmail.com").Id, "admin"))
             {
-                IdUserResult = userMgr.AddToRole(userMgr.FindByEmail("zverseAdmin@zverse.com").Id, "admin");
+                IdUserResult = userMgr.AddToRole(userMgr.FindByEmail("zverse123@gmail.com").Id, "admin");
             }
         }
     }

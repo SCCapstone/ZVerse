@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using ZVerseBrickProject.Models;
 
+
 namespace ZVerseBrickProject.Controllers
 {
     public class ShoppingCartFunctions : IDisposable
@@ -76,8 +77,7 @@ namespace ZVerseBrickProject.Controllers
 
         public List<CartItem> GetCartItems()
         {
-            ShoppingCartId = GetCartId();
-
+            ShoppingCartId = GetCartId(); 
             return _db.ShoppingCartItems.Where(
                 c => c.CartId == ShoppingCartId).ToList();
         }
