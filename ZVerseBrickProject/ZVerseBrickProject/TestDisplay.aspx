@@ -2,6 +2,15 @@
     CodeBehind="TestDisplay.aspx.cs" Inherits="ZVerseBrickProject.TestDisplay" %>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
+<!-----------------------------------------------------------------------------
+* Name: TestList.aspx
+* Author: 
+*   *****************************************************************************************
+* Edited By:
+*   *****************************************************************************************
+* Description: This aspx page creates the styling for the brick canvas, and 
+*   the html controls for all of the 3D brick windows
+------------------------------------------------------------------------------>
     <!--Styling the brick canvas -->
     <style>
         #productBrick {
@@ -21,11 +30,9 @@
         }
     </style>
 
-    <asp:FormView ID="BrickDetail" runat="server" ItemType="ZVerseBrickProject.Models.Brick" SelectMethod="GetBrick" RenderOuterTable="false">
-
-        
+    <!-- 3D window and form controls-->
+    <asp:FormView ID="BrickDetail" runat="server" ItemType="ZVerseBrickProject.Models.Brick" SelectMethod="GetBrick" RenderOuterTable="false">      
         <ItemTemplate>
-
             <div>
                 <h1><%#:Item.BrickName %></h1>
             </div>
@@ -91,16 +98,10 @@
 
                     <!--Shopping Cart button redirect to order page -->
                     <asp:Button runat="server" ID="Show" Text="Add To Cart" class="btn btn-success" CommandArgument="<%#:Item.BrickID %>" OnCommand="AddCart" />
-
-
-
-
                 </div>
             </div>
 
-            <!--this file does...-->
             <script src="js/threex.dynamictexture.js"></script>
-            <!--this file does...-->
             <script src="js/Three.js"></script>
             <script src="js/three.min.js"></script>
             
@@ -141,8 +142,6 @@
             <!--Containing file for brick and text rendering functions-->
             <!--Note this js file must be at the end of div content-->
             <script src="js/<%#Item.JSPath %>"></script>
-
         </ItemTemplate>
     </asp:FormView>
-
 </asp:Content>

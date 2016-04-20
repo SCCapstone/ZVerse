@@ -1,14 +1,19 @@
 ﻿<%@ Page Title="Models with Text" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="TestList.aspx.cs" Inherits="ZVerseBrickProject.TestForm" %>
-
 <asp:Content ID="Content3" ContentPlaceHolderID="MainContent" runat="server">
+<!-----------------------------------------------------------------------------
+* Name: TestList.aspx
+* Author: 
+*   ***********************************************************************************************
+* Edited By:
+*   ***********************************************************************************************
+* Description: ************************************************************************************
+------------------------------------------------------------------------------>
     <ol style="visibility: hidden;"></ol>
-
     <section>
         <div>
             <hgroup>
                 <h2><%: Page.Title %></h2>
             </hgroup>
-
             <asp:ListView ID="BrickList" runat="server"
                 DataKeyNames="BrickID" GroupItemCount="3"
                 ItemType="ZVerseBrickProject.Models.Brick" SelectMethod="GetBricks">
