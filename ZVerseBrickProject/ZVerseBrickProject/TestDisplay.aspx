@@ -57,6 +57,11 @@
                     <input type="radio" name="browser" onclick="check(this.value)" id="cursive" value="Courier">Courier<br>
                     <input type="radio" name="browser" onclick="check(this.value)" id="helv" value="Charlesworth">Charlesworth<br>
                     <input type="radio" name="browser" onclick="check(this.value)" id="opt" value="Comic Sans MS">Comic Sans MS<br>
+                    
+                    <input id="textSlider1" type="range" min="100" max="500" />
+                    <input id="textSlider2" type="range" min="100" max="500" />
+                    <input id="textSlider3" type="range" min="100" max="500" />
+
                     <br>
                     Your font is:
                     <input type="text" id="answer" size="20">
@@ -103,6 +108,8 @@
             <!--this file does...-->
             <script src="js/Three.js"></script>
             <script src="js/three.min.js"></script>
+           
+
             
             <!--Automatically draw on the brick when inscription is not empty -->
             <script>
@@ -137,6 +144,7 @@
                     }
 
                 })
+
             </script>
             <!--Containing file for brick and text rendering functions-->
             <!--Note this js file must be at the end of div content-->

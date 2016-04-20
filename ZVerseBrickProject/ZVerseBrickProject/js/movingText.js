@@ -18,7 +18,7 @@ var container = container = document.getElementById('canvas');
 var windowHalfX = container.offsetWidth / 2;
 var windowHalfY = container.offsetHeight / 2;
 
-var keyboard = new THREEx.KeyboardState();
+
 
 var group;
 var group1;
@@ -35,12 +35,27 @@ var positionText1 = 140;
 var positionText2 = 280;
 var positionText3 = 420;
 
+//for (var i = 0; i < 3; i++) {
+//    console.log(i, 'created EVENT')
+//    var $selector = $('#textSlider' + i);
+//    $selector.on("input change", function () {
+//        var val = $selector.val();
+//        console.log(val);
+//        positionText1 = val;
+//    });
+//}
+
+
+
 
 var objects = [];
 var mouse, raycaster, isShiftDown = false;
 var onKeyUp = false;
 var onKeyDown = false;
 var plane;
+
+
+
 
 /*
 Variables to store the dynamic textures, geometries, and materials for the 
@@ -155,6 +170,8 @@ Output Parameters:
 function onDocumentMouseOut(event) {
     mouseX = 0;
     mouseY = 0;
+
+    console.log('mouse out ');
     //camera.position.z = 10;
 }
 
@@ -174,13 +191,28 @@ function onDocumentMouseDown(event) {
 
     event.preventDefault();
 
-    document.addEventListener('mousemove', onDocumentMouseMove, false);
-    document.addEventListener('mouseup', onDocumentMouseUp, false);
-    document.addEventListener('mouseout', onDocumentMouseOut, false);
+    //document.addEventListener('mousemove', onDocumentMouseMove, false);
+    //document.addEventListener('mouseup', onDocumentMouseUp, false);
+    //document.addEventListener('mouseout', onDocumentMouseOut, false);
 
 
-    mouseXOnMouseDown = event.clientX - windowHalfX;
-    targetRotationOnMouseDownX = targetRotationX;
+    //mouseXOnMouseDown = event.clientX - windowHalfX;
+    //targetRotationOnMouseDownX = targetRotationX;
+
+    
+
+    //////
+    console.log('clicked');
+
+    vector.set((event.clientX / container.offsetWidth) * 2 - 1, -(event.clientY / container.offsetHeight) * 2 + 1, 0.5); // z = 0.5 important!
+    vector.unproject(camera);
+    raycaster.set(camera.position, vector.sub(camera.position).normalize());
+
+    var intersects = raycaster.intersectObjects(objects, recursiveFlag);
+
+    console.log(intersects);
+
+    /////
 
 }
 
@@ -228,8 +260,6 @@ function onDocumentTouchMove(event) {
     }
 }
 
-
-    
 
 
 /*-----------------------------------------------------------------------------
@@ -333,6 +363,9 @@ function render() {
         group3.rotation.x = -1
     }
 
+    moveTextUp();
+    moveTextDown();
+
     renderer.render(scene, camera);
 
 }
@@ -374,11 +407,29 @@ function getText1(text, answer) {
     //mesh5 = new THREE.Mesh(shadowgeo, shadowmaterial);
     //scene.add(mesh5);
     answer = "\"" + answer + "\"";
-    dynamicTexture.clear();
-    dynamicTexture.context.font = "bolder 58px " + answer;
-    dynamicTexture.drawText(text1, undefined, positionText1, '#707070');
-    dynamicTexture.context.font = "60px " + answer;
-    dynamicTexture.drawText(text1, undefined, positionText1, 'black');
+    //dynamicTexture.clear();
+    //dynamicTexture.context.font = "bolder 58px " + answer;
+    //dynamicTexture.drawText(text1, undefined, positionText1, '#707070');
+    //dynamicTexture.context.font = "60px " + answer;
+    //dynamicTexture.drawText(text1, undefined, positionText1, 'black');
+
+
+    //$("#textSlider1").on("input change", function () {
+    //    console.log('textSlider1 changed')
+    //    text1.position.y = $("#textSlider1").val();
+    //});
+
+    $("#textSlider1").on("input change", function() {
+  console.log('textSlider1 changed to ', $("#textSlider1").val())
+  dynamicTexture.clear();
+  dynamicTexture.context.font = "bolder 58px " + answer;
+  dynamicTexture.drawText(text1, undefined, $("#textSlider1").val(), '#707070');
+  dynamicTexture.context.font = "60px " + answer;
+  dynamicTexture.drawText(text1, undefined, $("#textSlider1").val(), 'black');
+});
+
+
+
     material1.transparent = true;
     material1.polygonOffset = true;
     material1.polygonOffsetFactor = -0.2;

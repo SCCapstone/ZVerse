@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Brick with Text" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="BrickwithText.aspx.cs" Inherits="ZVerseBrickProject.About" %>
+﻿ Page Title="Brick with Text" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="BrickwithText.aspx.cs" Inherits="ZVerseBrickProject.About" %>
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
 <!-----------------------------------------------------------------------------
 Name: BrickwithText.aspx
@@ -76,34 +76,11 @@ Output Parameters: Passes the user input from the text box to external
             <br />
             <br />
                    
-            <!-- Text Move up Button -->
-            <div>
-            <a class="btn btn-success" href="/AddToCart.aspx?productID=13">               
-                <span class="ProductListItem">
-                    <b>Move Text Up</b> 
-                 </span>           
-            </a>
-            </div>
-            <br />
-            <br />
-
-            <!-- Text Move Down Button -->
-            <div>
-            <a class="btn btn-success" href="/AddToCart.aspx?productID=13">               
-                <span class="ProductListItem">
-                    <b>Move Text Down</b> 
-                 </span>           
-            </a>
-            </div>
-            <br />
-            <br />
-
-
             <!--Shopping Cart button redirect to order page -->
             <div>
             <a class="btn btn-success" href="/AddToCart.aspx?productID=13">               
                 <span class="ProductListItem">
-                    <b>Add To Cart</b> 
+                    <b>Add To Cart flkdjalkfdjslkaj</b> 
                  </span>           
             </a>
             </div>
@@ -114,11 +91,11 @@ Output Parameters: Passes the user input from the text box to external
     <!--this file does...-->
     <script src="js/threex.dynamictexture.js"></script>
     <!--this file does...-->
-<%--    <script src="js/three.min.js"></script>--%>
+<%--    <script src="js/three.min.js"></script>
     <!--Containing file for brick and text rendering functions-->
     <!--Note this js file must be at the end of div content-->
     <!--this file does...-->
-    <script src="js/threex.dynamictexture.js"></script>
+<%--    <script src="js/threex.dynamictexture.js"></script>
     <!--this file does...-->
     <script src="js/three.min.js"></script>
     <script src="js/Three.js"></script>
@@ -128,7 +105,7 @@ Output Parameters: Passes the user input from the text box to external
     <script src="js/THREEx.KeyboardState.js"></script>
     <!--Containing file for brick and text rendering functions-->
     <!--Note this js file must be at the end of div content-->
-    <script src="js/movingText.js"></script>
+    <%--<script src="js/movingText.js"></script>
  
 
 </asp:Content>
