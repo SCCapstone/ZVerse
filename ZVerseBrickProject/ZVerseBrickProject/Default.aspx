@@ -2,12 +2,15 @@
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
     <%--http://stackoverflow.com/questions/4013955/how-to-include-css-in-master-pages--%>
-    <div class="jumbotron">
-        <h1><%: Title %>.</h1>
-      <p> We make 2D content 3D printable
-           <a href="http://zverse.com/" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
+    <%--<div class="jumbotron">
+        <h1 style="font:bold French Script MT"><%: Title %>.</h1>
+      <p> We make 2D content 3D printable </p>
+         <p>  <a href="http://zverse.com/" class="btn btn-lg">Learn more &raquo;</a></p>
          
-    </div>
+    </div>--%>
+    <br />
+    <IMG SRC="Images/zverse.png" ALT="Welcome to Zverse!" WIDTH=1100 HEIGHT=200>
+
     <div class="row">
         <div class ="col-md-6">
       <video width="500" height="375" autoplay controls>
@@ -17,7 +20,7 @@
  
 
         </div>
-        <div class="col-md-6">
+        <div class="col-md-6" background-color: "grey";>
 
             <h2 style="color:orangered;"> 
                 3D Content Creation</h2>
