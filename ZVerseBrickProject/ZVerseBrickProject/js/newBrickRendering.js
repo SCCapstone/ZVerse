@@ -333,13 +333,13 @@ Input Parameters:
 Output Parameters: No formal output, but this function renders text onto the 
     polygon on the top line
 -----------------------------------------------------------------------------*/
-function createText(attrs) {
-    dynamicTexture.clear();
-    dynamicTexture.context.font = "bolder 58px " + answer;
-    dynamicTexture.drawText(attrs.obj, undefined, $("#" + attrs.id).val(), '#707070');
-    dynamicTexture.context.font = "60px " + answer;
-    dynamicTexture.drawText(text1, undefined, $("#" + attrs.id).val(), 'black');
-}
+//function createText(attrs) {
+//    dynamicTexture.clear();
+//    dynamicTexture.context.font = "bolder 58px " + answer;
+//    dynamicTexture.drawText(attrs.obj, undefined, $("#" + attrs.id).val(), '#707070');
+//    dynamicTexture.context.font = "60px " + answer;
+//    dynamicTexture.drawText(text1, undefined, $("#" + attrs.id).val(), 'black');
+//}
 
 
 
@@ -405,11 +405,21 @@ function getText1(text, answer) {
 
 function getText2(text, answer) {
     createText({ obj: text, answer: answer, id: 'textSlider2' })
-    createBinder({ material: material1, geometry: geometry1, group: group1 })
+    createBinder({ material: material2, geometry: geometry2, group: group2 })
 
     $("#textSlider2").on("input change", function () {
         console.log('textSlider2 changed to ', $("#textSlider2").val())
         createText({ obj: text, answer: answer, id: 'textSlider2' })
+    });
+}
+
+function getText3(text, answer) {
+    createText({ obj: text, answer: answer, id: 'textSlider3' })
+    createBinder({ material: material3, geometry: geometry3, group: group3 })
+
+    $("#textSlider3").on("input change", function () {
+        console.log('textSlider3 changed to ', $("#textSlider3").val())
+        createText({ obj: text, answer: answer, id: 'textSlider3' })
     });
 }
 
@@ -449,20 +459,20 @@ Input Parameters:
     text: String of text to be rendered onto the polygon
 Output Parameters: No formal output, but this function renders text onto the 
     polygon on the bottom line
------------------------------------------------------------------------------*/
-function getText3(text,answer) {
-    text3 = text;
-    answer = "\"" + answer + "\"";
-    dynamicTexture2.clear();
-    dynamicTexture2.context.font = "bolder 58px " + answer;
-    dynamicTexture2.drawText(text3, undefined, 420, '#707070');
-    dynamicTexture2.context.font = "60px " + answer;
-    dynamicTexture2.drawText(text3, undefined, 420, 'black');
-    material3.transparent = true;
-    material3.polygonOffset = true;
-    material3.polygonOffsetFactor = -0.2;
-    mesh3 = new THREE.Mesh(geometry3, material3);
-    group3.add(mesh3);
-    scene.add(group3);
-}
+//-----------------------------------------------------------------------------*/
+//function getText3(text,answer) {
+//    text3 = text;
+//    answer = "\"" + answer + "\"";
+//    dynamicTexture2.clear();
+//    dynamicTexture2.context.font = "bolder 58px " + answer;
+//    dynamicTexture2.drawText(text3, undefined, 420, '#707070');
+//    dynamicTexture2.context.font = "60px " + answer;
+//    dynamicTexture2.drawText(text3, undefined, 420, 'black');
+//    material3.transparent = true;
+//    material3.polygonOffset = true;
+//    material3.polygonOffsetFactor = -0.2;
+//    mesh3 = new THREE.Mesh(geometry3, material3);
+//    group3.add(mesh3);
+//    scene.add(group3);
+//}
 
