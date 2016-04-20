@@ -376,7 +376,7 @@
     <Content Include="TestDisplay.aspx" />
     <Content Include="TestList.aspx" />
     <Content Include="three.js" />
-    <Content Include="video\ZVerse.mp4" />
+    <Content Include="video\ZVerse-Cropped.mp4" />
     <Content Include="ViewSwitcher.ascx" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>

@@ -6,51 +6,41 @@
       <p class="lead">ZVerse delivers turnkey 3D printing solutions from 3D content creation to full color production.
            <a href="http://zverse.com/" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
     </div>
-    <div = "row">
-        <div class="col-md-2">
-      <video width="500" height="500" controls>
-     <source src="video/ZVerse.mp4" type="video/mp4">
-    Your browser does not support the video tag.
-    </video>
-            </div>
-        <div class="col-md-2">
-            <p>
-
-
-
-
-
-                Please watch this video to become familiar withour website!
-            </p>
-            <p>
-                You can follow the links at the bottom of the page to become more familiar with our products.
-            </p>
-        </div>
-
-        </div>
+    
 
 
     <div class="row">
-        <div class="col-md-4">
-            <h2>3D Content Creation</h2>
+        <div class ="col-md-6">
+      <video width="500" height="375" controls>
+     <source src="video/ZVerse-Cropped.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+    </video>
+ 
+
+        </div>
+        <div class="col-md-6">
+            <h2> <br />
+                3D Content Creation</h2>
             <p>
                 The LAYR content creation platform is making it easy to turn 2D to 3D
             </p>
             <p>
                 <a class="btn btn-default" href="http://zverse.com/layr/">Learn more &raquo;</a>
             </p>
-        </div>
-        <div class="col-md-4">
-            <h2>Product Engineering</h2>
+       <%-- </div>
+        <div class="col-md-4">--%>
+            <h2> <br />
+                Product Engineering</h2>
             <p>
                We specialize in 3D design of products specifically engineered for 3D printing.
             </p>
             <p>
                 <a class="btn btn-default" href="http://zverse.com/3d-modeling/">Learn more &raquo;</a>
             </p>
-        </div>
-        <div class="col-md-4">
-            <h2>Full Color 3D Printing</h2>
+        <%--</div>
+        <div class="col-md-4">--%>
+            <h2> <br />
+                Full Color 3D Printing</h2>
             <p>
                 No one knows more about 3D color print production. Our experience and efficiency is unmatched.
             </p>
