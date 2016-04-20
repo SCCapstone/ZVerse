@@ -2,6 +2,15 @@
          CodeBehind="ProductDetails.aspx.cs" Inherits="ZVerseBrickProject.ProductDetails" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <asp:FormView ID="productDetail" runat="server" ItemType="ZVerseBrickProject.Models.Product" SelectMethod ="GetProduct" RenderOuterTable="false">
+<!-----------------------------------------------------------------------------
+* Name: ProductDetails.aspx
+* Author: 
+*   Ming Wong
+* Edited By:
+*   ***********************************************************************************************
+* Description: This aspx view generates the html for the individual products 
+*   on the product page.
+------------------------------------------------------------------------------>
         <ItemTemplate>
             <div>
                 <h1><%#:Item.ProductName %></h1>
@@ -19,18 +28,14 @@
                         <span><b>Price:</b>&nbsp;<%#: String.Format("{0:c}", Item.UnitPrice) %></span>
                         <br />
                         <br />
-                           <a class="btn btn-success" href="/AddToCart.aspx?productID=<%#:Item.ProductID %>">               
-                                        <span class="ProductListItem">
-                                            <b>Add To Cart<b>
-                                        </span>           
-                                    </a>
+                        <a class="btn btn-success" href="/AddToCart.aspx?productID=<%#:Item.ProductID %>">
+                            <span class="ProductListItem">
+                                <b>Add To Cart<b>
+                            </span>
+                        </a>
                     </td>
-
-
-                    
                 </tr>
             </table>
         </ItemTemplate>
     </asp:FormView>
- 
 </asp:Content>

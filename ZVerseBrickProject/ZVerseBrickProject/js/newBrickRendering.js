@@ -1,12 +1,13 @@
 ﻿/*-----------------------------------------------------------------------------
-Name: newBrickRendering.js
-Description: This file contains all of the primary functions for rendering the
-    brick polygon and its three lines of text on the side of the brick
-Input Parameters: Strings of text are passed from BrickwithText.aspx
-Output Parameters: No formal output, but there is a 3D window, polygon, and 
-    text rendered on the screen for the user to view
+* Name: newBrickRendering.js
+* Author:
+*   Alexa Breeland
+* Edited By:
+*   Daniel Harper
+* Description: This file contains all of the primary functions for rendering 
+*   the Mizzou Brick polygon and it's three lines of text on the side of the
+*   polygon
 -----------------------------------------------------------------------------*/
-
 //VARIABLE DECLARATION SECTION/////////////////////////////////////////////////
 var camera; 
 var scene;
@@ -32,6 +33,7 @@ var mouseYOnMouseDown = 0;
 /*
 Variables to store the dynamic textures, geometries, and materials for the 
     three lines of text that will be rendered onto the brick
+    ----------------------------------------------------------------------
     Top line: text1, dynamicTexture, geometry1, material1
     Middle line: text2, dynamicTexture1, geometry2, material2
     Bottom line: text3, dynamicTexture2, geometry3, material3
@@ -65,18 +67,20 @@ var zoomMax = 3.4; // the closest in you can go
 var zoomMin = 20; // the farthest out you can go
 var zoomSpeed = 0.1; // how much movement on scroll wheel
 
-//FUNCTION DECLARATION SECTION/////////////////////////////////////////////////
+//INITIAL CALL CODE////////////////////////////////////////////////////////////
 init();//initializing function uses to begin the 3D window
 animate();//makes the brick actually work by calling render
 
+//FUNCTION DECLARATION SECTION/////////////////////////////////////////////////
+
 /*-----------------------------------------------------------------------------
-Name: init()
-Description: The init function is called on the initial loading of the view. 
-    It begins the 3D window so that the brick can be rendered inside the window
-Input Parameters: This function has no input parameters. It is started on the 
-    loading of the view
-Output Parameters: This function has no formal output, but it does begin the 
-    3D window to render the brick and text lines
+* Name: init()
+* Description: The init function is called on the initial loading of the view. 
+*   It begins the 3D window so that the brick can be rendered inside the window
+* Input Parameters: This function has no input parameters. It is started on 
+*   the loading of the view
+* Output Parameters: This function has no formal output, but it does begin the 
+*   3D window to render the brick and text lines
 -----------------------------------------------------------------------------*/
 function init() {
     //set the primary parameters of the 3D window
@@ -92,7 +96,6 @@ function init() {
     group2 = new THREE.Object3D();
     group3 = new THREE.Object3D();
 
-
     //load the brick model and texture
     var texture = new THREE.TextureLoader().load("js/brick.jpg");
     var geometry = new THREE.CubeGeometry(5, 3.1, 2.9); //width, height, depth
@@ -105,7 +108,6 @@ function init() {
     renderer = new THREE.WebGLRenderer({alpha: 1});
     renderer.setSize(container.offsetWidth, container.offsetHeight);
     renderer.setClearColor(0xff0000, 0);
-
     container.appendChild(renderer.domElement);
 
     //bind window to event listeners
@@ -117,17 +119,6 @@ function init() {
     container.addEventListener('resize', onWindowResize, false);
 }
 
-
-/*-----------------------------------------------------------------------------
-Name: onDocumentMouseMove()
-Description: This function tracks the mouse movement ans stores the output 
-    into variables to be used in other functions
-Input Parameters: Mouse cursor movement
-Output Parameters:
-    mouseX - the x coordinate of the cursor on the screen
-    mouseY - the y coordinate of the cursor on the screen
------------------------------------------------------------------------------*/
-
 function onDocumentMouseOut(event) {
     mouseX = 0;
     mouseY = 0;
@@ -135,7 +126,6 @@ function onDocumentMouseOut(event) {
 }
 
 function onDocumentMouseWheel(event) {
-    //console.log(event.wheelDeltaY);
     if(event.wheelDeltaY > 0 && camera.position.z > zoomMax) //zoom in
     {
         camera.position.z = camera.position.z - zoomSpeed;
@@ -147,16 +137,12 @@ function onDocumentMouseWheel(event) {
 }
 
 function onDocumentMouseDown(event) {
-
     event.preventDefault();
-
     document.addEventListener('mousemove', onDocumentMouseMove, false);
     document.addEventListener('mouseup', onDocumentMouseUp, false);
     document.addEventListener('mouseout', onDocumentMouseOut, false);
-
     mouseXOnMouseDown = event.clientX - windowHalfX;
     targetRotationOnMouseDownX = targetRotationX;
-
     mouseYOnMouseDown = event.clientY - windowHalfY;
     targetRotationOnMouseDownY = targetRotationY;
 }
@@ -164,7 +150,6 @@ function onDocumentMouseDown(event) {
 function onDocumentMouseMove(event) {
     mouseX = event.clientX - windowHalfX;
     mouseY = event.clientY - windowHalfY;
-
     targetRotationY = targetRotationOnMouseDownY + (mouseY - mouseYOnMouseDown) * 0.02;
     targetRotationX = targetRotationOnMouseDownX + (mouseX - mouseXOnMouseDown) * 0.02;
 }
@@ -176,53 +161,37 @@ function onDocumentMouseUp(event) {
 }
 
 function onDocumentTouchStart(event) {
-
     if (event.touches.length == 1) {
-
         event.preventDefault();
-
         mouseXOnMouseDown = event.touches[0].pageX - windowHalfX;
         targetRotationOnMouseDownX = targetRotationX;
-
         mouseYOnMouseDown = event.touches[0].pageY - windowHalfY;
         targetRotationOnMouseDownY = targetRotationY;
     }
-
 }
 
 function onDocumentTouchMove(event) {
-
     if (event.touches.length == 1) {
-
         event.preventDefault();
-
         mouseX = event.touches[0].pageX - windowHalfX;
         targetRotationX = targetRotationOnMouseDownX + (mouseX - mouseXOnMouseDown) * 0.05;
-
         mouseY = event.touches[0].pageY - windowHalfY;
         targetRotationY = targetRotationOnMouseDownY + (mouseY - mouseYOnMouseDown) * 0.05;
     }
 }
 
-/*-----------------------------------------------------------------------------
-Name: animate()
-Description: TODO******************************************************************************************
-Input Parameters: This function has no input parameters
-Output Parameters:
-    The 3D window to render the brick in
------------------------------------------------------------------------------*/
 function animate() {
     requestAnimationFrame(animate);
     render();
 }
 
-
 /*-----------------------------------------------------------------------------
-Name: render()
-Description: TODO******************************************************************************************
-Input Parameters: this function has no input parameters
-Output Parameters:
-    This function has no output parameters
+* Name: render()
+* Description: This function begins rendering the polygon geometry and the 
+*   three editable lines of text on one of its sides
+* Input Parameters: this function has no input parameters
+* Output Parameters:
+*   This function has no output parameters
 -----------------------------------------------------------------------------*/
 function render() {
     //horizontal rotation   
@@ -247,21 +216,15 @@ function render() {
     //vertical rotation 
     finalRotationY = (targetRotationY - group1.rotation.x);
 
-
     if (group1.rotation.x <= 1 && group1.rotation.x >= -1) {
-
         group1.rotation.x += finalRotationY * 0.1;
     }
     if (group1.rotation.x > 1) {
-
         group1.rotation.x = 1
     }
     else if (group1.rotation.x < -1) {
-
         group1.rotation.x = -1
     }
-
-
 
     //horizontal rotation   
     group2.rotation.y += (targetRotationX - group2.rotation.y) * 0.1;
@@ -269,20 +232,15 @@ function render() {
     //vertical rotation 
     finalRotationY = (targetRotationY - group2.rotation.x);
 
-
     if (group2.rotation.x <= 1 && group2.rotation.x >= -1) {
-
         group2.rotation.x += finalRotationY * 0.1;
     }
     if (group2.rotation.x > 1) {
-
         group2.rotation.x = 1
     }
     else if (group2.rotation.x < -1) {
-
         group2.rotation.x = -1
     }
-
 
     //horizontal rotation   
     group3.rotation.y += (targetRotationX - group3.rotation.y) * 0.1;
@@ -290,31 +248,19 @@ function render() {
     //vertical rotation 
     finalRotationY = (targetRotationY - group3.rotation.x);
 
-
     if (group3.rotation.x <= 1 && group3.rotation.x >= -1) {
-
         group3.rotation.x += finalRotationY * 0.1;
     }
     if (group3.rotation.x > 1) {
-
         group3.rotation.x = 1
     }
     else if (group3.rotation.x < -1) {
-
         group3.rotation.x = -1
     }
 
     renderer.render(scene, camera);
-
 }
 
-
-/*-----------------------------------------------------------------------------
-Name: onWindowResize()
-Description: TODO******************************************************************************************
-Input Parameters:
-Output Parameters:
------------------------------------------------------------------------------*/
 function onWindowResize() {
     windowHalfX = container.offsetWidth / 2;
     windowHalfY = container.offsetHeight / 2;
@@ -323,19 +269,18 @@ function onWindowResize() {
     renderer.setSize(container.offsetWidth, container.offsetHeight);
 }
 
-
 /*-----------------------------------------------------------------------------
-Name: getText1()
-Description: This function takes in text renders it onto the polygon on the top
-    line of the three lines of text
-Input Parameters:
-    text: String of text to be rendered onto the polygon
-Output Parameters: No formal output, but this function renders text onto the 
-    polygon on the top line
+* Name: getText1()
+* Description: This function takes in text renders it onto the polygon on the 
+*   top line of the three lines of text
+* Input Parameters:
+*   text: String of text to be rendered onto the polygon
+*   answer: the font to use to render the text
+* Output Parameters: No formal output, but this function renders text onto the 
+*   polygon on the top line
 -----------------------------------------------------------------------------*/
 function getText1(text, answer) {
     text1 = text;
-
     //shadowing.clear();
     //shadowing.context.font = "bolder 55px Verdana";
     //shadowing.drawText(text1, undefined, 140, '#707070');
@@ -356,20 +301,18 @@ function getText1(text, answer) {
     mesh1 = new THREE.Mesh(geometry1, material1);
     group1.add(mesh1);
     scene.add(group1);
-    
 }
 
 
-
-
 /*-----------------------------------------------------------------------------
-Name: getText2()
-Description: This function takes in text renders it onto the polygon on the 
-    middle line of the three lines of text
-Input Parameters:
-    text: String of text to be rendered onto the polygon
-Output Parameters: No formal output, but this function renders text onto the 
-    polygon on the middle line
+* Name: getText2()
+* Description: This function takes in text renders it onto the polygon on the 
+*   middle line of the three lines of text
+* Input Parameters:
+*   text: String of text to be rendered onto the polygon
+*   answer: the font to use to render the text
+* Output Parameters: No formal output, but this function renders text onto the 
+*   polygon on the top line
 -----------------------------------------------------------------------------*/
 function getText2(text,answer) {
     text2 = text;
@@ -387,15 +330,15 @@ function getText2(text,answer) {
     scene.add(group2);
 }
 
-
 /*-----------------------------------------------------------------------------
-Name: getText3()
-Description: This function takes in text renders it onto the polygon on the 
-    bottom line of the three lines of text
-Input Parameters:
-    text: String of text to be rendered onto the polygon
-Output Parameters: No formal output, but this function renders text onto the 
-    polygon on the bottom line
+* Name: getText3()
+* Description: This function takes in text renders it onto the polygon on the 
+*   bottom line of the three lines of text
+* Input Parameters:
+*   text: String of text to be rendered onto the polygon
+*   answer: the font to use to render the text
+* Output Parameters: No formal output, but this function renders text onto the 
+*   polygon on the top line
 -----------------------------------------------------------------------------*/
 function getText3(text,answer) {
     text3 = text;
