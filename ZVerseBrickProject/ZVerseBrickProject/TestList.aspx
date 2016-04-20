@@ -6,7 +6,7 @@
     <section>
         <div>
             <hgroup>
-                <h2><%: Page.Title %></h2>
+                <h2 style="font-style:oblique"><%: Page.Title %></h2>
             </hgroup>
 
             <asp:ListView ID="BrickList" runat="server"

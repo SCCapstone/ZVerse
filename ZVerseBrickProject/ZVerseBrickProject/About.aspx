@@ -1,7 +1,7 @@
 ﻿<%@ Page Title="About Us" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="About.aspx.cs" Inherits="ZVerseBrickProject.Contact" %>
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
-    <h2><%: Title %></h2>
+    <h2 style="font-style:oblique;font:bold"><%: Title %></h2>
     
     <h3 style="color:orangered">About This Project</h3>
     
