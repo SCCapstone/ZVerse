@@ -403,6 +403,16 @@ function getText1(text, answer) {
 }
 
 
+function getText2(text, answer) {
+    createText({ obj: text, answer: answer, id: 'textSlider2' })
+    createBinder({ material: material1, geometry: geometry1, group: group1 })
+
+    $("#textSlider2").on("input change", function () {
+        console.log('textSlider2 changed to ', $("#textSlider2").val())
+        createText({ obj: text, answer: answer, id: 'textSlider2' })
+    });
+}
+
 
 
 /*-----------------------------------------------------------------------------
@@ -414,21 +424,21 @@ Input Parameters:
 Output Parameters: No formal output, but this function renders text onto the 
     polygon on the middle line
 -----------------------------------------------------------------------------*/
-function getText2(text,answer) {
-    text2 = text;
-    answer = "\"" + answer + "\"";
-    dynamicTexture1.clear();
-    dynamicTexture1.context.font = "bolder 58px " + answer;
-    dynamicTexture1.drawText(text2, undefined, 280, '#707070');
-    dynamicTexture1.context.font = "60px " + answer;
-    dynamicTexture1.drawText(text2, undefined, 280, 'black');
-    material2.transparent = true;
-    material2.polygonOffset = true;
-    material2.polygonOffsetFactor = -0.2;
-    mesh2 = new THREE.Mesh(geometry2, material2);
-    group2.add(mesh2);
-    scene.add(group2);
-}
+//function getText2(text,answer) {
+//    text2 = text;
+//    answer = "\"" + answer + "\"";
+//    dynamicTexture1.clear();
+//    dynamicTexture1.context.font = "bolder 58px " + answer;
+//    dynamicTexture1.drawText(text2, undefined, 280, '#707070');
+//    dynamicTexture1.context.font = "60px " + answer;
+//    dynamicTexture1.drawText(text2, undefined, 280, 'black');
+//    material2.transparent = true;
+//    material2.polygonOffset = true;
+//    material2.polygonOffsetFactor = -0.2;
+//    mesh2 = new THREE.Mesh(geometry2, material2);
+//    group2.add(mesh2);
+//    scene.add(group2);
+//}
 
 
 /*-----------------------------------------------------------------------------
