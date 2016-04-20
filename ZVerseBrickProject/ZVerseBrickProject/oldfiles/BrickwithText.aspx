@@ -1,4 +1,4 @@
-﻿ Page Title="Brick with Text" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="BrickwithText.aspx.cs" Inherits="ZVerseBrickProject.About" %>
+﻿<%@ Page Title="Brick with Text" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="BrickwithText.aspx.cs" Inherits="ZVerseBrickProject.About" %>
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
 <!-----------------------------------------------------------------------------
 Name: BrickwithText.aspx
@@ -27,7 +27,6 @@ Output Parameters: Passes the user input from the text box to external
             border: 1px solid;
             border-color:#99BBFF;
         }
-        
     </style> 
     <div>
         <h1>Mizzou Tradition Plaza Paved Replica</h1>
@@ -80,7 +79,7 @@ Output Parameters: Passes the user input from the text box to external
             <div>
             <a class="btn btn-success" href="/AddToCart.aspx?productID=13">               
                 <span class="ProductListItem">
-                    <b>Add To Cart flkdjalkfdjslkaj</b> 
+                    <b>Add To Cart</b> 
                  </span>           
             </a>
             </div>
@@ -91,21 +90,9 @@ Output Parameters: Passes the user input from the text box to external
     <!--this file does...-->
     <script src="js/threex.dynamictexture.js"></script>
     <!--this file does...-->
-<%--    <script src="js/three.min.js"></script>
-    <!--Containing file for brick and text rendering functions-->
-    <!--Note this js file must be at the end of div content-->
-    <!--this file does...-->
-<%--    <script src="js/threex.dynamictexture.js"></script>
-    <!--this file does...-->
     <script src="js/three.min.js"></script>
-    <script src="js/Three.js"></script>
-    <script src="js/Detector.js"></script>
-    <script src="js/CanvasRenderer.js"></script>
-    <script src="js/Projector.js"></script>
-    <script src="js/THREEx.KeyboardState.js"></script>
     <!--Containing file for brick and text rendering functions-->
     <!--Note this js file must be at the end of div content-->
-    <%--<script src="js/movingText.js"></script>
- 
+    <script src="js/newBrickRendering.js"></script>
 
 </asp:Content>

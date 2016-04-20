@@ -267,7 +267,6 @@
     <Content Include="js\CanvasRenderer.js" />
     <Content Include="js\DDSLoader.75.js" />
     <Content Include="js\Detector.75.js" />
-    <Content Include="js\movingText.js" />
     <Content Include="js\MTLLoader.75.js" />
     <Content Include="js\newUpload.jpg" />
     <Content Include="js\fonts\droid_sans_bold.typeface.js" />

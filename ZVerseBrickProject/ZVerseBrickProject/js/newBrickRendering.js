@@ -333,30 +333,73 @@ Input Parameters:
 Output Parameters: No formal output, but this function renders text onto the 
     polygon on the top line
 -----------------------------------------------------------------------------*/
-function getText1(text, answer) {
-    text1 = text;
-
-    //shadowing.clear();
-    //shadowing.context.font = "bolder 55px Verdana";
-    //shadowing.drawText(text1, undefined, 140, '#707070');
-    //shadowmaterial.transparent = true;
-    //shadowmaterial.polygonOffset = true;
-    //shadowmaterial.polygonOffsetFactor = -0.2;
-    //mesh5 = new THREE.Mesh(shadowgeo, shadowmaterial);
-    //scene.add(mesh5);
-    answer = "\"" + answer + "\"";
+function createText(attrs) {
     dynamicTexture.clear();
     dynamicTexture.context.font = "bolder 58px " + answer;
-    dynamicTexture.drawText(text1, undefined, 140, '#707070');
+    dynamicTexture.drawText(attrs.obj, undefined, $("#" + attrs.id).val(), '#707070');
     dynamicTexture.context.font = "60px " + answer;
-    dynamicTexture.drawText(text1, undefined, 140, 'black');
-    material1.transparent = true;
-    material1.polygonOffset = true;
-    material1.polygonOffsetFactor = -0.2;
-    mesh1 = new THREE.Mesh(geometry1, material1);
-    group1.add(mesh1);
-    scene.add(group1);
+    dynamicTexture.drawText(text1, undefined, $("#" + attrs.id).val(), 'black');
+}
+
+
+
+//function getText1(text, answer) {
+//    text1 = text;
+
+//    //shadowing.clear();
+//    //shadowing.context.font = "bolder 55px Verdana";
+//    //shadowing.drawText(text1, undefined, 140, '#707070');
+//    //shadowmaterial.transparent = true;
+//    //shadowmaterial.polygonOffset = true;
+//    //shadowmaterial.polygonOffsetFactor = -0.2;
+//    //mesh5 = new THREE.Mesh(shadowgeo, shadowmaterial);
+//    //scene.add(mesh5);
+//    answer = "\"" + answer + "\"";
+//    //dynamicTexture.clear();
+//    //dynamicTexture.context.font = "bolder 58px " + answer;
+//    //dynamicTexture.drawText(text1, undefined, 140, '#707070');
+//    //dynamicTexture.context.font = "60px " + answer;
+//    //dynamicTexture.drawText(text1, undefined, 140, 'black');
+//    createText({ obj: text1, id: 'textSlider1' })
+
+//    $("#textSlider1").on("input change", function () {
+//        console.log('textSlider1 changed to ', $("#textSlider1").val())
+//        createText({obj: text1, id: 'textSlider1'})
+//    });
+
+//    material1.transparent = true;
+//    material1.polygonOffset = true;
+//    material1.polygonOffsetFactor = -0.2;
+//    mesh1 = new THREE.Mesh(geometry1, material1);
+//    group1.add(mesh1);
+//    scene.add(group1);
     
+//}
+function createText(attrs) {
+    var answer = "\"" + attrs.answer + "\"";
+    dynamicTexture.clear();
+    dynamicTexture.context.font = "bolder 58px " + answer;
+    dynamicTexture.drawText(attrs.obj, undefined, $("#" + attrs.id).val(), '#707070');
+    dynamicTexture.context.font = "60px " + answer;
+    dynamicTexture.drawText(attrs.obj, undefined, $("#" + attrs.id).val(), 'black');
+}
+
+function createBinder(attrs) {
+    attrs.material.transparent = true;
+    attrs.material.polygonOffset = true;
+    attrs.material.polygonOffsetFactor = -0.2;
+    attrs.group.add(new THREE.Mesh(attrs.geometry, attrs.material));
+    scene.add(attrs.group);
+}
+
+function getText1(text, answer) {
+    createText({ obj: text, answer: answer, id: 'textSlider1' })
+    createBinder({ material: material1, geometry: geometry1, group: group1 })
+
+    $("#textSlider1").on("input change", function () {
+        console.log('textSlider1 changed to ', $("#textSlider1").val())
+        createText({ obj: text, answer: answer, id: 'textSlider1' })
+    });
 }
 
 
