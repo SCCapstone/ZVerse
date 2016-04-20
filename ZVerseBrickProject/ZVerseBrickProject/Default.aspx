@@ -9,7 +9,7 @@
          
     </div>--%>
     <br />
-    <IMG SRC="Images/zverse.png" ALT="Welcome to Zverse!" WIDTH=1100 HEIGHT=200>
+    <IMG SRC="Images/zverse.png" ALT="Welcome to Zverse!" WIDTH=1175 HEIGHT=200>
 
     <div class="row">
         <div class ="col-md-6">
@@ -20,7 +20,7 @@
  
 
         </div>
-        <div class="col-md-6" background-color: "grey";>
+        <div class="col-md-6">
 
             <h2 style="color:orangered;"> 
                 3D Content Creation</h2>

@@ -267,7 +267,7 @@
     <Content Include="Account\TwoFactorAuthenticationSignIn.aspx" />
     <Content Include="Account\VerifyPhoneNumber.aspx" />
     <Content Include="Checkout.aspx" />
-    <Content Include="Contact.aspx" />
+    <Content Include="About.aspx" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstraporiginal.css" />
     <Content Include="Content\Site.css" />
@@ -533,12 +533,12 @@
     <Compile Include="Checkout.aspx.designer.cs">
       <DependentUpon>Checkout.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Contact.aspx.cs">
-      <DependentUpon>Contact.aspx</DependentUpon>
+    <Compile Include="About.aspx.cs">
+      <DependentUpon>About.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Contact.aspx.designer.cs">
-      <DependentUpon>Contact.aspx</DependentUpon>
+    <Compile Include="About.aspx.designer.cs">
+      <DependentUpon>About.aspx</DependentUpon>
     </Compile>
     <Compile Include="Controllers\AddBricks.cs" />
     <Compile Include="Controllers\AddProducts.cs" />

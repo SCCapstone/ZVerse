@@ -60,7 +60,7 @@
                             <a runat="server" href="~/Default">Home</a>
                         </li>
                          <li>
-                            <a runat="server" href="~/Contact">Contact</a>
+                            <a runat="server" href="~/About">About</a>
                         </li>
                         <li>
                             <a runat="server" href="~/ProductList">Catalogue</a>
