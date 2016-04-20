@@ -3,12 +3,11 @@
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
     <%--http://stackoverflow.com/questions/4013955/how-to-include-css-in-master-pages--%>
     <div class="jumbotron">
+        <h2><%: Title %></h2>
       <p class="lead">ZVerse delivers turnkey 3D printing solutions from 3D content creation to full color production.
            <a href="http://zverse.com/" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
+         
     </div>
-    
-
-
     <div class="row">
         <div class ="col-md-6">
       <video width="500" height="375" controls>
@@ -19,7 +18,9 @@
 
         </div>
         <div class="col-md-6">
-            <h2> <br />
+            <div class="boxed">
+
+            <h2> 
                 3D Content Creation</h2>
             <p>
                 The LAYR content creation platform is making it easy to turn 2D to 3D
@@ -27,9 +28,10 @@
             <p>
                 <a class="btn btn-default" href="http://zverse.com/layr/">Learn more &raquo;</a>
             </p>
+                </div>
        <%-- </div>
         <div class="col-md-4">--%>
-            <h2> <br />
+            <h2> 
                 Product Engineering</h2>
             <p>
                We specialize in 3D design of products specifically engineered for 3D printing.
@@ -39,7 +41,7 @@
             </p>
         <%--</div>
         <div class="col-md-4">--%>
-            <h2> <br />
+            <h2> 
                 Full Color 3D Printing</h2>
             <p>
                 No one knows more about 3D color print production. Our experience and efficiency is unmatched.
@@ -49,5 +51,9 @@
             </p>
         </div>
     </div>
-
+<style>
+    .boxed {
+  border: 1px solid blue ;
+}
+</style>
 </asp:Content>
