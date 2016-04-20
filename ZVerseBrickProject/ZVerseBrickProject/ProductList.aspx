@@ -1,13 +1,14 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="ProductList.aspx.cs" Inherits="ZVerseBrickProject.WebForm1" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
      <ol style="visibility:hidden;"></ol>
-          <div id="CategoryMenu" style="text-align: left">       
+          <div id="CategoryMenu" style="text-align: left">  
+              <h4>Filter by Category:</h4>     
             <asp:ListView ID="categoryList"  
                 ItemType="ZVerseBrickProject.Models.Category" 
                 runat="server"
                 SelectMethod="GetCategories" >
                 <ItemTemplate>
-                    <b style="font-size: large; font-style: normal">
+                    <b style="font-size: 150%; font-style: normal">
                         <a href="/ProductList.aspx?id=<%#: Item.CategoryID %>">
                         <%#: Item.CategoryName %>
                         </a>

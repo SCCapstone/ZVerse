@@ -6,7 +6,7 @@
     </div>
     <asp:GridView ID="CartList" runat="server" AutoGenerateColumns="False" ShowFooter="True" GridLines="Vertical" CellPadding="4"
         ItemType="ZVerseBrickProject.Models.CartItem" SelectMethod="GetShoppingCartItems"
-        CssClass="table table-striped table-bordered">
+        OnRowCreated="gridViewOrders_RowCreated" CssClass="table table-striped table-bordered">
         <Columns>
             <asp:BoundField DataField="ProductID" HeaderText="ID" SortExpression="ProductID" />
             <asp:TemplateField HeaderText="Name">
@@ -23,21 +23,33 @@
                 </ItemTemplate>
             </asp:TemplateField>
 
-            <asp:TemplateField HeaderText="Item Total">
-                <ItemTemplate>
-                    <%#: String.Format("{0:c}", ((Convert.ToDouble(Item.Quantity)) *  Convert.ToDouble(Item.Product.UnitPrice)))%>
-                </ItemTemplate>
-            </asp:TemplateField>
             <asp:TemplateField HeaderText="Delete">
                 <ItemTemplate>
                     <asp:CheckBox ID="Delete" runat="server"></asp:CheckBox>
                 </ItemTemplate>
             </asp:TemplateField>
+
+            <asp:TemplateField HeaderText="Item Total">
+                <ItemTemplate>
+                    <%#: String.Format("{0:c}", ((Convert.ToDouble(Item.Quantity)) *  Convert.ToDouble(Item.Product.UnitPrice)))%>
+                </ItemTemplate>
+            </asp:TemplateField>
+
+
         </Columns>
+
+
     </asp:GridView>
     <div>
         <p></p>
+        <asp:Label ID="LabelShipping" runat="server" Text="Shipping Cost: $5.00"></asp:Label>
+        <br />
+        <asp:Label ID="LabelTax" runat="server" Text="Sales Tax: "></asp:Label>
+        <asp:Label ID="lbltaxTotal" runat="server" EnableViewState="false"></asp:Label>
+        <br />
+
         <strong>
+
             <asp:Label ID="LabelTotalText" runat="server" Text="Order Total: "></asp:Label>
             <asp:Label ID="lblTotal" runat="server" EnableViewState="false"></asp:Label>
         </strong>
