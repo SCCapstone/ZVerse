@@ -8,7 +8,7 @@ Output Parameters: No formal output, but there is a 3D window, polygon, and
 -----------------------------------------------------------------------------*/
 
 //VARIABLE DECLARATION SECTION/////////////////////////////////////////////////
-var camera; 
+var camera;
 var scene;
 var renderer;
 var mesh;
@@ -40,26 +40,29 @@ var text1 = '';
 var text2 = '';
 var text3 = '';
 
-var dynamicTexture = new THREEx.DynamicTexture(512, 512);
 var dynamicTexture1 = new THREEx.DynamicTexture(512, 512);
 var dynamicTexture2 = new THREEx.DynamicTexture(512, 512);
-var shadowing = new THREEx.DynamicTexture(512, 512);
+var dynamicTexture3 = new THREEx.DynamicTexture(512, 512);
+
 var shadowing1 = new THREEx.DynamicTexture(512, 512);
 var shadowing2 = new THREEx.DynamicTexture(512, 512);
+var shadowing3 = new THREEx.DynamicTexture(512, 512);
 
 var geometry1 = new THREE.CubeGeometry(4.9, 3, 3.1);
 var geometry2 = new THREE.CubeGeometry(4.9, 3, 3.1);
 var geometry3 = new THREE.CubeGeometry(4.9, 3, 3.1);
-var shadowgeo = new THREE.CubeGeometry(4.9, 3, 3);
+
 var shadowgeo1 = new THREE.CubeGeometry(4.9, 3, 3);
 var shadowgeo2 = new THREE.CubeGeometry(4.9, 3, 3);
+var shadowgeo3 = new THREE.CubeGeometry(4.9, 3, 3);
 
-var material1 = new THREE.MeshBasicMaterial({ map: dynamicTexture.texture });
-var material2 = new THREE.MeshBasicMaterial({ map: dynamicTexture1.texture });
-var material3 = new THREE.MeshBasicMaterial({ map: dynamicTexture2.texture });
-var shadowmaterial = new THREE.MeshBasicMaterial({ map: shadowing.texture });
+var material1 = new THREE.MeshBasicMaterial({ map: dynamicTexture1.texture });
+var material2 = new THREE.MeshBasicMaterial({ map: dynamicTexture2.texture });
+var material3 = new THREE.MeshBasicMaterial({ map: dynamicTexture3.texture });
+
 var shadowmaterial1 = new THREE.MeshBasicMaterial({ map: shadowing1.texture });
 var shadowmaterial2 = new THREE.MeshBasicMaterial({ map: shadowing2.texture });
+var shadowmaterial3 = new THREE.MeshBasicMaterial({ map: shadowing3.texture });
 
 var zoomMax = 3.4; // the closest in you can go
 var zoomMin = 20; // the farthest out you can go
@@ -102,7 +105,7 @@ function init() {
     scene.add(group);
 
     //render the brick and text line textures
-    renderer = new THREE.WebGLRenderer({alpha: 1});
+    renderer = new THREE.WebGLRenderer({ alpha: 1 });
     renderer.setSize(container.offsetWidth, container.offsetHeight);
     renderer.setClearColor(0xff0000, 0);
 
@@ -136,7 +139,7 @@ function onDocumentMouseOut(event) {
 
 function onDocumentMouseWheel(event) {
     //console.log(event.wheelDeltaY);
-    if(event.wheelDeltaY > 0 && camera.position.z > zoomMax) //zoom in
+    if (event.wheelDeltaY > 0 && camera.position.z > zoomMax) //zoom in
     {
         camera.position.z = camera.position.z - zoomSpeed;
     }
@@ -323,6 +326,38 @@ function onWindowResize() {
     renderer.setSize(container.offsetWidth, container.offsetHeight);
 }
 
+/*-----------------------------------------------------------------------------
+Name: createText()
+Description: This function creates the baseline for three text inputs. 
+             it specifies the color and size of the text as well. 
+Input Parameters: Attributes (attrs) - any characteristics that goes with the text lines
+Output Parameters:
+-----------------------------------------------------------------------------*/
+
+function createText(attrs) {
+    var answer = "\"" + attrs.answer + "\"";
+    attrs.texture.clear();
+    attrs.texture.context.font = "bolder 58px " + answer;
+    attrs.texture.drawText(attrs.obj, undefined, $("#" + attrs.id).val(), '#707070');
+    attrs.texture.context.font = "60px " + answer;
+    attrs.texture.drawText(attrs.obj, undefined, $("#" + attrs.id).val(), 'black');
+}
+
+/*-----------------------------------------------------------------------------
+Name: createBinder()
+Description: Binding the text to the polygons as well as putting the text lines inside
+             the groups. 
+Input Parameters: Attributes (attrs) - any characteristics that goes with the text lines
+Output Parameters:
+-----------------------------------------------------------------------------*/
+
+function createBinder(attrs) {
+    attrs.material.transparent = true;
+    attrs.material.polygonOffset = true;
+    attrs.material.polygonOffsetFactor = -0.2;
+    attrs.group.add(new THREE.Mesh(attrs.geometry, attrs.material));
+    scene.add(attrs.group);
+}
 
 /*-----------------------------------------------------------------------------
 Name: getText1()
@@ -333,97 +368,16 @@ Input Parameters:
 Output Parameters: No formal output, but this function renders text onto the 
     polygon on the top line
 -----------------------------------------------------------------------------*/
-//function createText(attrs) {
-//    dynamicTexture.clear();
-//    dynamicTexture.context.font = "bolder 58px " + answer;
-//    dynamicTexture.drawText(attrs.obj, undefined, $("#" + attrs.id).val(), '#707070');
-//    dynamicTexture.context.font = "60px " + answer;
-//    dynamicTexture.drawText(text1, undefined, $("#" + attrs.id).val(), 'black');
-//}
-
-
-
-//function getText1(text, answer) {
-//    text1 = text;
-
-//    //shadowing.clear();
-//    //shadowing.context.font = "bolder 55px Verdana";
-//    //shadowing.drawText(text1, undefined, 140, '#707070');
-//    //shadowmaterial.transparent = true;
-//    //shadowmaterial.polygonOffset = true;
-//    //shadowmaterial.polygonOffsetFactor = -0.2;
-//    //mesh5 = new THREE.Mesh(shadowgeo, shadowmaterial);
-//    //scene.add(mesh5);
-//    answer = "\"" + answer + "\"";
-//    //dynamicTexture.clear();
-//    //dynamicTexture.context.font = "bolder 58px " + answer;
-//    //dynamicTexture.drawText(text1, undefined, 140, '#707070');
-//    //dynamicTexture.context.font = "60px " + answer;
-//    //dynamicTexture.drawText(text1, undefined, 140, 'black');
-//    createText({ obj: text1, id: 'textSlider1' })
-
-//    $("#textSlider1").on("input change", function () {
-//        console.log('textSlider1 changed to ', $("#textSlider1").val())
-//        createText({obj: text1, id: 'textSlider1'})
-//    });
-
-//    material1.transparent = true;
-//    material1.polygonOffset = true;
-//    material1.polygonOffsetFactor = -0.2;
-//    mesh1 = new THREE.Mesh(geometry1, material1);
-//    group1.add(mesh1);
-//    scene.add(group1);
-    
-//}
-function createText(attrs) {
-    var answer = "\"" + attrs.answer + "\"";
-    dynamicTexture.clear();
-    dynamicTexture.context.font = "bolder 58px " + answer;
-    dynamicTexture.drawText(attrs.obj, undefined, $("#" + attrs.id).val(), '#707070');
-    dynamicTexture.context.font = "60px " + answer;
-    dynamicTexture.drawText(attrs.obj, undefined, $("#" + attrs.id).val(), 'black');
-}
-
-function createBinder(attrs) {
-    attrs.material.transparent = true;
-    attrs.material.polygonOffset = true;
-    attrs.material.polygonOffsetFactor = -0.2;
-    attrs.group.add(new THREE.Mesh(attrs.geometry, attrs.material));
-    scene.add(attrs.group);
-}
 
 function getText1(text, answer) {
-    createText({ obj: text, answer: answer, id: 'textSlider1' })
+    createText({ obj: text, answer: answer, id: 'textSlider1', texture: dynamicTexture1 })
     createBinder({ material: material1, geometry: geometry1, group: group1 })
 
     $("#textSlider1").on("input change", function () {
         console.log('textSlider1 changed to ', $("#textSlider1").val())
-        createText({ obj: text, answer: answer, id: 'textSlider1' })
+        createText({ obj: text, answer: answer, id: 'textSlider1', texture: dynamicTexture1 })
     });
 }
-
-
-function getText2(text, answer) {
-    createText({ obj: text, answer: answer, id: 'textSlider2' })
-    createBinder({ material: material2, geometry: geometry2, group: group2 })
-
-    $("#textSlider2").on("input change", function () {
-        console.log('textSlider2 changed to ', $("#textSlider2").val())
-        createText({ obj: text, answer: answer, id: 'textSlider2' })
-    });
-}
-
-function getText3(text, answer) {
-    createText({ obj: text, answer: answer, id: 'textSlider3' })
-    createBinder({ material: material3, geometry: geometry3, group: group3 })
-
-    $("#textSlider3").on("input change", function () {
-        console.log('textSlider3 changed to ', $("#textSlider3").val())
-        createText({ obj: text, answer: answer, id: 'textSlider3' })
-    });
-}
-
-
 
 /*-----------------------------------------------------------------------------
 Name: getText2()
@@ -434,45 +388,41 @@ Input Parameters:
 Output Parameters: No formal output, but this function renders text onto the 
     polygon on the middle line
 -----------------------------------------------------------------------------*/
-//function getText2(text,answer) {
-//    text2 = text;
-//    answer = "\"" + answer + "\"";
-//    dynamicTexture1.clear();
-//    dynamicTexture1.context.font = "bolder 58px " + answer;
-//    dynamicTexture1.drawText(text2, undefined, 280, '#707070');
-//    dynamicTexture1.context.font = "60px " + answer;
-//    dynamicTexture1.drawText(text2, undefined, 280, 'black');
-//    material2.transparent = true;
-//    material2.polygonOffset = true;
-//    material2.polygonOffsetFactor = -0.2;
-//    mesh2 = new THREE.Mesh(geometry2, material2);
-//    group2.add(mesh2);
-//    scene.add(group2);
-//}
 
+
+function getText2(text, answer) {
+    createText({ obj: text, answer: answer, id: 'textSlider2', texture: dynamicTexture2 })
+    createBinder({ material: material2, geometry: geometry2, group: group2 })
+
+    $("#textSlider2").on("input change", function () {
+        console.log('textSlider2 changed to ', $("#textSlider2").val())
+        createText({ obj: text, answer: answer, id: 'textSlider2', texture: dynamicTexture2 })
+    });
+}
 
 /*-----------------------------------------------------------------------------
 Name: getText3()
 Description: This function takes in text renders it onto the polygon on the 
-    bottom line of the three lines of text
+    middle line of the three lines of text
 Input Parameters:
     text: String of text to be rendered onto the polygon
 Output Parameters: No formal output, but this function renders text onto the 
-    polygon on the bottom line
-//-----------------------------------------------------------------------------*/
-//function getText3(text,answer) {
-//    text3 = text;
-//    answer = "\"" + answer + "\"";
-//    dynamicTexture2.clear();
-//    dynamicTexture2.context.font = "bolder 58px " + answer;
-//    dynamicTexture2.drawText(text3, undefined, 420, '#707070');
-//    dynamicTexture2.context.font = "60px " + answer;
-//    dynamicTexture2.drawText(text3, undefined, 420, 'black');
-//    material3.transparent = true;
-//    material3.polygonOffset = true;
-//    material3.polygonOffsetFactor = -0.2;
-//    mesh3 = new THREE.Mesh(geometry3, material3);
-//    group3.add(mesh3);
-//    scene.add(group3);
-//}
+    polygon on the middle line
+-----------------------------------------------------------------------------*/
+
+
+function getText3(text, answer) {
+    createText({ obj: text, answer: answer, id: 'textSlider3', texture: dynamicTexture3 })
+    createBinder({ material: material3, geometry: geometry3, group: group3 })
+
+    $("#textSlider3").on("input change", function () {
+        console.log('textSlider3 changed to ', $("#textSlider3").val())
+        createText({ obj: text, answer: answer, id: 'textSlider3', texture: dynamicTexture3 })
+    });
+}
+
+
+
+
+
 
