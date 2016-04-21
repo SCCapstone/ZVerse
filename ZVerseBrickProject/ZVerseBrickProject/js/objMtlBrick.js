@@ -47,8 +47,10 @@ Output Parameters: This function has no formal output, but it does begin the
 function init() {
 
     //Setting the camera view for te object
-    camera = new THREE.PerspectiveCamera(15, container.offsetWidth / container.offsetHeight, .01, 100);
-    camera.position.set(0, 10, 30);
+    camera = new THREE.PerspectiveCamera(45, container.offsetWidth / container.offsetHeight, .01, 100);
+    //camera.position.set(0, 10, 30);
+    camera.position.z = 10;
+
 
     //Creating a Scene for the object
     scene = new THREE.Scene();
