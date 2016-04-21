@@ -142,7 +142,6 @@ function onDocumentMouseOut(event) {
 }
 
 function onDocumentMouseWheel(event) {
-    console.log(event.wheelDeltaY);
     if (event.wheelDeltaY > 0 && camera.position.z > zoomMax) //zoom in
     {
         camera.position.z = camera.position.z - zoomSpeed;

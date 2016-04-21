@@ -2,6 +2,7 @@
          CodeBehind="ProductDetails.aspx.cs" Inherits="ZVerseBrickProject.ProductDetails" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <asp:FormView ID="productDetail" runat="server" ItemType="ZVerseBrickProject.Models.Product" SelectMethod ="GetProduct" RenderOuterTable="false">
+        <ItemTemplate>
 <!-----------------------------------------------------------------------------
 * Name: ProductDetails.aspx
 * Author: 
@@ -11,7 +12,6 @@
 * Description: This aspx view generates the html for the individual products 
 *   on the product page.
 ------------------------------------------------------------------------------>
-        <ItemTemplate>
             <div>
                 <h1><%#:Item.ProductName %></h1>
             </div>
