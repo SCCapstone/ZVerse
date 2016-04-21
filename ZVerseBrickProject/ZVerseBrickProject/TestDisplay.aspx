@@ -57,10 +57,15 @@
                     <input type="radio" name="browser" onclick="check(this.value)" id="cursive" value="Courier">Courier<br>
                     <input type="radio" name="browser" onclick="check(this.value)" id="helv" value="Charlesworth">Charlesworth<br>
                     <input type="radio" name="browser" onclick="check(this.value)" id="opt" value="Comic Sans MS">Comic Sans MS<br>
-                    
-                    <input id="textSlider1" type="range" min="100" max="500" />
-                    <input id="textSlider2" type="range" min="100" max="500" />
-                    <input id="textSlider3" type="range" min="100" max="500" />
+                    <br />
+                    <p>
+                        Please use the sliders below to place the Text lines to Desired Location.
+                    </p>
+                    <br />
+                         
+                    <input id="textSlider1" type="range" min="90" max="500" /> Move Text Line 1<br>
+                    <input id="textSlider2" type="range" min="90" max="500" /> Move Text Line 2<br>
+                    <input id="textSlider3" type="range" min="90" max="500" /> Move Text Line 3<br>
 
                     <br>
                     Your font is:
