@@ -13,6 +13,7 @@
             <hgroup>
                 <h2><%: Page.Title %></h2>
             </hgroup>
+            <!-- Display the custom brick image, title, and price. Create the hyperlink the custom brick model page --> 
             <asp:ListView ID="BrickList" runat="server"
                 DataKeyNames="BrickID" GroupItemCount="3"
                 ItemType="ZVerseBrickProject.Models.Brick" SelectMethod="GetBricks">
@@ -31,8 +32,6 @@
                         <td id="itemPlaceholder" runat="server"></td>
                     </tr>
                 </GroupTemplate>
-                <!-- Display the custom brick image, title, and price. 
-                    Create the hyperlink the custom brick model page --> 
                 <ItemTemplate>
                     <td class=" col-md-3" runat="server">
                         <table class="table">
