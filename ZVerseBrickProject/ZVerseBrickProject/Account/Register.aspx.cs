@@ -1,4 +1,7 @@
-﻿using System;
+﻿//Auto generated file
+//edited by Chris Clymer to allow email confirmation on the register page.
+
+using System;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -19,7 +22,7 @@ namespace ZVerseBrickProject.Account
             IdentityResult result = manager.Create(user, Password.Text);
             if (result.Succeeded)
             {
-                // For more information on how to enable account confirmation and password reset please visit http://go.microsoft.com/fwlink/?LinkID=320771
+                // This portion of the code was added to allow email confirmation for new users making accounts
                 string code = manager.GenerateEmailConfirmationToken(user.Id);
                 string callbackUrl = IdentityHelper.GetUserConfirmationRedirectUrl(code, user.Id, Request);
                 manager.SendEmail(user.Id, "Confirm your account", "Please confirm your account by clicking <a href=\"" + callbackUrl + "\">here</a>.");

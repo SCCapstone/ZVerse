@@ -144,6 +144,8 @@
             });
         });
     </script>
+
+    <%--This script makes sure that the content of our web page does not get covered when the window is minimized and the navbar moves.--%>
     <script>
         $(window).on('resize load', function () {
             $('body').css({ "padding-top": $(".navbar").height() + 20 + "px" });
