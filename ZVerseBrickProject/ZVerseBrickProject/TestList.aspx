@@ -2,11 +2,10 @@
 <asp:Content ID="Content3" ContentPlaceHolderID="MainContent" runat="server">
 <!-----------------------------------------------------------------------------
 * Name: TestList.aspx
-* Author: 
-*   ***********************************************************************************************
-* Edited By:
-*   ***********************************************************************************************
-* Description: ************************************************************************************
+* Author: Ming Wong 
+* Edited By: Alexa Breeland 
+* Description: 
+    The purpose of this html file is to display all the custom brick models. 
 ------------------------------------------------------------------------------>
     <ol style="visibility: hidden;"></ol>
     <section>
@@ -32,6 +31,8 @@
                         <td id="itemPlaceholder" runat="server"></td>
                     </tr>
                 </GroupTemplate>
+                <!-- Display the custom brick image, title, and price. 
+                    Create the hyperlink the custom brick model page --> 
                 <ItemTemplate>
                     <td class=" col-md-3" runat="server">
                         <table class="table">
@@ -54,12 +55,6 @@
                                         <b>Price: </b><%#:String.Format("{0:c}", Item.UnitPrice)%>
                                     </span>
                                     <br />
-<%--                                    <a class="btn btn-success btn-sm" href="/AddToCart.aspx?productID=-<%#Item.BrickID %>">
-                                        <span class="ProductListItem">
-                                            <b>Add To Cart<b>
-                                        </span>
-                                    </a>--%>
-
                                 </td>
                             </tr>
                             <tr>

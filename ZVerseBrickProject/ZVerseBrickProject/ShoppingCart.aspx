@@ -3,10 +3,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
 <!-----------------------------------------------------------------------------
 * Name: ShoppingCart.aspx
-* Author: 
-*   *************************************************************************************
-* Edited By:
-*   *************************************************************************************
+* Author: Ming Wong 
 * Description: This file generates the shopping cart view.
 ------------------------------------------------------------------------------>
     <div id="ShoppingCartTitle" runat="server" class="ContentHead">

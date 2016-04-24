@@ -4,7 +4,8 @@
 * Name: AddToCart.aspx
 * Author:
 *   Ming Wong
-* Description: **************************************************************************
+* Description: This webpage is not displayed on the webpage. The CS code behind
+               this webpage is doing the actaul work for adding an item on cart. 
 ------------------------------------------------------------------------------>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">

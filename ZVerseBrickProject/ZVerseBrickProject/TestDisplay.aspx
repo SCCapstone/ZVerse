@@ -4,10 +4,8 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
 <!-----------------------------------------------------------------------------
 * Name: TestList.aspx
-* Author: 
-*   *****************************************************************************************
-* Edited By:
-*   *****************************************************************************************
+* Author: Ming Wong
+* Edited By: Alexa Breeland 
 * Description: This aspx page creates the styling for the brick canvas, and 
 *   the html controls for all of the 3D brick windows
 ------------------------------------------------------------------------------>

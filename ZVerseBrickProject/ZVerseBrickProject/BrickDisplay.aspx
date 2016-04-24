@@ -1,10 +1,12 @@
-﻿<%@ Page Title="BrickDisplay" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="BrickDisplay.aspx.cs" Inherits="ZVerseBrickProject.About" %>
-
+﻿<!-----------------------------------------------------------------------------
+* Name: BrickDisplay.aspx
+* Authors:
+*   Sagar Mistry
+* Description: 
+*   This page display the sample brick from the obj file.  
+------------------------------------------------------------------------------>
+<%@ Page Title="BrickDisplay" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="BrickDisplay.aspx.cs" Inherits="ZVerseBrickProject.About" %>
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
-    <!-- <h2><%: Title %>.</h2>
-    <h3>Your application description page.</h3>
-    <p>Use this area to provide additional information.</p>
-       -->
 
     <style>
         #productBrick{
