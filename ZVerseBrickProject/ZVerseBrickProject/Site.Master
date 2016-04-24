@@ -46,72 +46,69 @@
         <div class="navbar navbar-inverse navbar-fixed-top">
             <div class="container">
                 <div class="navbar-header">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <a class="navbar-brand" runat="server" href="~/Default"></a>
+
+                    <button type = "button" class="navbar-toggle" data-toggle="collapse" data-target=".navHeaderCollapse">
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-
-                    <a class="navbar-brand" runat="server" href="~/Default"></a>
                 </div>
-                <div class="navbar-collapse collapse">
-                    <ul class="nav navbar-nav">
-                        <li><a runat="server" href="~/Default">Home</a></li>
-                        <li><a runat="server" href="~/Contact">Contact</a></li>
-                        <li><a runat="server" href="~/ProductList">Catalogue</a></li>
-                        <li><a runat="server" href="~/TestList">CustomObjects</a></li>
-                        <li><a runat="server" href="~/BrickDisplay">SampleBrick</a></li>
+                    <div class="collapse navbar-collapse navHeaderCollapse">
+                        <ul class="nav navbar-nav">
+                            <li><a runat="server" href="~/Default">Home</a></li>
+                            <li><a runat="server" href="~/Contact">Contact</a></li>
+                            <li><a runat="server" href="~/ProductList">Catalogue</a></li>
+                            <li><a runat="server" href="~/TestList">CustomObjects</a></li>
+                            <li><a runat="server" href="~/BrickDisplay">SampleBrick</a></li>
                         
-                        <li class="dropdown">
-                            <a runat="server" href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
-                                aria-expanded="false">BaseModels <span class="caret"></span></a>
-                             <ul class="dropdown-menu">
-                        <asp:ListView ID="bricklist" ItemType="ZVerseBrickProject.Models.Brick" runat="server" SelectMethod="GetBricks">
-                            <ItemTemplate>
-                                    <li >
-                                       <asp:Panel ID=Panel<%#:Item.BrickID%> CssClass="masterpanel" runat="server">
+                            <li class="dropdown">
+                                <a runat="server" href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                                    aria-expanded="false">BaseModels <span class="caret"></span></a>
+                                <ul class="dropdown-menu">
+                                    <asp:ListView ID="bricklist" ItemType="ZVerseBrickProject.Models.Brick" runat="server" SelectMethod="GetBricks">
+                                        <ItemTemplate>
+                                            <li >
+                                                <asp:Panel ID=Panel<%#:Item.BrickID%> CssClass="masterpanel" runat="server">
 
-                                         <a href="/TestDisplay.aspx?brickID=<%#:Item.BrickID%>">
-                                           &nbsp<%#:Item.BrickName %>
-                                        </a>
-                                   </asp:Panel>
-                                </li>
-                            </ItemTemplate>
-                            <ItemSeparatorTemplate></br></ItemSeparatorTemplate>
-                        </asp:ListView>
-                                 </ul>
+                                                    <a href="/TestDisplay.aspx?brickID=<%#:Item.BrickID%>">
+                                                        &nbsp<%#:Item.BrickName %>
+                                                    </a>
+                                                </asp:Panel>
+                                            </li>
+                                        </ItemTemplate>
+                                        <ItemSeparatorTemplate></br></ItemSeparatorTemplate>
+                                    </asp:ListView>
+                                </ul>
                             </li>
-
-                       
-                        <li >
-                            <a runat="server" href="~/ShoppingCart" id="cartCount"><asp:Panel ID="Panel9" CssClass="masterpanel" runat="server">&nbsp&nbsp</asp:Panel></a>
-                        </li>
-                        <li>
+                            <li>
+                                <a runat="server" href="~/ShoppingCart" id="cartCount"><asp:Panel ID="Panel9" CssClass="masterpanel" runat="server">&nbsp&nbsp</asp:Panel></a>
+                            </li>
+                            <li>
                                <a runat="server" id="adminLink" visible="false"
                                     href="~/Admin/AdminPage">Admin</a>
-                           
-                        </li>
+                            </li>
 
-                     </ul>
+                        </ul>
 
-                    <asp:LoginView runat="server" ViewStateMode="Disabled">
-                        <AnonymousTemplate>
-                            <ul class="nav navbar-nav navbar-right">
-                                <li><a runat="server" href="~/Account/Register">Register</a></li>
-                                <li><a runat="server" href="~/Account/Login">Log in</a></li>
-                            </ul>
-                        </AnonymousTemplate>
-                        <LoggedInTemplate>
-                            <ul class="nav navbar-nav navbar-right" >
-                                <li><a runat="server" href="~/Account/Manage" title="Manage your account">Welcome!</a></li>
-                                <li>
-                                    <asp:LoginStatus runat="server" LogoutAction="Redirect" LogoutText="Log off" LogoutPageUrl="~/" OnLoggingOut="Unnamed_LoggingOut" />
-                                </li>
-                            </ul>
-                        </LoggedInTemplate>
-                    </asp:LoginView>
+                        <asp:LoginView runat="server" ViewStateMode="Disabled">
+                            <AnonymousTemplate>
+                                <ul class="nav navbar-nav navbar-right">
+                                    <li><a runat="server" href="~/Account/Register">Register</a></li>
+                                    <li><a runat="server" href="~/Account/Login">Log in</a></li>
+                                </ul>
+                            </AnonymousTemplate>
+                            <LoggedInTemplate>
+                                <ul class="nav navbar-nav navbar-right" >
+                                    <li><a runat="server" href="~/Account/Manage" title="Manage your account">Welcome!</a></li>
+                                    <li>
+                                        <asp:LoginStatus runat="server" LogoutAction="Redirect" LogoutText="Log off" LogoutPageUrl="~/" OnLoggingOut="Unnamed_LoggingOut" />
+                                    </li>
+                                </ul>
+                            </LoggedInTemplate>
+                        </asp:LoginView>
 
-                </div>
+                    </div>
             </div>
         </div>
 
@@ -139,5 +136,10 @@
                 }
             });
         });
-        </script>
+    </script>
+    <script>
+        $(window).on('resize load', function () {
+            $('body').css({ "padding-top": $(".navbar").height() + 20 + "px" });
+        });
+    </script>
 </html>
