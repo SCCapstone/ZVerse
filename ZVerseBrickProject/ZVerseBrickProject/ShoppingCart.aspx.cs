@@ -139,7 +139,7 @@ namespace ZVerseBrickProject
                 var tax = (decimal)0.07 * (cartTotal + (decimal)5.00);
                 var total = cartTotal + tax;
                 lbltaxTotal.Text = String.Format("{0:c}", tax);
-                lblTotal.Text = String.Format("{0:c}", cartTotal);
+                lblTotal.Text = String.Format("{0:c}", total);
                 return usersShoppingCart.GetCartItems();
             }
         }
