@@ -8,6 +8,13 @@ using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using ZVerseBrickProject.Models;
 
+/*
+* Name: IdentityModels.cs
+* Author:
+*   Daniel Harper
+* Description: 
+    This file generate the user identity. 
+*/
 namespace ZVerseBrickProject.Models
 {
     // You can add User data for the user by adding more properties to your User class, please visit http://go.microsoft.com/fwlink/?LinkID=317594 to learn more.

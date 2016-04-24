@@ -7,6 +7,14 @@ using System.Web.UI.WebControls;
 using ZVerseBrickProject.Models;
 using System.Web.ModelBinding;
 
+/*
+* Name: ProductList.aspx.cs
+* Author:
+*   Ming Wong
+* Description: 
+    All the functions used to obtain the product 
+    and categories in the product list page. 
+*/
 
 namespace ZVerseBrickProject
 {
@@ -16,7 +24,7 @@ namespace ZVerseBrickProject
         {
 
         }
-
+        /* Obtain all the school categories of the products */ 
         public IQueryable<Category> GetCategories()
         {
             var _db = new ZVerseBrickProject.Models.ProductContext();
@@ -24,6 +32,8 @@ namespace ZVerseBrickProject
             return query;
         }
 
+        /* Obtain all the products in the database. If category is selected ,
+        obtain only products within that school category */ 
         public IQueryable<Product> GetProducts([QueryString("id")] int? categoryId)
         {
             var _db = new ZVerseBrickProject.Models.ProductContext();

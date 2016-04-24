@@ -1,6 +1,12 @@
 <%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.Mobile.master.cs" Inherits="ZVerseBrickProject.Site_Mobile" %>
 <%@ Register Src="~/ViewSwitcher.ascx" TagPrefix="friendlyUrls" TagName="ViewSwitcher" %>
-
+<!-----------------------------------------------------------------------------
+* Name: Site.Mobile.Master
+* Author: 
+*   Auto-Generated
+* Description: This html file generates a mobile friendly version of the 
+*   website to be displayed on a smart phone
+------------------------------------------------------------------------------>
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">

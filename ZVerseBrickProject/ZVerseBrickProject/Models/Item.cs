@@ -2,7 +2,13 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-
+/*
+* Name: Item.cs
+* Author:
+*   Ming Wong
+* Description: 
+    This file builds the item model.  
+*/
 namespace ZVerseBrickProject.Models
 {
     public class Item

@@ -2,6 +2,13 @@
     CodeBehind="TestDisplay.aspx.cs" Inherits="ZVerseBrickProject.TestDisplay" %>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
+<!-----------------------------------------------------------------------------
+* Name: TestList.aspx
+* Author: Ming Wong
+* Edited By: Alexa Breeland 
+* Description: This aspx page creates the styling for the brick canvas, and 
+*   the html controls for all of the 3D brick windows
+------------------------------------------------------------------------------>
     <!--Styling the brick canvas -->
     <style>
         #productBrick {
@@ -21,11 +28,9 @@
         }
     </style>
 
-    <asp:FormView ID="BrickDetail" runat="server" ItemType="ZVerseBrickProject.Models.Brick" SelectMethod="GetBrick" RenderOuterTable="false">
-
-        
+    <!-- 3D window and form controls-->
+    <asp:FormView ID="BrickDetail" runat="server" ItemType="ZVerseBrickProject.Models.Brick" SelectMethod="GetBrick" RenderOuterTable="false">      
         <ItemTemplate>
-
             <div>
                 <h1><%#:Item.BrickName %></h1>
             </div>
@@ -57,6 +62,16 @@
                     <input type="radio" name="browser" onclick="check(this.value)" id="cursive" value="Courier">Courier<br>
                     <input type="radio" name="browser" onclick="check(this.value)" id="helv" value="Charlesworth">Charlesworth<br>
                     <input type="radio" name="browser" onclick="check(this.value)" id="opt" value="Comic Sans MS">Comic Sans MS<br>
+                    <br />
+                    <p>
+                        Please use the sliders below to place the Text lines to Desired Location.
+                    </p>
+                    <br />
+                         
+                    <input id="textSlider1" type="range" min="90" max="500" /> Move Text Line 1<br>
+                    <input id="textSlider2" type="range" min="90" max="500" /> Move Text Line 2<br>
+                    <input id="textSlider3" type="range" min="90" max="500" /> Move Text Line 3<br>
+
                     <br>
                     Your font is:
                     <input type="text" id="answer" size="20">
@@ -91,18 +106,14 @@
 
                     <!--Shopping Cart button redirect to order page -->
                     <asp:Button runat="server" ID="Show" Text="Add To Cart" class="btn btn-success" CommandArgument="<%#:Item.BrickID %>" OnCommand="AddCart" />
-
-
-
-
                 </div>
             </div>
 
-            <!--this file does...-->
             <script src="js/threex.dynamictexture.js"></script>
-            <!--this file does...-->
             <script src="js/Three.js"></script>
             <script src="js/three.min.js"></script>
+           
+
             
             <!--Automatically draw on the brick when inscription is not empty -->
             <script>
@@ -137,12 +148,11 @@
                     }
 
                 })
+
             </script>
             <!--Containing file for brick and text rendering functions-->
             <!--Note this js file must be at the end of div content-->
             <script src="js/<%#Item.JSPath %>"></script>
-
         </ItemTemplate>
     </asp:FormView>
-
 </asp:Content>

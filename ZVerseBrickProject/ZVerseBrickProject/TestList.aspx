@@ -1,14 +1,19 @@
 ﻿<%@ Page Title="Models with Text" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="TestList.aspx.cs" Inherits="ZVerseBrickProject.TestForm" %>
-
 <asp:Content ID="Content3" ContentPlaceHolderID="MainContent" runat="server">
+<!-----------------------------------------------------------------------------
+* Name: TestList.aspx
+* Author: Ming Wong 
+* Edited By: Alexa Breeland 
+* Description: 
+    The purpose of this html file is to display all the custom brick models. 
+------------------------------------------------------------------------------>
     <ol style="visibility: hidden;"></ol>
-
     <section>
         <div>
             <hgroup>
                 <h2><%: Page.Title %></h2>
             </hgroup>
-
+            <!-- Display the custom brick image, title, and price. Create the hyperlink the custom brick model page --> 
             <asp:ListView ID="BrickList" runat="server"
                 DataKeyNames="BrickID" GroupItemCount="3"
                 ItemType="ZVerseBrickProject.Models.Brick" SelectMethod="GetBricks">
@@ -49,12 +54,6 @@
                                         <b>Price: </b><%#:String.Format("{0:c}", Item.UnitPrice)%>
                                     </span>
                                     <br />
-<%--                                    <a class="btn btn-success btn-sm" href="/AddToCart.aspx?productID=-<%#Item.BrickID %>">
-                                        <span class="ProductListItem">
-                                            <b>Add To Cart<b>
-                                        </span>
-                                    </a>--%>
-
                                 </td>
                             </tr>
                             <tr>

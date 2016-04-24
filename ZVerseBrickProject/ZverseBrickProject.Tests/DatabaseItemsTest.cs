@@ -6,6 +6,15 @@ using ZVerseBrickProject.Models;
 using ZVerseBrickProject.Controllers;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
+/*
+* Name: DatabaseItemsTest.cs
+* Author:
+*   Ming Wong
+* Description: 
+    This file contains all the unit test functions regarding to adding, removing,
+    or retrieving an item from the database. 
+*/
+
 namespace ZverseBrickProject.Tests
 {
     [TestClass]

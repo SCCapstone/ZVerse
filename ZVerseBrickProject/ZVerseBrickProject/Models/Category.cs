@@ -4,6 +4,13 @@ using System.Linq;
 using System.Web;
 using System.ComponentModel.DataAnnotations;
 
+/*
+* Name: Category.cs
+* Author:
+*   Ming Wong
+* Description: 
+    This file builds school categories for the product. 
+*/
 namespace ZVerseBrickProject.Models
 {
     public class Category

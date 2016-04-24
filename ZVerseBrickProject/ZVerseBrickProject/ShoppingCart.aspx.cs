@@ -10,12 +10,20 @@ using System.Collections.Specialized;
 using System.Collections;
 using System.Web.ModelBinding;
 using System.Diagnostics;
- 
+/*
+* Name: ShoppingCart.aspx.cs
+* Author:
+*   Ming Wong
+* Description: 
+    This file contains all the functions pertaining to the shopping cart.  
+*/
 
 namespace ZVerseBrickProject
 {
     public partial class ShoppingCart : System.Web.UI.Page
     {
+        /* On page load, if empty, display the "please add an item message 
+        Otherwise, display the cart totatl with tax and shipping summary */ 
         protected void Page_Load(object sender, EventArgs e)
         {
             using (ShoppingCartFunctions usersShoppingCart = new ShoppingCartFunctions())
@@ -45,6 +53,7 @@ namespace ZVerseBrickProject
             }
         }
 
+        /* Responsible for the footer row and order summary */ 
         protected void gridViewOrders_RowCreated(object sender, GridViewRowEventArgs e)
         {
 
@@ -76,6 +85,7 @@ namespace ZVerseBrickProject
 
         }
 
+        /* Responsible for the hyperlink to the product or brick detail page */ 
         protected void  producturlClick(object sender, CommandEventArgs e)
         {
             int productid = Convert.ToInt32(e.CommandArgument.ToString());
@@ -92,11 +102,16 @@ namespace ZVerseBrickProject
             Context.ApplicationInstance.CompleteRequest();
 
         }
+
+        /* Obtain all cart items */ 
         public List<CartItem> GetShoppingCartItems()
         {
             ShoppingCartFunctions actions = new ShoppingCartFunctions();
             return actions.GetCartItems();
         }
+
+        /* Update the shopping cart total when the delete item button is press 
+        or the quantity of the item changes */ 
         public List<CartItem> UpdateCartItems()
         {
             using (ShoppingCartFunctions usersShoppingCart = new ShoppingCartFunctions())
@@ -124,11 +139,12 @@ namespace ZVerseBrickProject
                 var tax = (decimal)0.07 * (cartTotal + (decimal)5.00);
                 var total = cartTotal + tax;
                 lbltaxTotal.Text = String.Format("{0:c}", tax);
-                lblTotal.Text = String.Format("{0:c}", cartTotal);
+                lblTotal.Text = String.Format("{0:c}", total);
                 return usersShoppingCart.GetCartItems();
             }
         }
 
+        /* Responsible for building the shopping cart table onto the webpage */ 
         public static IOrderedDictionary GetValues(GridViewRow row)
         {
             IOrderedDictionary values = new OrderedDictionary();
@@ -143,11 +159,13 @@ namespace ZVerseBrickProject
             return values;
         }
 
+        /* Call the updatecartitems function when update button is pressed */ 
         protected void UpdateBtn_Click(object sender, EventArgs e)
         {
             UpdateCartItems();
         }
 
+        /* Empty the cart and redirect to checkout page when checkout button is pressed */ 
         protected void CheckoutBtn_Click(object sender, EventArgs e)
         {
             using (ShoppingCartFunctions usersShoppingCart = new ShoppingCartFunctions())

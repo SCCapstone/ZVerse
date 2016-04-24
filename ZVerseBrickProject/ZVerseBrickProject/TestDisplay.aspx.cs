@@ -8,6 +8,15 @@ using ZVerseBrickProject.Models;
 using System.Web.ModelBinding;
 using System.Diagnostics;
 
+/*
+* Name: TestDisplay.aspx.cs
+* Author:
+*   Ming Wong
+* Description: 
+    This file contains all the functions pertaining to testdisplay page, 
+    which is the standard page for display custom model brick. 
+*/
+
 namespace ZVerseBrickProject
 {
     public partial class TestDisplay : System.Web.UI.Page
@@ -36,8 +45,8 @@ namespace ZVerseBrickProject
             return query;
         }
 
-        //This function will set the brickmodel visible property to 
-        // be true to reveal the model on the tab and catalogue. 
+        /* This function sends the inscription text to the addtocart
+        page */  
         protected void AddCart(object sender, CommandEventArgs e)
         {
             int brickid = -Int32.Parse(e.CommandArgument.ToString());

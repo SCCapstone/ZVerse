@@ -4,6 +4,13 @@ using System.Linq;
 using System.Web;
 using System.ComponentModel.DataAnnotations;
 
+/*
+* Name: Product.cs
+* Author:
+*   Ming Wong
+* Description: 
+    This file builds product model.  
+*/
 namespace ZVerseBrickProject.Models
 {
     public class Product

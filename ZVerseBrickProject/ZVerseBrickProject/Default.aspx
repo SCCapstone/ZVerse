@@ -1,6 +1,15 @@
 ﻿<%@ Page Title="ZVerse" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="default.aspx.cs" Inherits="ZVerseBrickProject._Default" %>
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
+<!-----------------------------------------------------------------------------
+* Name: Default.aspx
+* Author:
+*   Auto-Generated
+* Edited By:
+*   Alexa Breeland
+*   Ming Wong
+* Description: This aspx file is used to generate the default view
+------------------------------------------------------------------------------>
     <%--http://stackoverflow.com/questions/4013955/how-to-include-css-in-master-pages--%>
     <div class="jumbotron">
         <h1><%: Title %>.</h1>
@@ -37,5 +46,4 @@
             </p>
         </div>
     </div>
-
 </asp:Content>

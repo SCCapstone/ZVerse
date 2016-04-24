@@ -2,8 +2,15 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-using System.ComponentModel.DataAnnotations; 
+using System.ComponentModel.DataAnnotations;
 
+/*
+* Name: CartItem.cs
+* Author:
+*   Ming Wong
+* Description: 
+    This file builds cart tiem model. 
+*/
 namespace ZVerseBrickProject.Models
 {
     public class CartItem

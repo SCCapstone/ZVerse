@@ -1,4 +1,13 @@
-﻿using System;
+﻿/*-----------------------------------------------------------------------------
+* Name: Global.asax.cs
+* Author:
+*   Auto-Generated
+* Edited By:
+*   **********************************************************************************
+* Description: This file runs all the initialization processes to begin 
+*   running the web app
+-----------------------------------------------------------------------------*/
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -10,7 +19,6 @@ using System.Data.Entity;
 using ZVerseBrickProject.Models;
 using System.Web.Http;
 using ZVerseBrickProject.UserRoles;
-
 
 namespace ZVerseBrickProject
 {

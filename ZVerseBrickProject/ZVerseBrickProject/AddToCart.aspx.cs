@@ -8,6 +8,18 @@ using System.Diagnostics;
 using ZVerseBrickProject.Controllers;
 using ZVerseBrickProject.Models;
 
+/*
+* Name: AddToCart.cs
+* Author:
+*   Ming Wong
+* Description: 
+    This will save the product into the cart table in the databse.
+    If the product has inscription, a new brick model will be created 
+    with its inscription text and be inserted into the brick model
+    table, while adding to the cart table. After insertion, it will
+    redirect to the shopping cart page. 
+*/
+
 namespace ZVerseBrickProject
 {
     public partial class AddToCart : System.Web.UI.Page

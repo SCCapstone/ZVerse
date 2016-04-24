@@ -4,6 +4,13 @@ using System.Linq;
 using System.Web;
 using System.Data.Entity;
 
+/*
+* Name: Brick.cs
+* Author:
+*   Ming Wong
+* Description: 
+    This file initialize the database with products and custom objects. 
+*/
 namespace ZVerseBrickProject.Models
 {
     public class ProductDatabaseInitializer : DropCreateDatabaseIfModelChanges<ProductContext>
@@ -76,24 +83,6 @@ namespace ZVerseBrickProject.Models
                     tb3 = "",
 
                 },
-                //new Brick
-                //{
-                //    BrickID = 4,
-                //    BrickName = "Debug Model purpose",
-                //    Description = "Proud to be Clemson Fan. Hurry and purchase this wonderful brick with this 99% discount off!",
-                //    UnitPrice = 11.00,
-                //    Incription = "Clemson Brick default incript",
-                //    ImagePath="pine_blankframe.jpg",
-                //    JSPath = "Plaque.js",
-                //    isVisible = true,
-                //    showhide = "Hide",
-                //    isStandard = true,
-                //    tb1 = "test1",
-                //    tb2 = "test2",
-                //    tb3 = "test3",
-
-                //},
-
             };
 
             return bricks;  

@@ -11,6 +11,16 @@ using System.Linq;
 using ZVerseBrickProject.Models;
 using ZVerseBrickProject.Controllers;
 
+/*
+* Name: Site.Master.cs
+* Author:
+*  Auto-generated
+* Edit by:
+#   Ming Wong, Chris Clymer, Alexa Breeland 
+* Description: 
+    This file contains all the functions relating to the overal theme of the website.  
+*/
+
 namespace ZVerseBrickProject
 {
     public partial class SiteMaster : MasterPage
@@ -70,6 +80,7 @@ namespace ZVerseBrickProject
             }
         }
 
+        /* Only display admin page on navbar when admin is login */
         protected void Page_Load(object sender, EventArgs e)
         {
             if (HttpContext.Current.User.IsInRole("admin"))
@@ -79,7 +90,7 @@ namespace ZVerseBrickProject
 
            
         }
-
+        /* Display the number of items on shopping cart on navbar */ 
         protected void Page_PreRender(object sender, EventArgs e)
         {
             using (ShoppingCartFunctions usersShoppingCart = new ShoppingCartFunctions())
@@ -88,7 +99,7 @@ namespace ZVerseBrickProject
                 cartCount.InnerHtml = "<span class='glyphicon glyphicon-shopping-cart'></span>" + cartStr;
             }
         }
-
+        /* Obtain the categories */ 
         public IQueryable<Category> GetCategories()
         {
             var _db = new ZVerseBrickProject.Models.ProductContext();
@@ -96,7 +107,7 @@ namespace ZVerseBrickProject
             return query;
         }
 
-
+        /* Obtain all the custom brick models which admin has set it to show */ 
         public IQueryable<Brick> GetBricks()
         {
             var _db = new ZVerseBrickProject.Models.ProductContext();
@@ -105,7 +116,7 @@ namespace ZVerseBrickProject
             return query;
         }
 
-
+        /* Keep the session cookies for login users */ 
         protected void Unnamed_LoggingOut(object sender, LoginCancelEventArgs e)
         {
             Context.GetOwinContext().Authentication.SignOut(DefaultAuthenticationTypes.ApplicationCookie);
