@@ -2,8 +2,15 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-using System.Data.Entity; 
+using System.Data.Entity;
 
+/*
+* Name: ProductContext.cs
+* Author:
+*   Ming Wong
+* Description: 
+    This file is used to retreive objects from different tables in the database. 
+*/
 namespace ZVerseBrickProject.Models
 {
     public class ProductContext : DbContext

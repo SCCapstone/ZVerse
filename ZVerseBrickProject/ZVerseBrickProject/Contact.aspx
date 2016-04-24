@@ -19,6 +19,7 @@
     </address>
 
     <address>
-        <strong>Email:</strong>   <a href="mailto:info@zverse.com">info@zverse.com</a><br />
+        <strong>Email:</strong>   
+        <a href="mailto:info@zverse.com">info@zverse.com</a><br />
     </address>
 </asp:Content>
