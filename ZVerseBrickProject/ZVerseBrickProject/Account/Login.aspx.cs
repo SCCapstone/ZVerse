@@ -1,4 +1,8 @@
-﻿using System;
+﻿//auto generated file
+//edited by Chris Clymer
+//login page now only allows users with confirmed email addresses to log in.
+
+using System;
 using System.Web;
 using System.Web.UI;
 using Microsoft.AspNet.Identity;
@@ -37,6 +41,7 @@ namespace ZVerseBrickProject.Account
                 {
                     if (!user.EmailConfirmed)
                     {
+                        //code added to make the resend email confirmation visible.
                         FailureText.Text = "Invalid login attempt. You must have a confirmed email address. Enter your email and password, then press 'Resend Confirmation'.";
                         ErrorMessage.Visible = true;
                         ResendConfirm.Visible = true;
@@ -71,7 +76,8 @@ namespace ZVerseBrickProject.Account
                 }
             }
         }
-
+        //new function that allows the user to resend their email confirmation in case
+        //it accidentally gets deleted or never arrives
         protected void SendEmailConfirmationToken(object sender, EventArgs e)
         {
             var manager = Context.GetOwinContext().GetUserManager<ApplicationUserManager>();

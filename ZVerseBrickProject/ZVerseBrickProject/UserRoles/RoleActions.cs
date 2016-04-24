@@ -1,4 +1,10 @@
-﻿using System;
+﻿//<!-----------------------------------------------------------------------------
+//* Name: RoleActions.cs
+//* Author: Chris Clymer
+//* Description: This file creates the admin role and admin account
+//------------------------------------------------------------------------------>
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -13,7 +19,7 @@ namespace ZVerseBrickProject.UserRoles
     {
         internal void AddUserAndRole()
         {
-            // Access the application context and create result variables.
+            // access the application context and create result variables.
             Models.ApplicationDbContext context = new ApplicationDbContext();
             IdentityResult IdRoleResult;
             IdentityResult IdUserResult;
@@ -28,8 +34,8 @@ namespace ZVerseBrickProject.UserRoles
                 IdRoleResult = roleMgr.Create(new IdentityRole { Name = "admin" });
             }
 
-            // Create a UserManager object based on the UserStore object and the ApplicationDbContext  
-            // object.
+            // create a UserManager object based on the UserStore object and the ApplicationDbContext object.
+            // defines admin email account
             var userMgr = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(context));
             var appUser = new ApplicationUser
             {
@@ -38,8 +44,7 @@ namespace ZVerseBrickProject.UserRoles
             };
             IdUserResult = userMgr.Create(appUser, "Pa$$word1");
 
-            // If the new admin user was successfully created, 
-            // add the new user to the "admin" role. 
+            // If the new admin user was successfully created, add the new user to the "admin" role. 
             if (!userMgr.IsInRole(userMgr.FindByEmail("zverse123@gmail.com").Id, "admin"))
             {
                 IdUserResult = userMgr.AddToRole(userMgr.FindByEmail("zverse123@gmail.com").Id, "admin");
