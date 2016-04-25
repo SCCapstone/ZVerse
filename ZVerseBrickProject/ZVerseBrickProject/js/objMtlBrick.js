@@ -62,8 +62,8 @@ function init() {
     scene.add(ambient);
 
     //Adding directional light to the scene 
-    var directionalLight = new THREE.DirectionalLight(0xffffff);
-    directionalLight.position.set(0, 1, 1).normalize();
+    var directionalLight = new THREE.DirectionalLight(0xffdead, 1);
+    directionalLight.position.set(1, 1, 1).normalize();
     scene.add(directionalLight);
 
     // texture
