@@ -4,6 +4,14 @@ using System.Linq;
 using System.Web;
 using ZVerseBrickProject.Models;
 
+/*
+* Name: AddProducts.cs
+* Author:
+*   Ming Wong
+* Description: 
+    This file save the product into the database.
+*/
+
 namespace ZVerseBrickProject.Controllers
 {
     public class AddProducts

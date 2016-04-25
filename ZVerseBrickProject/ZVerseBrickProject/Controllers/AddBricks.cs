@@ -5,6 +5,13 @@ using System.Linq;
 using System.Web;
 using ZVerseBrickProject.Models;
 
+/*
+* Name: AddBricks.cs
+* Author:
+*   Ming Wong
+* Description: 
+    This file save the brick into database.
+*/
 namespace ZVerseBrickProject.Controllers
 {
     public class AddBricks

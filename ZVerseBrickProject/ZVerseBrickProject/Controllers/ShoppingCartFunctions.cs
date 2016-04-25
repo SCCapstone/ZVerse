@@ -4,6 +4,13 @@ using System.Linq;
 using System.Web;
 using ZVerseBrickProject.Models;
 
+/*
+* Name: ShoppingCartFunctions.cs
+* Author:
+*   Ming Wong
+* Description: 
+    This file contains all the functions pertaining to the shopping cart.
+*/
 
 namespace ZVerseBrickProject.Controllers
 {
@@ -15,6 +22,7 @@ namespace ZVerseBrickProject.Controllers
 
         public const string CartSessionKey = "CartId";
 
+        /* Obtain the product from the database onto the cart */ 
         public void AddToCart(int id)
         {
             // Retrieve the product from the database.           
@@ -57,6 +65,7 @@ namespace ZVerseBrickProject.Controllers
             }
         }
 
+        /* Obtain the current cart */ 
         public string GetCartId()
         {
             if (HttpContext.Current.Session[CartSessionKey] == null)
@@ -75,6 +84,7 @@ namespace ZVerseBrickProject.Controllers
             return HttpContext.Current.Session[CartSessionKey].ToString();
         }
 
+        /* Get all cart items */ 
         public List<CartItem> GetCartItems()
         {
             ShoppingCartId = GetCartId(); 
@@ -82,6 +92,7 @@ namespace ZVerseBrickProject.Controllers
                 c => c.CartId == ShoppingCartId).ToList();
         }
 
+        /* Get the total from the product price and quantity */ 
         public decimal GetTotal()
         {
             ShoppingCartId = GetCartId();
@@ -98,6 +109,7 @@ namespace ZVerseBrickProject.Controllers
 
         }
 
+        /* Obtain the current cart from its context */
         public ShoppingCartFunctions GetCart(HttpContext context)
         {
             using (var cart = new ShoppingCartFunctions())
@@ -107,6 +119,7 @@ namespace ZVerseBrickProject.Controllers
             }
         }
 
+        /* Update the shopping cart table in database when update check button is pressed */ 
         public void UpdateShoppingCartDatabase(String cartId, ShoppingCartUpdates[] CartItemUpdates)
         {
             using (var db = new ZVerseBrickProject.Models.ProductContext())
@@ -141,6 +154,7 @@ namespace ZVerseBrickProject.Controllers
             }
         }
 
+        /* Remove an item from the cart in the databse */
         public void RemoveItem(string removeCartID, int removeProductID)
         {
             using (var _db = new ZVerseBrickProject.Models.ProductContext())
@@ -176,6 +190,7 @@ namespace ZVerseBrickProject.Controllers
             }
         }
 
+        /* Update the quantity of an item in the database */ 
         public void UpdateItem(string updateCartID, int updateProductID, int quantity)
         {
             using (var _db = new ZVerseBrickProject.Models.ProductContext())
@@ -196,6 +211,7 @@ namespace ZVerseBrickProject.Controllers
             }
         }
 
+        /* Empty all items in the cart */ 
         public void EmptyCart()
         {
             ShoppingCartId = GetCartId();
@@ -223,6 +239,7 @@ namespace ZVerseBrickProject.Controllers
             _db.SaveChanges();
         }
 
+        /* Obtain the total number of items in the cart */ 
         public int GetCount()
         {
             ShoppingCartId = GetCartId();
