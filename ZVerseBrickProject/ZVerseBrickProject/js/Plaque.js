@@ -1,5 +1,6 @@
 /*-----------------------------------------------------------------------------
 Name: newBrickRendering.js
+Author: Sagar Mistry & Alexa Breeland
 Description: This file contains all of the primary functions for rendering the
     brick polygon and its three lines of text on the side of the brick
 Input Parameters: Strings of text are passed from BrickwithText.aspx
