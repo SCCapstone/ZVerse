@@ -1,4 +1,9 @@
-﻿using System;
+﻿//auto generated file
+//edited by Chris Clymer
+//This page now allows the forgot password link to be used so that the user
+//can change their password after clicking the link in the sent email.
+
+using System;
 using System.Web;
 using System.Web.UI;
 using Microsoft.AspNet.Identity;

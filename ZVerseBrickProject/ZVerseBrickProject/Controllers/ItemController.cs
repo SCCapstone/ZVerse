@@ -7,6 +7,13 @@ using System.Web.Http;
 using ZVerseBrickProject.Models;
 using System.Threading.Tasks;
 
+/*
+* Name: ItemController.cs
+* Author:
+*   Ming Wong
+* Description: 
+    This file save an item into database.
+*/
 namespace ZVerseBrickProject.Controllers
 {
     public class ItemController : ApiController

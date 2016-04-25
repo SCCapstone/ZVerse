@@ -2,6 +2,14 @@
 
 
 <asp:Content ID="AdminContent" ContentPlaceHolderID="MainContent" runat="server">
+<!-----------------------------------------------------------------------------
+* Name: AdminPage.aspx
+* Author: Chris Clymer  
+* Edited By: Alexa Breeland 
+* Description: This aspx page is the admin-only tab of our web page which shows
+* the admin extra features such as uploading a new js object to write text on
+* and picking which custom objects show up to the average customer.
+------------------------------------------------------------------------------>
     <link href="../Content/admin.css" rel="stylesheet" type=" text/css" />
     <h1>Welcome, Admin!</h1>
     <hr />
@@ -15,8 +23,6 @@
         <br />
         <br />
         <asp:Label runat="server" ID="StatusLabel" Text="" />
-
-
     </div>
 
     <h3>Our current available models include:</h3>
@@ -28,7 +34,7 @@
         <br />
     New uploads are automatically hidden. 
         <br />
-    Be sure to update the name and price of your newly uploaded models below and then click show!
+    Be sure to update the name and price of your newly uploaded models below!
         <br />
         <br />
 

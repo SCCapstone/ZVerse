@@ -7,6 +7,16 @@ using System.Web.UI.WebControls;
 using ZVerseBrickProject.Models;
 using System.Web.ModelBinding;
 
+/*
+* Name: ProductDetails.aspx.cs 
+* Author:
+*   Ming Wong
+* Description: 
+    This page contains only one method that will only 
+    find the products in the database to list out its 
+    details.  
+*/
+
 namespace ZVerseBrickProject
 {
     public partial class ProductDetails : System.Web.UI.Page

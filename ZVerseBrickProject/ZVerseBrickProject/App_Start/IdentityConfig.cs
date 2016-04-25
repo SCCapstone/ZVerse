@@ -14,6 +14,10 @@ using System.Diagnostics;
 
 namespace ZVerseBrickProject
 {
+
+    //This class enables the use of the email service SendGrid
+    //to be used to confirm our registered users and send them
+    //a reset password link in case they forget or lose it.
     public class EmailService : IIdentityMessageService
     {
         public async Task SendAsync(IdentityMessage message)
