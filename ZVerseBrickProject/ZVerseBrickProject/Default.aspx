@@ -1,5 +1,14 @@
 ﻿<%@ Page Title="ZVerse" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="default.aspx.cs" Inherits="ZVerseBrickProject._Default" %>
 
+
+<!-----------------------------------------------------------------------------
+* Name: Default.aspx
+* Authors:
+*   Auto Generated
+    Edited: Alexa Breeland
+* Description: 
+*   This page is the default for the site containing the video 
+------------------------------------------------------------------------------>
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
     <%--http://stackoverflow.com/questions/4013955/how-to-include-css-in-master-pages--%>
     <%--<div class="jumbotron">
