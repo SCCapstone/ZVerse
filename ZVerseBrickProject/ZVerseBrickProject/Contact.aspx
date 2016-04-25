@@ -1,13 +1,16 @@
 ﻿<%@ Page Title="Contact" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Contact.aspx.cs" Inherits="ZVerseBrickProject.Contact" %>
 
-<!-----------------------------------------------------------------------------
+
+<asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
+
+ <!-----------------------------------------------------------------------------
 * Name: Contact.aspx
 * Authors:
 *   Alexa Breeland
 * Description: 
 *   This page is the contact page with information about the project 
 ------------------------------------------------------------------------------>
-<asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
+
     <h2 style="font-style:oblique;font:bold">About</h2>
     
     <h3 style="color:orangered">About This Project</h3>
