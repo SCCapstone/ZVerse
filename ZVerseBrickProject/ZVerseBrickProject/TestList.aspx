@@ -11,7 +11,7 @@
     <section>
         <div>
             <hgroup>
-                <h2><%: Page.Title %></h2>
+                <h2 style="font-style:oblique"><%: Page.Title %></h2>
             </hgroup>
             <!-- Display the custom brick image, title, and price. Create the hyperlink the custom brick model page --> 
             <asp:ListView ID="BrickList" runat="server"
