@@ -275,7 +275,6 @@
     <Content Include="fonts\gentilis_regular.typeface.js" />
     <Content Include="fonts\optimer_regular.typeface.js" />
     <Content Include="fonts\Sans_Regular.js" />
-    <Content Include="html.html" />
     <Content Include="Images\zverse.png" />
     <Content Include="js\brickTexture.jpg" />
     <Content Include="js\CanvasRenderer.js" />
@@ -290,7 +289,6 @@
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="Account\Web.config" />
     <Content Include="fonts\helvetiker_regular.typeface.js" />
-    <Content Include="HtmlPage1.html" />
     <Content Include="Images\productImages\image01.jpg" />
     <Content Include="Images\productImages\image02.jpg" />
     <Content Include="Images\productImages\image03.jpg" />
