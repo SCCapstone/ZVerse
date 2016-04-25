@@ -68,9 +68,9 @@
                     </p>
                     <br />
                          
-                    <input id="textSlider1" type="range" min="90" max="500" /> Move Text Line 1<br>
-                    <input id="textSlider2" type="range" min="90" max="500" /> Move Text Line 2<br>
-                    <input id="textSlider3" type="range" min="90" max="500" /> Move Text Line 3<br>
+                    <input id="textSlider1" type="range" min="90" max="500" value="120"/> Move Text Line 1<br>
+                    <input id="textSlider2" type="range" min="90" max="500" value="240"/> Move Text Line 2<br>
+                    <input id="textSlider3" type="range" min="90" max="500" value="360"/> Move Text Line 3<br>
 
                     <br>
                     Your font is:
