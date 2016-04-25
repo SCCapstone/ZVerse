@@ -34,7 +34,7 @@
         <br />
     New uploads are automatically hidden. 
         <br />
-    Be sure to update the name and price of your newly uploaded models below and then click show!
+    Be sure to update the name and price of your newly uploaded models below!
         <br />
         <br />
 
